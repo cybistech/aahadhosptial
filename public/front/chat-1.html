@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <!-- Meta links -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta links end -->
+
+    <!-- Navigation link -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
+
+    <!-- Navigation link end -->
+
+    <!-- Chat page link -->
+
+    <link rel="stylesheet" href="css/app.min.css">
+
+    <!-- Chat page link end -->
+
+    <!-- Bootstrap links -->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <!-- Bootstrap links end -->
+
+    <!-- Custom link -->
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Custom link end -->
+
+    <!-- Fontawesome link 5 -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"> 
+
+    <!-- Fontawesome link 5 end -->
+
+    <!-- Testimonial -->
+
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/OwlCarousel2/OwlCarousel2/develop/dist/assets/owl.carousel.min.css">
+
+    <!-- Testimonial end -->
+
+    <!-- Responsive -->
+
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+    <!-- Responsive end -->
+
+</head>
+<body>
+
+    <!-- Section 1 -->
+
+    <div class="header-pinned" id="header">
+
+        <!-- Top header section -->
+
+        <div class="top-header">
+            <div class="container">
+                <div class="top-left-text">
+                    <p>Monday - Saturday,8am to 10pm</p>
+                </div>
+                <div class="top-right-text">
+                    <p>Call us now : +91 9016838037</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top header section end -->
+
+        <!-- Navigation -->
+
+        <div class="container">
+            <div class="navigation-custom-single">
+                <nav class="navbar navbar-light bg-faded">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logo.png" class="logo-img">
+                    </a>
+                    <div class="navbar-responsive-button">
+                        <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+                            &#9776;
+                        </button>
+                    </div>
+                    <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
+                        <ul class="nav navbar-nav pull-sm-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Departments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Doctors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Facilities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span id="six" class="button">Login</span>
+                                    <span>/</span>
+                                    <span id="six" class="button2">Register</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Navigationbar end -->
+
+    </div>
+
+    <div class="spacefor-global">
+    </div>
+
+    <!-- Section 1 End -->
+
+    <!-- Chat section -->
+
+    <div class="chats-tab-open">
+        <div class="container">
+            <div class="main-layout" style="margin-top: 25px;">
+                <aside class="sidebar">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="chats-content">
+                            <div class="d-flex flex-column h-100">
+                                <div class="hide-scrollbar h-100" id="chatContactsList">
+                                    <div class="sidebar-header sticky-top p-2">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5 class="font-weight-semibold mb-0">Chats</h5>
+                                            <ul class="nav flex-nowrap">
+                                                <li class="nav-item list-inline-item mr-0">
+                                                    <div class="dropdown">
+                                                        <a class="nav-link text-muted px-1" href="#" role="button" title="Details" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                                                            </svg>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#" role="button" data-toggle="modal" data-target="#startConversation">New Chat</a>
+                                                            <a class="dropdown-item" href="#" role="button" data-toggle="modal" data-target="#createGroup">Create Group</a>
+                                                            <a class="dropdown-item" href="#" role="button" data-toggle="modal" data-target="#inviteOthers">Invite Others</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="sidebar-sub-header">
+                                            <form class="form-inline">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control search border-right-0 transparent-bg pr-0" placeholder="Search users...">
+                                                    <div class="input-group-append">
+                                                        <div class="input-group-text transparent-bg border-left-0" role="button">
+                                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <ul class="contacts-list" id="chatContactTab" data-chat-list="">
+                                        <li class="contacts-item friends active">
+                                            <a class="contacts-link" href="javascript:;">
+                                                <div class="avatar avatar-online">
+                                                    <img src="img/p2.jpg" alt="">
+                                                </div>
+                                                <div class="contacts-content">
+                                                    <div class="contacts-info">
+                                                        <h6 class="chat-name text-truncate">Catherine Richardson</h6>
+                                                        <div class="chat-time">Just now</div>
+                                                    </div>
+                                                    <div class="contacts-texts">
+                                                        <p class="text-truncate">i'm sorry, i didn't catch that. could ...</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="contacts-item groups">
+                                            <a class="contacts-link"  href="chat-2.html">
+                                                <div class="avatar bg-success text-light">
+                                                    <span>
+                                                        <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div class="contacts-content">
+                                                    <div class="contacts-info">
+                                                        <h6 class="chat-name">Themeforest Group</h6>
+                                                        <div class="chat-time">
+                                                            <span>10:20 pm</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="contacts-texts">
+                                                        <p class="text-truncate">
+                                                            <span>Jeny: </span>
+                                                            i'm sorry, i didn't catch that. could ...
+                                                        </p>
+                                                        <div class="d-inline-flex align-items-center ml-1">
+                                                            <svg class="hw-16 text-muted" viewBox="0 0 20 20" fill="currentColor">
+                                                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="calls-content">
+                            <div class="d-flex flex-column h-100">
+                                <div class="hide-scrollbar h-100" id="callContactsList">
+                                    <div class="sidebar-header sticky-top p-2">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <ul class="nav flex-nowrap">
+                                                <li class="nav-item list-inline-item mr-0">
+                                                    <div class="dropdown">
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="#" role="button" data-toggle="modal" data-target="#startConversation">New Chat</a>
+                                                            <a class="dropdown-item" href="#" role="button" data-toggle="modal" data-target="#createGroup">Create Group</a>
+                                                            <a class="dropdown-item" href="#" role="button" data-toggle="modal" data-target="#inviteOthers">Invite Others</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <main class="main main-visible">
+                    <div class="chats">
+                        <div class="chat-body">
+                            <div class="chat-header">
+                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted d-xl-none" type="button" data-close="">
+                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                                    </svg>
+                                </button>
+                                <div class="media chat-name align-items-center text-truncate">
+                                    <div class="avatar avatar-online d-none d-sm-inline-block mr-3">
+                                        <img src="img/p2.jpg" alt="">
+                                    </div>
+                                    <div class="align-self-center">
+                                        <h6 class="text-truncate mb-0">Catherine Richardson</h6>
+                                        <small class="text-muted">Online</small>
+                                    </div>
+                                </div>
+                                <ul class="nav flex-nowrap">
+                                    <li class="nav-item list-inline-item d-none d-sm-block mr-1">
+                                        <a class="nav-link text-muted px-1" data-toggle="collapse" data-target="#searchCollapse" href="#" aria-expanded="false">
+                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item list-inline-item d-none d-sm-block mr-1">
+                                        <a class="nav-link text-muted px-1" href="#" title="Add People" type="button" data-toggle="modal" data-target="#myModal3">
+                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item list-inline-item d-none d-sm-block mr-0">
+                                        <div class="dropdown">
+                                            <a class="nav-link text-muted px-1" href="#" role="button" title="Details" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <svg class="hw-20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                                                    <path d="M17.919,4.633l-3.833,2.48V6.371c0-1-0.815-1.815-1.816-1.815H3.191c-1.001,0-1.816,0.814-1.816,1.815v7.261c0,1.001,0.815,1.815,1.816,1.815h9.079c1.001,0,1.816-0.814,1.816-1.815v-0.739l3.833,2.478c0.428,0.226,0.706-0.157,0.706-0.377V5.01C18.625,4.787,18.374,4.378,17.919,4.633 M13.178,13.632c0,0.501-0.406,0.907-0.908,0.907H3.191c-0.501,0-0.908-0.406-0.908-0.907V6.371c0-0.501,0.407-0.907,0.908-0.907h9.079c0.502,0,0.908,0.406,0.908,0.907V13.632zM17.717,14.158l-3.631-2.348V8.193l3.631-2.348V14.158z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item list-inline-item d-sm-none mr-0">
+                                        <div class="dropdown">
+                                            <a class="nav-link text-muted px-1" href="#" role="button" title="Details" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="collapse border-bottom px-3" id="searchCollapse">
+                                <div class="container-xl py-2 px-0 px-md-3">
+                                    <div class="input-group bg-light ">
+                                        <input type="text" class="form-control form-control-md border-right-0 transparent-bg pr-0" placeholder="Search...">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text transparent-bg border-left-0">
+                                                <svg class="hw-20 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-content p-2" id="messageBody">
+                                <div class="container">
+                                    <div class="message-day">
+                                        <div class="message-divider sticky-top pb-2" data-label="Yesterday">
+                                            &nbsp;
+                                        </div>
+                                        <div class="message">
+                                            <div class="message-wrapper">
+                                                <div class="message-content">
+                                                    <span>I have to give a presentation on global warming on Friday, and I am so nervous.</span>
+                                                </div>
+                                            </div>
+                                            <div class="message-options">
+                                                <div class="avatar avatar-sm">
+                                                    <img alt="" src="img/p2.jpg">
+                                                </div>
+                                                <span class="message-date">9:12am</span>
+                                                <div class="dropdown">
+                                                    <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"/>
+                                                        </svg>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                                            </svg>
+                                                            <span>Copy</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                                            </svg>
+                                                            <span>Replay</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                                            </svg>
+                                                            <span>Forward</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                                                            </svg>
+                                                            <span>Favourite</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                                            </svg>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="message self">
+                                            <div class="message-wrapper">
+                                                <div class="message-content">
+                                                    <span>First of all, you need to understand the subject matter thoroughly. You need to know what is global warming, what causes global warming, and what people should do to abate the effects of global warming.</span>
+                                                </div>
+                                            </div>
+                                            <div class="message-options">
+                                                <div class="avatar avatar-sm">
+                                                    <img alt="" src="img/p1.jpg">
+                                                </div>
+                                                <span class="message-date">9:12am</span>
+                                                <span class="message-status">Edited</span>
+                                                <div class="dropdown">
+                                                    <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"/>
+                                                        </svg>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                                            </svg>
+                                                            <span>Copy</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                                                            </svg>
+                                                            <span>Edit</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                                            </svg>
+                                                            <span>Replay</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <!-- Default :: Inline SVG -->
+                                                            <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                                            </svg>
+                                                            <span>Forward</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                                                            </svg>
+                                                            <span>Favourite</span>
+                                                        </a>
+                                                        <a class="dropdown-item d-flex align-items-center text-danger" href="#">
+                                                            <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                                            </svg> 
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-finished" id="chat-finished"></div>
+                            </div>
+                            <div class="chat-footer">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend mr-sm-2 mr-1">
+                                                <label for="file-upload">
+                                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                    </svg>
+                                                    <input type="file" id="file-upload">
+                                                </label>
+                                            </div>
+                                            <div class="input-group-prepend mr-sm-2 mr-1">
+                                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button">
+                                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <textarea class="form-control transparent-bg border-0 no-resize hide-scrollbar" placeholder="Write your message..." rows="1"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="btn btn-primary btn-icon rounded-circle text-light mb-1" role="button">
+                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Section end -->
+
+    <!-- Modal Login -->
+
+    <div class="modal" id="myModal3">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="audio-call-main-box">
+                        <img src="img/p1.jpg">
+                        <h2>Cathrine Richardson<span>Calling...</span></h2>
+                        <button type="button" class="audio-end" data-dismiss="modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                        <button type="button" class="audio-call audio-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login end -->
+
+    <!-- Footer -->
+
+    <div class="footer-main-box">
+        <div class="container">
+            <div class="footer-part-main-box">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="footer-r1-box">
+                            <div class="footer-logo-box">
+                                <img src="img/logo.png">
+                            </div>
+                            <div class="footer-r1-detail">
+                                <div class="footer-d1-box">
+                                    <h3>About us</h3>
+                                    <p>We want to help bring talanted students and unique startups together.</p>
+                                </div>
+                                <div class="footer-d1-box">
+                                    <h3>Contact us</h3>
+                                    <p><span><img src="img/phone.png"></span>+91 8866748331</p>
+                                    <p><span><img src="img/mail.png"></span>yourmailid.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1">
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <div class="footer-r1-box">
+                            <div class="footer-r1-detail">
+                                <div class="footer-d1-box">
+                                    <h3>Our department</h3>
+                                    <a href="#">Outpatient Department</a>
+                                    <a href="#">Padiatrics Department</a>
+                                    <a href="#">Neurology Department</a>
+                                    <a href="#">Dental Department</a>
+                                    <a href="#">Cardiology Department</a>
+                                    <a href="#">Diagnostic Department</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <div class="footer-r1-box">
+                            <div class="footer-r1-detail">
+                                <div class="footer-d1-box">
+                                    <h3>Helpful links</h3>
+                                    <a href="#">Servicesus</a>
+                                    <a href="#">Supports</a>
+                                    <a href="#">Terms & Condition</a>
+                                    <a href="#">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1">
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="footer-r1-box">
+                            <div class="footer-r1-detail">
+                                <div class="footer-d1-box">
+                                    <h3>Address</h3>
+                                    <p>4th floor, Royal arcade, jagatnaka, nana varachha, surat-395006.</p>
+                                </div>
+                                <div class="footer-d1-box">
+                                    <p>Sabcribe More Info</p>
+                                    <form>
+                                        <div class="inputWithIcon">
+                                            <input type="text" placeholder="Email">
+                                            <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="subcribe-button-box">
+                                            <button>Subcribe</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-part2-main-box">
+                <div class="footer-bottom-main-box">
+                    <div class="footer-icons-main-box">
+                        <div class="footer-icon-box">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                        <div class="footer-icon-box">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="footer-icon-box">
+                            <a href="#">
+                                <i class="fab fa-google-plus-g"></i>
+                            </a>
+                        </div>
+                        <div class="footer-icon-box">
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p>2018 @ Company private ltd.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer end -->
+
+    <!-- Javascript Files -->
+        <script src="vendors/jquery/jquery-3.5.0.min.js"></script>
+        <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            // Scroll to end of chat
+            document.querySelector('.chat-finished').scrollIntoView({
+                block: 'end',               // "start" | "center" | "end" | "nearest",
+                behavior: 'auto'          //"auto"  | "instant" | "smooth",
+            });
+        </script>
+
+
+        <!-- Navigation scripts -->
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.4/js/tether.min.js"></script>
+
+            <!-- Navigation scripts end -->
+
+            <!-- Bootstrap links -->
+
+            <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->  Remove this javascript file
+
+            <!-- Bootstrap links end -->
+
+        <!-- Navigation script end -->
+
+        <!-- Scrolling Header -->
+
+        <script type="text/javascript">
+            var lastScrollTop = 0;
+            $(window).scroll(function(event){
+              var $header = $('#header');
+              var headerPinned = 'header-pinned';
+              var headerUnpinned = 'header-unpinned';
+              var scroll = $(this).scrollTop();
+              var os = $header.offset().top;
+              var ht = $header.height();
+
+              if (scroll > lastScrollTop){
+                if (scroll > ht){
+                  $header.addClass(headerUnpinned).removeClass(headerPinned);
+                }
+              } else {
+                $header.addClass(headerPinned).removeClass(headerUnpinned);
+              }
+              lastScrollTop = scroll;
+            });
+        </script>
+
+        <!-- Scrolling Header end -->
+
+    <!-- Java script files end -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+page not found<?php /**PATH /home/vishal8589/public_html/demo/singleclinic/resources/views/errors/admin404.blade.php ENDPATH**/ ?>
