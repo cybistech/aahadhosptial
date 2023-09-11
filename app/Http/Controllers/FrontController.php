@@ -56,7 +56,7 @@ class FrontController extends Controller
           $doctor=Doctor::get()->take(4);
           $setting=Setting::find(1);
           $reviews=Review::with('doctors','users')->get()->take(4);
-          return view("front.home")->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctorls",$doctor)->with("chatpage",'1');;
+          return view("front.home")->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctors",$doctor)->with("chatpage",'1');;
        }
 
        public function getserviceanddoctor($department_id){
@@ -631,8 +631,14 @@ class FrontController extends Controller
     }
 
     public function services(){
-        $department=Department::all();
-        return view('front.services')->with("department",$department);
+        $department = Department::all();
+        $service = Service::all();
+        $setting = Setting::find(1);
+        return view('front.services')->with([
+            'department' => $department,
+            'service' => $service,
+            'setting' => $setting
+        ]);
     }
     public function news(){
         $department=Department::all();
