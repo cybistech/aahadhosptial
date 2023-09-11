@@ -61,21 +61,21 @@
                    <li class="active">
                      <a href="{{url('admin/patient')}}"> <i class="menu-icon fa fa-user"></i>{{__('messages.Patient')}}</a>
                   </li>
-                  <li class="active">
+                  {{-- <li class="active">
                      <a href="{{url('admin/package')}}"> <i class="menu-icon fa fa-user-md"></i>{{__('messages.Help Package')}}</a>
-                  </li>
-                  <li class="active">
+                  </li> --}}
+                  {{-- <li class="active">
                      <a href="{{url('admin/chat')}}"> <i class="menu-icon fa fa-comment"></i>{{__('messages.Chat')}} </a>
-                  </li>
-                  <li class="active">
+                  </li> --}}
+                  {{-- <li class="active">
                      <a href="{{url('admin/gallery')}}"> <i class="menu-icon fa fa-file-image-o"></i>{{__('messages.Gallery')}}</a>
-                  </li>
-                  <li class="active">
+                  </li> --}}
+                  {{-- <li class="active">
                      <a href="{{url('admin/review')}}"> <i class="menu-icon fa fa-star"></i>{{__('messages.Review')}}</a>
-                  </li>
-                   <li class="active">
+                  </li> --}}
+                   {{-- <li class="active">
                      <a href="{{url('admin/subscription')}}"> <i class="menu-icon fa fa-gift"></i>{{__('messages.Subscription')}}</a>
-                  </li>
+                  </li> --}}
                   <li class="active">
                      <a href="{{url('admin/news')}}"> <i class="menu-icon fa  fa-newspaper-o"></i>{{__('messages.news')}}</a>
                   </li>
@@ -83,7 +83,7 @@
                      <a href="{{url('admin/contactus')}}"> <i class="menu-icon fa  fa-address-card"></i>{{__('messages.Contact Us')}}</a>
                   </li>
                   <li class="active">
-                     <a href="{{url('admin/service')}}"> <i class="menu-icon fa fa-book"></i>{{__('messages.Facilities')}}</a>
+                     <a href="{{url('admin/service')}}"> <i class="menu-icon fa fa-book"></i>{{__('messages.services')}}</a>
                   </li>
 
                   <li class="active">
@@ -108,19 +108,19 @@
                         <span>{{__('messages.Privecy')}}</span>
                         </a>
                      </li>
-                     <li>
+                     {{-- <li>
                         <a href="{{url('admin/data_deletion')}}" class="waves-effect">
                         <i class="menu-icon fa fa-key"></i>
                         <span>{{__('messages.Data-Deletion')}}</span>
                         </a>
-                     </li>
+                     </li> --}}
                         <span style="color:#c8c9ce!important">{{__('messages.Notification')}}</span>
-                  <li class="active">
+                  {{-- <li class="active">
                      <a href="{{url('admin/notification')}}"> <i class="menu-icon fa fa-bell"></i>{{__('messages.Notification')}}</a>
-                  </li>
-                  <li class="active">
+                  </li> --}}
+                  {{-- <li class="active">
                      <a href="{{url('admin/paymentgateway')}}"> <i class="menu-icon fa fa-money"></i>{{__('messages.Payment Gateway')}}</a>
-                  </li>
+                  </li> --}}
                   <li class="active">
                      <a href="{{url('admin/setting/1')}}"> <i class="menu-icon fa fa-cogs"></i>{{__('messages.Setting')}}</a>
                   </li>

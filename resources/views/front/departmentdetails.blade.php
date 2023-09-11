@@ -1,147 +1,218 @@
-@extends('front.layout')
+@extends('front.layout.main')
 @section('title')
 {{__('messages.Department Details')}}
-@stop
-@section('content')
-<?php $res_curr=explode("-",$setting->currency);?>
-  <div class="d-detailpg-main-box">
-		<div class="container">
-			<div class="global-heading">
-				<h2>{{$departmentdetails->name}}</h2>
-				<p>{{__('messages.The life so short, the craft so long to learn')}}</p>
-			</div>
-			<div class="d-detailpg-part-main-box">
-				<div class="row">
-					<div class="col-lg-9 col-md-12">
+@endsection
+@section('main.container')
+   {{-- <div class="sidebar-cart">
+    <span class="cart-back-drop"></span>
+    <div class="shopping-cart">
+        <div class="cart-header">
+            <div class="title">Shopping Cart <span>(3)</span></div>
+            <button class="close-cart"><span class="flaticon-add"></span></button>
+        </div>
+        <ul class="shopping-cart-items">
+            <li class="cart-item">
+                <img src="images/resource/products/product-thumb-1.jpg" alt="#" class="thumb" />
+                <span class="item-name">First Aid Kit</span>
+                <span class="item-quantity">1 x <span class="item-amount">$50.00</span></span>
+                <a href="shop-single.html" class="product-detail"></a>
+                <button class="remove">Remove</button>
+            </li>
 
-						<div class="d-detail-main-box">
-							<div class="global-part-heading global-heading">
-								<h3>{{__('messages.About Department')}}</h3>
-								<p>{{$departmentdetails->description}}</p>
-							</div>
-						</div>
-						<div class="d-pricelist-main-box">
-							<div class="global-part-heading global-heading">
-								<h3>{{__('messages.Price list')}}</h3>
-							</div>
-							<div class="pricelist-part-main-box">
-								<div class="row">
-									<div class="col-lg-6 col-md-6">
-										<div class="pricelist-treatment-main-box">
-											<div class="pricelist-part-img-mainbox">
-												<div class="pricelist-part-img-box">
-													<img src="{{asset('front/img/treatment.png')}}">
-												</div>
-												<span>{{__('messages.Treatments')}}</span>
-											</div>
-											<div class="pricelist-part-detail-mainbox">
-												@if($departmentdetails->service)
-												@foreach($departmentdetails->service as $s)
-												   @if($s->price_for=='2')
-												       <div class="pricelist-part-detail-box">
-															<p>{{$s->name}}</p>
+            <li class="cart-item">
+                <img src="images/resource/products/product-thumb-2.jpg" alt="#" class="thumb"  />
+                <span class="item-name">Vitamin Tablet</span>
+                <span class="item-quantity">1 x <span class="item-amount">$25.00</span></span>
+                <a href="shop-single.html" class="product-detail"></a>
+                <button class="remove">Remove</button>
+            </li>
 
-															<span>- {{$res_curr[1].$s->price}}</span>
-													    </div>
-												   @endif
-												@endforeach
-												@endif
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-6">
-										<div class="pricelist-investigation-main-box">
-											<div class="pricelist-part-img-mainbox">
-												<div class="pricelist-part-img-box">
-													<img src="{{asset('front/img/investigation.png')}}">
-												</div>
-												<span>{{__('messages.Investigations')}}</span>
-											</div>
-											<div class="pricelist-part-detail-mainbox">
-												@if($departmentdetails->service)
-												@foreach($departmentdetails->service as $s)
-												   @if($s->price_for=='1')
-												<div class="pricelist-part-detail-box">
-													<p>{{$s->name}}</p>
-															<span>- {{$res_curr[1].$s->price}}</span>
-												</div>
-												  @endif
-												@endforeach
-												@endif
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-12">
-						<div class="d-detail-emergency-mainbox">
-							<img src="{{asset('front/img/emergency.png')}}">
-							<p>{{__('messages.Emergency Number')}}</p>
-							<h4>{{$departmentdetails->emergency_no}}</h4>
-						</div>
-						<div class="d-detail-collapse-doctor">
-							<div class="accordion indicator-plus-before round-indicator" id="accordionH" aria-multiselectable="true">
-								<div class="card m-b-0">
-									@if($departmentdetails->doctor)
-									   <?php $i=0; ?>
+            <li class="cart-item">
+                <img src="images/resource/products/product-thumb-3.jpg" alt="#" class="thumb"  />
+                <span class="item-name">Zinc Tablet</span>
+                <span class="item-quantity">1 x <span class="item-amount">$15.00</span></span>
+                <a href="shop-single.html" class="product-detail"></a>
+                <button class="remove">Remove</button>
+            </li>
+        </ul>
 
-										@foreach($departmentdetails->doctor as $doc)
-											<div class="card-header collapsed" role="tab" id="heading{{$i}}" href="#collapse{{$i}}"  data-parent="#accordion{{$i}}" aria-expanded="false" aria-controls="collapse{{$i}}" onclick="changedoctorblog('{{$i}}')">
-												<a class="card-title">
-													{{ucwords(strtolower($doc->name))}}
-												</a>
-											</div>
-											 @if($i==0)
-											 <div class="collapse in" id="collapse{{$i}}" role="tabpanel" aria-labelledby="heading{{$i}}" aria-expanded="true" >
-									     @else
-									     <div class="collapse" id="collapse{{$i}}" role="tabpanel" aria-labelledby="heading{{$i}}" aria-expanded="false" >
-									     @endif
+        <div class="cart-footer">
+            <div class="shopping-cart-total"><strong>Subtotal:</strong> $90.00</div>
+            <a href="shopping-cart.html" class="theme-btn btn-style-three"><span class="btn-title">View Cart</span></a>
+            <a href="checkout.html" class="theme-btn btn-style-one"><span class="btn-title">Checkout</span></a>
+        </div>
+    </div> <!-- End shopping-cart -->
+</div> --}}
 
-												<div class="card-body">
-													<div class="doctorl-part-box">
-														<?php
-					                                             if($doc->image){
-					                                             	$image=asset('upload/doctor')."/".$doc->image;
-					                                             }else{
-					                                             	$image=asset('upload/profile/profile.png');
-					                                             }
-														?>
-														<div class="doctorl-dp-img doctorl-dp-img-1" style="background-image: url('<?=$image?>')"></div>
-														<div class="doctor-detail-part">
-															<div class="doctorl-part-detail">
-																<h4>{{$doc->name}}</h4>
-																<p class="departdoc">{{substr($doc->about_us,0,50)}}</p>
-															</div>
-															<div class="icons-images">
-																<span class="facebook-doctorl">
-																	<a href="{{isset($doc->facebook_id)?$doc->facebook_id:''}}"><i class="fab fa-facebook-f"></i></a>
-																</span>
-																<span class="twitter-doctorl">
-																	<a href="{{isset($doc->twitter_id)?$doc->twitter_id:''}}"><i class="fab fa-twitter"></i></a>
-																</span>
-																<span class="gp-doctorl">
-																	<a href="{{isset($doc->google_id)?$doc->google_id:''}}"><i class="fab fa-google-plus-g"></i></a>
-																</span>
-																<span class="instagram-doctorl">
-																	<a href="{{isset($doc->instagram_id)?$doc->instagram_id:''}}"><img src="{{asset('front/img/instagram.png')}}"></a>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<?php $i++;?>
-										@endforeach
-									@endif
-									<input type="hidden" id="avilabledoctor" value="{{$i}}">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-@stop
+
+
+<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<div class="auto-container">
+    <div class="title-outer">
+        <h1>Departments</h1>
+        <ul class="page-breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Departments</li>
+        </ul>
+    </div>
+</div>
+</section>
+
+<div class="sidebar-page-container">
+<div class="auto-container">
+    <div class="row clearfix">
+
+        <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12 order-2">
+            <div class="service-detail">
+                <div class="images-box">
+                    {{-- <figure class="image wow fadeIn"><a src="{{ asset('upload/department').'/'.$departmentdetails->image }}" class="lightbox-image" data-fancybox="services"><img src="{{asset('upload/department').'/'.$departmentdetails->image}}"  alt="{{ $departmentdetails->name }}"></a></figure> --}}
+                </div>
+
+                <div class="content-box">
+                    <div class="title-box">
+                        <h2>{{ $departmentdetails->name }}</h2>
+                        <span class="theme_color">ResoFus Alomar Treatment for Essential Tremor and Parkinson's Disease</span>
+                    </div>
+                    <p>{{$departmentdetails->description}}</p>
+                    <div class="two-column">
+                        <div class="row">
+                            <div class="image-column col-xl-6 col-lg-12 col-md-12">
+                                <figure class="image"><a href="images/resource/post-img.jpg" class="lightbox-image"><img src="images/resource/post-img.jpg" alt=""></a></figure>
+                            </div>
+                            <div class="text-column col-xl-6 col-lg-12 col-md-12">
+                                <p>Complete account of the systems and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness.</p>
+                                <ul class="list-style-one">
+                                    <li>Enhancing Your Vision sit ametcon sec tetur</li>
+                                    <li>adipisicing eiusmod tempor tread depth sit tread</li>
+                                    <li>eiusmod Your Vision sit ametcon sec tetur sec</li>
+                                    <li>adipisicing eiusmod tempor tread depth sit </li>
+                                    <li>tread Your Vision sit ametcon sec tetur</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Why Choose This Service</h3>
+
+                    <p>Complete account of the systems and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful anyone who loves or pursues.</p>
+
+
+                    <div class="product-info-tabs">
+                        <div class="prod-tabs tabs-box">
+                            <ul class="tab-btns tab-buttons clearfix">
+                                <li data-tab="#prod-details" class="tab-btn active-btn">Precautions</li>
+                                <li data-tab="#prod-spec" class="tab-btn">Intelligence</li>
+                                <li data-tab="#prod-reviews" class="tab-btn">Specializations</li>
+                            </ul>
+
+                            <div class="tabs-content">
+
+                                <div class="tab active-tab" id="prod-details">
+                                    <div class="content">
+                                        <p>Suspendisse laoreet at nulla id auctor. Maecenas in dui cursus, lacinia nisl non, blandit lorem. Aliquam vel risus hendrerit, faucibus nisl a, porta sapien. Etiam iaculis mattis quam, nec iaculis velit feugiat quis. Pellentesque sed feugiat dui, ac euismod leo.</p>
+                                    </div>
+                                </div>
+
+                                <div class="tab" id="prod-spec">
+                                    <div class="content">
+                                        <p>Suspendisse laoreet at nulla id auctor. Maecenas in dui cursus, lacinia nisl non, blandit lorem. Aliquam vel risus hendrerit, faucibus nisl a, porta sapien. Etiam iaculis mattis quam, nec iaculis velit feugiat quis. Pellentesque sed feugiat dui, ac euismod leo.</p>
+                                    </div>
+                                </div>
+
+                                <div class="tab" id="prod-reviews">
+                                    <div class="content">
+                                        <p>Suspendisse laoreet at nulla id auctor. Maecenas in dui cursus, lacinia nisl non, blandit lorem. Aliquam vel risus hendrerit, faucibus nisl a, porta sapien. Etiam iaculis mattis quam, nec iaculis velit feugiat quis. Pellentesque sed feugiat dui, ac euismod leo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-side col-xl-3 col-lg-4 col-md-12 col-sm-12">
+            <aside class="sidebar services-sidebar">
+
+                <div class="sidebar-widget categories">
+                    <div class="widget-content">
+                        <ul class="services-categories">
+                            <li><a href="departments.html">All Departments</a></li>
+                            @foreach ($department as $d)
+                                <li @if ($d->id == $departmentdetails->id) class="active" @endif><a href="{{url('departmentdetail').'/'.$d->id}}">{{ $d->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="brochures-box">
+                    <div class="inner">
+                        <h4>Download Brochures</h4>
+                        <div class="text">Etiam tortor lorem, auctor ut orci ut, vehicula ultricies mauris. scelerisque gravida.</div>
+                        <a class="theme-btn btn-style-one" href="#"><span class="btn-title"><i class="fa fa-file-pdf"></i> Info Company</span></a>
+                        <a class="theme-btn btn-style-one" href="#"><span class="btn-title"><i class="fa fa-file-pdf"></i> Brochure Newest</span></a>
+                    </div>
+                </div>
+
+                <div class="help-box">
+                    <span>Quick Contact</span>
+                    <h4>Get Solution</h4>
+                    <p>Contact us at the Medicoz office nearest to you or submit a business inquiry online.</p>
+                    <a href="contact.html" class="theme-btn btn-style-one"><span class="btn-title">Contact</span></a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+</div>
+
+<section class="services-section-two">
+<div class="auto-container">
+    <div class="carousel-outer">
+        <div class="services-carousel owl-carousel owl-theme default-dots">
+
+            @foreach ($department as $d)
+                <div class="service-block-two">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="department-detail.html"><img src="images/resource/service-1.jpg" alt=""></a></figure>
+                        </div>
+                        <div class="lower-content">
+                            <div class="title-box">
+                               <span class=""><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></span>
+                               <h4><a href="department-detail.html">{{ $d->name }}</a></h4>
+                            </div>
+                            <div class="text">{{substr($d->description,0,125)}}</div>
+                            <span class="icon-right flaticon-heart-2"></span>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+<!-- Clients Section -->
+<section class="clients-section alternate">
+<div class="auto-container">
+
+    <!-- Sponsors Outer -->
+    <div class="sponsors-outer">
+        <!--clients carousel-->
+        <ul class="clients-carousel owl-carousel owl-theme">
+            <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
+            <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
+            <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
+            <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
+            <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
+        </ul>
+    </div>
+</div>
+</section>
+
+@endsection

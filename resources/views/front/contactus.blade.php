@@ -1,70 +1,141 @@
-@extends("front.layout")
-@section("title")
-{{__("messages.Contact Us")}}
-@stop
-@section("meta_title")
-<meta name="title" content='{{__("messages.Contact Us")}}'>
-<meta name="description" content='{{__("messages.Do you have any questions? Please do not hesitate to contact us directly")}}'/>
-@stop
-@section("content")
- <div class="contactpg-main-box">
-		<div class="contactpg-part1-main-box">
-			<div class="part1-part-main-box">
-				<div class="part1-part-box">
-					<div class="global-heading">
-						<h2>{{__("messages.Contact Us")}}</h2>
-						<p>{{__("messages.Do you have any questions? Please do not hesitate to contact us directly")}}</p>
-					</div>
-					<div class="part-form-main-box">
-						@if(Session::get("message"))
-                     <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                        {{Session::get("message")}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+@extends('front.layout.main')
+@section('title')
+ {{__('Services')}}
+@endsection
+
+@section('main.container')
+
+<section class="page-title" style="background-image: url(images/background/8.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>Contact Us</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{{-- <!-- Map Section -->
+<section class="map-section">
+    <div class="auto-container">
+        <div class="map-outer">
+            <div class="map-canvas"
+                data-zoom="12"
+                data-lat="-37.817085"
+                data-lng="144.955631"
+                data-type="roadmap"
+                data-hue="#ffc400"
+                data-title="Envato"
+                data-icon-path="images/icons/map-marker.png"
+                data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Map Section --> --}}
+
+<section class="contact-section" id="contact">
+    <div class="small-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">Contact Now</span>
+            <h2>Write us a Message !</h2>
+            <span class="divider"></span>
+        </div>
+
+        <div class="contact-box">
+            <div class="row">
+                <div class="contact-info-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner">
+                        <span class="icon flaticon-worldwide"></span>
+                        <h4><strong>Address</strong></h4>
+                        <p>{{$setting->address}}</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner">
+                        <span class="icon flaticon-phone"></span>
+                        <h4><strong>Phone</strong></h4>
+                        <p><a href="#">{{$setting->phone_no}}</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-info-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner">
+                        <span class="icon flaticon-email"></span>
+                        <h4><strong>Email</strong></h4>
+                        <p><a href="mailto:support@example.com">{{$setting->email}}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part-form-main-box">
+            @if(Session::get("message"))
+                <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+                    {{Session::get("message")}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">×</span>
-                        </button>
-                     </div>
-                     @endif
-						<form action="{{url('savecontact')}}" method="post">
-							 {{csrf_field()}}
-							<input type="text" required name="name" id="name" placeholder="{{__('messages.Enter Your Full Name')}}">
-							<input type="email" required name="email" id="name" placeholder="{{__('messages.Enter Your Email')}}">
-							<input type="text" required name="topic" id="topic" placeholder="{{__('messages.Your query topic')}}">
-							<input type="text" required name="phone" id="phone" placeholder="{{__('messages.Enter Phone number')}}">
-							<textarea name="message" required id="message" placeholder="{{__('messages.Enter Your Messages')}}"></textarea>
-							<button type="submit">{{__("messages.Submit")}}</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="contactpg-part2-main-box">
-			<div class="part1-part-main-box">
-				<div class="part2-first-main-box">
-					<div class="part2-part-main-box">
-						<div class="part2-icon-main-box">
-							<img src="{{asset('front/img/cphone.png')}}">
-						</div>
-						<h3>{{__('messages.Call us')}}</h3>
-						<p>{{$setting->phone_no}}</p>
-					</div>
-					<div class="part2-part-main-box">
-						<div class="part2-icon-main-box">
-							<img src="{{asset('front/img/cmail.png')}}">
-						</div>
-						<h3>{{__('messages.Email address')}}</h3>
-						<p>{{$setting->email}}</p>
-					</div>
-					<div class="part2-part-main-box part2-part-font-main-box">
-						<p>{{__('messages.Our team will come back to you within a matter of hours to help you')}}</p>
-						<div class="part2-icon-main-box">
-							<a href="{{$setting->facebook_id}}"><i class="fab fa-facebook-f"></i></a>
-						</div>
-						<div class="part2-icon-main-box">
-							<a href="{{$setting->instagram_id}}"><i class="fab fa-instagram"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-@stop
+                    </button>
+                </div>
+            @endif
+        <div class="form-box">
+            <div class="contact-form">
+                <form action="{{url('savecontact')}}" method="post" id="email-form">
+                    @csrf
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            <div class="response"></div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="name" class="username" placeholder="Full Name *">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" class="email" placeholder="Email Address *">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="topic" class="username" placeholder="Topic">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="phone" class="username" placeholder="Your Phone">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <div class="form-group">
+                                <textarea name="message" class="message" placeholder="Massage"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-lg-12 text-center pt-3">
+                            <button class="theme-btn btn-style-one" type="submit" id="submit" name="submit-form"><span class="btn-title">Send Message</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="clients-section alternate">
+    <div class="auto-container">
+
+        <div class="sponsors-outer">
+            <ul class="clients-carousel owl-carousel owl-theme">
+                <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
+            </ul>
+        </div>
+    </div>
+</section>
+@endsection

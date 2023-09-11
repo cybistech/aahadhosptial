@@ -1,37 +1,67 @@
-@extends('front.layout')
+@extends('front.layout.main')
 @section('title')
  {{__('messages.Department')}}
-@stop
-@section('content')
-  <div class="departmentpg-main-box">
-		<div class="container">
-			<div class="global-heading">
-				<h2>{{__('messages.Department')}}</h2>
-				<p>{{__('messages.Goodness and hard work are rewarded with respect')}}</p>
-			</div>
-			<div class="department-part-main-box">
-				<div class="row">
-					@if(count($department)>0)
-						@foreach($department as $d)
-							<div class="col-lg-3 col-md-4 col-sm-6">
-								<div class="department-part-box">
-									<div class="department-part-img">
-										<img src="{{asset('upload/department').'/'.$d->image}}">
-									</div>
-									<div class="text-detail-box">
-										<h4>{{$d->name}}</h4>
-										<p>{{substr($d->description,0,75)}}</p>
-									</div>
-									<div class="department-viewd-btn services-btn-main-box">
-										<a href="{{url('departmentdetail').'/'.$d->id}}">{{__('messages.View Detail')}}</a>
-									</div>
-								</div>
-							</div>
-						@endforeach
-					@endif
-				</div>
-			</div>
-		</div>
-	</div>
+@endsection
+@section('main.container')
 
-@stop
+
+<section class="page-title" style="background-image: url(images/background/8.jpg);">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h1>Departments</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>Departments</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+ <section class="services-section-two">
+    <div class="auto-container">
+
+        <div class="carousel-outer">
+            <div class="row">
+                @if (count($department)>0)
+
+                    @foreach ($department as $d)
+                        <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    {{-- <figure class="image"><a href="department-detail.html"><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></a></figure> --}}
+                                </div>
+                                <div class="lower-content">
+                                    <div class="title-box">
+                                        <span class=""><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></span>
+                                        <h4><a href="{{url('departmentdetail').'/'.$d->id}}">{{ $d->name }}</a></h4>
+                                    </div>
+                                    <div class="text">{{substr($d->description,0,75)}}</div>
+                                    <span class="icon-right flaticon-heart-2"></span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="clients-section alternate">
+    <div class="auto-container">
+
+        <div class="sponsors-outer">
+            <ul class="clients-carousel owl-carousel owl-theme">
+                <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
+            </ul>
+        </div>
+    </div>
+</section>
+@endsection

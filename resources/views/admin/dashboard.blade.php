@@ -1,7 +1,7 @@
 @extends('admin.layout')
 @section('title')
 {{__('messages.Dashboard')}}
-@stop
+@endsection
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
@@ -85,7 +85,7 @@
          <div class="card">
             <div class="card-body">
                <h4 class="orderh4">
-                  <i class="fa fa-ambulance" aria-hidden="true"></i>{{__('messages.Latest').' '.__('messages.Appointment')}} 
+                  <i class="fa fa-ambulance" aria-hidden="true"></i>{{__('messages.Latest').' '.__('messages.Appointment')}}
                   <a class="btn btn-primary btn-flat m-b-30 m-t-30 elec textorder" href="{{url('admin/appointment/0/0')}}">{{__('messages.Show All')}}</a>
                </h4>
                <div class="table-responsive dtdiv">
@@ -142,7 +142,7 @@
                                    <td>{{isset($d->ratting)?$d->ratting:""}}</td>
                                 </tr>
                             @endforeach
-                        @endif                      
+                        @endif
                      </tbody>
                   </table>
                </div>
@@ -151,7 +151,7 @@
       </div>
    </div>
 </div>
-@stop
+@endsection
 @section('footer')
 <script type="text/javascript">adminchangelogin()</script>
-@stop
+@endsection

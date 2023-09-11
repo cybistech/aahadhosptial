@@ -47,23 +47,23 @@ Route::group(['prefix' => '/'], function () {
 
      Route::get("/",[HomeController::class,'showlogin']);
 
-     Route::get("/",[FrontController::class,'showhome']);
+     Route::get("/",[FrontController::class,'showhome'])->name('home');
      Route::get("getserviceanddoctor/{id}",[FrontController::class,'getserviceanddoctor']);
      Route::post("bookappoinment",[FrontController::class,'bookappoinment']);
      Route::get("allfacilites",[FrontController::class,'allfacilites']);
-     Route::get("departments",[FrontController::class,'department']);
-     Route::get('services',[FrontController::class,'services']);
-     Route::get('events',[FrontController::class,'events']);
-     Route::get('news',[FrontController::class,'news']);
+     Route::get("departments",[FrontController::class,'department'])->name('departments');
+     Route::get('services',[FrontController::class,'services'])->name('services');
+     Route::get('events',[FrontController::class,'events'])->name('events');
+     Route::get('news',[FrontController::class,'news'])->name('news');
      Route::get("departmentdetail/{id}",[FrontController::class,'departmentdetail']);
-     Route::get("doctors",[FrontController::class,'doctorlist']);
+     Route::get("doctors",[FrontController::class,'doctorlist'])->name('doctors');
      Route::get("gallery",[FrontController::class,'gallery']);
-     Route::get("contact_us",[FrontController::class,'contact_us']);
+     Route::get("contact_us",[FrontController::class,'contact_us'])->name('contact_us');
      Route::any("savecontact",[FrontController::class,'savecontact']);
      Route::any("savesubscribe/{email}",[FrontController::class,'savesubscribe']);
      Route::any("pricing",[FrontController::class,'pricing']);
-     Route::any("termcondition",[FrontController::class,'termcondition']);
-     Route::any("privacypolicy",[FrontController::class,'privacypolicy']);
+     Route::any("termcondition",[FrontController::class,'termcondition'])->name('terms_and_conditions');
+     Route::any("privacypolicy",[FrontController::class,'privacypolicy'])->name('privacy_policy');
      Route::get("postregister",[FrontController::class,'postregister']);
      Route::get("postlogin",[FrontController::class,'postlogin']);
      Route::get("userlogout",[FrontController::class,'userlogout']);
