@@ -10,13 +10,13 @@ class Review extends Model
     protected $primaryKey = 'id';
 
       public function doctors()
-    {      
+    {
         return $this->hasone('App\Model\Doctor', 'user_id', 'doctor_id');
     }
      public function users()
-    {      
+    {
         return $this->hasone('App\User', 'id', 'user_id');
     }
-     
+
 }
 ?>

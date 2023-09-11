@@ -39,7 +39,7 @@ class User extends Authenticatable
 
 
        public function doctors()
-    {      
+    {
         return $this->hasone('App\Model\Doctor', 'user_id', 'id');
     }
 }
