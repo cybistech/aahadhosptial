@@ -33,7 +33,7 @@
                                 <div class="lower-content">
                                     <div class="title-box">
                                         <span class=""><img src="<?php echo e(asset('upload/department').'/'.$d->image); ?>" alt="<?php echo e($d->name); ?>"></span>
-                                        <h4><a href="<?php echo e(url('departmentdetail').'/'.$d->id); ?>"><?php echo e($d->name); ?></a></h4>
+                                        <h4><a href="<?php echo e(url('departmentdetail').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></h4>
                                     </div>
                                     <div class="text"><?php echo e(substr($d->description,0,75)); ?></div>
                                     <span class="icon-right flaticon-heart-2"></span>

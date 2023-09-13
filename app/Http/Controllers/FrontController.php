@@ -215,10 +215,10 @@ class FrontController extends Controller
             return view("front.doctordetails")->with('doctor_list',$doctor_list)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
        }
 
-       public function departmentdetail($id){
+       public function departmentdetail($slug){
            $department=Department::all();
             $setting=Setting::find(1);
-           $departmentdetails=Department::with("doctor","service")->find($id);
+           $departmentdetails=Department::with("doctor","service")->where('slug',$slug)->first();
            if($departmentdetails){
                return view("front.departmentdetails")->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
            }else{

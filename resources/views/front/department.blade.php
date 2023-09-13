@@ -33,7 +33,7 @@
                                 <div class="lower-content">
                                     <div class="title-box">
                                         <span class=""><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></span>
-                                        <h4><a href="{{url('departmentdetail').'/'.$d->id}}">{{ $d->name }}</a></h4>
+                                        <h4><a href="{{url('departmentdetail').'/'.$d->slug}}">{{ $d->name }}</a></h4>
                                     </div>
                                     <div class="text">{{substr($d->description,0,75)}}</div>
                                     <span class="icon-right flaticon-heart-2"></span>
