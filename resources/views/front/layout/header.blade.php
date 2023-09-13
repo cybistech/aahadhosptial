@@ -93,7 +93,7 @@
                                     </a>
                                     <ul>
                                         @foreach ($department as $d)
-                                            <li><a href="{{ url('departmentdetail').'/'.$d->id }}">{{ $d->name }}</a></li>
+                                            <li><a href="{{ url('departmentdetail').'/'.$d->slug }}">{{ $d->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
