@@ -31,12 +31,9 @@
                                 <div class="footer-widget">
                                     <h2 class="widget-title">Departments</h2>
                                     <ul class="user-links">
-                                        <li><a href="#">Surgery & Radiology</a></li>
-                                        <li><a href="#">Family Medicine</a></li>
-                                        <li><a href="#">Women’s Health</a></li>
-                                        <li><a href="#">Optician</a></li>
-                                        <li><a href="#">Pediatrics</a></li>
-                                        <li><a href="#">Dermatology</a></li>
+                                        <?php $__currentLoopData = $department->take(6); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <li><a href="<?php echo e(url('departmentdetail').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></li>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </div>
                             </div>

@@ -31,12 +31,9 @@
                                 <div class="footer-widget">
                                     <h2 class="widget-title">Departments</h2>
                                     <ul class="user-links">
-                                        <li><a href="#">Surgery & Radiology</a></li>
-                                        <li><a href="#">Family Medicine</a></li>
-                                        <li><a href="#">Women’s Health</a></li>
-                                        <li><a href="#">Optician</a></li>
-                                        <li><a href="#">Pediatrics</a></li>
-                                        <li><a href="#">Dermatology</a></li>
+                                        @foreach ($department->take(6) as $d)
+                                            <li><a href="{{ url('departmentdetail').'/'.$d->slug }}">{{ $d->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
