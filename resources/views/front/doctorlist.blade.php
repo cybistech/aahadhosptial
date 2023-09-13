@@ -40,7 +40,7 @@
                         </div>
                         <div class="info-box">
                             <h5 class="name"><a href="{{url('doctordetails/').'/'.$d->user_id}}">{{ $d->name }}</a></h5>
-                            <span class="">{{ $d->about_us }}</span>
+                            <span class="">{{substr($d->about_us,0,100)}}</span>
                         </div>
                     </div>
                 </div>

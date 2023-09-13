@@ -40,7 +40,7 @@
                         </div>
                         <div class="info-box">
                             <h5 class="name"><a href="<?php echo e(url('doctordetails/').'/'.$d->user_id); ?>"><?php echo e($d->name); ?></a></h5>
-                            <span class=""><?php echo e($d->about_us); ?></span>
+                            <span class=""><?php echo e(substr($d->about_us,0,100)); ?></span>
                         </div>
                     </div>
                 </div>
