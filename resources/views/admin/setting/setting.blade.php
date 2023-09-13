@@ -121,11 +121,11 @@
                                  @include('admin.setting.currency')
                               </select>
                            </div>
-                           @if(Config::get("democheck.vdemo")=='1')
+                           {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @else
+                           @else --}}
                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @endif
+                           {{-- @endif --}}
 
                         </form>
                      </div>
@@ -161,11 +161,11 @@
                               <label>{{__('messages.TWILIO_AUTH_TOKEN')}}</label>
                               <input type="text" class="form-control" name="TWILIO_AUTH_TOKEN" id="TWILIO_AUTH_TOKEN" placeholder="{{__('messages.Enter').' '.__('messages.TWILIO_AUTH_TOKEN')}}" value="<?= isset($data->TWILIO_AUTH_TOKEN)?$data->TWILIO_AUTH_TOKEN:""?>">
                            </div>
-                           @if(Config::get("democheck.vdemo")=='1')
+                           {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @else
+                           @else --}}
                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @endif
+                           {{-- @endif --}}
                         </form>
                      </div>
                      <div class="tab-pane fade <?= $id==3?'show active':""?>" id="step3" role="tabpanel" aria-labelledby="step3-tab">
@@ -207,11 +207,11 @@
                               <label>{{__('messages.Working days')}}<span class="reqfield">*</span></label>
                               <input type="text" name="working_day" id="working_day" class="form-control" placeholder="{{__('messages.Working days')}}" value="<?= isset($data->working_day)?$data->working_day:""?>"/>
                            </div>
-                           @if(Config::get("democheck.vdemo")=='1')
+                           {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @else
+                           @else --}}
                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @endif
+                           {{-- @endif --}}
 
                         </form>
                      </div>
@@ -223,11 +223,11 @@
                               <label>{{__('messages.Terms Condition')}}</label>
                               <textarea class="form-control" name="termscondition" id="termscondition"><?= isset($data->terms_condition)?$data->terms_condition:""?></textarea>
                            </div>
-                           @if(Config::get("democheck.vdemo")=='1')
+                           {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @else
+                           @else --}}
                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @endif
+                           {{-- @endif --}}
 
                         </form>
                      </div>
@@ -238,11 +238,11 @@
                               <label>{{__('messages.Privacy Policy')}}</label>
                               <textarea class="form-control" name="privacydata" id="privacydata" placeholder=""><?= isset($data->privacy_policy)?$data->privacy_policy:""?></textarea>
                            </div>
-                           @if(Config::get("democheck.vdemo")=='1')
+                           {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @else
+                           @else --}}
                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @endif
+                           {{-- @endif --}}
                         </form>
                      </div>
 
@@ -262,11 +262,11 @@
 
                            </div>
 
-                           @if(Config::get("democheck.vdemo")=='1')
+                           {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @else
+                           @else --}}
                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
-                           @endif
+                           {{-- @endif --}}
                         </form>
                      </div>
 

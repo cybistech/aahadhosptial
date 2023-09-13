@@ -125,11 +125,9 @@
                                  <?php echo $__env->make('admin.setting.currency', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                               </select>
                            </div>
-                           <?php if(Config::get("democheck.vdemo")=='1'): ?>
-                              <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php else: ?>
+                           
                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php endif; ?>
+                           
 
                         </form>
                      </div>
@@ -166,11 +164,9 @@
                               <label><?php echo e(__('messages.TWILIO_AUTH_TOKEN')); ?></label>
                               <input type="text" class="form-control" name="TWILIO_AUTH_TOKEN" id="TWILIO_AUTH_TOKEN" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.TWILIO_AUTH_TOKEN')); ?>" value="<?= isset($data->TWILIO_AUTH_TOKEN)?$data->TWILIO_AUTH_TOKEN:""?>">
                            </div>
-                           <?php if(Config::get("democheck.vdemo")=='1'): ?>
-                              <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php else: ?>
+                           
                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php endif; ?>
+                           
                         </form>
                      </div>
                      <div class="tab-pane fade <?= $id==3?'show active':""?>" id="step3" role="tabpanel" aria-labelledby="step3-tab">
@@ -213,11 +209,9 @@
                               <label><?php echo e(__('messages.Working days')); ?><span class="reqfield">*</span></label>
                               <input type="text" name="working_day" id="working_day" class="form-control" placeholder="<?php echo e(__('messages.Working days')); ?>" value="<?= isset($data->working_day)?$data->working_day:""?>"/>
                            </div>
-                           <?php if(Config::get("democheck.vdemo")=='1'): ?>
-                              <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php else: ?>
+                           
                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php endif; ?>
+                           
 
                         </form>
                      </div>
@@ -230,11 +224,9 @@
                               <label><?php echo e(__('messages.Terms Condition')); ?></label>
                               <textarea class="form-control" name="termscondition" id="termscondition"><?= isset($data->terms_condition)?$data->terms_condition:""?></textarea>
                            </div>
-                           <?php if(Config::get("democheck.vdemo")=='1'): ?>
-                              <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php else: ?>
+                           
                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php endif; ?>
+                           
 
                         </form>
                      </div>
@@ -246,11 +238,9 @@
                               <label><?php echo e(__('messages.Privacy Policy')); ?></label>
                               <textarea class="form-control" name="privacydata" id="privacydata" placeholder=""><?= isset($data->privacy_policy)?$data->privacy_policy:""?></textarea>
                            </div>
-                           <?php if(Config::get("democheck.vdemo")=='1'): ?>
-                              <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php else: ?>
+                           
                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php endif; ?>
+                           
                         </form>
                      </div>
 
@@ -271,11 +261,9 @@
 
                            </div>
 
-                           <?php if(Config::get("democheck.vdemo")=='1'): ?>
-                              <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php else: ?>
+                           
                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
-                           <?php endif; ?>
+                           
                         </form>
                      </div>
 
