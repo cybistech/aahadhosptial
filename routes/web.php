@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 Route::get('p/migrate_reset', function (Request $request) {
-    $migrationPath = '/database/migrations/2023_09_12_080233_create_news_table.php';
+    $migrationPath = '/database/migrations/2023_09_13_114947_add_slug_to_departments_table';
     $command = "migrate --path=$migrationPath --force";
 
     Artisan::call($command);
