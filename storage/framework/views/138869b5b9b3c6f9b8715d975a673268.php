@@ -91,7 +91,7 @@
                                     </a>
                                     <ul>
                                         <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <li><a href="<?php echo e(url('departmentdetail').'/'.$d->id); ?>"><?php echo e($d->name); ?></a></li>
+                                            <li><a href="<?php echo e(url('departmentdetail').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></li>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </li>
