@@ -12,6 +12,7 @@ use App\Model\Appointment;
 use App\Model\Review;
 use App\Model\TimeTable;
 use App\Model\Token;
+use Illuminate\Support\Str;
 // use Session;
 use Illuminate\Support\Facades\Session;
 use validate;
@@ -90,6 +91,7 @@ class DepartmentController extends Controller
             }
 
             $store->name=$request->get("name");
+            $store->slug=Str::Slug($request->get('name'));
             $store->description=$request->get("description");
             $store->emergency_no=$request->get("emergency_no");
             $store->image=$img_url;

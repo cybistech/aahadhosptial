@@ -86,17 +86,12 @@
                         </div>
                      </div>
                      <div>
-                        <?php if(Session::get("is_demo")=='1'): ?>
-                           <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >
-                              <?php echo e(__('messages.Submit')); ?>
-
-                              </button>
-                        <?php else: ?>
+                        
                             <button id="payment-button" type="submit" class="btn btn-lg btn-info" >
                               <?php echo e(__('messages.Submit')); ?>
 
                               </button>
-                        <?php endif; ?>
+                        
 
                      </div>
                   </form>

@@ -82,15 +82,15 @@
                         </div>
                      </div>
                      <div>
-                        @if(Session::get("is_demo")=='1')
+                        {{-- @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >
                               {{__('messages.Submit')}}
                               </button>
-                        @else
+                        @else --}}
                             <button id="payment-button" type="submit" class="btn btn-lg btn-info" >
                               {{__('messages.Submit')}}
                               </button>
-                        @endif
+                        {{-- @endif --}}
 
                      </div>
                   </form>
