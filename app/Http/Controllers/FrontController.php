@@ -199,8 +199,8 @@ class FrontController extends Controller
 
        public function doctordetails($id){
             $department=Department::all();
-            $doctor_list= Doctor::get()->take(4);
             $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
+
 
             if(!$doctor) {
                 return redirect('/');
@@ -209,6 +209,7 @@ class FrontController extends Controller
             $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
             $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
             $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
+            $doctor_list=Doctor::where('department_id',$doctor->department_id)->get()->take(8);
             //echo "<pre>";print_r($reviews);exit;
              $setting=Setting::find(1);
            //  echo "<pre>";print_r($doctor);exit;
