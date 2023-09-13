@@ -17,21 +17,26 @@
         </div>
     </div>
 </section>
-<!--End Page Title-->
 
-<!-- Blog Section -->
 <section class="blog-section blog-checkerboard">
+    @foreach ($newsPost as $index => $n)
     <div class="auto-container">
-        <!-- News Block -->
-        <div class="news-block-three">
+        <div class="news-block-three {{ $index % 2 == 0 ? 'even' : 'odd' }} ">
             <div class="inner-box">
                 <div class="image-box">
-                    <figure class="image"><a href="blog-post-image.html"><img src="images/resource/blog-1.jpg" alt=""></a></figure>
-                    <a href="#" class="date">June 9, 2020</a>
+                    <?php
+                                if($n->featured_image){
+                                    $image=asset('upload/news')."/".$n->featured_image;
+                                }else{
+                                    $image=asset('upload/profile/profile.png');
+                                }
+                            ?>
+                    <figure class="image"><a href="blog-post-image.html"><img src="{{ $image }}" alt=""></a></figure>
+                    <a href="#" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
                 </div>
                 <div class="content-box">
-                    <h4><a href="blog-post-image.html">Diagnostic Services for Efficient <br>Results Picking Right</a></h4>
-                    <div class="text">Suspendisse potenti. Quisque risus sem, volutpat a sapien et, mattis condimentum est. Suspendisse feugiat cursus turpis, et porta lectus euismod accumsan. Nam felis ipsum, eleifend.</div>
+                    <h4><a href="blog-post-image.html">{{ $n->title }}</a></h4>
+                    <div class="text">{{$n->contents}}</div>
                     <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
                     <div class="post-info">
                         <div class="post-author">By <a href="#">Admin Rose</a></div>
@@ -43,119 +48,9 @@
                 </div>
             </div>
         </div>
-
-        <!-- News Block -->
-        <div class="news-block-three even">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image"><a href="blog-post-image.html"><img src="images/resource/blog-2.jpg" alt=""></a></figure>
-                    <a href="#" class="date">June 9, 2020</a>
-                </div>
-                <div class="content-box">
-                    <h4><a href="blog-post-image.html">Preparing for an ECG Tips From <br> Our Diagnosticians.</a></h4>
-                    <div class="text">Suspendisse potenti. Quisque risus sem, volutpat a sapien et, mattis condimentum est. Suspendisse feugiat cursus turpis, et porta lectus euismod accumsan. Nam felis ipsum, eleifend.</div>
-                    <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
-                    <div class="post-info">
-                        <div class="post-author">By Admin Rose</div>
-                        <ul class="post-option">
-                            <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                            <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- News Block -->
-        <div class="news-block-three">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image"><a href="blog-post-image.html"><img src="images/resource/blog-3.jpg" alt=""></a></figure>
-                    <a href="#" class="date">June 9, 2020</a>
-                </div>
-                <div class="content-box">
-                    <h4><a href="blog-post-image.html">Diagnostic Services for Efficient <br>Results Picking Right?</a></h4>
-                    <div class="text">Suspendisse potenti. Quisque risus sem, volutpat a sapien et, mattis condimentum est. Suspendisse feugiat cursus turpis, et porta lectus euismod accumsan. Nam felis ipsum, eleifend.</div>
-                    <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
-                    <div class="post-info">
-                        <div class="post-author">By Admin Rose</div>
-                        <ul class="post-option">
-                            <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                            <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- News Block -->
-        <div class="news-block-three even">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image"><a href="blog-post-image.html"><img src="images/resource/blog-4.jpg" alt=""></a></figure>
-                    <a href="#" class="date">June 9, 2020</a>
-                </div>
-                <div class="content-box">
-                    <h4><a href="blog-post-image.html">Diagnostic Services for Efficient <br>Results Picking Right?</a></h4>
-                    <div class="text">Suspendisse potenti. Quisque risus sem, volutpat a sapien et, mattis condimentum est. Suspendisse feugiat cursus turpis, et porta lectus euismod accumsan. Nam felis ipsum, eleifend.</div>
-                    <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
-                    <div class="post-info">
-                        <div class="post-author">By Admin Rose</div>
-                        <ul class="post-option">
-                            <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                            <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- News Block -->
-        <div class="news-block-three">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image"><a href="blog-post-image.html"><img src="images/resource/blog-5.jpg" alt=""></a></figure>
-                    <a href="#" class="date">June 9, 2020</a>
-                </div>
-                <div class="content-box">
-                    <h4><a href="blog-post-image.html">Reasons to Visit for Heart <br>Specialist Department.</a></h4>
-                    <div class="text">Suspendisse potenti. Quisque risus sem, volutpat a sapien et, mattis condimentum est. Suspendisse feugiat cursus turpis, et porta lectus euismod accumsan. Nam felis ipsum, eleifend.</div>
-                    <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
-                    <div class="post-info">
-                        <div class="post-author">By Admin Rose</div>
-                        <ul class="post-option">
-                            <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                            <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- News Block -->
-        <div class="news-block-three even">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image"><a href="blog-post-image.html"><img src="images/resource/blog-6.jpg" alt=""></a></figure>
-                    <a href="#" class="date">Sep 19, 2020</a>
-                </div>
-                <div class="content-box">
-                    <h4><a href="blog-post-image.html">Preparing for an ECG Tips From <br> Our Diagnosticians.</a></h4>
-                    <div class="text">Suspendisse potenti. Quisque risus sem, volutpat a sapien et, mattis condimentum est. Suspendisse feugiat cursus turpis, et porta lectus euismod accumsan. Nam felis ipsum, eleifend.</div>
-                    <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
-                    <div class="post-info">
-                        <div class="post-author">By Admin Rose</div>
-                        <ul class="post-option">
-                            <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                            <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    @endforeach
 </section>
-<!--End Blog Section -->
 
 <!-- Clients Section -->
 <section class="clients-section alternate">

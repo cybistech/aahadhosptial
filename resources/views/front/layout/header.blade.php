@@ -63,50 +63,31 @@
                     <div class="logo-box">
                         <div class="logo"><a href="{{route('home')}}"><img src="{{asset('assets/images/logo.png')}}" alt="" title=""></a></div>
                     </div>
-
-
+                    @php $segment1 =  request()->segment(1);  @endphp
                     <div class="nav-outer">
-                        <nav class="nav main-menu">
+                        <nav class="nav main-menu" style="margin-right: 3.5rem">
                             <ul class="navigation" id="navbar">
-                                <li class="current dropdown">
+                                <li class="@if($segment1=='') current @endif dropdown">
                                     <a href="{{route('home')}}">
                                         <span>Home</span>
                                     </a>
-                                    <ul>
-                                        <li class="current"><a href="index.html">Home Medical</a></li>
-                                        <li><a href="index-2.html">Home Clanic</a></li>
-                                        <li><a href="index-3.html">Home Dental Care</a></li>
-                                        <li><a href="index-4.html">Home Eye Care</a></li>
-                                        <li><a href="index-5.html">Home Prenatal care</a></li>
-                                    </ul>
                                 </li>
 
-                                <li class="dropdown">
+                                <li class="dropdown @if($segment1=='doctors') current @endif ">
                                     <a href="{{route('doctors')}}">
                                         <span>Doctors</span>
                                     </a>
-                                    <ul>
-                                        <li><a href="doctors.html">Doctors</a></li>
-                                        <li><a href="doctor-detail.html">Doctor Detail</a></li>
-                                    </ul>
                                 </li>
 
-                                <li class="dropdown">
+                                <li class="dropdown @if($segment1=='services') current @endif">
                                     <a href="{{route('services')}}">
                                         <span>Services</span>
                                     </a>
-                                    <ul>
+                                    {{-- <ul>
                                         <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="services.html">Gallery</a></li>
-                                        <li><a href="pricing-table.html">Pricing Table</a></li>
-                                        <li><a href="elements.html">UI Elements</a></li>
-                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                        <li><a href="error-page.html">Error 404</a></li>
-                                        <li><a href="terms-and-condition.html">Terms and Condition</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown @if($segment1=='departments') current @endif">
                                     <a href="{{route('departments')}}">
                                         <span>Departments</span>
                                     </a>
@@ -117,11 +98,11 @@
                                     </ul>
                                 </li>
 
-                                <li class="dropdown">
+                                <li class="dropdown @if($segment1=='news') current @endif">
                                     <a href="{{route('news')}}">
                                         <span>News</span>
                                     </a>
-                                    <ul>
+                                    {{-- <ul>
                                         <li><a href="blog-checkboard.html">Checkerboard</a></li>
                                         <li><a href="blog-masonry.html">Masonry</a></li>
                                         <li><a href="blog-two-col.html">Two Columns</a></li>
@@ -138,29 +119,21 @@
                                                 <li><a href="blog-post-video.html">Video Post</a></li>
                                             </ul>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown @if($segment1=='events') current @endif">
                                     <a href="{{route('events')}}">
                                         <span>Events</span>
                                     </a>
-                                    <ul>
-                                        <li><a href="shop.html">Shop</a></li>
-                                        <li><a href="shop-single.html">Shop Single</a></li>
-                                        <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                    </ul>
                                 </li>
-                                <li><a href="{{route('contact_us')}}">Contact</a></li>
+                                <li class="@if($segment1=='contact-us') current @endif"><a href="{{route('contact_us')}}">Contact</a></li>
                             </ul>
                         </nav>
 
-
-                        <div class="outer-box">
+                        {{-- <div class="outer-box">
                             <button class="search-btn"><span class="fa fa-search"></span></button>
-                             <a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-one"><span class="btn-title">Appointment</span></a>
-                        </div>
+                             <a href="appointment.html" id="appointment-btn" class="theme-btn btn-style-one"><span class="btn-title">Privacy Policy</span></a>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -189,9 +162,9 @@
 
                 <div class="outer-box">
 
-                    <div class="search-box">
+                    {{-- <div class="search-box">
                         <button class="search-btn mobile-search-btn"><i class="flaticon-magnifying-glass"></i></button>
-                    </div>
+                    </div> --}}
 
                     <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="fa fa-bars"></span></a>
                 </div>

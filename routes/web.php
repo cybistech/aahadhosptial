@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\braintreeController;
 use App\Http\Controllers\AuthenticatedoctorController;
 use App\Http\Controllers\FrontController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -28,6 +30,14 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('p/migrate_reset', function (Request $request) {
+    $migrationPath = '/database/migrations/2023_09_12_080233_create_news_table.php';
+    $command = "migrate --path=$migrationPath --force";
+
+    Artisan::call($command);
+    return "Migration complete!";
+});
 
 Route::get('cache_clear', function() {
    Artisan::call('config:cache');
@@ -58,7 +68,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("departmentdetail/{id}",[FrontController::class,'departmentdetail']);
      Route::get("doctors",[FrontController::class,'doctorlist'])->name('doctors');
      Route::get("gallery",[FrontController::class,'gallery']);
-     Route::get("contact_us",[FrontController::class,'contact_us'])->name('contact_us');
+     Route::get("contact-us",[FrontController::class,'contact_us'])->name('contact_us');
      Route::any("savecontact",[FrontController::class,'savecontact']);
      Route::any("savesubscribe/{email}",[FrontController::class,'savesubscribe']);
      Route::any("pricing",[FrontController::class,'pricing']);
@@ -151,6 +161,13 @@ Route::group(['prefix' => 'admin'], function () {
          Route::resource("notification",NotificationController::class);
          Route::post("savenotification", [NotificationController::class,'savenotification']);
 
+         //  News
+         Route::resource('newss', NewsController::class);
+         Route::get('saveNews/{id}',[NewsController::class,'saveNews']);
+         Route::post("updatenews",[NewsController::class,'updatedeNews']);
+         Route::get("deletedenews/{id}",[NewsController::class,'deletenews']);
+
+
          //album
          Route::resource("gallery",GalleryController::class);
          Route::get("savealbum/{id}",[GalleryController::class,'savealbum']);
@@ -225,7 +242,7 @@ Route::group(['prefix' => 'doctor'], function () {
             Route::get("editprofile/{tab_id}",[AuthenticatedoctorController::class,'editprofile']);
             Route::any("updatedoctorprofile",[AuthenticatedoctorController::class,'updatedoctorprofile']);
             Route::post("updateworkinghours",[AuthenticatedoctorController::class,'updateworkinghours']);
-           // Route::get("sendnotification","ChatsController@sendnotification");
+            Route::get("sendnotification",[ChatsController::class.'sendnotification']);
 
             Route::get("appointment",[AppointmentController::class,'showdoctorappointment']);
             Route::get("orderstatus/{order_id}/{appointment_id}",[AppointmentController::class,'changeorderstatus']);

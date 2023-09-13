@@ -382,6 +382,18 @@ return [
     'About Us'=>'About Us',
     'Submit'=>'Submit',
     'Privecy' =>'Privacy Policy',
+    'title' => 'Title',
+    'status' => 'Status',
+    'content' =>'Content',
+    'Meta Description' => 'Meta Description',
+    'Meta Tags' =>'Meta Tags',
+    'Excerpt' => 'Excerpt',
+    'Content' => 'Content',
+    'Tags' => 'Tags',
+    'News Title' => 'News Title',
+    'Save News' => 'Add News',
+    'Title' => 'Title',
+    'News Delete Successfully' => 'News Delete Successfuly'
 
 
 

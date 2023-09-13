@@ -1,6 +1,6 @@
 @extends('front.layout.main')
 @section('title')
- {{__('Services')}}
+ {{__('Contact Us')}}
 @endsection
 
 @section('main.container')

@@ -30,7 +30,7 @@
                                     $image=asset('upload/profile/profile.png');
                                 }
                             ?>
-                            <figure class="image"><a href="<?php echo e(url('doctordetails/').'/'.$d->user_id); ?>"><img src="<?php echo e($image); ?>" alt=""></a></figure>
+                            <figure class="image"><a href="<?php echo e(url('doctordetails/').'/'.$d->user_id); ?>"><img src="<?php echo e($image); ?>" alt="<?php echo e($d->name); ?>"></a></figure>
                             <ul class="social-links">
                                 <li><a href="<?php echo e(isset($d->facebook_id)?$d->facebook_id:'https://www.facebook.com'); ?>"><span class="fab fa-facebook-f"></span></a></li>
                                 <li><a href="<?php echo e(isset($d->twitter_id)?$d->twitter_id:'https://twitter.com/search-home'); ?>"><span class="fab fa-twitter"></span></a></li>

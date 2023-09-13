@@ -108,7 +108,7 @@
         </div>
 
         <div class="testimonial-outer">
-            <!-- Client Testimonial Carousel -->
+
             <div class="client-testimonial-carousel owl-carousel owl-theme">
 
                 <!--Testimonial Block -->

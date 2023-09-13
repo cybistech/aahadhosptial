@@ -21,6 +21,7 @@ use App\Model\Subscription;
 use App\Model\NewsLetter;
 
 use App\Model\About;
+use App\Model\News;
 use Twilio\Rest\Client;
 use App\Model\Resetpassword;
 use Kreait\Firebase;
@@ -198,6 +199,7 @@ class FrontController extends Controller
 
        public function doctordetails($id){
             $department=Department::all();
+            $doctor_list= Doctor::get()->take(4);
             $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
 
             if(!$doctor) {
@@ -210,7 +212,7 @@ class FrontController extends Controller
             //echo "<pre>";print_r($reviews);exit;
              $setting=Setting::find(1);
            //  echo "<pre>";print_r($doctor);exit;
-            return view("front.doctordetails")->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
+            return view("front.doctordetails")->with('doctor_list',$doctor_list)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
        }
 
        public function departmentdetail($id){
@@ -642,7 +644,9 @@ class FrontController extends Controller
     }
     public function news(){
         $department=Department::all();
-        return view('front.news')->with("department",$department);
+        $setting=Setting::first();
+        $newsPost=News::all();
+        return view('front.news')->with("department",$department)->with('setting',$setting)->with('newsPost',$newsPost);
     }
     public function events(){
         $department=Department::all();

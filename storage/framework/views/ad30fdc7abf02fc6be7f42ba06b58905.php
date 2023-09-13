@@ -181,13 +181,13 @@
         </div>
     </div>
 </section>
-<!-- End Main Slider-->
 
-<!-- Top Features -->
+
+
 <section class="top-features">
     <div class="auto-container">
         <div class="row">
-            <!-- Feature Block -->
+
             <div class="feature-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <span class="icon flaticon-charity"></span>
@@ -196,7 +196,6 @@
                 </div>
             </div>
 
-            <!-- Feature Block -->
             <div class="feature-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <span class="icon flaticon-lifeline"></span>
@@ -205,7 +204,6 @@
                 </div>
             </div>
 
-            <!-- Feature Block -->
             <div class="feature-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <span class="icon flaticon-doctor"></span>
@@ -216,7 +214,6 @@
         </div>
     </div>
 </section>
-<!-- End Features Section -->
 
 
 <!-- About Section -->

@@ -67,7 +67,7 @@
                   
                    
                   <li class="active">
-                     <a href="<?php echo e(url('admin/news')); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.news')); ?></a>
+                     <a href="<?php echo e(url(route('newss.index'))); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.news')); ?></a>
                   </li>
                   <li class="active">
                      <a href="<?php echo e(url('admin/contactus')); ?>"> <i class="menu-icon fa  fa-address-card"></i><?php echo e(__('messages.Contact Us')); ?></a>

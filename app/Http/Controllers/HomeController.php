@@ -74,7 +74,7 @@ class HomeController extends Controller
 
 
                if($request->get("type")=='2'){
-                   Session::put("profile_pic",asset("public/upload/profile").'/'.$checkuser->profile_pic);
+                   Session::put("profile_pic",asset("upload/profile").'/'.$checkuser->profile_pic);
                    Session::put("profile_pic_path","/profile/".$checkuser->profile_pic);
                     return redirect("admin/dashboard");
                }else{
@@ -82,11 +82,11 @@ class HomeController extends Controller
 
                  if($doctor){
                     if($doctor->image!=""){
-                         Session::put("profile_pic",asset("public/upload/doctor").'/'.$doctor->image);
+                         Session::put("profile_pic",asset("upload/doctor").'/'.$doctor->image);
                     }else{
-                         Session::put("profile_pic",asset("public/upload/profile/profile.png"));
+                         Session::put("profile_pic",asset("upload/profile/profile.png"));
                     }
-                    Session::put("profile_pic",asset("public/upload/doctor").'/'.$doctor->image);
+                    Session::put("profile_pic",asset("upload/doctor").'/'.$doctor->image);
                          Session::put("profile_pic_path","/doctor/".$doctor->image);
                     return redirect("doctor/dashboard");
                  }

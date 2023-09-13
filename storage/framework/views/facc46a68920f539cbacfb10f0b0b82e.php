@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
- <?php echo e(__('Services')); ?>
+ <?php echo e(__('Contact Us')); ?>
 
 <?php $__env->stopSection(); ?>
 
