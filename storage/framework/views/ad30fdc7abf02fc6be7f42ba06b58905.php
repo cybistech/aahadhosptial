@@ -283,7 +283,6 @@
     </div>
 </section>
 
-<!-- Team Section -->
 <section class="team-section">
     <div class="auto-container">
         <div class="sec-title text-center">
@@ -322,7 +321,7 @@
         <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="#">Explore all Dr. Team</a></div>
     </div>
 </section>
-<!-- End Team Section -->
+
 
 <!-- Appointment Section -->
 <section class="appointment-section">
@@ -532,7 +531,7 @@
  <!-- News Section -->
 <section class="news-section">
     <div class="auto-container">
-        <!-- Sec Title -->
+
         <div class="sec-title text-center">
             <span class="title">OUR BLOG</span>
             <h2>Recent Articles and News</h2>
@@ -540,68 +539,34 @@
         </div>
 
         <div class="row">
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-1.jpg" alt=""></a></figure>
-                        <a href="#" class="date">Sep 19, 2020</a>
-                    </div>
-                    <div class="lower-content">
-                        <h4><a href="blog-post-image.html">What is The Success rate<br> of a root canel?</a></h4>
-                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                        <div class="post-info">
-                            <div class="post-author">By Admin Rose</div>
-                            <ul class="post-option">
-                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                            </ul>
+            <?php if(count($news)>0): ?>
+                <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><a href="blog-post-image.html"><img src="<?php echo e(asset('upload/news')."/".$n->featured_image); ?>" alt="<?php echo e($n->title); ?>"></a></figure>
+                                <a href="#" class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></a>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="blog-post-image.html"><?php echo e($n->title); ?></a></h4>
+                                <div class="text"><?php echo e(substr($n->contents,0,75)); ?></div>
+                                <div class="post-info">
+                                    <div class="post-author">By Admin Rose</div>
+                                    <ul class="post-option">
+                                        <li><a href="#">0 <i class="far fa-heart"></i></a></li>
+                                        <li><a href="#">0 <i class="far fa-comments"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endif; ?>
 
             <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-2.jpg" alt=""></a></figure>
-                        <a href="#" class="date">Sep 19, 2020</a>
-                    </div>
-                    <div class="lower-content">
-                        <h4><a href="blog-post-image.html">How to handle your kids’ <Br>mystery ailments?</a></h4>
-                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                        <div class="post-info">
-                            <div class="post-author">By Admin Rose</div>
-                            <ul class="post-option">
-                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-3.jpg" alt=""></a></figure>
-                        <a href="#" class="date">Sep 19, 2020</a>
-                    </div>
-                    <div class="lower-content">
-                        <h4><a href="blog-post-image.html">How to help the cardiology <br>department</a></h4>
-                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                        <div class="post-info">
-                            <div class="post-author">By Admin Rose</div>
-                            <ul class="post-option">
-                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
     </div>

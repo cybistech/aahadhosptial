@@ -531,7 +531,7 @@
  <!-- News Section -->
 <section class="news-section">
     <div class="auto-container">
-        <!-- Sec Title -->
+
         <div class="sec-title text-center">
             <span class="title">OUR BLOG</span>
             <h2>Recent Articles and News</h2>
@@ -539,69 +539,29 @@
         </div>
 
         <div class="row">
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-1.jpg" alt=""></a></figure>
-                        <a href="#" class="date">Sep 19, 2020</a>
-                    </div>
-                    <div class="lower-content">
-                        <h4><a href="blog-post-image.html">What is The Success rate<br> of a root canel?</a></h4>
-                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                        <div class="post-info">
-                            <div class="post-author">By Admin Rose</div>
-                            <ul class="post-option">
-                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                            </ul>
+            @if (count($news)>0)
+                @foreach ($news as $n)
+                    <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><a href="blog-post-image.html"><img src="{{asset('upload/news')."/".$n->featured_image}}" alt="{{ $n->title }}"></a></figure>
+                                <a href="#" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="blog-post-image.html">{{ $n->title }}</a></h4>
+                                <div class="text">{{ substr($n->contents,0,75) }}</div>
+                                <div class="post-info">
+                                    <div class="post-author">By Admin Rose</div>
+                                    <ul class="post-option">
+                                        <li><a href="#">0 <i class="far fa-heart"></i></a></li>
+                                        <li><a href="#">0 <i class="far fa-comments"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-2.jpg" alt=""></a></figure>
-                        <a href="#" class="date">Sep 19, 2020</a>
-                    </div>
-                    <div class="lower-content">
-                        <h4><a href="blog-post-image.html">How to handle your kids’ <Br>mystery ailments?</a></h4>
-                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                        <div class="post-info">
-                            <div class="post-author">By Admin Rose</div>
-                            <ul class="post-option">
-                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-3.jpg" alt=""></a></figure>
-                        <a href="#" class="date">Sep 19, 2020</a>
-                    </div>
-                    <div class="lower-content">
-                        <h4><a href="blog-post-image.html">How to help the cardiology <br>department</a></h4>
-                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                        <div class="post-info">
-                            <div class="post-author">By Admin Rose</div>
-                            <ul class="post-option">
-                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                @endforeach
+            @endif
         </div>
     </div>
 </section>
