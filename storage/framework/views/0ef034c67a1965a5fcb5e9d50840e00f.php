@@ -32,10 +32,10 @@
                                 </div>
                                 <div class="lower-content">
                                     <div class="title-box">
-                                        <span class=""><img src="<?php echo e(asset('upload/department').'/'.$d->image); ?>" alt="<?php echo e($d->name); ?>"></span>
-                                        <h4><a href="<?php echo e(url('departmentdetail').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></h4>
+                                        <span class=""><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><img src="<?php echo e(asset('upload/department').'/'.$d->image); ?>" alt="<?php echo e($d->name); ?>"></a></span>
+                                        <h4><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></h4>
                                     </div>
-                                    <div class="text"><?php echo e(substr($d->description,0,75)); ?></div>
+                                    <div class="text"><a><?php echo e(substr($d->description,0,75)); ?></a></div>
                                     <span class="icon-right flaticon-heart-2"></span>
                                 </div>
                             </div>

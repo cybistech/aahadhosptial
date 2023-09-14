@@ -28,14 +28,14 @@
                         <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    {{-- <figure class="image"><a href="department-detail.html"><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></a></figure> --}}
+                                    {{-- <figure class="image"><a><img src="{{asset('upload/departmrnt').'/'.$d->image}}" alt="{{ $d->name }}"></a></figure> --}}
                                 </div>
                                 <div class="lower-content">
                                     <div class="title-box">
-                                        <span class=""><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></span>
-                                        <h4><a href="{{url('departmentdetail').'/'.$d->slug}}">{{ $d->name }}</a></h4>
+                                        <span class=""><a href="{{url('departments').'/'.$d->slug}}"><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></a></span>
+                                        <h4><a href="{{url('departments').'/'.$d->slug}}">{{ $d->name }}</a></h4>
                                     </div>
-                                    <div class="text">{{substr($d->description,0,75)}}</div>
+                                    <div class="text"><a>{{substr($d->description,0,75)}}</a></div>
                                     <span class="icon-right flaticon-heart-2"></span>
                                 </div>
                             </div>
