@@ -159,7 +159,7 @@
                     <span>Quick Contact</span>
                     <h4>Get Solution</h4>
                     <p>Contact us at the Medicoz office nearest to you or submit a business inquiry online.</p>
-                    <a href="contact.html" class="theme-btn btn-style-one"><span class="btn-title">Contact</span></a>
+                    <a href="{{route('contact_us')}}" class="theme-btn btn-style-one"><span class="btn-title">Contact</span></a>
                 </div>
             </aside>
         </div>
@@ -176,12 +176,12 @@
                 <div class="service-block-two">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="department-detail.html"><img src="images/resource/service-1.jpg" alt=""></a></figure>
+                            <figure class="image"><a href="{{url('departments').'/'.$d->slug}}"><img src="images/resource/service-1.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
                             <div class="title-box">
                                <span class=""><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></span>
-                               <h4><a href="department-detail.html">{{ $d->name }}</a></h4>
+                               <h4><a href="{{url('departments').'/'.$d->slug}}">{{ $d->name }}</a></h4>
                             </div>
                             <div class="text">{{substr($d->description,0,125)}}</div>
                             <span class="icon-right flaticon-heart-2"></span>
