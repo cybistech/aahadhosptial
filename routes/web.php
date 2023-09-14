@@ -73,7 +73,7 @@ Route::group(['prefix' => '/'], function () {
      Route::any("savesubscribe/{email}",[FrontController::class,'savesubscribe']);
      Route::any("pricing",[FrontController::class,'pricing']);
      Route::any("termcondition",[FrontController::class,'termcondition'])->name('terms_and_conditions');
-     Route::any("privacypolicy",[FrontController::class,'privacypolicy'])->name('privacy_policy');
+     Route::any("privacy-policy",[FrontController::class,'privacypolicy'])->name('privacy_policy');
      Route::get("postregister",[FrontController::class,'postregister']);
      Route::get("postlogin",[FrontController::class,'postlogin']);
      Route::get("userlogout",[FrontController::class,'userlogout']);

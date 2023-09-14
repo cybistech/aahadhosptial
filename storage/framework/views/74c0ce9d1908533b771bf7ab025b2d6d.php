@@ -81,25 +81,26 @@
                                         <ul class="contact-list">
                                             <li>
                                                 <span class="icon flaticon-placeholder"></span>
-                                                <div class="text">2130 Fulton Street San Diego <Br>CA 94117-1080 USA</div>
+                                                <div class="text"><?php echo e($setting->address); ?></div>
                                             </li>
 
                                             <li>
                                                 <span class="icon flaticon-call-1"></span>
-                                                <div class="text">Mon to Fri : 08:30 - 18:00</div>
-                                                <a href="tel:+89868679575"><strong>+898 68679 575</strong></a>
+                                                <div class="text"><?php echo e($setting->working_day); ?></div>
+                                                <a href="tel:+89868679575"><strong><?php echo e($setting->phone_no); ?></strong></a>
                                             </li>
 
                                             <li>
                                                 <span class="icon flaticon-email"></span>
                                                 <div class="text">Do you have a Question?<br>
-                                                <a href="mailto:info@gmail.com"><strong>info@gmail.com</strong></a></div>
+                                                <a href="mailto:info@gmail.com"><strong><?php echo e($setting->email); ?></strong></a></div>
                                             </li>
 
                                             <li>
                                                 <span class="icon flaticon-back-in-time"></span>
-                                                <div class="text">Mon - Sat 8.00 - 18.00<br>
-                                                <strong>Sunday CLOSED</strong></div>
+                                                <div class="text"><?php echo e($setting->working_day); ?>
+
+                                                </div>
                                             </li>
                                         </ul>
                                     </div>
@@ -118,9 +119,9 @@
                 <div class="inner-container clearfix">
                     <div class="footer-nav">
                         <ul class="clearfix">
-                           <li><a href="index.html">Privacy Policy</a></li>
-                           <li><a href="about-us.html">Contact</a></li>
-                           <li><a href="services.html">Supplier</a></li>
+                           <li><a href="<?php echo e(route('privacy_policy')); ?>">Privacy Policy</a></li>
+                           <li><a href="<?php echo e(route('contact_us')); ?>">Contact</a></li>
+                           <li><a href="<?php echo e(route('services')); ?>">Services</a></li>
                         </ul>
                     </div>
 

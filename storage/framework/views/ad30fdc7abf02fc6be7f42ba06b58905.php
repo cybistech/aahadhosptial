@@ -256,7 +256,7 @@
 </section>
 <!-- End About Section -->
 
-<!-- Services Section -->
+
 <section class="services-section">
     <div class="auto-container">
         <div class="sec-title text-center">
@@ -266,63 +266,22 @@
         </div>
 
         <div class="row">
-            <!-- Service Block -->
-            <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <span class="icon flaticon-heartbeat"></span>
-                    <h5><a href="#">Health Check</a></h5>
-                    <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
-                </div>
-            </div>
 
-            <!-- Service Block -->
-            <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <span class="icon flaticon-surgery-room"></span>
-                    <h5><a href="#">Operation Theater</a></h5>
-                    <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
-                </div>
-            </div>
+            <?php if(count($services)>0): ?>
+                <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="service-block col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <span class=""><img src="<?php echo e(asset('upload/service').'/'.$s->icon); ?>" alt="<?php echo e($s->name); ?>"></span>
+                            <h5><a href="#"><?php echo e($s->name); ?></a></h5>
+                            <div class="text"><?php echo e(substr($s->description,0,75)); ?></div>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endif; ?>
 
-            <!-- Service Block -->
-            <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <span class="icon flaticon-pharmacy"></span>
-                    <h5><a href="#">Pharmacy Support</a></h5>
-                    <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
-                </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <span class="icon flaticon-transport"></span>
-                    <h5><a href="#">Ambulance Car</a></h5>
-                    <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
-                </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <span class="icon flaticon-lab"></span>
-                    <h5><a href="#">Lat Tests</a></h5>
-                    <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
-                </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <span class="icon flaticon-first-aid"></span>
-                    <h5><a href="#">Intensive Care</a></h5>
-                    <div class="text">We offer extensive medical procedures to outbound & inbound patients what it is and we are very proud achievement staff.</div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
-<!--End Services Section -->
 
 <!-- Team Section -->
 <section class="team-section">
