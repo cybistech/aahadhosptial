@@ -31,13 +31,13 @@
                                     $image=asset('upload/profile/profile.png');
                                 }
                             ?>
-                    <figure class="image"><a href="blog-post-image.html"><img src="{{ $image }}" alt=""></a></figure>
+                    <figure class="image"><a href="{{route('news_detail')}}"><img src="{{ $image }}" alt=""></a></figure>
                     <a href="#" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
                 </div>
                 <div class="content-box">
-                    <h4><a href="blog-post-image.html">{{ $n->title }}</a></h4>
+                    <h4><a href="{{route('news_detail')}}">{{ $n->title }}</a></h4>
                     <div class="text">{{$n->contents}}</div>
-                    <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
+                    <a href="{{route('news_detail')}}" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
                     <div class="post-info">
                         <div class="post-author">By <a href="#">Admin Rose</a></div>
                         <ul class="post-option">

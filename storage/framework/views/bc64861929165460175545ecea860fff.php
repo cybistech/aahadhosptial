@@ -31,13 +31,13 @@
                                     $image=asset('upload/profile/profile.png');
                                 }
                             ?>
-                    <figure class="image"><a href="blog-post-image.html"><img src="<?php echo e($image); ?>" alt=""></a></figure>
+                    <figure class="image"><a href="<?php echo e(route('news_detail')); ?>"><img src="<?php echo e($image); ?>" alt=""></a></figure>
                     <a href="#" class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></a>
                 </div>
                 <div class="content-box">
-                    <h4><a href="blog-post-image.html"><?php echo e($n->title); ?></a></h4>
+                    <h4><a href="<?php echo e(route('news_detail')); ?>"><?php echo e($n->title); ?></a></h4>
                     <div class="text"><?php echo e($n->contents); ?></div>
-                    <a href="blog-post-image.html" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
+                    <a href="<?php echo e(route('news_detail')); ?>" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
                     <div class="post-info">
                         <div class="post-author">By <a href="#">Admin Rose</a></div>
                         <ul class="post-option">
