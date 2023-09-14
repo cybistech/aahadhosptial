@@ -3,4 +3,7 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('front.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\clinic Management\resources\views/front/events.blade.php ENDPATH**/ ?>
+<?php $__env->startSection('main.container'); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('front.layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\clinic Management\resources\views/front/events.blade.php ENDPATH**/ ?>

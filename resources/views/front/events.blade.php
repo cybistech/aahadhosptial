@@ -1,4 +1,7 @@
-@extends('front.layout')
+@extends('front.layout.main')
 @section('title')
  {{__('messages.Events')}}
-@stop
+@endsection
+
+@section('main.container')
+@endsection

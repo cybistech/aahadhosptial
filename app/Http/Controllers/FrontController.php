@@ -655,7 +655,11 @@ class FrontController extends Controller
     }
     public function events(){
         $department=Department::all();
-        return view('front.events')->with("department",$department);
+        $setting=Setting::first();
+        return view('front.events')->with([
+            'department'=>$department,
+            'setting'=>$setting
+        ]);
     }
 
     public function news_detail(){

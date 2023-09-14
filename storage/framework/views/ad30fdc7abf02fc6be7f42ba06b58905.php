@@ -318,7 +318,7 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
-        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="#">Explore all Dr. Team</a></div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="<?php echo e(route('doctors')); ?>">Explore all Dr. Team</a></div>
     </div>
 </section>
 
