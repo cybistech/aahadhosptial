@@ -101,7 +101,7 @@
                         <ul class="services-categories">
                             <li><a href="departments.html">All Departments</a></li>
                             @foreach ($department as $d)
-                                <li @if ($d->id == $departmentdetails->id) class="active" @endif><a href="{{url('departmentdetail').'/'.$d->slug}}">{{ $d->name }}</a></li>
+                                <li @if ($d->id == $departmentdetails->id) class="active" @endif><a href="{{url('departments').'/'.$d->slug}}">{{ $d->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
