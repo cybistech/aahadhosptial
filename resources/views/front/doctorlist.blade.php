@@ -30,7 +30,7 @@
                                     $image=asset('upload/profile/profile.png');
                                 }
                             ?>
-                            <figure class="image"><a href="{{url('doctordetails/').'/'.$d->slug}}"><img src="{{ $image }}" alt="{{ $d->name }}"></a></figure>
+                            <figure class="image"><a href="{{url('doctors/').'/'.$d->slug}}"><img src="{{ $image }}" alt="{{ $d->name }}"></a></figure>
                             <ul class="social-links">
                                 <li><a href="{{isset($d->facebook_id)?$d->facebook_id:'https://www.facebook.com'}}"><span class="fab fa-facebook-f"></span></a></li>
                                 <li><a href="{{isset($d->twitter_id)?$d->twitter_id:'https://twitter.com/search-home'}}"><span class="fab fa-twitter"></span></a></li>
@@ -39,7 +39,7 @@
                             </ul>
                         </div>
                         <div class="info-box">
-                            <h5 class="name"><a href="{{url('doctordetails/').'/'.$d->slug}}">{{ $d->name }}</a></h5>
+                            <h5 class="name"><a href="{{url('doctors/').'/'.$d->slug}}">{{ $d->name }}</a></h5>
                             <span class="">{{substr($d->about_us,0,100)}}</span>
                         </div>
                     </div>

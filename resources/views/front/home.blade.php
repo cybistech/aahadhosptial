@@ -302,7 +302,7 @@
                                 $image=asset('upload/profile/profile.png');
                             }
                         ?>
-                        <figure class="image"><img src="{{ $image }}" alt=""></figure>
+                        <figure class="image"><a href="{{url('doctors/').'/'.$d->slug}}"><img src="{{ $image }}" alt="{{ $d->name }}"></a></figure>
                         <ul class="social-links">
                             <li><a href="{{isset($d->facebook_id)?$d->facebook_id:'https://www.facebook.com'}}"><span class="fab fa-facebook"></span></a></li>
                             <li><a href="{{isset($d->linkdin_id)?$d->linkdin_id:'https://www.linkdine.com/?hl=en'}}"><span class="fab fa-linkedin-in"></span></a></li>
@@ -310,7 +310,7 @@
                             <li><a href="{{isset($d->instagram_id)?$d->instagram_id:'https://www.instagram.com/?hl=en'}}"><span class="fab fa-instagram"></span></a></li>
                         </ul>
                         <div class="info-box">
-                            <h4 class="name"><a href="doctor-detail.html">{{ $d->name }}</a></h4>
+                            <h4 class="name"><a href="{{url('doctors/').'/'.$d->slug}}">{{ $d->name }}</a></h4>
                             <span class="designation">Senior Dr. at Delmont</span>
                         </div>
                     </div>
