@@ -69,13 +69,13 @@
                            </div>
                         </div>
                         <div>
-                            @if(Config::get("democheck.vdemo")=='1')
+                            {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Save')}}</button>
-                           @else
+                           @else --}}
                               <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                   {{__('messages.Save')}}
                               </button>
-                           @endif
+                           {{-- @endif --}}
 
                         </div>
                      </form>
