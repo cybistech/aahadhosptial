@@ -52,15 +52,19 @@
                   <li class="active">
                      <a href="<?php echo e(url('admin/dashboard')); ?>"> <i class="menu-icon fa fa-dashboard"></i><?php echo e(__('messages.Dashboard')); ?> </a>
                   </li>
+
                   <li class="active">
-                     <a href="<?php echo e(url('admin/appointment/0/0')); ?>"> <i class="menu-icon fa fa-calendar"></i><?php echo e(__('messages.Appointment')); ?></a>
-                  </li>
+                    <a href="<?php echo e(url('admin/department')); ?>"> <i class="menu-icon fa fa-eercast"></i><?php echo e(__('messages.Department')); ?></a>
+                 </li>
+                  
+
+                  <li class="active">
+                    <a href="<?php echo e(url('admin/service')); ?>"> <i class="menu-icon fa fa-book"></i><?php echo e(__('messages.services')); ?></a>
+                 </li>
                   <li class="active">
                      <a href="<?php echo e(url('admin/doctor')); ?>"> <i class="menu-icon fa fa-user-md"></i><?php echo e(__('messages.Doctors')); ?></a>
                   </li>
-                   <li class="active">
-                     <a href="<?php echo e(url('admin/patient')); ?>"> <i class="menu-icon fa fa-user"></i><?php echo e(__('messages.Patient')); ?></a>
-                  </li>
+                   
                   
                   
                   
@@ -70,36 +74,15 @@
                      <a href="<?php echo e(url(route('newss.index'))); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.news')); ?></a>
                   </li>
                   <li class="active">
+                    <a href="<?php echo e(url(route('newss.index'))); ?>"> <i class="menu-icon fa fa-calendar-o"></i><?php echo e(__('Events')); ?></a>
+                 </li>
+                  <li class="active">
                      <a href="<?php echo e(url('admin/contactus')); ?>"> <i class="menu-icon fa  fa-address-card"></i><?php echo e(__('messages.Contact Us')); ?></a>
                   </li>
-                  <li class="active">
-                     <a href="<?php echo e(url('admin/service')); ?>"> <i class="menu-icon fa fa-book"></i><?php echo e(__('messages.services')); ?></a>
-                  </li>
 
-                  <li class="active">
-                     <a href="<?php echo e(url('admin/department')); ?>"> <i class="menu-icon fa fa-eercast"></i><?php echo e(__('messages.Department')); ?></a>
-                  </li>
-                  <span style="color:#c8c9ce!important">Privacy Policy</span>
-                     <li>
-                        <a href="<?php echo e(url('admin/about')); ?>" class="waves-effect">
-                        <i class="menu-icon fa fa-key "></i>
-                        <span><?php echo e(__('messages.About')); ?></span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="<?php echo e(url('admin/Terms_condition')); ?>" class="waves-effect">
-                        <i class="menu-icon fa fa-key"></i>
-                        <span><?php echo e(__('messages.term')); ?></span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="<?php echo e(url('admin/app_privacy')); ?>" class="waves-effect">
-                        <i class="menu-icon fa fa-key"></i>
-                        <span><?php echo e(__('messages.Privecy')); ?></span>
-                        </a>
-                     </li>
                      
-                        <span style="color:#c8c9ce!important"><?php echo e(__('messages.Notification')); ?></span>
+                     
+                        
                   
                   
                   <li class="active">
