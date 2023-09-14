@@ -5,7 +5,7 @@
 
 @section('main.container')
 
-<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<section class="page-title" style="background-image: url({{asset('upload/department/department.jpg')}});">
     <div class="auto-container">
         <div class="title-outer">
             <h1>Contact Us</h1>
@@ -16,7 +16,7 @@
         </div>
     </div>
 </section>
-{{-- <!-- Map Section -->
+<!-- Map Section -->
 <section class="map-section">
     <div class="auto-container">
         <div class="map-outer">
@@ -33,7 +33,7 @@
         </div>
     </div>
 </section>
-<!-- End Map Section --> --}}
+<!-- End Map Section -->
 
 <section class="contact-section" id="contact">
     <div class="small-container">
