@@ -44,29 +44,31 @@
                     <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                         <div class="row">
 
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                            @php
+                                $news=news();
+                            @endphp
 
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget recent-posts">
                                     <h2 class="widget-title">Latest News</h2>
 
                                     <div class="widget-content">
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-post-image.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a></div>
-                                            <h4><a href="blog-post-image.html">Integrative Medicine <Br>& Cancer Treatment.</a></h4>
-                                            <span class="date">July 11, 2020</span>
-                                        </div>
-
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-post-image.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a></div>
-                                            <h4><a href="blog-post-image.html">Achieving Better <br>Health Care Time.</a></h4>
-                                            <span class="date">August 1, 2020</span>
-                                        </div>
-
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-post-image.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a></div>
-                                            <h4><a href="blog-post-image.html">Great Health Care <br>For Patients.</a></h4>
-                                            <span class="date">August 1, 2020</span>
-                                        </div>
+                                        @if (count($news)>0)
+                                            @foreach ($news as $n)
+                                                <div class="post">
+                                                    <?php
+                                                        if($n->featured_image){
+                                                            $image=asset('upload/news')."/".$n->featured_image;
+                                                        }else{
+                                                            $image=asset('upload/profile/profile.png');
+                                                        }
+                                                    ?>
+                                                    <div class="thumb"><a href="blog-post-image.html"><img src="{{ $image }}" alt=""></a></div>
+                                                    <h4><a href="blog-post-image.html">{{ $n->title }}</a></h4>
+                                                    <span class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</span>
+                                                </div>
+                                            @endforeach
+                                        @endif
                                     </div>
                                 </div>
                             </div>
