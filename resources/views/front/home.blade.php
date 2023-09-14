@@ -283,7 +283,6 @@
     </div>
 </section>
 
-<!-- Team Section -->
 <section class="team-section">
     <div class="auto-container">
         <div class="sec-title text-center">
@@ -322,7 +321,7 @@
         <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="#">Explore all Dr. Team</a></div>
     </div>
 </section>
-<!-- End Team Section -->
+
 
 <!-- Appointment Section -->
 <section class="appointment-section">
