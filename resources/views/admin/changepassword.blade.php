@@ -40,7 +40,7 @@
                      </div>
                      @endif
                      <form action="{{url('admin/updatepassword')}}" method="post"   enctype="multipart/form-data">
-                        {{csrf_field()}}                                           
+                        {{csrf_field()}}
                         <div class="form-group">
                            <label for="name" class=" form-control-label">
                            {{__('messages.Enter Current Password')}}
@@ -63,14 +63,14 @@
                            <input type="password" id="rpwd" placeholder="{{__('messages.Re-enter New Password')}}" class="form-control" name="rpwd" onchange="changecheckboth(this.value)" required="">
                         </div>
                         <div class="form-group">
-                            @if(Config::get("democheck.vdemo")=='1')
+                            {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Save')}}</button>
-                           @else
+                           @else --}}
                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                    {{__('messages.Save')}}
-                               </button> 
-                           @endif 
-                          
+                               </button>
+                           {{-- @endif --}}
+
                         </div>
                      </form>
                   </div>
