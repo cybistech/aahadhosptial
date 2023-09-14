@@ -318,7 +318,7 @@
             @endforeach
         </div>
 
-        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="#">Explore all Dr. Team</a></div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="{{route('doctors')}}">Explore all Dr. Team</a></div>
     </div>
 </section>
 
@@ -523,7 +523,7 @@
             </div>
         </div>
 
-        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="#">Explore all Dr. Team</a></div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="{{route('doctors')}}">Explore all Dr. Team</a></div>
     </div>
 </section>
 <!--End Pricing Section -->
