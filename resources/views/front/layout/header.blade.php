@@ -44,10 +44,10 @@
                     </div>
                     <div class="top-right">
                         <ul class="social-icon-one">
-                            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                            <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                            <li><a href="{{ $setting->facebook_id }}"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="{{ $setting->twitter_id }}"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="{{ $setting->instagram_id}}"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="{{ $setting->google_id}}"><span class="fab fa-google"></span></a></li>
                         </ul>
                     </div>
                 </div>
