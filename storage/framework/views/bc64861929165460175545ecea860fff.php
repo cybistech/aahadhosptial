@@ -9,10 +9,10 @@
 <section class="page-title" style="background-image: url(images/background/8.jpg);">
     <div class="auto-container">
         <div class="title-outer">
-            <h1>Checkerboard</h1>
+            <h1>News</h1>
             <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Blog</li>
+                <li><a href="<?php echo e(route('news')); ?>">Home</a></li>
+                <li>News</li>
             </ul>
         </div>
     </div>
