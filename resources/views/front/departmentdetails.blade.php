@@ -3,46 +3,7 @@
 {{__('messages.Department Details')}}
 @endsection
 @section('main.container')
-   {{-- <div class="sidebar-cart">
-    <span class="cart-back-drop"></span>
-    <div class="shopping-cart">
-        <div class="cart-header">
-            <div class="title">Shopping Cart <span>(3)</span></div>
-            <button class="close-cart"><span class="flaticon-add"></span></button>
-        </div>
-        <ul class="shopping-cart-items">
-            <li class="cart-item">
-                <img src="images/resource/products/product-thumb-1.jpg" alt="#" class="thumb" />
-                <span class="item-name">First Aid Kit</span>
-                <span class="item-quantity">1 x <span class="item-amount">$50.00</span></span>
-                <a href="shop-single.html" class="product-detail"></a>
-                <button class="remove">Remove</button>
-            </li>
 
-            <li class="cart-item">
-                <img src="images/resource/products/product-thumb-2.jpg" alt="#" class="thumb"  />
-                <span class="item-name">Vitamin Tablet</span>
-                <span class="item-quantity">1 x <span class="item-amount">$25.00</span></span>
-                <a href="shop-single.html" class="product-detail"></a>
-                <button class="remove">Remove</button>
-            </li>
-
-            <li class="cart-item">
-                <img src="images/resource/products/product-thumb-3.jpg" alt="#" class="thumb"  />
-                <span class="item-name">Zinc Tablet</span>
-                <span class="item-quantity">1 x <span class="item-amount">$15.00</span></span>
-                <a href="shop-single.html" class="product-detail"></a>
-                <button class="remove">Remove</button>
-            </li>
-        </ul>
-
-        <div class="cart-footer">
-            <div class="shopping-cart-total"><strong>Subtotal:</strong> $90.00</div>
-            <a href="shopping-cart.html" class="theme-btn btn-style-three"><span class="btn-title">View Cart</span></a>
-            <a href="checkout.html" class="theme-btn btn-style-one"><span class="btn-title">Checkout</span></a>
-        </div>
-    </div> <!-- End shopping-cart -->
-</div> --}}
 
 
 

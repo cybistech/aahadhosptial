@@ -3,9 +3,6 @@
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('main.container'); ?>
-   
-
-
 
 <section class="page-title" style="background-image: url(images/background/8.jpg);">
 <div class="auto-container">
@@ -56,6 +53,24 @@
                     <h3>Why Choose This Service</h3>
 
                     <p>Complete account of the systems and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful anyone who loves or pursues.</p>
+
+
+                    <div class="auto-container">
+                        <div class="row">
+                            <?php if(count($departmentdetails->service)>0): ?>
+                                <?php $__currentLoopData = $departmentdetails->service; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="service-block col-lg-4 col-md-6 col-sm-12">
+                                        <div class="inner-box">
+                                            <span class=""><img src="<?php echo e(asset('upload/service').'/'.$s->icon); ?>" alt="<?php echo e($s->name); ?>"></span>
+                                            <h5><a href="#"><?php echo e($s->name); ?></a></h5>
+                                            <div class="text"><?php echo e($s->description); ?></div>
+                                        </div>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
 
 
                     <div class="product-info-tabs">

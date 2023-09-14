@@ -43,34 +43,7 @@
                     <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                         <div class="row">
 
-                            <?php
-                                $news=news();
-                            ?>
-
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget recent-posts">
-                                    <h2 class="widget-title">Latest News</h2>
-
-                                    <div class="widget-content">
-                                        <?php if(count($news)>0): ?>
-                                            <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <div class="post">
-                                                    <?php
-                                                        if($n->featured_image){
-                                                            $image=asset('upload/news')."/".$n->featured_image;
-                                                        }else{
-                                                            $image=asset('upload/profile/profile.png');
-                                                        }
-                                                    ?>
-                                                    <div class="thumb"><a href="blog-post-image.html"><img src="<?php echo e($image); ?>" alt=""></a></div>
-                                                    <h4><a href="blog-post-image.html"><?php echo e($n->title); ?></a></h4>
-                                                    <span class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></span>
-                                                </div>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            </div>
+                            
 
 
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
@@ -94,7 +67,7 @@
                                             <li>
                                                 <span class="icon flaticon-email"></span>
                                                 <div class="text">Do you have a Question?<br>
-                                                <a href="mailto:info@gmail.com"><strong><?php echo e($setting->email); ?></strong></a></div>
+                                                <a href="mailto:<?php echo e($setting->email); ?>"><strong><?php echo e($setting->email); ?></strong></a></div>
                                             </li>
 
                                             <li>
