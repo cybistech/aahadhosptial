@@ -17,11 +17,10 @@
                                         <p>We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
                                     </div>
                                     <ul class="social-icon-three">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="{{ $setting->facebook_id }}"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="{{ $setting->twitter_id }}"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="{{ $setting->google_id }}"><i class="fab fa-google"></i></a></li>
+                                        <li><a href="{{ $setting->instagram_id }}"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -32,7 +31,7 @@
                                     <h2 class="widget-title">Departments</h2>
                                     <ul class="user-links">
                                         @foreach ($department->take(6) as $d)
-                                            <li><a href="{{ url('departmentdetail').'/'.$d->slug }}">{{ $d->name }}</a></li>
+                                            <li><a href="{{ url('departments').'/'.$d->slug }}">{{ $d->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -44,7 +43,7 @@
                     <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                         <div class="row">
 
-                            @php
+                            {{-- @php
                                 $news=news();
                             @endphp
 
@@ -71,7 +70,7 @@
                                         @endif
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
 
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
@@ -89,13 +88,13 @@
                                             <li>
                                                 <span class="icon flaticon-call-1"></span>
                                                 <div class="text">{{$setting->working_day}}</div>
-                                                <a href="tel:+89868679575"><strong>{{$setting->phone_no}}</strong></a>
+                                                <a href="tel:{{ $setting->phone_no}}"><strong>{{$setting->phone_no}}</strong></a>
                                             </li>
 
                                             <li>
                                                 <span class="icon flaticon-email"></span>
                                                 <div class="text">Do you have a Question?<br>
-                                                <a href="mailto:info@gmail.com"><strong>{{$setting->email}}</strong></a></div>
+                                                <a href="mailto:{{ $setting->email }}"><strong>{{$setting->email}}</strong></a></div>
                                             </li>
 
                                             <li>

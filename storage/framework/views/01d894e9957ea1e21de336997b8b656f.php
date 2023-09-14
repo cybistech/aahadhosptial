@@ -26,7 +26,7 @@
         <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12 order-2">
             <div class="service-detail">
                 <div class="images-box">
-                    <figure class="image wow fadeIn"><a src="<?php echo e(asset('upload/department').'/'.$departmentdetails->image); ?>" class="lightbox-image" data-fancybox="services"><img src="<?php echo e(asset('upload/department').'/'.$departmentdetails->image); ?>"  alt="<?php echo e($departmentdetails->name); ?>"></a></figure>
+                    
                 </div>
 
                 <div class="content-box">

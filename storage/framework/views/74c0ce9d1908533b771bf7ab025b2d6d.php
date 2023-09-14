@@ -17,11 +17,10 @@
                                         <p>We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
                                     </div>
                                     <ul class="social-icon-three">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="<?php echo e($setting->facebook_id); ?>"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?php echo e($setting->twitter_id); ?>"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?php echo e($setting->google_id); ?>"><i class="fab fa-google"></i></a></li>
+                                        <li><a href="<?php echo e($setting->instagram_id); ?>"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -32,7 +31,7 @@
                                     <h2 class="widget-title">Departments</h2>
                                     <ul class="user-links">
                                         <?php $__currentLoopData = $department->take(6); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <li><a href="<?php echo e(url('departmentdetail').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></li>
+                                            <li><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></li>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </div>
@@ -89,7 +88,7 @@
                                             <li>
                                                 <span class="icon flaticon-call-1"></span>
                                                 <div class="text"><?php echo e($setting->working_day); ?></div>
-                                                <a href="tel:+89868679575"><strong><?php echo e($setting->phone_no); ?></strong></a>
+                                                <a href="tel:<?php echo e($setting->phone_no); ?>"><strong><?php echo e($setting->phone_no); ?></strong></a>
                                             </li>
 
                                             <li>
