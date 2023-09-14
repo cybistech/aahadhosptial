@@ -78,7 +78,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("postlogin",[FrontController::class,'postlogin']);
      Route::get("userlogout",[FrontController::class,'userlogout']);
      Route::get("postforgot",[FrontController::class,'postforgot']);
-     Route::get("doctordetails/{id}",[FrontController::class,'doctordetails']);
+     Route::get("doctordetails/{slug}",[FrontController::class,'doctordetails']);
      Route::any("addreview",[FrontController::class,'addreview']);
      Route::post("mediaupload",[FrontController::class,'mediaupload']);
      Route::post("deletemedia",[FrontController::class,'deletemedia']);
