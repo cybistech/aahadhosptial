@@ -26,7 +26,7 @@
         <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12 order-2">
             <div class="service-detail">
                 <div class="images-box">
-                    
+                    <figure class="image wow fadeIn"><a src="<?php echo e(asset('upload/department').'/'.$departmentdetails->image); ?>" class="lightbox-image" data-fancybox="services"><img src="<?php echo e(asset('upload/department').'/'.$departmentdetails->image); ?>"  alt="<?php echo e($departmentdetails->name); ?>"></a></figure>
                 </div>
 
                 <div class="content-box">
@@ -120,7 +120,7 @@
                     <span>Quick Contact</span>
                     <h4>Get Solution</h4>
                     <p>Contact us at the Medicoz office nearest to you or submit a business inquiry online.</p>
-                    <a href="contact.html" class="theme-btn btn-style-one"><span class="btn-title">Contact</span></a>
+                    <a href="<?php echo e(route('contact_us')); ?>" class="theme-btn btn-style-one"><span class="btn-title">Contact</span></a>
                 </div>
             </aside>
         </div>
@@ -137,12 +137,12 @@
                 <div class="service-block-two">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="department-detail.html"><img src="images/resource/service-1.jpg" alt=""></a></figure>
+                            <figure class="image"><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><img src="images/resource/service-1.jpg" alt=""></a></figure>
                         </div>
                         <div class="lower-content">
                             <div class="title-box">
                                <span class=""><img src="<?php echo e(asset('upload/department').'/'.$d->image); ?>" alt="<?php echo e($d->name); ?>"></span>
-                               <h4><a href="department-detail.html"><?php echo e($d->name); ?></a></h4>
+                               <h4><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></h4>
                             </div>
                             <div class="text"><?php echo e(substr($d->description,0,125)); ?></div>
                             <span class="icon-right flaticon-heart-2"></span>
