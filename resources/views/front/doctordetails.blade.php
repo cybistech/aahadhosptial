@@ -7,7 +7,7 @@
  <section class="page-title" style="background-image: url(images/background/8.jpg);">
     <div class="auto-container">
         <div class="title-outer">
-            <h1> Doctor Details</h1>
+            <h1>{{ $doctor->name }}</h1>
             <ul class="page-breadcrumb">
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('doctors')}}">Doctors</a></li>
