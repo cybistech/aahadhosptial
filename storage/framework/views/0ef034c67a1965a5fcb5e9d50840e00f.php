@@ -5,7 +5,7 @@
 <?php $__env->startSection('main.container'); ?>
 
 
-<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<section class="page-title" style="background-image: url(<?php echo e(asset('upload/department/department.jpg')); ?>);">
     <div class="auto-container">
         <div class="title-outer">
             <h1>Departments</h1>
@@ -28,11 +28,11 @@
                         <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    
+                                    <figure class="image"><a><img src="<?php echo e(asset('upload/department').'/'.$d->image); ?>" alt="<?php echo e($d->name); ?>"></a></figure>
                                 </div>
                                 <div class="lower-content">
                                     <div class="title-box">
-                                        <span class=""><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><img src="<?php echo e(asset('upload/department').'/'.$d->image); ?>" alt="<?php echo e($d->name); ?>"></a></span>
+                                        <span class="icon flaticon-heart-2"></span>
                                         <h4><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></h4>
                                     </div>
                                     <div class="text"><a><?php echo e(substr($d->description,0,75)); ?></a></div>

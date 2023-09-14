@@ -61,16 +61,15 @@ class DoctorController extends Controller
             if($request->get("real_image")!=""){
                  if ($request->hasFile('image'))
                   {
-                     $file = $request->file('image');
-                     $filename = $file->getClientOriginalName();
-                     $extension = $file->getClientOriginalExtension() ?: 'png';
-                     $folderName = '/upload/doctor';
-                     $picture = 'doctor_'.mt_rand(100000,999999). '.' . $extension;
-                     $destinationPath = public_path() . $folderName;
-                     $resizedImage = Image::make($file)->resize(290, 195);
-                     $resizedImage->save($destinationPath. '/' . $picture);
-                     $img_url = $picture;
-                     $image_path = public_path() ."/upload/doctor/".$request->get("real_image");
+                    $file = $request->file('image');
+                    $filename = $file->getClientOriginalName();
+                    $extension = $file->getClientOriginalExtension() ?: 'png';
+                    $folderName = '/upload/doctor';
+                    $picture = 'doctor_'.mt_rand(100000,999999). '.' . $extension;
+                    $destinationPath = public_path() . $folderName;
+                    $request->file('image')->move($destinationPath, $picture);
+                    $img_url = $picture;
+                    $image_path = public_path() ."/upload/doctor/".$request->get("real_image");
                         if(file_exists($image_path)) {
                             try {
                                  unlink($image_path);
@@ -85,14 +84,13 @@ class DoctorController extends Controller
             }else{
                 if ($request->hasFile('image'))
                   {
-                     $file = $request->file('image');
+                    $file = $request->file('image');
                      $filename = $file->getClientOriginalName();
                      $extension = $file->getClientOriginalExtension() ?: 'png';
                      $folderName = '/upload/doctor';
                      $picture = 'doctor_'.mt_rand(100000,999999). '.' . $extension;
                      $destinationPath = public_path() . $folderName;
-                     $resizedImage = Image::make($file)->resize(290, 195);
-                     $resizedImage->save($destinationPath. '/' . $picture);
+                     $request->file('image')->move($destinationPath, $picture);
                      $img_url = $picture;
                  }
             }
