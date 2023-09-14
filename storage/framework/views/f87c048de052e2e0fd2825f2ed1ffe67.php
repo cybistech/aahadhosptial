@@ -35,13 +35,13 @@
          <div class="container">
             <div class="login-content">
                <div class="login-logo">
-                  <a href="index.html">
-                  <span><?php echo e(__('messages.site name')); ?></span>
-                  <?php if($type==2): ?>
+                  <a href="<?php echo e(route('home')); ?>">
+                  <span><?php echo e(__('messages.Clinic')); ?></span>
+                  
                       <span><?php echo e(__('messages.Admin')); ?></span>
-                  <?php else: ?>
-                     <span><?php echo e(__('messages.Doctors')); ?></span>
-                  <?php endif; ?>
+                  
+                     
+                  
 
                   </a>
                </div>
@@ -85,13 +85,11 @@
 
                         </label>
                      </div>
-                     <?php if($type==3): ?>
-                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Doctors').' '.__('messages.Sign in')); ?></button>
-                         <a href="<?php echo e(url('admin/')); ?>" class="btn btn-secondary btn-flat m-b-30 m-t-30 signin" ><?php echo e(__('messages.Admin').' '.__('messages.Sign in')); ?></a>
-                     <?php else: ?>
+                     
+                         
                          <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Admin').' '.__('messages.Sign in')); ?></button>
-                         <a href="<?php echo e(url('doctor/')); ?>" class="btn btn-secondary btn-flat m-b-30 m-t-30 signin"><?php echo e(__('messages.Doctors').' '.__('messages.Sign in')); ?></a>
-                     <?php endif; ?>
+                         
+                     
 
                   </form>
                </div>
