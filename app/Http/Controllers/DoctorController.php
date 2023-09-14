@@ -12,6 +12,8 @@ use App\Model\Appointment;
 use App\Model\Token;
 use App\Model\Review;
 use App\User;
+use Illuminate\Support\Str;
+// use Intervention\Image\Facades\Image;
 use App\Model\Setting;
 // use Session;
 use Illuminate\Support\Facades\Session;
@@ -65,7 +67,8 @@ class DoctorController extends Controller
                      $folderName = '/upload/doctor';
                      $picture = 'doctor_'.mt_rand(100000,999999). '.' . $extension;
                      $destinationPath = public_path() . $folderName;
-                     $request->file('image')->move($destinationPath, $picture);
+                     $resizedImage = Image::make($file)->resize(290, 195);
+                     $resizedImage->save($destinationPath. '/' . $picture);
                      $img_url = $picture;
                      $image_path = public_path() ."/upload/doctor/".$request->get("real_image");
                         if(file_exists($image_path)) {
@@ -88,7 +91,8 @@ class DoctorController extends Controller
                      $folderName = '/upload/doctor';
                      $picture = 'doctor_'.mt_rand(100000,999999). '.' . $extension;
                      $destinationPath = public_path() . $folderName;
-                     $request->file('image')->move($destinationPath, $picture);
+                     $resizedImage = Image::make($file)->resize(290, 195);
+                     $resizedImage->save($destinationPath. '/' . $picture);
                      $img_url = $picture;
                  }
             }
@@ -125,6 +129,7 @@ class DoctorController extends Controller
             }
             $store->department_id=$request->get("department");
             $store->name=$request->get("name");
+            $store->slug=Str::slug($request->get('name'));
             $store->email=$request->get("email");
             $store->password=$request->get("password");
             $store->phone_no=$request->get("phone_no");

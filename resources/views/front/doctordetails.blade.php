@@ -60,39 +60,6 @@
                         </li> --}}
                     </ul>
                 </div>
-
-                <div class="appointment-form default-form">
-                    <div class="sec-title">
-                        <span class="sub-title">Online Appoinment</span>
-                        <h2>Make An Appointment</h2>
-                        <span class="divider"></span>
-                    </div>
-
-                    <!--Comment Form-->
-                    <form action="#" method="post" id="email-form">
-                        <div class="row">
-                            <div class="form-group col-lg-6 col-md-12">
-                                <input type="text" name="username" placeholder="Your Name">
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-12">
-                                <input type="text" name="phone" placeholder="Your Phone">
-                            </div>
-
-                            <div class="form-group col-lg-12 col-md-12">
-                                <input type="email" name="email" placeholder="Your Email *">
-                            </div>
-
-                            <div class="form-group col-lg-12 col-md-12">
-                                <textarea name="contact_message" placeholder="Tell us about Pasent"></textarea>
-                            </div>
-
-                            <div class="form-group col-lg-12 col-md-12">
-                                <button class="theme-btn btn-style-one" type="button" name="submit-form"><span class="btn-title">Submit Query</span></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
 
             <!-- Sidebar Side -->
@@ -119,7 +86,6 @@
                     <div class="docter-availability">
                         <div class="inner">
                             <div class="sec-title">
-                                <span class="sub-title">Timining</span>
                                 <h2>Availability</h2>
                                 <span class="divider"></span>
                                 <div class="text">Suspendisse potenti. Maecenas dapibus ac tellus sed pulvinar. Vestibulum bib volutpat accumsan non laoreet nulla luctus.</div>
@@ -205,7 +171,7 @@
                             $image=asset('upload/profile/profile.png');
                         }
                     ?>
-                            <figure class="image"><a href="{{url('doctordetails/').'/'.$d_list->user_id}}"><img src="{{ $image }}" alt="{{ $d_list->name }}"></a></figure>
+                            <figure class="image"><a href="{{url('doctordetails/').'/'.$d_list->slug}}"><img src="{{ $image }}" alt="{{ $d_list->name }}"></a></figure>
                             <ul class="social-links">
                         <li><a href="{{isset($d_list->facebook_id)?$d_list->facebook_id:'https://www.facebook.com'}}"><span class="fab fa-facebook"></span></a></li>
                         <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
@@ -213,7 +179,7 @@
                         <li><a href="{{isset($d_list->instagram_id)?$d_list->instagram_id:'https://www.instagram.com/?hl=en'}}"><span class="fab fa-instagram"></span></a></li>
                     </ul>
                     <div class="info-box">
-                        <h4 class="name"><a href="doctor-detail.html">{{ $d_list->name }}</a></h4>
+                        <h4 class="name"><a href="{{url('doctordetails/').'/'.$d_list->slug}}">{{ $d_list->name }}</a></h4>
                         <span class="designation">Senior Dr. at Delmont</span>
                     </div>
                 </div>
