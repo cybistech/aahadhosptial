@@ -4,7 +4,7 @@ return [
 		"meta_description_admin"=>"Single Web Clinic Admin",
 		"meta_keyword"=>"Single,Clinic,Hospital",
 		"meta_title_admin"=>"Clinic Admin",
-		"Clinic"=>"Clinic",
+		"Clinic"=>"Aahad Hospital",
 		"shortcode"=>"SC",
 		"Dashboard"=>"Dashboard",
 		"Appointment"=>"Appointment",
