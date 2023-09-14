@@ -114,6 +114,17 @@
                            <input type="file" id="file" name="featured_image" class="form-control-file" accept="image/*">
                         </div>
                      </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        <?php echo e(__('Status')); ?>
+
+                        <span class="reqfield" >*</span>
+                        </label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="publish" <?php echo e(old('status' == "publish" ? 'selected' : '')); ?>><?php echo e(__('Publish')); ?></option>
+                            <option value="draft"   <?php echo e(old('status' == "draft" ? 'selected' : '')); ?>><?php echo e(__('Draft')); ?></option>
+                        </select>
+                    </div>
                      <div>
                         
                             <button id="payment-button" type="submit" class="btn btn-lg btn-info" >

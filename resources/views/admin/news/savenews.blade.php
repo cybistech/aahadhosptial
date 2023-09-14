@@ -107,6 +107,16 @@
                            <input type="file" id="file" name="featured_image" class="form-control-file" accept="image/*">
                         </div>
                      </div>
+                     <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        {{__('Status')}}
+                        <span class="reqfield" >*</span>
+                        </label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="publish" {{old('status' == "publish" ? 'selected' : '')}}>{{__('Publish')}}</option>
+                            <option value="draft"   {{old('status' == "draft" ? 'selected' : '')}}>{{__('Draft')}}</option>
+                        </select>
+                    </div>
                      <div>
                         {{-- @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >

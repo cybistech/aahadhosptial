@@ -58,10 +58,11 @@
                         <tr>
                            <td><?php echo e(isset($d->id)?$d->id:""); ?></td>
                            <td><?php echo e(isset($d->title)?$d->title:""); ?></td>
-                           <td>
+                           <td style="height: 150px; width: 150px;">
                                <img src="<?php echo e(asset('upload/news').'/'.$d->featured_image); ?>" class="imgsize1"/>
                            </td>
                            <td><?php echo e(isset($d->contents)?$d->contents:""); ?></td>
+                           <td><?php echo e(isset($d->status)?$d->status:""); ?></td>
                            <td>
                                 <a href="<?php echo e(url('admin/saveNews/').'/'.$d->id); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
                                 

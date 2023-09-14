@@ -57,10 +57,11 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->title)?$d->title:""}}</td>
-                           <td>
+                           <td style="height: 150px; width: 150px;">
                                <img src="{{asset('upload/news').'/'.$d->featured_image}}" class="imgsize1"/>
                            </td>
                            <td>{{isset($d->contents)?$d->contents:""}}</td>
+                           <td>{{isset($d->status)?$d->status:""}}</td>
                            <td>
                                 <a href="{{url('admin/saveNews/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
                                 {{-- <a href="javascript:deleterow('deletedenews','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a> --}}

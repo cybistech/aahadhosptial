@@ -31,6 +31,7 @@ class NewsController extends Controller
                'excerpt' => 'required',
                'contents' => 'required',
                'tags' =>'required',
+               'status'=>'required',
            ]);
          }else{
            $request->validate([
@@ -40,6 +41,7 @@ class NewsController extends Controller
             'excerpt' => 'required',
             'contents' => 'required',
             'tags' =>'required',
+            'status'=>'required',
             'featured_image' => 'required',
            ]);
         }
@@ -99,6 +101,7 @@ class NewsController extends Controller
        $store->author=Auth::id();
        $store->user_id=Auth::id();
        $store->featured_image=$img_url;
+       $store->status=$request->status;
        $store->save();
        Session::flash('message',$msg);
        Session::flash('alert-class', 'alert-success');
