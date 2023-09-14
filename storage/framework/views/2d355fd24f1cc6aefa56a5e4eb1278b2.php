@@ -8,10 +8,10 @@
 <section class="page-title" style="background-image: url(images/background/8.jpg);">
     <div class="auto-container">
         <div class="title-outer">
-            <h1>Dedicated Doctors</h1>
+            <h1>Doctors</h1>
             <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Doctors</li>
+                <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
+                <li><a href="<?php echo e(route('doctors')); ?>">Doctors</a></li>
             </ul>
         </div>
     </div>
@@ -114,7 +114,7 @@
 <section class="time-table-section">
     <div class="auto-container">
         <div class="table-outer">
-            <!-- Doctors Time Table -->
+
             <table class="doctors-time-table">
                 <thead>
                     <tr>

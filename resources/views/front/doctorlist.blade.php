@@ -8,10 +8,10 @@
 <section class="page-title" style="background-image: url(images/background/8.jpg);">
     <div class="auto-container">
         <div class="title-outer">
-            <h1>Dedicated Doctors</h1>
+            <h1>Doctors</h1>
             <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Doctors</li>
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('doctors')}}">Doctors</a></li>
             </ul>
         </div>
     </div>
