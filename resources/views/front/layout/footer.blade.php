@@ -127,7 +127,7 @@
                     </div>
 
                     <div class="copyright-text">
-                        <p>Copyright © 2023 <a href="#">Bold Touch</a>All Rights Reserved.</p>
+                        <p>Copyright © 2023 <a href="{{route('home')}}"> Aahad Hospital </a>All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
