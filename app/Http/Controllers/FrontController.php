@@ -198,9 +198,11 @@ class FrontController extends Controller
             return redirect()->back();
        }
 
-       public function doctordetails($id){
+       public function doctordetails($slug){
             $department=Department::all();
-            $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
+            $d_detail=Doctor::where('slug',$slug)->first();
+            $id=$d_detail->user_id;
+            $doctor=Doctor::with('department',"TimeTabledata")->where("slug",$slug)->first();
 
 
             if(!$doctor) {
