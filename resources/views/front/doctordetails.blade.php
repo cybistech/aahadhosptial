@@ -1,6 +1,6 @@
 @extends('front.layout.main')
 @section('title')
-{{__('messages.Doctor Details')}}
+{{ $doctor->name }}
 @endsection
 @section('main.container')
 
