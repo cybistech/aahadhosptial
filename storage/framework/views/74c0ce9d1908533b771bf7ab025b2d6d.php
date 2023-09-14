@@ -10,7 +10,7 @@
                             <div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget about-widget">
                                     <div class="logo">
-                                        <a href="index.html"><img src="<?php echo e(asset('assets/images/logo-2.png')); ?>" alt="" /></a>
+                                        <a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('assets/images/logo-2.png')); ?>" alt="" /></a>
                                     </div>
                                     <div class="text">
                                         <p>Our Clinic has grown to provide a world class facility for the clinic advanced restorative. </p>
@@ -18,8 +18,6 @@
                                     </div>
                                     <ul class="social-icon-three">
                                         <li><a href="<?php echo e($setting->facebook_id); ?>"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="<?php echo e($setting->twitter_id); ?>"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="<?php echo e($setting->google_id); ?>"><i class="fab fa-google"></i></a></li>
                                         <li><a href="<?php echo e($setting->instagram_id); ?>"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
