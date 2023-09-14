@@ -69,19 +69,6 @@
                                                 </div>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         <?php endif; ?>
-
-
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-post-image.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a></div>
-                                            <h4><a href="blog-post-image.html">Achieving Better <br>Health Care Time.</a></h4>
-                                            <span class="date">August 1, 2020</span>
-                                        </div>
-
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-post-image.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a></div>
-                                            <h4><a href="blog-post-image.html">Great Health Care <br>For Patients.</a></h4>
-                                            <span class="date">August 1, 2020</span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

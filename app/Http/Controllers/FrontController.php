@@ -235,7 +235,8 @@ class FrontController extends Controller
           $doctor=Doctor::all();
           $departmentdoctor=Department::with('doctor')->get();
            $setting=Setting::find(1);
-          return view("front.doctorlist")->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
+           $reviews=Review::with('doctors','users')->get()->take(4);
+          return view("front.doctorlist")->with('reviews',$reviews)->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
        }
 
        public function gallery(){

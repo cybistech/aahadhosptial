@@ -62,89 +62,33 @@
         </div>
 
         <div class="testimonial-outer">
-            <!-- Product Thumbs Carousel -->
             <div class="client-thumb-outer">
                 <div class="client-thumbs-carousel owl-carousel owl-theme">
-                    <div class="thumb-item">
-                        <figure class="thumb-box"><img src="images/resource/testi-thumb-1.jpg" alt=""></figure>
-                        <div class="author-info">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="author-name">Lara Croft</div>
-                            <div class="designation">Restaurant Owner</div>
-                        </div>
-                    </div>
-                    <div class="thumb-item">
-                        <figure class="thumb-box"><img src="images/resource/testi-thumb-2.jpg" alt=""></figure>
-                        <div class="author-info">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="author-name">Lara Croft</div>
-                            <div class="designation">Restaurant Owner</div>
-                        </div>
-                    </div>
-                    <div class="thumb-item">
-                        <figure class="thumb-box"><img src="images/resource/testi-thumb-3.jpg" alt=""></figure>
-                        <div class="author-info">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="author-name">Lara Croft</div>
-                            <div class="designation">Restaurant Owner</div>
-                        </div>
-                    </div>
-                    <div class="thumb-item">
-                        <figure class="thumb-box"><img src="images/resource/testi-thumb-2.jpg" alt=""></figure>
-                        <div class="author-info">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="author-name">Lara Croft</div>
-                            <div class="designation">Restaurant Owner</div>
-                        </div>
-                    </div>
-                    <div class="thumb-item">
-                        <figure class="thumb-box"><img src="images/resource/testi-thumb-3.jpg" alt=""></figure>
-                        <div class="author-info">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="author-name">Lara Croft</div>
-                            <div class="designation">Restaurant Owner</div>
-                        </div>
-                    </div>
+                    <?php if(count($reviews)>0): ?>
+                        <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="thumb-item">
+                                <figure class="thumb-box"><img src="<?php echo e(asset('images/resource/testi-thumb-1.jpg')); ?>"" alt=""></figure>
+                                <div class="author-info">
+                                    <span class="icon fa fa-quote-left"></span>
+                                    <div class="author-name"><?php echo e($r->users->name); ?></div>
+                                    <div class="designation">Restaurant Owner</div>
+                                </div>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
                 </div>
             </div>
 
-            <!-- Client Testimonial Carousel -->
             <div class="client-testimonial-carousel default-dots owl-carousel owl-theme">
-
-                <!--Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
-                    </div>
-                </div>
-
-                <!--Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
-                    </div>
-                </div>
-
-                <!--Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
-                    </div>
-                </div>
-
-                <!--Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
-                    </div>
-                </div>
-
-                <!--Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
-                    </div>
-                </div>
+                <?php if(count($reviews)>0): ?>
+                    <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="testimonial-block">
+                            <div class="inner-box">
+                                <div class="text"><?php echo e($r->review); ?></div>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -154,7 +98,6 @@
                 <div class="content-column">
                     <h4>We Employ The Latest Technology</h4>
                     <h2>We Ensure Safe Dental Sergery </h2>
-                    <a href="#" class="theme-btn btn-style-three"><span class="btn-title">Take Appointment</span></a>
                 </div>
 
                 <div class="video-column">
