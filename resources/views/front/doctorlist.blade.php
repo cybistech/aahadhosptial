@@ -31,7 +31,7 @@
 </section>
 
 
-<section class="testimonial-section-two">
+{{-- <section class="testimonial-section-two">
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title text-center">
@@ -88,9 +88,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
-<section class="time-table-section">
+{{-- <section class="time-table-section">
     <div class="auto-container">
         <div class="table-outer">
 
@@ -396,7 +396,7 @@
             </table>
         </div>
     </div>
-</section>
+</section> --}}
 
 @endsection
 
