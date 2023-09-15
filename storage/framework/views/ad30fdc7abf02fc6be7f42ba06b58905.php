@@ -6,7 +6,7 @@
 <?php $__env->startSection('main.container'); ?>
 
 
- <section class="main-slider">
+<section class="main-slider">
     <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
         <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
             <ul>
@@ -374,150 +374,14 @@
 </section>
 <!-- End Appointment Section -->
 
-<!-- Testimonial Section -->
-<section class="testimonial-section">
-    <div class="auto-container">
-
-        <div class="sec-title text-center">
-            <span class="title">HAPPY Patient</span>
-            <h2>What Says Our Patients</h2>
-            <span class="divider"></span>
-        </div>
-
-        <div class="testimonial-outer">
-            <div class="client-testimonial-carousel owl-carousel owl-theme">
-                <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="testimonial-block">
-                        <div class="inner-box">
-                            <div class="text"><?php echo e($r->review); ?></div>
-                        </div>
-                    </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-            </div>
-
-            <div class="client-thumb-outer">
-
-                <div class="client-thumbs-carousel owl-carousel owl-theme">
-                    <?php $__currentLoopData = $review; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="thumb-item">
-                            <figure class="thumb-box"><img src="<?php echo e(asset('resource/testi-thumb-1.jpg')); ?>" alt=""></figure>
-                            <div class="author-info">
-                                <span class="icon fa fa-quote-left"></span>
-                                <div class="author-name"><?php echo e($r->users->name); ?></div>
-                                <div class="designation">Restaurant Owner</div>
-                            </div>
-                        </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</section>
 
 
-<!-- Pricing Section -->
-<section class="pricing-section">
-    <div class="auto-container">
-        <div class="sec-title text-center">
-            <span class="sub-title">Our Pricing</span>
-            <h2>Pricing Plan</h2>
-            <span class="divider"></span>
-        </div>
 
-        <div class="outer-box">
-            <div class="row">
-                <!-- Pricing Block -->
-                <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="price-box">
-                            <h4 class="price">$299</h4>
-                            <div class="validaty">Per Month</div>
-                        </div>
-                        <h3 class="title">Cardiology</h3>
-                        <ul class="features">
-                            <li>Functional Diagnotics</li>
-                            <li>Allergens Drugs</li>
-                            <li>Pollen Allergens</li>
-                            <li>Food Allergens</li>
-                        </ul>
-                        <div class="btn-box">
-                            <a href="#" class="theme-btn">Get Offer</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Pricing Block -->
-                <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="price-box">
-                            <h4 class="price">$120</h4>
-                            <div class="validaty">Per Month</div>
-                        </div>
-                        <h3 class="title">Detal Care</h3>
-                        <ul class="features">
-                            <li>Tooth implantation</li>
-                            <li>Lase Dentistry</li>
-                            <li>Tests and Treatment</li>
-                            <li>Medical Consultation</li>
-                        </ul>
-                        <div class="btn-box">
-                            <a href="#" class="theme-btn">Get Offer</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Pricing Block -->
-                <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="price-box">
-                            <h4 class="price">$150</h4>
-                            <div class="validaty">Per Month</div>
-                        </div>
-                        <h3 class="title">Body Checkup</h3>
-                        <ul class="features">
-                            <li>Tests and Treatment</li>
-                            <li>Tests and Treatment</li>
-                            <li>Laboratory Services</li>
-                            <li>Food Allergens</li>
-                        </ul>
-                        <div class="btn-box">
-                            <a href="#" class="theme-btn">Get Offer</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Pricing Block -->
-                <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="price-box">
-                            <h4 class="price">$100</h4>
-                            <div class="validaty">Per Month</div>
-                        </div>
-                        <h3 class="title">Blood Test</h3>
-                        <ul class="features">
-                            <li>Blood Test Service</li>
-                            <li>Safety Training Tips</li>
-                            <li>Tests and Treatment</li>
-                            <li>Food Allergens</li>
-                        </ul>
-                        <div class="btn-box">
-                            <a href="#" class="theme-btn">Get Offer</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="<?php echo e(route('doctors')); ?>">Explore all Dr. Team</a></div>
-    </div>
-</section>
-<!--End Pricing Section -->
 
- <!-- News Section -->
 <section class="news-section">
     <div class="auto-container">
 

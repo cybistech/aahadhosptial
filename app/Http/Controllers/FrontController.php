@@ -48,6 +48,14 @@ class FrontController extends Controller
           Session::put("main_banner",asset('public/upload/web').'/'.$setting->main_banner);
        }
        public function showhome(){
+        $setting=Setting::find(1);
+        $seo = (object) array(
+            'seo_title' => ' Home '.'|'.' Aahad Hospital',
+            'seo_description' => 'Some description',
+            'seo_other' => '',
+            'seo_type'=>'website',
+            'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+        );
          if(!isset($_COOKIE['fload'])){
             //setcookie('fload','1', time() + (86400 * 30), "/");
          }
@@ -55,10 +63,9 @@ class FrontController extends Controller
           $package=Package::get()->take(3);
           $department=Department::all();
           $doctor=Doctor::get()->take(4);
-          $setting=Setting::find(1);
           $news=News::get()->take(3);
           $reviews=Review::with('doctors','users')->get()->take(4);
-          return view("front.home")->with('news',$news)->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctors",$doctor)->with("chatpage",'1');;
+          return view("front.home")->with('seo',$seo)->with('news',$news)->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctors",$doctor)->with("chatpage",'1');;
        }
 
        public function getserviceanddoctor($department_id){

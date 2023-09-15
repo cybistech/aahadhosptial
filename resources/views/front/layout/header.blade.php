@@ -5,6 +5,7 @@
 <title>@yield('title')</title>
 
 
+
 <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{asset('assets/plugins/revolution/css/settings.css')}}" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
 <link href="{{asset('assets/plugins/revolution/css/layers.css')}}" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
@@ -18,6 +19,34 @@
 <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
 <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 
+{{-- @php
+        if(isset($seo)){
+            $image = $seo->image;
+            $description = $seo->seo_description;
+            $title= $seo->seo_title;
+            // $keywords = $seo->seo_keywords;
+            $type= $seo->seo_type;
+         }
+
+    @endphp
+<title>{!! ucfirst($title) !!}</title>
+<meta name='description' itemprop='description' content='{!! $description !!}'>
+{{-- <meta name='keywords'  content='{{$keywords}}'> --}}
+
+{{-- <meta property="og:title" content="{!! $title !!}" >
+<meta property="og:description" content="{!! $description !!}">
+<meta property="og:type" content="{{\Request::url()}}" >
+<meta property="og:image" content="{{$image}}" >
+<meta property="og:url" content="{{$type}}" >
+
+<meta property="og:site_name" content="Prime" >
+<meta property="og:locale" content="en" >
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="Prime">
+<meta name="twitter:title" content="{!! $title !!}">
+<meta name="twitter:description" content="{!! $description !!}">
+<meta name="twitter:image" content="{{$type}}"> --}}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
