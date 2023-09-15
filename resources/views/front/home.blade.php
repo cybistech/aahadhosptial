@@ -269,14 +269,7 @@
 
             @if (count($services)>0)
                 @foreach ($services as $s)
-                    <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <span class="icon flaticon-heartbeat"></span>
-                            {{-- <span class=""><img src="{{asset('upload/service').'/'.$s->icon}}" alt="{{ $s->name }}"></span> --}}
-                            <h5><a href="#">{{ $s->name }}</a></h5>
-                            <div class="text">{{ substr($s->description,0,75) }}</div>
-                        </div>
-                    </div>
+                   @include('front.components.services')
                 @endforeach
             @endif
 
