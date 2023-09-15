@@ -243,11 +243,11 @@
                     <div class="video-link">
                         <a href="https://www.youtube.com/watch?v=4UvS3k8D4rs" class="play-btn lightbox-image" data-fancybox="images"><span class="flaticon-play-button-1"></span></a>
                     </div>
-                    <figure class="image-1"><img src="images/resource/image-1.png" alt=""></figure>
-                    <figure class="image-2"><img src="images/resource/image-2.png" alt=""></figure>
+                    <figure class="image-1"><img src="<?php echo e(asset('upload/images/image-1.png')); ?>" alt=""></figure>
+                    <figure class="image-2"><img src="<?php echo e(asset('upload/images/image-2.png')); ?>" alt=""></figure>
                     <figure class="image-3">
                         <span class="hex"></span>
-                        <img src="images/resource/image-3.png" alt="">
+                        <img src="<?php echo e(asset('upload/images/image-3.png')); ?>" alt="">
                     </figure>
                 </div>
             </div>
@@ -271,7 +271,8 @@
                 <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="service-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
-                            <span class=""><img src="<?php echo e(asset('upload/service').'/'.$s->icon); ?>" alt="<?php echo e($s->name); ?>"></span>
+                            <span class="icon flaticon-heartbeat"></span>
+                            
                             <h5><a href="#"><?php echo e($s->name); ?></a></h5>
                             <div class="text"><?php echo e(substr($s->description,0,75)); ?></div>
                         </div>
@@ -325,7 +326,7 @@
 
 <!-- Appointment Section -->
 <section class="appointment-section">
-    <div class="image-layer" style="background-image: url<?php echo e(asset('assets/images/background/2.jpg')); ?>;"></div>
+    <div class="image-layer" style="background-image: url<?php echo e(asset('upload/department/department.jpg')); ?>;"></div>
     <div class="auto-container">
         
             

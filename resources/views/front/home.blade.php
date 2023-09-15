@@ -6,7 +6,7 @@
 @section('main.container')
 
 
- <section class="main-slider">
+<section class="main-slider">
     <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
         <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
             <ul>
@@ -386,8 +386,8 @@
 </section>
 <!-- End Appointment Section -->
 
-<!-- Testimonial Section -->
-<section class="testimonial-section">
+
+{{-- <section class="testimonial-section">
     <div class="auto-container">
 
         <div class="sec-title text-center">
@@ -428,11 +428,11 @@
 
         </div>
     </div>
-</section>
+</section> --}}
 
 
-<!-- Pricing Section -->
-<section class="pricing-section">
+
+{{-- <section class="pricing-section">
     <div class="auto-container">
         <div class="sec-title text-center">
             <span class="sub-title">Our Pricing</span>
@@ -442,7 +442,7 @@
 
         <div class="outer-box">
             <div class="row">
-                <!-- Pricing Block -->
+
                 <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="price-box">
@@ -462,7 +462,6 @@
                     </div>
                 </div>
 
-                <!-- Pricing Block -->
                 <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="price-box">
@@ -482,7 +481,6 @@
                     </div>
                 </div>
 
-                <!-- Pricing Block -->
                 <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="price-box">
@@ -502,7 +500,6 @@
                     </div>
                 </div>
 
-                <!-- Pricing Block -->
                 <div class="pricing-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="price-box">
@@ -526,10 +523,9 @@
 
         <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="{{route('doctors')}}">Explore all Dr. Team</a></div>
     </div>
-</section>
-<!--End Pricing Section -->
+</section> --}}
 
- <!-- News Section -->
+
 <section class="news-section">
     <div class="auto-container">
 
