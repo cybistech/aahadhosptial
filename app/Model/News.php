@@ -9,5 +9,5 @@ class News extends Model
 {
     use HasFactory;
     protected $primarykey='id';
-    protected $fillable=['title','status','author','meta_description','meta_tags','excerpt','content','tags','featured_image','user_id'];
+    protected $fillable=['title','slug','status','author','meta_description','meta_tags','excerpt','content','tags','featured_image','user_id'];
 }
