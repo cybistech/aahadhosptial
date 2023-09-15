@@ -101,7 +101,7 @@
                         <ul class="services-categories">
                             <li><a href="departments.html">All Departments</a></li>
                             <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <li <?php if($d->id == $departmentdetails->id): ?> class="active" <?php endif; ?>><a href="<?php echo e(url('departmentdetail').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></li>
+                                <li <?php if($d->id == $departmentdetails->id): ?> class="active" <?php endif; ?>><a href="<?php echo e(url('departments').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></li>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>

@@ -18,23 +18,20 @@
 </section>
 
 
-
-
-
-<section class="clients-section alternate">
+<section class="services-section-two">
     <div class="auto-container">
-
-        <div class="sponsors-outer">
-            <ul class="clients-carousel owl-carousel owl-theme">
-                <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-            </ul>
+        <div class="carousel-outer">
+            <div class="row">
+                <?php if(count($department)>0): ?>
+                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php echo $__env->make('front.components.department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('front.layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\clinic Management\resources\views/front/department.blade.php ENDPATH**/ ?>
