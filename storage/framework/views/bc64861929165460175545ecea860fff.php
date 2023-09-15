@@ -20,56 +20,36 @@
 
 <section class="blog-section blog-checkerboard">
     <?php $__currentLoopData = $newsPost; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <div class="auto-container">
-        <div class="news-block-three <?php echo e($index % 2 == 0 ? 'even' : 'odd'); ?> ">
-            <div class="inner-box">
-                <div class="image-box">
-                    <?php
+        <div class="auto-container">
+            <div class="news-block-three">
+                <div class="inner-box">
+                    <a href="<?php echo e(route('news_detail')); ?>">
+                        <div class="image-box">
+                            <?php
                                 if($n->featured_image){
                                     $image=asset('upload/news')."/".$n->featured_image;
                                 }else{
                                     $image=asset('upload/profile/profile.png');
                                 }
                             ?>
-                    <figure class="image"><a href="<?php echo e(route('news_detail')); ?>"><img src="<?php echo e($image); ?>" alt=""></a></figure>
-                    <a href="#" class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></a>
-                </div>
-                <div class="content-box">
-                    <h4><a href="<?php echo e(route('news_detail')); ?>"><?php echo e($n->title); ?></a></h4>
-                    <div class="text"><?php echo e($n->contents); ?></div>
-                    <a href="<?php echo e(route('news_detail')); ?>" class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></a>
-                    <div class="post-info">
-                        <div class="post-author">By <a href="#">Admin Rose</a></div>
-                        <ul class="post-option">
-                            <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                            <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                        </ul>
+                            <figure class="image"><img style=" width: 585px; height: 330px;" src="<?php echo e($image); ?>" alt=""></figure>
+                            <a href="<?php echo e(route('news_detail')); ?>"class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></a>
+                        </div>
+                    </a>
+                    <div class="content-box">
+                        <h4><a href="<?php echo e(route('news_detail')); ?>"><?php echo e($n->title); ?></a></h4>
+                        <a href="<?php echo e(route('news_detail')); ?>">
+                            <div class="text"><?php echo e(substr($n->contents,0,250)); ?></div>
+                            <div class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></div>
+                            <div class="post-info">
+                            <div class="post-author">By Admin Rose</div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </section>
-
-<!-- Clients Section -->
-<section class="clients-section alternate">
-    <div class="auto-container">
-
-        <!-- Sponsors Outer -->
-        <div class="sponsors-outer">
-            <!--clients carousel-->
-            <ul class="clients-carousel owl-carousel owl-theme">
-                <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!--End Clients Section -->
 
 <?php $__env->stopSection(); ?>
 
