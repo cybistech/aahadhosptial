@@ -9,10 +9,10 @@
 <section class="page-title" style="background-image: url({{asset('upload/department/department.jpg')}});">
     <div class="auto-container">
         <div class="title-outer">
-            <h1>News</h1>
+            <h1>Events</h1>
             <ul class="page-breadcrumb">
                 <li><a href="{{route('news')}}">Home</a></li>
-                <li>News</li>
+                <li>Events</li>
             </ul>
         </div>
     </div>
