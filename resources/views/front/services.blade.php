@@ -30,7 +30,7 @@
     </div>
 </section>
 
-<section class="appointment-section alternate">
+{{-- <section class="appointment-section alternate">
     <div class="image-layer" style="background-image: url(images/background/2.jpg);"></div>
     <div class="auto-container">
         <div class="row">
@@ -88,13 +88,11 @@
             </div>
         </div>
     </div>
-</section>
-<!-- End Appointment Section -->
+</section> --}}
 
- <!-- Testimonial Section -->
-<section class="testimonial-section">
+{{-- <section class="testimonial-section">
     <div class="auto-container">
-        <!-- Sec Title -->
+
         <div class="sec-title text-center">
             <span class="title">HAPPY Patient</span>
             <h2>What Says Our Patients</h2>
@@ -105,35 +103,31 @@
 
             <div class="client-testimonial-carousel owl-carousel owl-theme">
 
-                <!--Testimonial Block -->
+
                 <div class="testimonial-block">
                     <div class="inner-box">
                         <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
                     </div>
                 </div>
 
-                <!--Testimonial Block -->
                 <div class="testimonial-block">
                     <div class="inner-box">
                         <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
                     </div>
                 </div>
 
-                <!--Testimonial Block -->
                 <div class="testimonial-block">
                     <div class="inner-box">
                         <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
                     </div>
                 </div>
 
-                <!--Testimonial Block -->
                 <div class="testimonial-block">
                     <div class="inner-box">
                         <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
                     </div>
                 </div>
 
-                <!--Testimonial Block -->
                 <div class="testimonial-block">
                     <div class="inner-box">
                         <div class="text">Medical Centre is a great place to get all of your medical needs. I came in for a check up and did not wait more than 5 minutes before I was seen. I can only imagine the type of service you get for more serious issues. Thanks!</div>
@@ -141,7 +135,6 @@
                 </div>
             </div>
 
-            <!-- Product Thumbs Carousel -->
             <div class="client-thumb-outer">
                 <div class="client-thumbs-carousel owl-carousel owl-theme">
                     <div class="thumb-item">
@@ -188,28 +181,6 @@
             </div>
         </div>
     </div>
-</section>
-<!-- End Testimonial Section -->
-
-<!-- Clients Section -->
-<section class="clients-section alternate">
-    <div class="auto-container">
-
-        <!-- Sponsors Outer -->
-        <div class="sponsors-outer">
-            <!--clients carousel-->
-            <ul class="clients-carousel owl-carousel owl-theme">
-                <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!--End Clients Section -->
-
-
+</section> --}}
 
 @endsection
