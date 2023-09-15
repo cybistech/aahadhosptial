@@ -558,7 +558,7 @@
                     <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="blog-post-image.html"><img width="350" height="192" src="{{asset('upload/news')."/".$n->featured_image}}" alt="{{ $n->title }}"></a></figure>
+                                <figure class="image"><a href="blog-post-image.html"><img width="350" height="192" style="height: 177.7px" src="{{asset('upload/news')."/".$n->featured_image}}" alt="{{ $n->title }}"></a></figure>
                                 <a href="#" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
                             </div>
                             <div class="lower-content">
@@ -579,7 +579,7 @@
         </div>
     </div>
 </section>
-<!--End News Section -->
+
 
 <!-- Clients Section -->
 <section class="clients-section">
