@@ -7,13 +7,13 @@
 
 
 
-<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<section class="page-title" style="background-image: url({{asset('upload/department/department.jpg')}});">
 <div class="auto-container">
     <div class="title-outer">
         <h1>{{ $departmentdetails->name }}</h1>
         <ul class="page-breadcrumb">
             <li><a href="index.html">Home</a></li>
-            <li>Departments</li>
+            <li>Department Details</li>
         </ul>
     </div>
 </div>
@@ -26,19 +26,18 @@
         <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12 order-2">
             <div class="service-detail">
                 <div class="images-box">
-                    {{-- <figure class="image wow fadeIn"><a src="{{ asset('upload/department').'/'.$departmentdetails->image }}" class="lightbox-image" data-fancybox="services"><img src="{{asset('upload/department').'/'.$departmentdetails->image}}"  alt="{{ $departmentdetails->name }}"></a></figure> --}}
+                    <figure class="image wow fadeIn"><a src="#" class="lightbox-image" data-fancybox="services"><img src="{{asset('upload/department').'/'.$departmentdetails->image}}"  alt="{{ $departmentdetails->name }}"></a></figure>
                 </div>
 
                 <div class="content-box">
                     <div class="title-box">
                         <h2>{{ $departmentdetails->name }}</h2>
-                        <span class="theme_color">ResoFus Alomar Treatment for Essential Tremor and Parkinson's Disease</span>
                     </div>
                     <p>{{$departmentdetails->description}}</p>
-                    <div class="two-column">
+                    <div>
                         <div class="row">
                             <div class="image-column col-xl-6 col-lg-12 col-md-12">
-                                <figure class="image"><a href="images/resource/post-img.jpg" class="lightbox-image"><img src="images/resource/post-img.jpg" alt=""></a></figure>
+                                <figure class="image"><a href="#"class="lightbox-image"><img src="{{asset('upload/images/post-img.jpg')}}" alt=""></a></figure>
                             </div>
                             <div class="text-column col-xl-6 col-lg-12 col-md-12">
                                 <p>Complete account of the systems and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness.</p>
@@ -52,11 +51,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <h3>Why Choose This Service</h3>
-
-                    <p>Complete account of the systems and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful anyone who loves or pursues.</p>
-
 
                     <div class="product-info-tabs">
                         <div class="prod-tabs tabs-box">
@@ -99,7 +93,7 @@
                 <div class="sidebar-widget categories">
                     <div class="widget-content">
                         <ul class="services-categories">
-                            <li><a href="departments.html">All Departments</a></li>
+                            <li><a href="{{route('departments')}}">All Departments</a></li>
                             @foreach ($department as $d)
                                 <li @if ($d->id == $departmentdetails->id) class="active" @endif><a href="{{url('departments').'/'.$d->slug}}">{{ $d->name }}</a></li>
                             @endforeach
@@ -129,51 +123,29 @@
 </div>
 
 <section class="services-section-two">
-<div class="auto-container">
-    <div class="carousel-outer">
-        <div class="services-carousel owl-carousel owl-theme default-dots">
-
-            @foreach ($department as $d)
-                <div class="service-block-two">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="{{url('departments').'/'.$d->slug}}"><img src="images/resource/service-1.jpg" alt=""></a></figure>
-                        </div>
-                        <div class="lower-content">
-                            <div class="title-box">
-                               <span class=""><img src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></span>
-                               <h4><a href="{{url('departments').'/'.$d->slug}}">{{ $d->name }}</a></h4>
+    <div class="auto-container">
+        <div class="carousel-outer">
+            <div class="services-carousel owl-carousel owl-theme default-dots">
+                @foreach ($department as $d)
+                    <div class="service-block-two">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img style="height: 265.13px;" src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></figure>
                             </div>
-                            <div class="text">{{substr($d->description,0,125)}}</div>
-                            <span class="icon-right flaticon-heart-2"></span>
+                            <div class="lower-content">
+                                <div class="title-box">
+                                    <span class="icon flaticon-heart-2"></span>
+                                    <h4>{{ $d->name }}</a></h4>
+                                </div>
+                                <a href="{{url('departments').'/'.$d->slug}}">
+                                    <div class="text">{{substr($d->description,0,75)}}</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-
+                @endforeach
+            </div>
         </div>
     </div>
-</div>
 </section>
-
-
-
-<!-- Clients Section -->
-<section class="clients-section alternate">
-<div class="auto-container">
-
-    <!-- Sponsors Outer -->
-    <div class="sponsors-outer">
-        <!--clients carousel-->
-        <ul class="clients-carousel owl-carousel owl-theme">
-            <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-            <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-            <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-            <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-            <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-        </ul>
-    </div>
-</div>
-</section>
-
 @endsection

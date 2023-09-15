@@ -6,7 +6,7 @@
 
 <?php $__env->startSection('main.container'); ?>
 
-<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<section class="page-title" style="background-image: url(<?php echo e(asset('upload/department/department.jpg')); ?>);">
     <div class="auto-container">
         <div class="title-outer">
             <h1>News</h1>
