@@ -216,7 +216,7 @@
 </section>
 
 
-<!-- About Section -->
+
 <section class="about-section">
     <div class="auto-container">
         <div class="row">
@@ -254,7 +254,7 @@
         </div>
     </div>
 </section>
-<!-- End About Section -->
+
 
 
 <section class="services-section">
