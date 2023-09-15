@@ -17,19 +17,27 @@
     </div>
 </section>
 
-
-     <div class="sidebar-page-container">
+    <div class="sidebar-page-container">
         <div class="auto-container">
             <div class="row clearfix">
+                <!--Content Side-->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
                     <div class="blog-post">
+                        <!-- News Block -->
                         <div class="news-block">
                             <div class="inner-box">
-                                <div class="image"><img src="images/resource/blog-single.jpg" alt="" /></div>
+                                <?php
+                                    if($newsDetail->featured_image){
+                                        $image=asset('upload/news')."/".$newsDetail->featured_image;
+                                    }else{
+                                        $image=asset('upload/profile/profile.png');
+                                    }
+                                ?>
+                                <div class="image"><img src="{{$image}}" alt="" /></div>
                                 <div class="lower-content">
                                     <ul class="post-info">
                                         <li><span class="far fa-user"></span> Admin</li>
-                                        <li><span class="far fa-calendar"></span> {{ \Carbon\Carbon::parse($newsDetail->created_at)->format('j F, Y') }}</li>
+                                        <li><span class="far fa-calendar"></span>{{ \Carbon\Carbon::parse($newsDetail->created_at)->format('j F, Y') }}</li>
                                     </ul>
                                     <h3>What is The Success rate of a root canel?</h3>
                                     <p>Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis l Nullam mauris vitae tortor sodales efficitur. There have been a lot of cases in which people were not provided with accurate reports that eventually affected their medical treatment. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -49,11 +57,13 @@
                         </div>
                     </div>
 
+
                     <div class="author-box">
                         <div class="inner-box clearfix">
                             <div class="thumb"><img src="images/resource/author-thumb.jpg" alt=""></div>
                             <span class="title">Author</span>
                             <h4 class="name">Robert Theodore</h4>
+                            <div class="text">Dynamically innovate resource and leveling customer service for state of the art customer service circumstances occur.</div>
                             <ul class="social-icon-one">
                                 <li><a href="#"><span class="fab fa-facebook"></span></a></li>
                                 <li><a href="#"><span class="fab fa-twitter"></span></a></li>
@@ -67,8 +77,8 @@
                     <div class="related-news">
                         <div class="group-title"><h3>Related News</h3></div>
                         <div class="row">
+                            @foreach ($news as $n)
                             <div class="news-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
-                                @foreach ($news as $n)
                                     <div class="inner-box">
                                         <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
                                             <div class="image-box">
@@ -93,11 +103,10 @@
                                             </div>
                                         </a>
                                     </div>
+                                </div>
                                 @endforeach
-
                             </div>
                         </div>
-                    </div>
                 </div>
 
                 <!--Sidebar Side-->
@@ -125,54 +134,23 @@
                             </ul>
                         </div>
 
-                        <!-- Latest News -->
                         <div class="sidebar-widget latest-news">
                             <div class="sidebar-title"><h3>Popular Posts</h3></div>
                             <div class="widget-content">
-                                <article class="post">
-                                    <div class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a></div>
-                                    <h5><a href="blog-single.html">How to handle your kids’<br>from mystery ailments</a></h5>
-                                    <div class="post-info">March 20, 2020</div>
-                                </article>
-
-                                <article class="post">
-                                    <div class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a></div>
-                                    <h5><a href="blog-single.html">Lung cancer survival rate <br>in England improves</a></h5>
-                                    <div class="post-info">February 14, 2020</div>
-                                </article>
-
-                                <article class="post">
-                                    <div class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a></div>
-                                    <h5><a href="blog-single.html">Negative statin stories add <br>to heart health risk</a></h5>
-                                    <div class="post-info">January 22, 2021</div>
-                                </article>
-                            </div>
-                        </div>
-
-                        <!-- Newslatters-->
-                        <div class="sidebar-widget newslatters">
-                            <div class="sidebar-title"><h3><span class="icon flaticon-rss-symbol"></span>Newsletter</h3></div>
-                            <div class="text">Enter your email address below to subscribe to our newsletter</div>
-                            <form method="post" action="blog-sidebar.html">
-                                <div class="form-group">
-                                    <input type="text" name="input" value="" placeholder="Your email address..." required="">
-                                    <button type="submit" class="theme-btn"><span class="btn-title">Subscribe</span></button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- Instagram Widget -->
-                        <div class="sidebar-widget instagram-widget">
-                            <div class="sidebar-title"> <h3>Instagram</h3> </div>
-                            <div class="widget-content">
-                                <div class="clearfix">
-                                    <figure class="post-thumb"><img src="images/resource/instagram-1.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-                                    <figure class="post-thumb"><img src="images/resource/instagram-2.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-                                    <figure class="post-thumb"><img src="images/resource/instagram-3.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-                                    <figure class="post-thumb"><img src="images/resource/instagram-4.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-                                    <figure class="post-thumb"><img src="images/resource/instagram-5.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-                                    <figure class="post-thumb"><img src="images/resource/instagram-6.jpg" alt=""><a href="blog-single.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-                                </div>
+                                @foreach ($news as $n)
+                                    <article class="post">
+                                        <?php
+                                            if($n->featured_image){
+                                                $image=asset('upload/news')."/".$n->featured_image;
+                                            }else{
+                                                $image=asset('upload/profile/profile.png');
+                                            }
+                                        ?>
+                                        <div class="post-thumb"><a href="{{ route('news_detail', ['slug' => $n->slug]) }}"><img style="height: 85px;" src="{{$image}}" alt="{{$n->title}}"></a></div>
+                                        <h5><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{$n->title}}</a></h5>
+                                        <div class="post-info">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</div>
+                                    </article>
+                                @endforeach
                             </div>
                         </div>
 
@@ -197,4 +175,8 @@
             </div>
         </div>
     </div>
+    <!-- End Sidebar Container -->
+
+
+
 @endsection
