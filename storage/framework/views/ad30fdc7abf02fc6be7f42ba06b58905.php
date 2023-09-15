@@ -281,11 +281,18 @@
             <?php endif; ?>
 
         </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="<?php echo e(route('services')); ?>">Explore all Services</a></div>
     </div>
 </section>
 
 <section class="services-section-two">
     <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">Our Departments</span>
+            <h2>Our Dedicated Departments</h2>
+            <span class="divider"></span>
+        </div>
+
         <div class="carousel-outer">
             <div class="row">
                 <?php if(count($department)>0): ?>
@@ -295,6 +302,7 @@
                 <?php endif; ?>
             </div>
         </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="<?php echo e(route('departments')); ?>">Explore all Departments</a></div>
     </div>
 </section>
 
