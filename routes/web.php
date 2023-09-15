@@ -66,7 +66,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get('services/{slug}',[FrontController::class,'services_detail'])->name('service_detail');
      Route::get('events',[FrontController::class,'events'])->name('events');
      Route::get('news',[FrontController::class,'news'])->name('news');
-     Route::get('news-details',[FrontController::class,'news_detail'])->name('news_detail');
+     Route::get('news/{slug}',[FrontController::class,'news_detail'])->name('news_detail');
      Route::get("departments/{slug}",[FrontController::class,'departmentdetail']);
      Route::get("doctors",[FrontController::class,'doctorlist'])->name('doctors');
      Route::get("gallery",[FrontController::class,'gallery']);

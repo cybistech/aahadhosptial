@@ -23,7 +23,7 @@
         <div class="auto-container">
             <div class="news-block-three">
                 <div class="inner-box">
-                    <a href="{{route('news_detail')}}">
+                    <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
                         <div class="image-box">
                             <?php
                                 if($n->featured_image){
@@ -33,12 +33,12 @@
                                 }
                             ?>
                             <figure class="image"><img style=" width: 585px; height: 330px;" src="{{ $image }}" alt=""></figure>
-                            <a href="{{route('news_detail')}}"class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
+                            <a href="{{ route('news_detail', ['slug' => $n->slug]) }}" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
                         </div>
                     </a>
                     <div class="content-box">
-                        <h4><a href="{{route('news_detail')}}">{{ $n->title }}</a></h4>
-                        <a href="{{route('news_detail')}}">
+                        <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ $n->title }}</a></h4>
+                        <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
                             <div class="text">{{ substr($n->contents,0,250) }}</div>
                             <div class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></div>
                             <div class="post-info">

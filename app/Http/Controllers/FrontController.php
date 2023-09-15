@@ -671,12 +671,16 @@ class FrontController extends Controller
         ]);
     }
 
-    public function news_detail(){
+    public function news_detail($slug){
         $setting=Setting::first();
         $department=Department::all();
+        $newsDetail=News::where('news_categories_id',1)->where('slug',$slug)->first();
+        $news=News::where('news_categories_id',1)->get();
         return view('front.newsdetail')->with([
             'department'=>$department,
-            'setting'=>$setting
+            'setting'=>$setting,
+            'newsDetail'=>$newsDetail,
+            'news'=>$news
         ]);
     }
 

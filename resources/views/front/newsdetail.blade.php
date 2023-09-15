@@ -1,40 +1,35 @@
 @extends('front.layout.main')
 @section('title')
-{{__('messages.Doctor List')}}
+{{ $newsDetail->title }}
 @endsection
 
 @section('main.container')
- <!--Page Title-->
- <section class="page-title" style="background-image: url(images/background/8.jpg);">
+
+<section class="page-title" style="background-image: url({{asset('upload/department/department.jpg')}});">
     <div class="auto-container">
         <div class="title-outer">
-            <h1>Image Post</h1>
+            <h1>{{ $newsDetail->title }}</h1>
             <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Blog</li>
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li>News Detail</li>
             </ul>
         </div>
     </div>
 </section>
-<!--End Page Title-->
 
 
-     <!-- Sidebar Page Container -->
      <div class="sidebar-page-container">
         <div class="auto-container">
             <div class="row clearfix">
-                <!--Content Side-->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
                     <div class="blog-post">
-                        <!-- News Block -->
                         <div class="news-block">
                             <div class="inner-box">
                                 <div class="image"><img src="images/resource/blog-single.jpg" alt="" /></div>
                                 <div class="lower-content">
                                     <ul class="post-info">
                                         <li><span class="far fa-user"></span> Admin</li>
-                                        <li><span class="far fa-comments"></span> Comments</li>
-                                        <li><span class="far fa-calendar"></span> 25 Jan 19</li>
+                                        <li><span class="far fa-calendar"></span> {{ \Carbon\Carbon::parse($newsDetail->created_at)->format('j F, Y') }}</li>
                                     </ul>
                                     <h3>What is The Success rate of a root canel?</h3>
                                     <p>Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis l Nullam mauris vitae tortor sodales efficitur. There have been a lot of cases in which people were not provided with accurate reports that eventually affected their medical treatment. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -52,34 +47,13 @@
                                 </div>
                             </div>
                         </div>
-
-                       <!-- Other Options -->
-                        <div class="post-share-options clearfix">
-                            <ul class="tags pull-left">
-                                <li><a href="#">Cars</a></li>
-                                <li><a href="#">Engines</a></li>
-                                <li><a href="#">Auto</a></li>
-                                <li><a href="#">Break</a></li>
-                            </ul>
-
-                            <ul class="social-icon pull-right">
-                                <li><a href="#"><span class="fab fa-facebook"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-whatsapp"></span></a></li>
-                                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                <li><a href="#"><span class="fab fa-dribbble"></span></a></li>
-                            </ul>
-                        </div>
                     </div>
 
-
-                    <!-- Author Box -->
                     <div class="author-box">
                         <div class="inner-box clearfix">
                             <div class="thumb"><img src="images/resource/author-thumb.jpg" alt=""></div>
                             <span class="title">Author</span>
                             <h4 class="name">Robert Theodore</h4>
-                            <div class="text">Dynamically innovate resource and leveling customer service for state of the art customer service circumstances occur.</div>
                             <ul class="social-icon-one">
                                 <li><a href="#"><span class="fab fa-facebook"></span></a></li>
                                 <li><a href="#"><span class="fab fa-twitter"></span></a></li>
@@ -90,121 +64,39 @@
                         </div>
                     </div>
 
-                    <!-- Related News -->
                     <div class="related-news">
                         <div class="group-title"><h3>Related News</h3></div>
                         <div class="row">
-                            <!-- News Block -->
                             <div class="news-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-1.jpg" alt=""></a></figure>
-                                        <a href="#" class="date">Sep 19, 2020</a>
+                                @foreach ($news as $n)
+                                    <div class="inner-box">
+                                        <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
+                                            <div class="image-box">
+                                                <?php
+                                                    if($n->featured_image){
+                                                        $image=asset('upload/news')."/".$n->featured_image;
+                                                    }else{
+                                                        $image=asset('upload/profile/profile.png');
+                                                    }
+                                                ?>
+                                                <figure class="image"><img style=" width: 585px; height: 330px;" src="{{ $image }}" alt=""></figure>
+                                                <a href="{{ route('news_detail', ['slug' => $n->slug]) }}" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
+                                            </div>
+                                        </a>
+                                        <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
+                                            <div class="lower-content">
+                                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">What is The Success rate<br> of a root canel?</a></h4>
+                                                <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
+                                                    <div class="post-info">
+                                                    <div class="post-author">By Admin Rose</div>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="lower-content">
-                                        <h4><a href="blog-post-image.html">What is The Success rate<br> of a root canel?</a></h4>
-                                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                                        <div class="post-info">
-                                            <div class="post-author">By Admin Rose</div>
-                                            <ul class="post-option">
-                                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                @endforeach
 
-                            <!-- News Block -->
-                            <div class="news-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><a href="blog-post-image.html"><img src="images/resource/news-2.jpg" alt=""></a></figure>
-                                        <a href="#" class="date">Sep 19, 2020</a>
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="blog-post-image.html">How to handle your kids’ <Br>mystery ailments?</a></h4>
-                                        <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
-                                        <div class="post-info">
-                                            <div class="post-author">By Admin Rose</div>
-                                            <ul class="post-option">
-                                                <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                                <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Comments Area -->
-                    <div class="comments-area">
-                        <div class="group-title">
-                            <h3>03 Comments</h3>
-                        </div>
-                        <div class="comment-box">
-                            <div class="comment">
-                                <div class="author-thumb"><img src="images/resource/avatar-1.jpg" alt=""></div>
-                                <div class="comment-info">
-                                    <div class="name">Steven Rich</div>
-                                    <div class="date">JAN 01, 2020</div>
-                                </div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet tempor tempor. Pellentesque facilisis, ligula ut porta lobortis, enim.</div>
-                                <a href="#" class="reply-btn">Reply</a>
-                            </div>
-                        </div>
-
-                        <div class="comment-box reply-comment">
-                            <div class="comment">
-                                <div class="author-thumb"><img src="images/resource/avatar-2.jpg" alt=""></div>
-                                <div class="comment-info">
-                                    <div class="name">Donal Smith</div>
-                                    <div class="date">1 hours ago</div>
-                                </div>
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet tempor tempor. Pellentesque facilisis, ligula ut porta lobortis, enim.</div>
-                                <a href="#" class="reply-btn">Reply</a>
-                            </div>
-                        </div>
-
-                        <div class="comment-box">
-                            <div class="comment">
-                                <div class="author-thumb"><img src="images/resource/avatar-3.jpg" alt=""></div>
-                                <div class="comment-info">
-                                    <div class="name">Rona Stove</div>
-                                    <div class="date">2 hours ago</div>
-                                </div>
-
-                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet tempor tempor. Pellentesque facilisis, ligula ut porta lobortis, enim magna convallis est.</div>
-                                <a href="#" class="reply-btn">Reply</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Comment Form-->
-                    <div class="comment-form">
-                        <div class="group-title">
-                            <h3>Leave a Comment</h3>
-                        </div>
-                        <form method="post" action="blog.html">
-                            <div class="row clearfix">
-                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                    <input type="text" name="username" placeholder="Name" required="">
-                                </div>
-
-                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                    <input type="email" name="email" placeholder="Email" required="">
-                                </div>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea name="message" placeholder="Your Comments"></textarea>
-                                </div>
-
-                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="btn-title">Post Comment</span></button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
 
@@ -305,25 +197,4 @@
             </div>
         </div>
     </div>
-    <!-- End Sidebar Container -->
-
-    <!-- Clients Section -->
-    <section class="clients-section alternate">
-        <div class="auto-container">
-
-            <!-- Sponsors Outer -->
-            <div class="sponsors-outer">
-                <!--clients carousel-->
-                <ul class="clients-carousel owl-carousel owl-theme">
-                    <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--End Clients Section -->
-
 @endsection
