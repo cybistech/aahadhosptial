@@ -17,7 +17,20 @@
     </div>
 </section>
 
-@include('front.components.department')
+
+<section class="services-section-two">
+    <div class="auto-container">
+        <div class="carousel-outer">
+            <div class="row">
+                @if (count($department)>0)
+                    @foreach ($department as $d)
+                        @include('front.components.department')
+                    @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
