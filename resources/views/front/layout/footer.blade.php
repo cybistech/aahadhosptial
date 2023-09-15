@@ -1,9 +1,7 @@
-    <!-- Clients Section -->
-    <section class="clients-section">
+
+    <section class="clients-section alternate">
         <div class="auto-container">
-            <!-- Sponsors Outer -->
             <div class="sponsors-outer">
-                <!--clients carousel-->
                 <ul class="clients-carousel owl-carousel owl-theme">
                     <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
                     <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
