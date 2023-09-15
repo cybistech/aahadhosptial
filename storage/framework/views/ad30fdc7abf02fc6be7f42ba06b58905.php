@@ -284,6 +284,20 @@
     </div>
 </section>
 
+<section class="services-section-two">
+    <div class="auto-container">
+        <div class="carousel-outer">
+            <div class="row">
+                <?php if(count($department)>0): ?>
+                    <?php $__currentLoopData = $department->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php echo $__env->make('front.components.department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="team-section">
     <div class="auto-container">
         <div class="sec-title text-center">
@@ -324,7 +338,6 @@
 </section>
 
 
-<!-- Appointment Section -->
 <section class="appointment-section">
     <div class="image-layer" style="background-image: url<?php echo e(asset('upload/department/department.jpg')); ?>;"></div>
     <div class="auto-container">
@@ -333,7 +346,7 @@
 
         <div class="fun-fact-section">
             <div class="row">
-                <!--Column-->
+
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-user-experience"></span></div>
@@ -342,7 +355,6 @@
                     </div>
                 </div>
 
-                <!--Column-->
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-team"></span></div>
@@ -351,7 +363,6 @@
                     </div>
                 </div>
 
-                <!--Column-->
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-hospital"></span></div>
@@ -360,7 +371,6 @@
                     </div>
                 </div>
 
-                <!--Column-->
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-add-friend"></span></div>
@@ -372,7 +382,6 @@
         </div>
     </div>
 </section>
-<!-- End Appointment Section -->
 
 
 

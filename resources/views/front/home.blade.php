@@ -281,6 +281,22 @@
             @endif
 
         </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="{{route('services')}}">Explore all Services</a></div>
+    </div>
+</section>
+
+<section class="services-section-two">
+    <div class="auto-container">
+        <div class="carousel-outer">
+            <div class="row">
+                @if (count($department)>0)
+                    @foreach ($department->take(3) as $d)
+                        @include('front.components.department')
+                    @endforeach
+                @endif
+            </div>
+        </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="{{route('departments')}}">Explore all Departments</a></div>
     </div>
 </section>
 
@@ -324,7 +340,6 @@
 </section>
 
 
-<!-- Appointment Section -->
 <section class="appointment-section">
     <div class="image-layer" style="background-image: url{{asset('upload/department/department.jpg')}};"></div>
     <div class="auto-container">
@@ -345,7 +360,7 @@
 
         <div class="fun-fact-section">
             <div class="row">
-                <!--Column-->
+
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-user-experience"></span></div>
@@ -354,7 +369,6 @@
                     </div>
                 </div>
 
-                <!--Column-->
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-team"></span></div>
@@ -363,7 +377,6 @@
                     </div>
                 </div>
 
-                <!--Column-->
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-hospital"></span></div>
@@ -372,7 +385,6 @@
                     </div>
                 </div>
 
-                <!--Column-->
                 <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
                     <div class="count-box">
                         <div class="icon-box"><span class="icon flaticon-add-friend"></span></div>
@@ -384,7 +396,6 @@
         </div>
     </div>
 </section>
-<!-- End Appointment Section -->
 
 
 {{-- <section class="testimonial-section">

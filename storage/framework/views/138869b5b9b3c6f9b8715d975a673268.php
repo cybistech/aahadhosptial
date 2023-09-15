@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<title><?php echo $__env->yieldContent('title'); ?></title>
 
 
 
@@ -18,34 +19,9 @@
 <link rel="shortcut icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>" type="image/x-icon">
 <link rel="icon" href="<?php echo e(asset('images/favicon.png')); ?>" type="image/x-icon">
 
-<?php
-        if(isset($seo)){
-            $image = $seo->image;
-            $description = $seo->seo_description;
-            $title= $seo->seo_title;
-            // $keywords = $seo->seo_keywords;
-            $type= $seo->seo_type;
-         }
-
-    ?>
-<title><?php echo ucfirst($title); ?></title>
-<meta name='description' itemprop='description' content='<?php echo $description; ?>'>
 
 
-<meta property="og:title" content="<?php echo $title; ?>" >
-<meta property="og:description" content="<?php echo $description; ?>">
-<meta property="og:type" content="<?php echo e(\Request::url()); ?>" >
-<meta property="og:image" content="<?php echo e($image); ?>" >
-<meta property="og:url" content="<?php echo e($type); ?>" >
 
-<meta property="og:site_name" content="Prime" >
-<meta property="og:locale" content="en" >
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="Prime">
-<meta name="twitter:title" content="<?php echo $title; ?>">
-<meta name="twitter:description" content="<?php echo $description; ?>">
-<meta name="twitter:image" content="<?php echo e($type); ?>">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
