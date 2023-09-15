@@ -677,4 +677,17 @@ class FrontController extends Controller
             'setting'=>$setting
         ]);
     }
+
+    public function services_detail($slug){
+        $setting=Setting::first();
+        $department=Department::all();
+        $serviceDetail=Service::where('slug',$slug)->first();
+        $service=Service::all();
+        return view('front.servicesdetail')->with([
+            'setting'=>$setting,
+            'service'=>$service,
+            'department'=>$department,
+            'serviceDetail'=>$serviceDetail
+        ]);
+    }
 }

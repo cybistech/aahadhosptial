@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 Route::get('p/migrate_reset', function (Request $request) {
-    $migrationPath = '/database/migrations/2023_09_13_131910_add_slug_to_doctors_table.php';
+    $migrationPath = '/database/migrations/2023_09_15_073601_add_slug_to_services_table.php';
     $command = "migrate --path=$migrationPath --force";
 
     Artisan::call($command);
@@ -63,6 +63,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("allfacilites",[FrontController::class,'allfacilites']);
      Route::get("departments",[FrontController::class,'department'])->name('departments');
      Route::get('services',[FrontController::class,'services'])->name('services');
+     Route::get('services/{slug}',[FrontController::class,'services_detail'])->name('service_detail');
      Route::get('events',[FrontController::class,'events'])->name('events');
      Route::get('news',[FrontController::class,'news'])->name('news');
      Route::get('news-details',[FrontController::class,'news_detail'])->name('news_detail');

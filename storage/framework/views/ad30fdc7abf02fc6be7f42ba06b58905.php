@@ -216,7 +216,7 @@
 </section>
 
 
-<!-- About Section -->
+
 <section class="about-section">
     <div class="auto-container">
         <div class="row">
@@ -254,7 +254,7 @@
         </div>
     </div>
 </section>
-<!-- End About Section -->
+
 
 
 <section class="services-section">
@@ -269,14 +269,7 @@
 
             <?php if(count($services)>0): ?>
                 <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <span class="icon flaticon-heartbeat"></span>
-                            
-                            <h5><a href="#"><?php echo e($s->name); ?></a></h5>
-                            <div class="text"><?php echo e(substr($s->description,0,75)); ?></div>
-                        </div>
-                    </div>
+                   <?php echo $__env->make('front.components.services', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>
 
@@ -414,7 +407,7 @@
                     <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="blog-post-image.html"><img src="<?php echo e(asset('upload/news')."/".$n->featured_image); ?>" alt="<?php echo e($n->title); ?>"></a></figure>
+                                <figure class="image"><a href="blog-post-image.html"><img width="350" height="192" style="height: 177.7px" src="<?php echo e(asset('upload/news')."/".$n->featured_image); ?>" alt="<?php echo e($n->title); ?>"></a></figure>
                                 <a href="#" class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></a>
                             </div>
                             <div class="lower-content">
@@ -435,25 +428,7 @@
         </div>
     </div>
 </section>
-<!--End News Section -->
 
-<!-- Clients Section -->
-<section class="clients-section">
-    <div class="auto-container">
-
-        <!-- Sponsors Outer -->
-        <div class="sponsors-outer">
-            <!--clients carousel-->
-            <ul class="clients-carousel owl-carousel owl-theme">
-                <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-            </ul>
-        </div>
-    </div>
-</section>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('front.layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\clinic Management\resources\views/front/home.blade.php ENDPATH**/ ?>
