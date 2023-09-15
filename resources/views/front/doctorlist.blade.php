@@ -1,6 +1,6 @@
 @extends('front.layout.main')
 @section('title')
- {{__('messages.Doctor List')}}
+ {{__('Doctors')}}
 @endsection
 
 @section('main.container')
