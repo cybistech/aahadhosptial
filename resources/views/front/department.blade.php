@@ -22,12 +22,13 @@
     <div class="auto-container">
         <div class="carousel-outer">
             <div class="row">
-                @if (count($department)>0)
-                    @foreach ($department as $d)
+                @if (count($departments)>0)
+                    @foreach ($departments as $d)
                         @include('front.components.department')
                     @endforeach
                 @endif
             </div>
+            {{ $departments->links() }}
         </div>
     </div>
 </section>

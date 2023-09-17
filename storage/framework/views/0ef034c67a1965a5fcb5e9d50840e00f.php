@@ -22,12 +22,14 @@
     <div class="auto-container">
         <div class="carousel-outer">
             <div class="row">
-                <?php if(count($department)>0): ?>
-                    <?php $__currentLoopData = $department; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if(count($departments)>0): ?>
+                    <?php $__currentLoopData = $departments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php echo $__env->make('front.components.department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endif; ?>
             </div>
+            <?php echo e($departments->links()); ?>
+
         </div>
     </div>
 </section>

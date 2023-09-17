@@ -119,8 +119,9 @@ class FrontController extends Controller
 
        public function department(){
            $department=Department::all();
+           $departments=Department::paginate(10);
            $setting=Setting::find(1);
-           return view("front.department")->with("department",$department)->with("setting",$setting);
+           return view("front.department")->with("department",$department)->with('departments',$departments)->with("setting",$setting);
        }
 
        public function contact_us(){
@@ -239,7 +240,7 @@ class FrontController extends Controller
 
        public function doctorlist(){
           $department=Department::all();
-          $doctor=Doctor::all();
+          $doctor=Doctor::paginate(10);
           $departmentdoctor=Department::with('doctor')->get();
            $setting=Setting::find(1);
            $reviews=Review::with('doctors','users')->get()->take(4);

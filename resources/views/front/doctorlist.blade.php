@@ -27,6 +27,7 @@
                 @endforeach
             @endif
         </div>
+        {{ $doctor->links() }}
     </div>
 </section>
 
