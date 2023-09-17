@@ -17,7 +17,6 @@
     </div>
 </section>
 
-
 <section class="team-section-two alternate alternate2">
     <div class="auto-container">
         <div class="row">
