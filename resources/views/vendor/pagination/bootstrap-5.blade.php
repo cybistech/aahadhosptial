@@ -42,7 +42,7 @@
                 </li>
             @endif
         </ul>
-        <p class="small text-muted">
+        <p class="small text-muted" style="margin: 10px;">
             {!! __('Showing') !!}
             <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
             {!! __('to') !!}

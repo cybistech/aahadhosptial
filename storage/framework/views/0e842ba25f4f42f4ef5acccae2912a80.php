@@ -42,7 +42,7 @@
                 </li>
             <?php endif; ?>
         </ul>
-        <p class="small text-muted">
+        <p class="small text-muted" style="margin: 10px;">
             <?php echo __('Showing'); ?>
 
             <span class="fw-semibold"><?php echo e($paginator->firstItem()); ?></span>
