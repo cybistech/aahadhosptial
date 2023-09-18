@@ -57,7 +57,7 @@
                     <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
                         <div class="row">
 
-                            {{-- @php
+                             @php
                                 $news=news();
                             @endphp
 
@@ -84,7 +84,7 @@
                                         @endif
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
 
 
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
