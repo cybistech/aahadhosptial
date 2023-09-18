@@ -123,19 +123,9 @@
     </div>
 </section>
 
-
-<section class="clients-section alternate">
-    <div class="auto-container">
-
-        <div class="sponsors-outer">
-            <ul class="clients-carousel owl-carousel owl-theme">
-                <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-                <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-            </ul>
-        </div>
-    </div>
-</section>
+@endsection
+@section('scripts')
+    <script src="{{ asset('assets/js/validations.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endsection

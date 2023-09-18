@@ -149,6 +149,8 @@
 
 </div>
 
+@yield('scripts')
+
 <script src="{{asset('assets/js/jquery.js')}}"></script>
 <script src="{{asset('assets/js/popper.min.js')}}"></script>
 
