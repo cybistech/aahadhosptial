@@ -688,6 +688,21 @@ class FrontController extends Controller
         ]);
     }
 
+    public function events_detail($slug){
+        $setting=Setting::first();
+        $department=Department::all();
+        $newsDetail=News::where('news_categories_id',2)->where('slug',$slug)->with('user')->first();
+        $news=News::where('news_categories_id',2)->get();
+        $categories=NewsCategories::all();
+        return view('front.newsdetail')->with([
+            'department'=>$department,
+            'setting'=>$setting,
+            'newsDetail'=>$newsDetail,
+            'news'=>$news,
+            'news_categories'=>$categories,
+        ]);
+    }
+
     public function services_detail($slug){
         $setting=Setting::first();
         $department=Department::all();
