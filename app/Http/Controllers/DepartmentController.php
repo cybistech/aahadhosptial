@@ -15,6 +15,7 @@ use App\Model\Token;
 use Illuminate\Support\Str;
 // use Session;
 use Illuminate\Support\Facades\Session;
+use Symfony\Contracts\Service\Attribute\Required;
 use validate;
 class DepartmentController extends Controller
 {
@@ -41,7 +42,8 @@ class DepartmentController extends Controller
                     'name' => 'required',
                     'description' => 'required|min:40',
                     'emergency_no'=>'required',
-                    'image'=>'required'
+                    'image'=>'required',
+                    'icon'=>'required'
                 ]);
              }
             $img_url="";
@@ -95,6 +97,7 @@ class DepartmentController extends Controller
             $store->description=$request->get("description");
             $store->emergency_no=$request->get("emergency_no");
             $store->image=$img_url;
+            $store->icon=$request->get('icon');
             $store->save();
             Session::flash('message',$msg);
             Session::flash('alert-class', 'alert-success');

@@ -81,6 +81,13 @@
                            <input type="file" id="file" name="image" class="form-control-file" accept="image/*">
                         </div>
                      </div>
+                     <div class="form-group">
+                        <label for="icon" class=" form-control-label">
+                        {{__('messages.Icon')}}
+                        <span class="reqfield">*</span>
+                        </label>
+                        <input type="text" id="icon" placeholder="{{__('messages.Enter').' '.__('messages.Icon Class')}}" class="form-control" required name="icon" value="{{ isset($data->icon)?$data->icon:''}}">
+                     </div>
                      <div>
                         {{-- @if(Session::get("is_demo")=='1')
                            <button id="payment-button" type="button"  onclick="disablebtn()" class="btn btn-lg btn-info" >

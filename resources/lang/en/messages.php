@@ -393,7 +393,9 @@ return [
     'News Title' => 'News Title',
     'Save News' => 'Add News',
     'Title' => 'Title',
-    'News Delete Successfully' => 'News Delete Successfuly'
+    'News Delete Successfully' => 'News Delete Successfuly',
+    'Icon' => 'Icon',
+    'Icon Class'=> 'Icon Class'
 
 
 
