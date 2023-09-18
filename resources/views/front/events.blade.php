@@ -50,6 +50,9 @@
             </div>
         </div>
     @endforeach
+    <div>
+        {{ $events->links() }}
+    </div>
 </section>
 
 @endsection

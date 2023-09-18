@@ -49,6 +49,9 @@
             </div>
         </div>
     @endforeach
+    <div>
+        {{ $newsPost->links() }}
+    </div>
 </section>
 
 @endsection
