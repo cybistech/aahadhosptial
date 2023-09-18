@@ -395,7 +395,8 @@ return [
     'Title' => 'Title',
     'News Delete Successfully' => 'News Delete Successfuly',
     'Icon' => 'Icon',
-    'Icon Class'=> 'Icon Class'
+    'Icon Class'=> 'Icon Class',
+    'meta_description'=>'Meta Description',
 
 
 

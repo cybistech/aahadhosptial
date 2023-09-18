@@ -35,13 +35,15 @@ class DepartmentController extends Controller
                 $request->validate([
                     'name' => 'required',
                     'description' => 'required|min:40',
-                    'emergency_no'=>'required'
+                    'emergency_no'=>'required',
+                    'meta_description'=>'required',
                 ]);
               }else{
                 $request->validate([
                     'name' => 'required',
                     'description' => 'required|min:40',
                     'emergency_no'=>'required',
+                    'meta_description'=>'required',
                     'image'=>'required',
                     'icon'=>'required'
                 ]);
@@ -94,6 +96,7 @@ class DepartmentController extends Controller
 
             $store->name=$request->get("name");
             $store->slug=Str::Slug($request->get('name'));
+            $store->meta_description=$request->get('meta_description');
             $store->description=$request->get("description");
             $store->emergency_no=$request->get("emergency_no");
             $store->image=$img_url;
