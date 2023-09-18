@@ -570,6 +570,7 @@
                 @endforeach
             @endif
         </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="{{route('news')}}">Explore all News</a></div>
     </div>
 </section>
 

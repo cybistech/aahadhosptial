@@ -174,6 +174,11 @@
 <script src="{{asset('assets/js/owl.js')}}"></script>
 <script src="{{asset('assets/js/wow.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
+<!--Google Map APi Key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
+{{-- <script src="js/map-script.js"></script> --}}
+<script src="{{asset('assets/js/map-script.js')}}"></script>
+<!--End Google Map APi-->
 </body>
 </html>
 

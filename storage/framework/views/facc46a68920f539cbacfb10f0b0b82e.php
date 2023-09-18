@@ -5,7 +5,7 @@
 
 <?php $__env->startSection('main.container'); ?>
 
-<section class="page-title" style="background-image: url(images/background/8.jpg);">
+<section class="page-title" style="background-image: url(<?php echo e(asset('upload/department/department.jpg')); ?>);">
     <div class="auto-container">
         <div class="title-outer">
             <h1>Contact Us</h1>
@@ -16,7 +16,24 @@
         </div>
     </div>
 </section>
-
+<!-- Map Section -->
+<section class="map-section">
+    <div class="auto-container">
+        <div class="map-outer">
+            <div class="map-canvas"
+                data-zoom="12"
+                data-lat="-37.817085"
+                data-lng="144.955631"
+                data-type="roadmap"
+                data-hue="#ffc400"
+                data-title="Envato"
+                data-icon-path="images/icons/map-marker.png"
+                data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Map Section -->
 
 <section class="contact-section" id="contact">
     <div class="small-container">

@@ -426,6 +426,7 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>
         </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="<?php echo e(route('news')); ?>">Explore all News</a></div>
     </div>
 </section>
 
