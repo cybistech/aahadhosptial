@@ -14,8 +14,7 @@
 <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<link id="theme-color-file" href="{{asset('assets/css/color-themes/default-theme.css')}}" rel="stylesheet">
-
+<link id="theme-color-file" href="{{asset('assets/css/color-themes/dodgerblue.css')}}" rel="stylesheet">
 <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
 <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 

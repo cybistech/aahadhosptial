@@ -1,5 +1,5 @@
 
-    <section class="clients-section alternate">
+    {{-- <section class="clients-section alternate">
         <div class="auto-container">
             <div class="sponsors-outer">
                 <ul class="clients-carousel owl-carousel owl-theme">
@@ -11,7 +11,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <footer class="main-footer">
@@ -176,6 +176,7 @@
 <script src="{{asset('assets/js/owl.js')}}"></script>
 <script src="{{asset('assets/js/wow.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
+
 <!--Google Map APi Key-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
 {{-- <script src="js/map-script.js"></script> --}}

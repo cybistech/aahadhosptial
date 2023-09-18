@@ -11,7 +11,7 @@
             <h1>{{ $newsDetail->title }}</h1>
             <ul class="page-breadcrumb">
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li>News Detail</li>
+                <li>Events Detail</li>
             </ul>
         </div>
     </div>
@@ -71,7 +71,7 @@
                             @foreach ($news as $n)
                             <div class="news-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
                                     <div class="inner-box">
-                                        <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
+                                        <a href="{{ route('event_detail', ['slug' => $n->slug]) }}">
                                             <div class="image-box">
                                                 <?php
                                                     if($n->featured_image){
@@ -81,12 +81,12 @@
                                                     }
                                                 ?>
                                                 <figure class="image"><img style=" width: 585px; height: 330px;" src="{{ $image }}" alt=""></figure>
-                                                <a href="{{ route('news_detail', ['slug' => $n->slug]) }}" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
+                                                <a href="{{ route('event_detail', ['slug' => $n->slug]) }}" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
                                             </div>
                                         </a>
-                                        <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
+                                        <a href="{{ route('event_detail', ['slug' => $n->slug]) }}">
                                             <div class="lower-content">
-                                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ substr($n->title,0,25) }}</a></h4>
+                                                <h4><a href="{{ route('event_detail', ['slug' => $n->slug]) }}">{{ substr($n->title,0,25) }}</a></h4>
                                                 <div class="text">{{ substr($n->contents,0,75) }}</div>
                                                     <div class="post-info">
                                                     <div class="post-author">{{ $n->user->name }}</div>

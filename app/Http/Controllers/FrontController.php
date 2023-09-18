@@ -694,7 +694,7 @@ class FrontController extends Controller
         $newsDetail=News::where('news_categories_id',2)->where('slug',$slug)->with('user')->first();
         $news=News::where('news_categories_id',2)->get();
         $categories=NewsCategories::all();
-        return view('front.newsdetail')->with([
+        return view('front.events_detail')->with([
             'department'=>$department,
             'setting'=>$setting,
             'newsDetail'=>$newsDetail,

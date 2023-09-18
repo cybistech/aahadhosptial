@@ -88,8 +88,8 @@
                     data-textalign="['top','top','top','top']"
                     data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
                         <div class="btn-box">
-                            <a href="about-us.html" class="theme-btn btn-style-one"><span class="btn-title">About Us</span></a>
-                            <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Our Services</span></a>
+                            <a href="{{route('departments')}}" class="theme-btn btn-style-one"><span class="btn-title">Our Departments</span></a>
+                            <a href="{{route('doctors')}}" class="theme-btn btn-style-two"><span class="btn-title">Our Doctors</span></a>
                         </div>
                     </div>
                 </li>
@@ -172,8 +172,8 @@
                     data-textalign="['top','top','top','top']"
                     data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
                         <div class="btn-box">
-                            <a href="about-us.html" class="theme-btn btn-style-one"><span class="btn-title">About Us</span></a>
-                            <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Our Services</span></a>
+                            <a href="{{route('departments')}}" class="theme-btn btn-style-one"><span class="btn-title">Our Departments</span></a>
+                            <a href="{{route('doctors')}}" class="theme-btn btn-style-two"><span class="btn-title">Our Doctors</span></a>
                         </div>
                     </div>
                 </li>
@@ -558,7 +558,7 @@
                                 </div>
                             </a>
                             <div class="lower-content">
-                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ $n->title }}</a></h4>
+                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ substr($n->title,0,25) }}</a></h4>
                                 <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
                                 <div class="text">{{ substr($n->contents,0,75) }}</div>
                                     <div class="post-info">
