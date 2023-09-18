@@ -232,7 +232,7 @@
                     </div>
                     <div class="link-box">
                         <figure class="signature"><img src="images/resource/signature.png" alt=""></figure>
-                        <a href="#" class="theme-btn btn-style-one"><span class="btn-title">More About</span></a>
+                        {{-- <a href="#" class="theme-btn btn-style-one"><span class="btn-title">More About</span></a> --}}
                     </div>
                 </div>
             </div>
