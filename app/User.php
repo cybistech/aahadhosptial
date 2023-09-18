@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Model\News;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -41,5 +42,10 @@ class User extends Authenticatable
        public function doctors()
     {
         return $this->hasone('App\Model\Doctor', 'user_id', 'id');
+    }
+
+    public function blogs()
+    {
+        return $this->hasMany(News::class);
     }
 }

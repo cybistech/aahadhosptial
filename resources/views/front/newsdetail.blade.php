@@ -20,10 +20,8 @@
     <div class="sidebar-page-container">
         <div class="auto-container">
             <div class="row clearfix">
-                <!--Content Side-->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
                     <div class="blog-post">
-                        <!-- News Block -->
                         <div class="news-block">
                             <div class="inner-box">
                                 <?php
@@ -33,12 +31,13 @@
                                         $image=asset('upload/profile/profile.png');
                                     }
                                 ?>
-                                <div class="image"><img src="{{$image}}" alt="" /></div>
+                                <div class="image"><img src="{{$image}}" alt="{{ $newsDetail->title }}" /></div>
                                 <div class="lower-content">
                                     <ul class="post-info">
                                         <li><span class="far fa-user"></span> Admin</li>
                                         <li><span class="far fa-calendar"></span>{{ \Carbon\Carbon::parse($newsDetail->created_at)->format('j F, Y') }}</li>
                                     </ul>
+                                    {{-- Here we placed the contents of the News Description --}}
                                     <h3>What is The Success rate of a root canel?</h3>
                                     <p>Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis l Nullam mauris vitae tortor sodales efficitur. There have been a lot of cases in which people were not provided with accurate reports that eventually affected their medical treatment. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     <blockquote>It's a beautiful day in this neighborhood a beautiful day for a neighbor. Would you be mine could you be mine Its a neighborly day in this beautywood a neighborly day for a beauty.</blockquote>
@@ -60,10 +59,9 @@
 
                     <div class="author-box">
                         <div class="inner-box clearfix">
-                            <div class="thumb"><img src="images/resource/author-thumb.jpg" alt=""></div>
+                            <div class="thumb"><img src="{{asset('upload/profile')."/".$newsDetail->user->profile_pic}}" alt=""></div>
                             <span class="title">Author</span>
-                            <h4 class="name">Robert Theodore</h4>
-                            <div class="text">Dynamically innovate resource and leveling customer service for state of the art customer service circumstances occur.</div>
+                            <h4 class="name"> {{ $newsDetail->user->name }} </h4>
                             <ul class="social-icon-one">
                                 <li><a href="#"><span class="fab fa-facebook"></span></a></li>
                                 <li><a href="#"><span class="fab fa-twitter"></span></a></li>
