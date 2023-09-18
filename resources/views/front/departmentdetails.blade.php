@@ -1,6 +1,6 @@
 @extends('front.layout.main')
 @section('title')
-{{__('messages.Department Details')}}
+{{ $departmentdetails->name }}
 @endsection
 @section('main.container')
 
@@ -13,7 +13,8 @@
         <h1>{{ $departmentdetails->name }}</h1>
         <ul class="page-breadcrumb">
             <li><a href="{{route('home')}}">Home</a></li>
-            <li>Department Details</li>
+            <li><a href="{{route('departments')}}">Departments</a></li>
+            <li><a href="#">{{ $departmentdetails->name }}</a></li>
         </ul>
     </div>
 </div>

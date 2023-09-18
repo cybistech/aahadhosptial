@@ -11,6 +11,7 @@
             <ul class="page-breadcrumb">
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('doctors')}}">Doctors</a></li>
+                <li><a href="#">{{ $doctor->name }}</a></li>
             </ul>
         </div>
     </div>

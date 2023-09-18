@@ -11,7 +11,8 @@
                 <h1>{{$serviceDetail->name}}</h1>
                 <ul class="page-breadcrumb">
                     <li><a href="{{route('home')}}">Home</a></li>
-                    <li>Service Details</li>
+                    <li><a href="{{route('services')}}">Services</a></li>
+                    <li><a href="#">{{ $serviceDetail->name }}</a></li>
                 </ul>
             </div>
         </div>
