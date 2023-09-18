@@ -15,6 +15,6 @@
 use App\Model\News;
 
 function news(){
-    $news=News::all();
+    $news=News::where('news_categories_id',1)->get();
     return $news;
 }

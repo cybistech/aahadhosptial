@@ -76,8 +76,8 @@
                                                             $image=asset('upload/profile/profile.png');
                                                         }
                                                     ?>
-                                                    <div class="thumb"><a href="blog-post-image.html"><img src="{{ $image }}" alt=""></a></div>
-                                                    <h4><a href="blog-post-image.html">{{ $n->title }}</a></h4>
+                                                    <div class="thumb"><a href="{{ route('news_detail', ['slug' => $n->slug]) }}"><img src="{{ $image }}" alt=""></a></div>
+                                                    <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ $n->title }}</a></h4>
                                                     <span class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</span>
                                                 </div>
                                             @endforeach
