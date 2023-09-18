@@ -22,6 +22,7 @@ use App\Model\NewsLetter;
 
 use App\Model\About;
 use App\Model\News;
+use App\Model\NewsCategories;
 use Twilio\Rest\Client;
 use App\Model\Resetpassword;
 use Kreait\Firebase;
@@ -677,11 +678,13 @@ class FrontController extends Controller
         $department=Department::all();
         $newsDetail=News::where('news_categories_id',1)->where('slug',$slug)->with('user')->first();
         $news=News::where('news_categories_id',1)->get();
+        $categories=NewsCategories::all();
         return view('front.newsdetail')->with([
             'department'=>$department,
             'setting'=>$setting,
             'newsDetail'=>$newsDetail,
-            'news'=>$news
+            'news'=>$news,
+            'news_categories'=>$categories,
         ]);
     }
 
@@ -696,5 +699,9 @@ class FrontController extends Controller
             'department'=>$department,
             'serviceDetail'=>$serviceDetail
         ]);
+    }
+
+    public function categories_manage($slug){
+        return redirect()->route($slug);
     }
 }

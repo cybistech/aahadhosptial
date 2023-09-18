@@ -107,7 +107,6 @@
                         </div>
                 </div>
 
-                <!--Sidebar Side-->
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
                     <aside class="sidebar">
                         <!--search box-->
@@ -120,15 +119,13 @@
                             </form>
                         </div>
 
-                        <!-- Categories -->
+
                         <div class="sidebar-widget category-list">
                             <div class="sidebar-title"><h3>Categories</h3></div>
                             <ul class="cat-list">
-                                <li><a href="#">Procedures <span>(06)</span></a></li>
-                                <li><a href="#">Transplantation <span>(02)</span></a></li>
-                                <li class="active"><a href="#">Management <span>(05)</span></a></li>
-                                <li><a href="#">Healthcare Tips <span>(25)</span></a></li>
-                                <li><a href="#">Uncategorized <span>(04)</span></a></li>
+                                @foreach ($news_categories as $c)
+                                    <li><a href="{{ route('manage_categories', ['slug' => $c->slug]) }}">{{ $c->name }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
 
