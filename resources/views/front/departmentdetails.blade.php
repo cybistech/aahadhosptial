@@ -12,7 +12,7 @@
     <div class="title-outer">
         <h1>{{ $departmentdetails->name }}</h1>
         <ul class="page-breadcrumb">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{route('home')}}">Home</a></li>
             <li>Department Details</li>
         </ul>
     </div>

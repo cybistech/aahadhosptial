@@ -558,7 +558,7 @@
                                 </div>
                             </a>
                             <div class="lower-content">
-                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ $n->title }}</a></h4>
+                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ substr($n->title,0,40) }}</a></h4>
                                 <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
                                 <div class="text">{{ substr($n->contents,0,75) }}</div>
                                     <div class="post-info">
