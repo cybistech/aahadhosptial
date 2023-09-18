@@ -32,6 +32,7 @@
       @endif
       <link href="{{asset('fileupload/dist/css/jquery.dm-uploader.min.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="{{asset('front/css/app.min.css?v=212')}}">
+      <script src="//cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
       <input type="hidden" id="authid" value="{{Auth::id()}}">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
