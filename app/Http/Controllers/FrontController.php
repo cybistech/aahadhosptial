@@ -659,13 +659,13 @@ class FrontController extends Controller
     public function news(){
         $department=Department::all();
         $setting=Setting::first();
-        $newsPost=News::where('news_categories_id',1)->get();
+        $newsPost=News::where('news_categories_id',1)->with('user')->get();
         return view('front.news')->with("department",$department)->with('setting',$setting)->with('newsPost',$newsPost);
     }
     public function events(){
         $department=Department::all();
         $setting=Setting::first();
-        $events=News::where('news_categories_id',2)->get();
+        $events=News::where('news_categories_id',2)->with('user')->get();
         return view('front.events')->with([
             'department'=>$department,
             'events'=>$events,

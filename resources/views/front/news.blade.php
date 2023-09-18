@@ -42,7 +42,7 @@
                             <div class="text">{{ substr($n->contents,0,250) }}</div>
                             <div class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></div>
                             <div class="post-info">
-                            <div class="post-author">By Admin Rose</div>
+                            <div class="post-author"> {{$n->user->name}} </div>
                         </a>
                     </div>
                 </div>

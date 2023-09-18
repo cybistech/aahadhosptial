@@ -558,11 +558,7 @@
                                 <h4><a href="blog-post-image.html">{{ $n->title }}</a></h4>
                                 <div class="text">{{ substr($n->contents,0,75) }}</div>
                                 <div class="post-info">
-                                    <div class="post-author">By Admin Rose</div>
-                                    <ul class="post-option">
-                                        <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                        <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                                    </ul>
+                                    <div class="post-author">{{ $n->user->name }}</div>
                                 </div>
                             </div>
                         </div>
