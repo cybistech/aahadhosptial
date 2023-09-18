@@ -16,6 +16,7 @@ use Twilio\Rest\Client;
 use App\Model\Review;
 use App\Model\Token;
 use App\Model\ContactUs;
+use App\Model\News;
 use DateTime;
 use DateTimeZone;
 // use Session;
@@ -105,7 +106,8 @@ class HomeController extends Controller
         $totaldoctor=count(Doctor::all());
         $leastappointment=Appointment::with('doctors','services','department')->orderBy('id','DESC')->take(10)->get();
         $leastreview=Review::with("doctors","users")->orderBy('id','DESC')->take(10)->get();
-    	return view("admin.dashboard")->with("totaldepartment",$totaldepartment)->with("totalservice",$totalservice)->with("totaldoctor",$totaldoctor)->with("leastappointment",$leastappointment)->with("leastreview",$leastreview);
+    	$latestnews=News::where('news_categories_id',1)->count();
+        return view("admin.dashboard")->with('latest_news',$latestnews)->with("totaldepartment",$totaldepartment)->with("totalservice",$totalservice)->with("totaldoctor",$totaldoctor)->with("leastappointment",$leastappointment)->with("leastreview",$leastreview);
     }
 
     public function logout(){

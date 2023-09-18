@@ -24,27 +24,12 @@
 <div class="content mt-3">
 <div class="col-xl-3 col-lg-6">
    <div class="card">
-      <a href="{{url('admin/appointment/0/0')}}"><div class="card-body">
+      <a href="{{url('admin/department')}}"><div class="card-body">
          <div class="stat-widget-one">
             <div class="stat-icon dib"><i class="fa fa-ambulance  text-primary border-primary"></i></div>
             <div class="stat-content dib">
                <div class="stat-text">{{__('messages.Total')}}</div>
-			   <div class="stat-text">{{__('messages.Appointment')}}</div>
-               <div class="stat-digit">{{$totaldoctor}}</div>
-            </div>
-         </div>
-      </div></a>
-   </div>
-</div>
-<div class="col-xl-3 col-lg-6">
-   <div class="card">
-     <a href="{{url('admin/department')}}"> <div class="card-body">
-         <div class="stat-widget-one">
-            <div class="stat-icon dib"><i class="ti-layout-grid2  text-success border-success"></i></div>
-            <div class="stat-content dib">
-               <div class="stat-text">{{__('messages.Total')}}</div>
-               <div class="stat-text">{{__('messages.Department')}}
-               </div>
+			   <div class="stat-text">{{__('messages.Department')}}</div>
                <div class="stat-digit">{{$totaldepartment}}</div>
             </div>
          </div>
@@ -52,28 +37,43 @@
    </div>
 </div>
 <div class="col-xl-3 col-lg-6">
-   <div class="card">
-      <a href="{{url('admin/service')}}"><div class="card-body">
-         <div class="stat-widget-one">
-            <div class="stat-icon dib"><i class="ti-book  text-warning border-warning"></i></div>
-            <div class="stat-content dib">
-               <div class="stat-text">{{__('messages.Total')}}</div>
-               <div class="stat-text">{{__('messages.Facilities')}}</div>
-               <div class="stat-digit">{{$totalservice}}</div>
-            </div>
-         </div>
-      </div></a>
-   </div>
-</div>
+    <div class="card">
+       <a href="{{url('admin/service')}}"><div class="card-body">
+          <div class="stat-widget-one">
+             <div class="stat-icon dib"><i class="ti-book  text-warning border-warning"></i></div>
+             <div class="stat-content dib">
+                <div class="stat-text">{{__('messages.Total')}}</div>
+                <div class="stat-text">{{__('messages.services')}}</div>
+                <div class="stat-digit">{{$totalservice}}</div>
+             </div>
+          </div>
+       </div></a>
+    </div>
+ </div>
+ <div class="col-xl-3 col-lg-6">
+    <div class="card">
+      <a href="{{url('admin/doctor')}}"> <div class="card-body">
+          <div class="stat-widget-one">
+             <div class="stat-icon dib"><i class="fa fa-user-md  text-danger border-danger"></i></div>
+             <div class="stat-content dib">
+                <div class="stat-text">{{__('messages.Total')}}</div>
+                <div class="stat-text">{{__('messages.Doctors')}}</div>
+                <div class="stat-digit">{{$totaldoctor}}</div>
+             </div>
+          </div>
+       </div></a>
+    </div>
+ </div>
 <div class="col-xl-3 col-lg-6">
    <div class="card">
-     <a href="{{url('admin/doctor')}}"> <div class="card-body">
+     <a href="{{url('admin/department')}}"> <div class="card-body">
          <div class="stat-widget-one">
-            <div class="stat-icon dib"><i class="fa fa-user-md  text-danger border-danger"></i></div>
+            <div class="stat-icon dib"><i class="ti-layout-grid2  text-success border-success"></i></div>
             <div class="stat-content dib">
                <div class="stat-text">{{__('messages.Total')}}</div>
-               <div class="stat-text">{{__('messages.Doctors')}}</div>
-               <div class="stat-digit">{{$totaldoctor}}</div>
+               <div class="stat-text">{{__('messages.News')}}
+               </div>
+               <div class="stat-digit">{{$latest_news}}</div>
             </div>
          </div>
       </div></a>
