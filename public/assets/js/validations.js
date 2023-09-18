@@ -1,3 +1,4 @@
+<script>
 $(document).ready(function () {
     // Initialize the validation plugin
     $('#email-form').validate({
@@ -38,3 +39,5 @@ $(document).ready(function () {
         },
     });
 });
+</script>
+
