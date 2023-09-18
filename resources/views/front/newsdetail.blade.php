@@ -110,14 +110,14 @@
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
                     <aside class="sidebar">
                         <!--search box-->
-                        <div class="sidebar-widget search-box">
+                        {{-- <div class="sidebar-widget search-box">
                             <form method="post" action="blog.html">
                                 <div class="form-group">
                                     <input type="search" name="search-field" value="" placeholder="Search....." required="">
                                     <button type="submit"><span class="icon fa fa-search"></span></button>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
 
 
                         <div class="sidebar-widget category-list">
@@ -149,20 +149,17 @@
                             </div>
                         </div>
 
+                        @php
+                            $tags = explode(' ', $newsDetail->tags);
+                        @endphp
+
                         <!-- Tags -->
                         <div class="sidebar-widget tags">
-                            <div class="sidebar-title"><h3>Tag Cloud</h3></div>
+                            <div class="sidebar-title"><h3>Tags</h3></div>
                             <ul class="popular-tags clearfix">
-                                <li><a href="#">Ideas</a></li>
-                                <li><a href="#">Doctor</a></li>
-                                <li><a href="#">Health</a></li>
-                                <li><a href="#">Department</a></li>
-                                <li><a href="#">Nurse</a></li>
-                                <li><a href="#">Growth</a></li>
-                                <li><a href="#">Expert</a></li>
-                                <li><a href="#">Tips</a></li>
-                                <li><a href="#">Service</a></li>
-                                <li><a href="#">Medical</a></li>
+                                @foreach($tags as $tag)
+                                    <li><a href="#">{{ $tag }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </aside>
