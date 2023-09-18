@@ -258,7 +258,7 @@ class FrontController extends Controller
           $store=new ContactUs();
           $store->name=$request->get("name");
           $store->email=$request->get("email");
-          $store->topic=$request->get("topic");
+        //   $store->topic=$request->get("topic");
           $store->phone=$request->get("phone");
           $store->message=$request->get("message");
           $store->save();

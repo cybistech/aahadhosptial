@@ -16,7 +16,7 @@
         </div>
     </div>
 </section>
-<!-- Map Section -->
+
 <section class="map-section">
     <div class="auto-container">
         <div class="map-outer">
@@ -97,9 +97,9 @@
                                 <input type="email" name="email" class="email" placeholder="Email Address *">
                             </div>
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <input type="text" name="topic" class="username" placeholder="Topic">
-                            </div>
+                            </div> --}}
 
                             <div class="form-group">
                                 <input type="text" name="phone" class="username" placeholder="Your Phone">
