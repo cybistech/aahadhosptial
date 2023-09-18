@@ -62,13 +62,6 @@
                             <div class="thumb"><img src="{{asset('upload/profile')."/".$newsDetail->user->profile_pic}}" alt=""></div>
                             <span class="title">Author</span>
                             <h4 class="name"> {{ $newsDetail->user->name }} </h4>
-                            <ul class="social-icon-one">
-                                <li><a href="#"><span class="fab fa-facebook"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-whatsapp"></span></a></li>
-                                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                <li><a href="#"><span class="fab fa-dribbble"></span></a></li>
-                            </ul>
                         </div>
                     </div>
 
@@ -93,10 +86,10 @@
                                         </a>
                                         <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
                                             <div class="lower-content">
-                                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">What is The Success rate<br> of a root canel?</a></h4>
-                                                <div class="text">Nullam mauris vitae tortor sodales efficitur. Quisque orci ante. Proin amet turpis</div>
+                                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ $n->title }}</a></h4>
+                                                <div class="text">{{ substr($n->contents,0,75) }}</div>
                                                     <div class="post-info">
-                                                    <div class="post-author">By Admin Rose</div>
+                                                    <div class="post-author">{{ $n->user->name }}</div>
                                                 </div>
                                             </div>
                                         </a>
