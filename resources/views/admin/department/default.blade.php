@@ -44,6 +44,7 @@
                         <tr>
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Name')}}</th>
+                           <th>{{__('messages.Icon')}}</th>
                            <th>{{__('messages.Image')}}</th>
                            <th>{{__('messages.Emergency No')}}</th>
                            <th>{{__('messages.Action')}}</th>
@@ -55,6 +56,7 @@
                         <tr>
                            <td>{{isset($d->id)?$d->id:""}}</td>
                            <td>{{isset($d->name)?$d->name:""}}</td>
+                           <td>{{isset($d->icon)?$d->icon:""}}</td>
                            <td>
                                <img src="{{asset('upload/department').'/'.$d->image}}" class="imgsize1"/>
                            </td>
