@@ -89,7 +89,6 @@
 
         <div class="sidebar-side col-xl-3 col-lg-4 col-md-12 col-sm-12">
             <aside class="sidebar services-sidebar">
-
                 <div class="sidebar-widget categories">
                     <div class="widget-content">
                         <ul class="services-categories">
@@ -100,7 +99,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="brochures-box">
                     <div class="inner">
                         <h4>Download Brochures</h4>
@@ -129,18 +127,20 @@
                 @foreach ($department as $d)
                     <div class="service-block-two">
                         <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img style="height: 265.13px;" src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></figure>
-                            </div>
-                            <div class="lower-content">
-                                <div class="title-box">
-                                    <span class="icon flaticon-heart-2"></span>
-                                    <h4>{{ $d->name }}</a></h4>
+                            <a href="{{url('departments').'/'.$d->slug}}">
+                                <div class="image-box">
+                                    <figure class="image"><img style="height: 265.13px;" src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></figure>
                                 </div>
-                                <a href="{{url('departments').'/'.$d->slug}}">
-                                    <div class="text">{{substr($d->description,0,75)}}</div>
-                                </a>
-                            </div>
+                                <div class="lower-content">
+                                    <div class="title-box">
+                                        <span class="icon flaticon-heart-2"></span>
+                                        <h4>{{ $d->name }}</a></h4>
+                                    </div>
+                                    <a href="{{url('departments').'/'.$d->slug}}">
+                                        <div class="text">{{substr($d->description,0,75)}}</div>
+                                    </a>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach
