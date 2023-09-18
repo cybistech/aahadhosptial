@@ -545,21 +545,26 @@
             <span class="divider"></span>
         </div>
 
+
         <div class="row">
             @if (count($news)>0)
                 @foreach ($news as $n)
                     <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                         <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><a href="blog-post-image.html"><img width="350" height="192" style="height: 177.7px" src="{{asset('upload/news')."/".$n->featured_image}}" alt="{{ $n->title }}"></a></figure>
-                                <a href="#" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="blog-post-image.html">{{ $n->title }}</a></h4>
-                                <div class="text">{{ substr($n->contents,0,75) }}</div>
-                                <div class="post-info">
-                                    <div class="post-author">{{ $n->user->name }}</div>
+                            <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
+                                <div class="image-box">
+                                    <figure class="image"><img width="350" height="192" style="height: 177.7px" src="{{asset('upload/news')."/".$n->featured_image}}" alt="{{ $n->title }}"></figure>
+                                    <a href="{{ route('news_detail', ['slug' => $n->slug]) }}" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
                                 </div>
+                            </a>
+                            <div class="lower-content">
+                                <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ $n->title }}</a></h4>
+                                <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
+                                <div class="text">{{ substr($n->contents,0,75) }}</div>
+                                    <div class="post-info">
+                                        <div class="post-author">{{ $n->user->name }}</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

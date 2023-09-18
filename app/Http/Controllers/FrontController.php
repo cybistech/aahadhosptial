@@ -64,7 +64,7 @@ class FrontController extends Controller
           $package=Package::get()->take(3);
           $department=Department::all();
           $doctor=Doctor::get()->take(4);
-          $news=News::get()->take(3);
+          $news=News::where('news_categories_id',1)->get()->take(3);
           $reviews=Review::with('doctors','users')->get()->take(4);
           return view("front.home")->with('seo',$seo)->with('news',$news)->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctors",$doctor)->with("chatpage",'1');;
        }
