@@ -99,7 +99,7 @@
                         <span class="reqfield" >*</span>
                         </label>
                         <textarea required name="contents" class="ckeditor form-control" id="contents" cols="35" rows="20">{{ isset($data->description)?$data->description:''}}</textarea>
-                        <input type="text" id="contents" placeholder="{{__('messages.Enter').' '.__('messages.Content')}}" class="form-control" required name="contents" value="{{ isset($data->contents)?$data->contents:''}}">
+                        {{-- <input type="text" id="contents" placeholder="{{__('messages.Enter').' '.__('messages.Content')}}" class="form-control" required name="contents" value="{{ isset($data->contents)?$data->contents:''}}"> --}}
                      </div>
 
                      <div class="form-group">

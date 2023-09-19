@@ -132,6 +132,6 @@ class NewsController extends Controller
         }
         Session::flash('message',__('messages.News Delete Successfully'));
         Session::flash('alert-class', 'alert-success');
-        return redirect()->route('newss.index');
+        return redirect('admin/news');
   }
 }
