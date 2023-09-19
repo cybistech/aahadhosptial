@@ -1,14 +1,14 @@
 (function($) {
-	
+
 	"use strict";
-	
+
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.preloader').length){
 			$('.preloader').delay(200).fadeOut(500);
 		}
 	}
-	
+
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
 		if($('.main-header').length){
@@ -74,12 +74,12 @@
 		jQuery(function ($) {
 		  var $navbar = $('#navbar');
 		  var $mobileNav = $('#nav-mobile');
-		  
+
 		  $navbar
 		    .clone()
 		    .removeClass('navbar')
 		    .appendTo($mobileNav);
-		  
+
 		  $mobileNav.mmenu({
 		  	"counters": false,
 		  	"navbars": [
@@ -136,7 +136,7 @@
 					items:1
 				},
 			}
-		});    		
+		});
 	}
 
 	//Services Carousel
@@ -160,7 +160,7 @@
 					items:3
 				}
 			}
-		});    		
+		});
 	}
 
 	//Single Item Carousel
@@ -186,7 +186,7 @@
 					items:1
 				}
 			}
-		});    		
+		});
 	}
 
 	//Three Items Carousel
@@ -212,7 +212,7 @@
 					items:3
 				}
 			}
-		});    		
+		});
 	}
 
 	//Four Items Carousel
@@ -334,13 +334,13 @@
 				        }
 				    },
 				})
-				
+
 		.on('click', '.owl-item', function () {
 			$sync3.trigger('to.owl.carousel', [$(this).index(), duration, true]);
 		})
 		.on('changed.owl.carousel', function (e) {
 			if (!flag) {
-				flag = true;		
+				flag = true;
 				$sync3.trigger('to.owl.carousel', [e.item.index, duration, true]);
 				flag = false;
 			}
@@ -367,17 +367,17 @@
 					items:2
 				},
 			}
-		});    		
+		});
 	}
 
 	//Default Masonary
 	function defaultMasonry() {
 		if($('.masonry-items-container').length){
-	
+
 			var winDow = $(window);
 			// Needed variables
 			var $container=$('.masonry-items-container');
-	
+
 			$container.isotope({
 				itemSelector: '.masonry-item',
 				 masonry: {
@@ -388,10 +388,10 @@
 					easing:'linear'
 				}
 			});
-	
+
 			winDow.on('resize', function(){
 
-				$container.isotope({ 
+				$container.isotope({
 					itemSelector: '.masonry-item',
 					animationOptions: {
 						duration: 500,
@@ -452,14 +452,14 @@
 	//Accordion Box
 	if($('.accordion-box').length){
 		$(".accordion-box").on('click', '.acc-btn', function() {
-			
+
 			var outerBox = $(this).parents('.accordion-box');
 			var target = $(this).parents('.accordion');
-			
+
 			if($(this).hasClass('active')!==true){
 				$(outerBox).find('.accordion .acc-btn').removeClass('active ');
 			}
-			
+
 			if ($(this).next('.acc-content').is(':visible')){
 				return false;
 			}else{
@@ -467,19 +467,19 @@
 				$(outerBox).children('.accordion').removeClass('active-block');
 				$(outerBox).find('.accordion').children('.acc-content').slideUp(300);
 				target.addClass('active-block');
-				$(this).next('.acc-content').slideDown(300);	
+				$(this).next('.acc-content').slideDown(300);
 			}
-		});	
+		});
 	}
 
 	//Fact Counter + Text Count
 	if($('.count-box').length){
 		$('.count-box').appear(function(){
-	
+
 			var $t = $(this),
 				n = $t.find(".count-text").attr("data-stop"),
 				r = parseInt($t.find(".count-text").attr("data-speed"), 10);
-				
+
 			if (!$t.hasClass("counted")) {
 				$t.addClass("counted");
 				$({
@@ -497,7 +497,7 @@
 					}
 				});
 			}
-			
+
 		},{accY: 0});
 	}
 
@@ -515,7 +515,7 @@
 		$('.tabs-box .tab-buttons .tab-btn').on('click', function(e) {
 			e.preventDefault();
 			var target = $($(this).attr('data-tab'));
-			
+
 			if ($(target).is(':visible')){
 				return false;
 			}else{
@@ -539,31 +539,42 @@
 			}
 		});
 	}
-	
+
 	//Contact Form Validation
 	if($('#email-form').length){
-		$('#submit').click(function(){
-			
-            var o = new Object();
+
+
             var form = '#email-form';
-			
-			var username = $('#email-form .username').val();
-			var email = $('#email-form .email').val();
-			var subject = $('#email-form .subject').val();
-			
-			if(username == '' || email == '' || subject == '')
-			{
-				$('#email-form .response').html('<div class="failed">Please fill the required fields.</div>');
-				return false;
-			}
-            
+
+            $(form).validate({
+                rules: {
+                    name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                        phone: "required",
+                        message: "required"
+                },
+                messages: {
+                    name: "Please Enter Your name",
+                    email: {
+                        required: "Please Enter Your email",
+                        email: "Please Enter a valid email address"
+                    },
+                    phone: "Please Enter the phone number",
+                    message: "Please Enter a message"
+                },
+            });
+                $('#submit').click(function(){
+
             $.ajax({
                 url:"sendemail.php",
                 method:"POST",
                 data: $(form).serialize(),
-                beforeSend:function(){
-                    $('#email-form .response').html('<div class="text-info"><img src="images/icons/preloader.gif"> Loading...</div>');
-                },
+                // beforeSend:function(){
+                //     $('#email-form .response').html('<div class="text-info"><img src="images/icons/preloader.gif"> Loading...</div>');
+                // },
                 success:function(data){
                     $('form').trigger("reset");
                     $('#email-form .response').fadeIn().html(data);
@@ -575,9 +586,9 @@
                     $('#email-form .response').fadeIn().html(data);
                 }
             });
+
         });
 	}
-
 	// Scroll to a Specific Div
 	if($('.scroll-to-target').length){
 		$(".scroll-to-target").on('click', function() {
@@ -586,7 +597,7 @@
 		   $('html, body').animate({
 			   scrollTop: $(target).offset().top
 			 }, 1500);
-	
+
 		});
 	}
 
@@ -605,7 +616,7 @@
 	}
 
 	//Event Countdown Timer
-	if($('.time-countdown').length){  
+	if($('.time-countdown').length){
 		$('.time-countdown').each(function() {
 		var $this = $(this), finalDate = $(this).data('countdown');
 		$this.countdown(finalDate, function(event) {
@@ -614,7 +625,7 @@
 	 });
 	}
 
-	if($('.clock-wrapper').length){  
+	if($('.clock-wrapper').length){
 		(function(){
             //generate clock animations
             var now       = new Date(),
@@ -636,18 +647,18 @@
 /* ==========================================================================
    When document is Scrollig, do
    ========================================================================== */
-	
+
 	$(window).on('scroll', function() {
 		headerStyle();
 	});
-	
+
 /* ==========================================================================
    When document is loading, do
    ========================================================================== */
-	
+
 	$(window).on('load', function() {
 		handlePreloader();
 		defaultMasonry();
-	});	
+	});
 
 })(window.jQuery);

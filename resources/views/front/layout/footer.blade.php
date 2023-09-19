@@ -167,6 +167,8 @@
 <script src="{{asset('assets/plugins/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
 <script src="{{asset('assets/js/main-slider-script.js')}}"></script>
 
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/js/jquery.fancybox.js')}}"></script>
 <script src="{{asset('assets/js/mmenu.polyfills.js')}}"></script>

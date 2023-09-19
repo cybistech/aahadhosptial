@@ -58,7 +58,7 @@
                                                         <td>
                                                                 <img src="{{asset('upload/service').'/'.$d->icon}}" class="imgsize1"  />
                                                         </td>
-                                                        <td>{{isset($d->description)?$d->description:""}}</td>
+                                                        <td>{!!isset($d->description)?$d->description:""!!}</td>
                                                         <td>
                                                                 <a href="{{url('admin/saveservice/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
                                                                 <a href="{{url('admin/deleteservice/').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a>
