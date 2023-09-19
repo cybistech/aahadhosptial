@@ -65,7 +65,7 @@
                            <td>{{$d->phone_no}}</td>
                            <td>
                               <a href="{{url('admin/savedoctor/').'/'.$d->id.'/1'}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                              <a href="javascript:deleterow('deletedoctor','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
+                              <a href="{{url('admin/deletedoctor').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a>
                            </td>
                         </tr>
                         @endforeach
