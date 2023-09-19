@@ -93,6 +93,7 @@ class NewsController extends Controller
 
 
        $store->title=$request->get("title");
+       $store->slug=Str::slug($request->get('title'));
        $store->meta_description=$request->get("meta_description");
        $store->meta_tags=$request->get("meta_tags");
        $store->excerpt=$request->excerpt;

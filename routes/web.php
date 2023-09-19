@@ -166,7 +166,7 @@ Route::group(['prefix' => 'admin'], function () {
          Route::post("savenotification", [NotificationController::class,'savenotification']);
 
          //  News
-         Route::resource('newss', NewsController::class);
+         Route::resource('news', NewsController::class);
          Route::get('saveNews/{id}',[NewsController::class,'saveNews']);
          Route::post("updatenews",[NewsController::class,'updatedeNews']);
          Route::get("deletedenews/{id}",[NewsController::class,'deletenews']);
@@ -202,8 +202,8 @@ Route::group(['prefix' => 'admin'], function () {
          Route::get("review",[DoctorController::class,'showreview']);
          Route::get("deletereview/{id}",[DoctorController::class,'deletereview']);
 
-        Route::get("news",[NotificationController::class,'shownews']);
-        Route::post("sennews",[NotificationController::class,'sendnews']);
+        // Route::get("news",[NotificationController::class,'shownews']);
+        // Route::post("sennews",[NotificationController::class,'sendnews']);
         Route::get("contactus",[HomeController::class,'showcontactus']);
 
         Route::get("patient",[HomeController::class,'showpatient']);
