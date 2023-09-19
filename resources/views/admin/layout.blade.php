@@ -88,9 +88,9 @@
                   <li class="active">
                      <a href="{{url('admin/news')}}"> <i class="menu-icon fa  fa-newspaper-o"></i>{{__('messages.news')}}</a>
                   </li>
-                  <li class="active">
+                  {{-- <li class="active">
                     <a href="{{url('admin/news')}}"> <i class="menu-icon fa fa-calendar-o"></i>{{__('Events')}}</a>
-                 </li>
+                 </li> --}}
                   <li class="active">
                      <a href="{{url('admin/contactus')}}"> <i class="menu-icon fa  fa-address-card"></i>{{__('messages.Contact Us')}}</a>
                   </li>
