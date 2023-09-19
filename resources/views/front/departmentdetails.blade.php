@@ -34,8 +34,13 @@
                     <div class="title-box">
                         <h2>{{ $departmentdetails->name }}</h2>
                     </div>
-                    <p>{{$departmentdetails->description}}</p>
+                    {{-- <p>{{$departmentdetails->description}}</p> --}}
                     <div>
+                        @if ($departmentdetails->description)
+                            {!! $departmentdetails->description !!}
+                        @endif
+                    </div>
+                    {{-- <div>
                         <div class="row">
                             <div class="image-column col-xl-6 col-lg-12 col-md-12">
                                 <figure class="image"><a href="#"class="lightbox-image"><img src="{{asset('upload/images/post-img.jpg')}}" alt=""></a></figure>
@@ -51,7 +56,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="product-info-tabs">
                         <div class="prod-tabs tabs-box">

@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Save').' '.__('messages.Facilities')}}
+{{__('messages.Save').' '.__('messages.services')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
          <div class="page-title">
-            <h1>{{__('messages.Save').' '.__('messages.Facilities')}}</h1>
+            <h1>{{__('messages.Save').' '.__('messages.services')}}</h1>
          </div>
       </div>
    </div>
@@ -16,9 +16,9 @@
          <div class="page-title">
             <ol class="breadcrumb text-right">
                <li>
-                  <a href="{{url('admin/service')}}">{{__('messages.Facilities')}}</a>
+                  <a href="{{url('admin/service')}}">{{__('messages.services')}}</a>
                </li>
-               <li class="active">{{__('messages.Save').' '.__('messages.Facilities')}}</li>
+               <li class="active">{{__('messages.Save').' '.__('messages.services')}}</li>
             </ol>
          </div>
       </div>

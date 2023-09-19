@@ -1,13 +1,13 @@
 @extends('admin.layout')
 @section('title')
- {{__('messages.Facilities')}}
+ {{__('messages.services')}}
 @stop
 @section('content')
 <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>{{__('messages.Facilities')}}</h1>
+                        <h1>{{__('messages.services')}}</h1>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li class="active">{{__('messages.Facilities')}}</li>
+                            <li class="active">{{__('messages.services')}}</li>
                         </ol>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                                   </div>
                                 @endif
                                 <div>
-                                    <a href="{{url('admin/saveservice/0')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Facilities')}}</a>
+                                    <a href="{{url('admin/saveservice/0')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.services')}}</a>
                                 </div>
                                 <div class="table-responsive">
                                 <table id="service" class="table  table-striped table-bordered">
@@ -61,7 +61,7 @@
                                                         <td>{{isset($d->description)?$d->description:""}}</td>
                                                         <td>
                                                                 <a href="{{url('admin/saveservice/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                                                <a href="javascript:deleterow('deleteservice','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
+                                                                <a href="{{url('admin/deleteservice/').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a>
                                                         </td>
                                                     </tr>
                                                 @endforeach

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 // use Auth;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Service;
+use Illuminate\Support\Str;
 // use Session;
 use Illuminate\Support\Facades\Session;
 use DataTables;
@@ -84,6 +85,7 @@ class ServiceController extends Controller
         }
 
         $store->name=$request->get("name");
+        $store->slug=Str::slug($request->get('name'));
         $store->description=$request->get("description");
         $store->icon=$img_url;
         $store->save();
