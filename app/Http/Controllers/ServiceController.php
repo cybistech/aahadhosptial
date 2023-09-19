@@ -30,7 +30,7 @@ class ServiceController extends Controller
             $request->validate([
                 'name' => 'required',
                 'description' => 'required',
-                'meta_description'=>'required,'
+                'meta_description'=>'required',
             ]);
         }else{
             $request->validate([
