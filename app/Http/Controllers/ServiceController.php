@@ -80,10 +80,10 @@ class ServiceController extends Controller
 
         if($request->get("id")!="0"){
             $store=Service::find($request->get("id"));
-            $msg=__('messages.Facilities Update Successfully');
+            $msg=__('Service Update Successfully');
         }else{
             $store=new Service();
-            $msg=__("messages.Facilities Add Successfully");
+            $msg=__("Service Add Successfully");
         }
 
         $store->name=$request->get("name");

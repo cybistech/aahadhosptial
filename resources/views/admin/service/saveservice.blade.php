@@ -70,7 +70,8 @@
                         <label for="email" class=" form-control-label">
                         {{__('messages.Description')}}<span class="reqfield" >*</span>
                         </label>
-                        <textarea required id="description" name="description"  class="form-control">{{ isset($servicedata->description)?$servicedata->description:''}}</textarea>
+                        <textarea required name="description" class="ckeditor form-control" id="description" cols="35" rows="20">{{ isset($servicedata->description)?$servicedata->description:''}}</textarea>
+                        {{-- <textarea required id="description" name="description"  class="form-control">{{ isset($servicedata->description)?$servicedata->description:''}}</textarea> --}}
                      </div>
                      <div class="form-group">
                         <label for="file" class=" form-control-label">
@@ -103,4 +104,5 @@
    </div>
 </div>
 
-@stop
+
+@endsection
