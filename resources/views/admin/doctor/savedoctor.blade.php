@@ -145,13 +145,16 @@
                               <label for="email" class=" form-control-label">
                               {{__('messages.About us')}}<span class="reqfield" >*</span>
                               </label>
-                              <textarea required id="description" name="aboutus" class="form-control">{{ isset($data->about_us)?$data->about_us:''}}</textarea>
+                              <textarea required name="aboutus" class="ckeditor form-control" id="description" cols="35" rows="20">{{ isset($data->about_us)?$data->about_us:''}}</textarea>
+                              {{-- <textarea required id="description" name="aboutus" class="form-control">{{ isset($data->about_us)?$data->about_us:''}}</textarea> --}}
                            </div>
                            <div class="col-md-12 form-group">
                               <label for="email" class=" form-control-label">
                               {{__('messages.Service')}}<span class="reqfield" >*</span>
                               </label>
-                              <textarea required id="servicedoctor" name="service"  class="form-control">{{ isset($data->service)?$data->service:''}}</textarea>
+                              <textarea required name="service" class="ckeditor form-control" id="servicedoctor" cols="35" rows="20">{{ isset($data->service)?$data->service:''}}</textarea>
+
+                              {{-- <textarea required id="servicedoctor" name="service"  class="form-control">{{ isset($data->service)?$data->service:''}}</textarea> --}}
                            </div>
                            <div class="col-md-12 form-group">
                               <label for="file" class=" form-control-label">
@@ -257,4 +260,14 @@
    </div>
 </div>
 
-@stop
+<script type="text/javascript">
+    //<![CDATA[
+
+CKEDITOR.replace( 'description',
+{
+fullPage : true,
+uiColor : '##ffffff'
+});
+//]]>
+</script>
+@endsection

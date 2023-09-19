@@ -103,6 +103,15 @@
       </div>
    </div>
 </div>
+<script type="text/javascript">
+    //<![CDATA[
 
+CKEDITOR.replace( 'description',
+{
+fullPage : true,
+uiColor : '##ffffff'
+});
+//]]>
+</script>
 
 @endsection
