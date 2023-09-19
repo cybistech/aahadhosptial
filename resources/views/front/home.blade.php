@@ -220,19 +220,14 @@
 <section class="about-section">
     <div class="auto-container">
         <div class="row">
-            <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
                 <div class="inner-column">
                     <div class="sec-title">
-                        <span class="sub-title">OUR MEDICAL</span>
-                        <h2>We're setting Standards in Research what's more, Clinical Care.</h2>
-                        <span class="divider"></span>
-                        <p>We provide the most full medical services, so every person could have the pportunity o receive qualitative medical help.</p>
-                        <p> Our Clinic has grown to provide a world class facility for the treatment of tooth loss, dental cosmetics and bore advanced restorative dentistry. We are among the most qualified implant providers in the AUS with over 30 years of uality training and experience.</p>
-                    </div>
-                    <div class="link-box">
-                        <figure class="signature"><img src="images/resource/signature.png" alt=""></figure>
-                        {{-- <a href="#" class="theme-btn btn-style-one"><span class="btn-title">More About</span></a> --}}
+                        <h2>CEO's Message</h2>
+                        <span class="sub-title">{{ $setting->ceo_name }}</span>
+                        @if ($setting->ceo_message)
+                            {!! $setting->ceo_message !!}
+                        @endif
                     </div>
                 </div>
             </div>
@@ -240,15 +235,7 @@
             <!-- Images Column -->
             <div class="images-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <div class="video-link">
-                        <a href="https://www.youtube.com/watch?v=4UvS3k8D4rs" class="play-btn lightbox-image" data-fancybox="images"><span class="flaticon-play-button-1"></span></a>
-                    </div>
-                    <figure class="image-1"><img src="{{asset('upload/images/image-1.png')}}" alt=""></figure>
-                    <figure class="image-2"><img src="{{asset('upload/images/image-2.png')}}" alt=""></figure>
-                    <figure class="image-3">
-                        <span class="hex"></span>
-                        <img src="{{asset('upload/images/image-3.png')}}" alt="">
-                    </figure>
+                    <figure class="image-1"><img src="{{asset('upload/ceo/').'/'.$setting->ceo_image}}" alt="{{ $setting->ceo_name }}"></figure>
                 </div>
             </div>
         </div>
@@ -339,23 +326,23 @@
 </section>
 
 
-<section class="appointment-section">
+{{-- <section class="appointment-section">
     <div class="image-layer" style="background-image: url{{asset('upload/department/department.jpg')}};"></div>
     <div class="auto-container">
-        {{-- <div class="row">
+        <div class="row">
             <!-- Content Column -->
-            {{-- <div class="content-column col-lg-6 col-md-12 col-sm-12">
+            <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <span class="title">Need a Doctor for Check-up?</span>
                     <h2>Just Make an Appointment <br>and You’re Done!</h2>
                     <div class="number">Get Your Quote or Call: <strong>(0080) 123-453-789</strong></div>
                     <a href="#" class="theme-btn btn-style-three"><span class="btn-title">Get an Appointment</span></a>
                 </div>
-            </div> --}}
-            {{-- <div class="image-column col-lg-6 col-md-12 col-sm-12">
+            </div>
+            <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <figure class="image"><img src="images/resource/image-4.png" alt=""></figure>
             </div>
-        </div> --}}
+        </div>
 
         <div class="fun-fact-section">
             <div class="row">
@@ -394,7 +381,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
 {{-- <section class="testimonial-section">

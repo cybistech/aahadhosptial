@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="form-group col-md-9">
                                         <label for="stripe_key" class=" form-control-label">{{__('messages.ceo_image')}} (100X100)<span class="reqfield">*</span></label>
-                                        <input type="file" name="ceo_image" id="handbanner" required class="form-control" accept="image/*">
+                                        <input type="file" name="ceo_image" id="handbanner" class="form-control" accept="image/*">
                                     </div>
                                 </div>
                             </div>
