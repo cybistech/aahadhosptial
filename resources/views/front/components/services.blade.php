@@ -4,7 +4,7 @@
             {{-- <span class=""><img src="{{asset('upload/service').'/'.$s->icon}}" alt="{{ $s->name }}"></span> --}}
             <span class="icon flaticon-heartbeat"></span>
             <h5 style="color: black">{{$s->name}}</h5>
-            <div class="text">{{ substr($s->description,0,75) }}</div>
+            <div class="text">{!! substr($s->description,0,140) !!}</div>
         </div>
     {{-- </a> --}}
 </div>
