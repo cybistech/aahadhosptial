@@ -98,6 +98,7 @@
                         {{__('messages.Content')}}
                         <span class="reqfield" >*</span>
                         </label>
+                        <textarea required name="contents" class="ckeditor form-control" id="contents" cols="35" rows="20">{{ isset($data->description)?$data->description:''}}</textarea>
                         <input type="text" id="contents" placeholder="{{__('messages.Enter').' '.__('messages.Content')}}" class="form-control" required name="contents" value="{{ isset($data->contents)?$data->contents:''}}">
                      </div>
 
@@ -125,8 +126,8 @@
                         <span class="reqfield" >*</span>
                         </label>
                         <select name="status" id="status" class="form-control">
-                            <option value="publish" {{old('status' == "publish" ? 'selected' : '')}} @if($data->status == 'publish') selected @endif>{{__('Publish')}}</option>
-                            <option value="draft"   {{old('status' == "draft" ? 'selected' : '')}} @if($data->status == 'draft') selected @endif>{{__('Draft')}}</option>
+                            <option value="publish" {{old('status' == "publish" ? 'selected' : '')}} <?= isset($data->status) && $data->status == 'publish' ? "selected='selected'" : "" ?>>{{__('Publish')}}</option>
+                            <option value="draft"   {{old('status' == "draft" ? 'selected' : '')}} <?= isset($data->status) && $data->status == 'draft' ? "selected='selected'" : "" ?>>{{__('Draft')}}</option>
                         </select>
                     </div>
                      <div>
@@ -149,4 +150,14 @@
    </div>
 </div>
 
-@stop
+<script type="text/javascript">
+    //<![CDATA[
+
+CKEDITOR.replace( 'news',
+{
+fullPage : true,
+uiColor : '##ffffff'
+});
+//]]>
+</script>
+@endsection
