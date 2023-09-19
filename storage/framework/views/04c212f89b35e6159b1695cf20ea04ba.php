@@ -32,6 +32,7 @@
       <?php endif; ?>
       <link href="<?php echo e(asset('fileupload/dist/css/jquery.dm-uploader.min.css')); ?>" rel="stylesheet">
       <link rel="stylesheet" href="<?php echo e(asset('front/css/app.min.css?v=212')); ?>">
+      <script src="//cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
       <input type="hidden" id="authid" value="<?php echo e(Auth::id()); ?>">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -71,11 +72,9 @@
                   
                    
                   <li class="active">
-                     <a href="<?php echo e(url(route('newss.index'))); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.news')); ?></a>
+                     <a href="<?php echo e(url('admin/news')); ?>"> <i class="menu-icon fa  fa-newspaper-o"></i><?php echo e(__('messages.news')); ?></a>
                   </li>
-                  <li class="active">
-                    <a href="<?php echo e(url(route('newss.index'))); ?>"> <i class="menu-icon fa fa-calendar-o"></i><?php echo e(__('Events')); ?></a>
-                 </li>
+                  
                   <li class="active">
                      <a href="<?php echo e(url('admin/contactus')); ?>"> <i class="menu-icon fa  fa-address-card"></i><?php echo e(__('messages.Contact Us')); ?></a>
                   </li>

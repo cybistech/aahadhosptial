@@ -398,6 +398,9 @@ return [
     'Icon Class'=> 'Icon Class',
     'meta_description'=>'Meta Description',
     'Select News_Categories'=>'Select News Categories',
+    'ceo_name' => 'CEO Name',
+    'ceo_message' => 'CEO Message',
+    'ceo_image' =>'CEO Image',
 
 
 

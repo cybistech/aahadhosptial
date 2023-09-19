@@ -32,7 +32,7 @@
                         <a class="nav-link <?= $id==1?'active':""?>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{{__('messages.Basic Information')}}</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link <?= $id==2?'active':""?>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{{__('messages.Server Key')}}</a>
+                        <a class="nav-link <?= $id==2?'active':""?>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{{__('messages.ceo_message')}}</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link <?= $id==3?'active':""?>" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">{{__('messages.Setting')}}</a>
@@ -130,6 +130,54 @@
                         </form>
                      </div>
                      <div class="tab-pane fade <?= $id==2?'show active':""?>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <form method="post" action="{{url('admin/saveserverkey')}}" class="btnsaveoption" enctype="multipart/form-data">
+                           {{csrf_field()}}
+                           <div class="form-group">
+                              <label>{{__('messages.ceo_name')}}</label>
+                              <textarea class="form-control" name="ceo_name" id="ceo_name" placeholder="{{__('messages.Enter').' '.__('messages.ceo_name')}}"><?= isset($data->ceo_name)?$data->ceo_name:""?></textarea>
+                           </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="form-group col-md-3" >
+                                        <img src="{{asset('upload/ceo').'/'.$data->ceo_image}}" class="webimage" />
+                                    </div>
+                                    <div class="form-group col-md-9">
+                                        <label for="stripe_key" class=" form-control-label">{{__('messages.ceo_image')}} (100X100)<span class="reqfield">*</span></label>
+                                        <input type="file" name="ceo_image" id="handbanner" required class="form-control" accept="image/*">
+                                    </div>
+                                </div>
+                            </div>
+
+                           <div class="form-group">
+                              <label>{{__('messages.ceo_message')}}</label>
+                              <textarea class="form-control" name="ceo_message" id="ceo_message" placeholder=""><?= isset($data->ceo_message)?$data->ceo_message:""?></textarea>
+                              {{-- <input type="text" class="form-control" name="TWILIO_ACCOUNT_SID" id="TWILIO_ACCOUNT_SID" placeholder="{{__('messages.Enter').' '.__('messages.TWILIO_ACCOUNT_SID')}}" value="<?= isset($data->TWILIO_ACCOUNT_SID)?$data->TWILIO_ACCOUNT_SID:""?>"> --}}
+                           </div>
+                           {{-- <div class="form-group">
+                              <label>{{__('messages.TWILIO_API_KEY')}}</label>
+                              <input type="text" class="form-control" name="TWILIO_API_KEY" id="TWILIO_API_KEY" placeholder="{{__('messages.Enter').' '.__('messages.TWILIO_API_KEY')}}" value="<?= isset($data->TWILIO_API_KEY)?$data->TWILIO_API_KEY:""?>">
+                           </div>
+                            <div class="form-group">
+                              <label>{{__('messages.TWILIO_API_SECRET')}}</label>
+                              <input type="text" class="form-control" name="TWILIO_API_SECRET" id="TWILIO_API_SECRET" placeholder="{{__('messages.Enter').' '.__('messages.TWILIO_API_SECRET')}}" value="<?= isset($data->TWILIO_API_SECRET)?$data->TWILIO_API_SECRET:""?>">
+                           </div>
+                            <div class="form-group">
+                              <label>{{__('messages.TWILIO_CHAT_SERVICE_SID')}}</label>
+                              <input type="text" class="form-control" name="TWILIO_CHAT_SERVICE_SID" id="TWILIO_CHAT_SERVICE_SID" placeholder="{{__('messages.Enter').' '.__('messages.TWILIO_CHAT_SERVICE_SID')}}" value="<?= isset($data->TWILIO_CHAT_SERVICE_SID)?$data->TWILIO_CHAT_SERVICE_SID:""?>">
+                           </div>
+                           <div class="form-group">
+                              <label>{{__('messages.TWILIO_AUTH_TOKEN')}}</label>
+                              <input type="text" class="form-control" name="TWILIO_AUTH_TOKEN" id="TWILIO_AUTH_TOKEN" placeholder="{{__('messages.Enter').' '.__('messages.TWILIO_AUTH_TOKEN')}}" value="<?= isset($data->TWILIO_AUTH_TOKEN)?$data->TWILIO_AUTH_TOKEN:""?>">
+                           </div> --}}
+                           {{-- @if(Config::get("democheck.vdemo")=='1')
+                              <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
+                           @else --}}
+                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
+                           {{-- @endif --}}
+                        </form>
+                     </div>
+                     {{-- <div class="tab-pane fade <?= $id==2?'show active':""?>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <form method="post" action="{{url('admin/saveserverkey')}}" class="btnsaveoption">
                            {{csrf_field()}}
                            <div class="form-group">
@@ -160,14 +208,14 @@
                            <div class="form-group">
                               <label>{{__('messages.TWILIO_AUTH_TOKEN')}}</label>
                               <input type="text" class="form-control" name="TWILIO_AUTH_TOKEN" id="TWILIO_AUTH_TOKEN" placeholder="{{__('messages.Enter').' '.__('messages.TWILIO_AUTH_TOKEN')}}" value="<?= isset($data->TWILIO_AUTH_TOKEN)?$data->TWILIO_AUTH_TOKEN:""?>">
-                           </div>
+                           </div> --}}
                            {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
                            @else --}}
-                               <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
+                               {{-- <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button> --}}
                            {{-- @endif --}}
-                        </form>
-                     </div>
+                        {{-- </form>
+                     </div> --}}
                      <div class="tab-pane fade <?= $id==3?'show active':""?>" id="step3" role="tabpanel" aria-labelledby="step3-tab">
                         <form method="post" action="{{url('admin/savesitesetting')}}" class="btnsaveoption" >
                            {{csrf_field()}}
@@ -282,5 +330,6 @@
 <script>
    CKEDITOR.replace('termscondition');
    CKEDITOR.replace('privacydata');
+   CKEDITOR.replace('ceo_message');
 </script>
 @stop

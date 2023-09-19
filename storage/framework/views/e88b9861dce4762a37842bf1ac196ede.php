@@ -66,7 +66,7 @@
                            <td><?php echo e($d->phone_no); ?></td>
                            <td>
                               <a href="<?php echo e(url('admin/savedoctor/').'/'.$d->id.'/1'); ?>" class="btn btn-primary"><?php echo e(__('messages.Edit')); ?></a>
-                              <a href="javascript:deleterow('deletedoctor','<?= $d->id ?>')" class="btn btn-danger"><?php echo e(__('messages.Delete')); ?></a>
+                              <a href="<?php echo e(url('admin/deletedoctor').'/'.$d->id); ?>" class="btn btn-danger"><?php echo e(__('messages.Delete')); ?></a>
                            </td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

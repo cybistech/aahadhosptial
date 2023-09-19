@@ -32,7 +32,7 @@
                         <a class="nav-link <?= $id==1?'active':""?>" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><?php echo e(__('messages.Basic Information')); ?></a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link <?= $id==2?'active':""?>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?php echo e(__('messages.Server Key')); ?></a>
+                        <a class="nav-link <?= $id==2?'active':""?>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?php echo e(__('messages.ceo_message')); ?></a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link <?= $id==3?'active':""?>" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false"><?php echo e(__('messages.Setting')); ?></a>
@@ -132,43 +132,58 @@
                         </form>
                      </div>
                      <div class="tab-pane fade <?= $id==2?'show active':""?>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form method="post" action="<?php echo e(url('admin/saveserverkey')); ?>" class="btnsaveoption">
+                        <form method="post" action="<?php echo e(url('admin/saveserverkey')); ?>" class="btnsaveoption" enctype="multipart/form-data">
                            <?php echo e(csrf_field()); ?>
 
                            <div class="form-group">
-                              <label><?php echo e(__('messages.Android Server Key')); ?></label>
-                              <textarea class="form-control" name="android_server_key" id="android_server_key" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.Android Server Key')); ?>"><?= isset($data->android_server_key)?$data->android_server_key:""?></textarea>
-                           </div>
-                           <div class="form-group">
-                              <label><?php echo e(__('messages.Ios Server Key')); ?></label>
-                              <textarea class="form-control" name="ios_server_key" id="ios_server_key" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.Ios Server Key')); ?>"><?= isset($data->ios_server_key)?$data->ios_server_key:""?></textarea>
+                              <label><?php echo e(__('messages.ceo_name')); ?></label>
+                              <textarea class="form-control" name="ceo_name" id="ceo_name" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.ceo_name')); ?>"><?= isset($data->ceo_name)?$data->ceo_name:""?></textarea>
                            </div>
 
+
+
+
+
+
+
+
                            <div class="form-group">
-                              <label><?php echo e(__('messages.TWILIO_ACCOUNT_SID')); ?></label>
-                              <input type="text" class="form-control" name="TWILIO_ACCOUNT_SID" id="TWILIO_ACCOUNT_SID" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.TWILIO_ACCOUNT_SID')); ?>" value="<?= isset($data->TWILIO_ACCOUNT_SID)?$data->TWILIO_ACCOUNT_SID:""?>">
+                            <div class="row">
+                               <div class="form-group col-md-3" >
+                                   <img src="<?php echo e(asset('upload/ceo').'/'.$data->ceo_image); ?>" class="webimage" />
+                               </div>
+                               <div class="form-group col-md-9">
+                                   <label for="stripe_key" class=" form-control-label"><?php echo e(__('messages.ceo_image')); ?> (100X100)<span class="reqfield">*</span></label>
+                                   <input type="file" name="ceo_image" id="handbanner" required class="form-control" accept="image/*">
+                               </div>
                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                           
+
                            <div class="form-group">
-                              <label><?php echo e(__('messages.TWILIO_API_KEY')); ?></label>
-                              <input type="text" class="form-control" name="TWILIO_API_KEY" id="TWILIO_API_KEY" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.TWILIO_API_KEY')); ?>" value="<?= isset($data->TWILIO_API_KEY)?$data->TWILIO_API_KEY:""?>">
+                              <label><?php echo e(__('messages.ceo_message')); ?></label>
+                              <textarea class="form-control" name="ceo_message" id="ceo_message" placeholder=""><?= isset($data->ceo_message)?$data->ceo_message:""?></textarea>
+                              
                            </div>
-                            <div class="form-group">
-                              <label><?php echo e(__('messages.TWILIO_API_SECRET')); ?></label>
-                              <input type="text" class="form-control" name="TWILIO_API_SECRET" id="TWILIO_API_SECRET" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.TWILIO_API_SECRET')); ?>" value="<?= isset($data->TWILIO_API_SECRET)?$data->TWILIO_API_SECRET:""?>">
-                           </div>
-                            <div class="form-group">
-                              <label><?php echo e(__('messages.TWILIO_CHAT_SERVICE_SID')); ?></label>
-                              <input type="text" class="form-control" name="TWILIO_CHAT_SERVICE_SID" id="TWILIO_CHAT_SERVICE_SID" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.TWILIO_CHAT_SERVICE_SID')); ?>" value="<?= isset($data->TWILIO_CHAT_SERVICE_SID)?$data->TWILIO_CHAT_SERVICE_SID:""?>">
-                           </div>
-                           <div class="form-group">
-                              <label><?php echo e(__('messages.TWILIO_AUTH_TOKEN')); ?></label>
-                              <input type="text" class="form-control" name="TWILIO_AUTH_TOKEN" id="TWILIO_AUTH_TOKEN" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.TWILIO_AUTH_TOKEN')); ?>" value="<?= isset($data->TWILIO_AUTH_TOKEN)?$data->TWILIO_AUTH_TOKEN:""?>">
-                           </div>
+                           
                            
                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30"><?php echo e(__('messages.Submit')); ?></button>
                            
                         </form>
                      </div>
+                     
+                           
+                               
+                           
+                        
                      <div class="tab-pane fade <?= $id==3?'show active':""?>" id="step3" role="tabpanel" aria-labelledby="step3-tab">
                         <form method="post" action="<?php echo e(url('admin/savesitesetting')); ?>" class="btnsaveoption" >
                            <?php echo e(csrf_field()); ?>
@@ -279,6 +294,7 @@
 <script>
    CKEDITOR.replace('termscondition');
    CKEDITOR.replace('privacydata');
+   CKEDITOR.replace('ceo_message');
 </script>
 <?php $__env->stopSection(); ?>
 

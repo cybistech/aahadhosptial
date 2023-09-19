@@ -211,17 +211,42 @@ class NotificationController extends Controller
        return redirect('admin/setting'.'/2');
    }
 
-   public function saveserverkey(Request $request){
-       $setting=Setting::find(1);
-       $setting->android_server_key=$request->get("android_server_key");
-       $setting->ios_server_key=$request->get("ios_server_key");
-       $setting->TWILIO_ACCOUNT_SID=$request->get("TWILIO_ACCOUNT_SID");
-       $setting->TWILIO_API_KEY=$request->get("TWILIO_API_KEY");
-       $setting->TWILIO_API_SECRET=$request->get("TWILIO_API_SECRET");
-       $setting->TWILIO_CHAT_SERVICE_SID=$request->get("TWILIO_CHAT_SERVICE_SID");
-       $setting->TWILIO_AUTH_TOKEN=$request->get("TWILIO_AUTH_TOKEN");
-       $setting->save();
-       return redirect('admin/setting'.'/3');
+    public function saveserverkey(Request $request){
+
+        $setting=Setting::find(1);
+        if ($request->hasFile('ceo_image'))
+        {
+            $img =$setting->ceo_image;
+            $file = $request->file('ceo_image');
+            $filename = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension() ?: 'png';
+            $folderName = '/upload/ceo';
+            $picture = 'ceo_message_'.mt_rand(100000,999999). '.' . $extension;
+            $destinationPath = public_path() . $folderName;
+            $request->file('ceo_image')->move($destinationPath, $picture);
+            $setting->ceo_image = $picture;
+            $image_path = public_path() ."/upload/ceo/".$img;
+            if(file_exists($image_path)) {
+                try {
+                    unlink($image_path);
+                }
+                catch(Exception $e) {
+
+                }
+            }
+        }
+        $setting->ceo_name=$request->get('ceo_name');
+        $setting->ceo_message=$request->get('ceo_message');
+        $setting->save();
+        return redirect('admin/setting'.'/3');
+
+        //    $setting->android_server_key=$request->get("android_server_key");
+        //    $setting->ios_server_key=$request->get("ios_server_key");
+        //    $setting->TWILIO_ACCOUNT_SID=$request->get("TWILIO_ACCOUNT_SID");
+        //    $setting->TWILIO_API_KEY=$request->get("TWILIO_API_KEY");
+        //    $setting->TWILIO_API_SECRET=$request->get("TWILIO_API_SECRET");
+        //    $setting->TWILIO_CHAT_SERVICE_SID=$request->get("TWILIO_CHAT_SERVICE_SID");
+        //    $setting->TWILIO_AUTH_TOKEN=$request->get("TWILIO_AUTH_TOKEN");
    }
 
    public function savesitesetting(Request $request){
