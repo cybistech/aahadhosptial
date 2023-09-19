@@ -134,6 +134,12 @@
                                  </label>
                                  <input type="text" id="instagram_id" required placeholder="{{__('messages.Enter').' '.__('messages.Instagram ID')}}"  class="form-control"  name="instagram_id" value="{{ isset($data->instagram_id)?$data->instagram_id:''}}">
                               </div>
+                              <div class="col-md-6">
+                                <label for="meta_description" class=" form-control-label">
+                                {{__('messages.meta_description')}}
+                                </label>
+                                <input type="text" id="meta_description" required placeholder="{{__('messages.Enter').' '.__('messages.meta_description')}}"  class="form-control"  name="meta_description" value="{{ isset($data->meta_description)?$data->meta_description:''}}">
+                             </div>
                            </div>
                            <div class=" col-md-12 form-group">
                               <label for="email" class=" form-control-label">

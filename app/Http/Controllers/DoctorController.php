@@ -42,7 +42,8 @@ class DoctorController extends Controller
                     'password'=>'required',
                     'phone_no'=>'required',
                     'aboutus'=>'required',
-                    'service'=>'required'
+                    'service'=>'required',
+                    'meta_description'=>'required',
                 ]);
               }else{
                 $request->validate([
@@ -53,6 +54,7 @@ class DoctorController extends Controller
                     'phone_no'=>'required',
                     'aboutus'=>'required',
                     'service'=>'required',
+                    'meta_description'=>'required',
                     'image'=>'required'
                 ]);
              }
@@ -137,6 +139,7 @@ class DoctorController extends Controller
             $store->twitter_id=$request->get("twitter_id");
             $store->google_id=$request->get("google_id");
             $store->instagram_id=$request->get("instagram_id");
+            $store->meta_description=$request->get('meta_description');
             $store->image=$img_url;
             $store->save();
             return redirect("admin/savedoctor/".$store->id.'/2');
