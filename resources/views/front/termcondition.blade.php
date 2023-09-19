@@ -112,5 +112,4 @@
         </div>
     </div>
 </section>
-<!-- End Terms And Conditions -->
 @endsection

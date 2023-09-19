@@ -14,8 +14,7 @@
 <link href="<?php echo e(asset('assets/css/responsive.css')); ?>" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<link id="theme-color-file" href="<?php echo e(asset('assets/css/color-themes/default-theme.css')); ?>" rel="stylesheet">
-
+<link id="theme-color-file" href="<?php echo e(asset('assets/css/color-themes/dodgerblue.css')); ?>" rel="stylesheet">
 <link rel="shortcut icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>" type="image/x-icon">
 <link rel="icon" href="<?php echo e(asset('images/favicon.png')); ?>" type="image/x-icon">
 
@@ -125,7 +124,7 @@
 
                 <div class="main-box">
                     <div class="logo-box">
-                        <div class="logo"><a href="index.html"><img src="<?php echo e(asset('assets/images/logo.png')); ?>" alt="" title=""></a></div>
+                        <div class="logo"><a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('assets/images/logo.png')); ?>" alt="" title=""></a></div>
                     </div>
 
 
@@ -135,7 +134,7 @@
 
 
         <div class="mobile-header">
-            <div class="logo"><a href="index.html"><img src="<?php echo e(asset('assets/images/logo.png')); ?>" alt="" title=""></a></div>
+            <div class="logo"><a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('assets/images/logo.png')); ?>" alt="" title=""></a></div>
 
 
             <div class="nav-outer clearfix">

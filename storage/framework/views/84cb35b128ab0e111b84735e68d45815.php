@@ -140,33 +140,17 @@
                               <textarea class="form-control" name="ceo_name" id="ceo_name" placeholder="<?php echo e(__('messages.Enter').' '.__('messages.ceo_name')); ?>"><?= isset($data->ceo_name)?$data->ceo_name:""?></textarea>
                            </div>
 
-
-
-
-
-
-
-
-                           <div class="form-group">
-                            <div class="row">
-                               <div class="form-group col-md-3" >
-                                   <img src="<?php echo e(asset('upload/ceo').'/'.$data->ceo_image); ?>" class="webimage" />
-                               </div>
-                               <div class="form-group col-md-9">
-                                   <label for="stripe_key" class=" form-control-label"><?php echo e(__('messages.ceo_image')); ?> (100X100)<span class="reqfield">*</span></label>
-                                   <input type="file" name="ceo_image" id="handbanner" required class="form-control" accept="image/*">
-                               </div>
-                           </div>
-
-                        </div>
-
-
-
-
-
-
-
-                           
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="form-group col-md-3" >
+                                        <img src="<?php echo e(asset('upload/ceo').'/'.$data->ceo_image); ?>" class="webimage" />
+                                    </div>
+                                    <div class="form-group col-md-9">
+                                        <label for="stripe_key" class=" form-control-label"><?php echo e(__('messages.ceo_image')); ?> (100X100)<span class="reqfield">*</span></label>
+                                        <input type="file" name="ceo_image" id="handbanner" required class="form-control" accept="image/*">
+                                    </div>
+                                </div>
+                            </div>
 
                            <div class="form-group">
                               <label><?php echo e(__('messages.ceo_message')); ?></label>

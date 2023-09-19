@@ -1,17 +1,5 @@
 
-    <section class="clients-section alternate">
-        <div class="auto-container">
-            <div class="sponsors-outer">
-                <ul class="clients-carousel owl-carousel owl-theme">
-                    <li class="slide-item"> <a href="#"><img src="images/clients/1.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/2.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/3.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/4.png" alt=""></a> </li>
-                    <li class="slide-item"> <a href="#"><img src="images/clients/5.png" alt=""></a> </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    
 
 
     <footer class="main-footer">
@@ -54,48 +42,7 @@
                     </div>
 
 
-                    <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
-                        <div class="row">
-
-                            
-
-
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-
-                                <div class="footer-widget contact-widget">
-                                    <h2 class="widget-title">Contact Us</h2>
-
-                                    <div class="widget-content">
-                                        <ul class="contact-list">
-                                            <li>
-                                                <span class="icon flaticon-placeholder"></span>
-                                                <div class="text"><?php echo e($setting->address); ?></div>
-                                            </li>
-
-                                            <li>
-                                                <span class="icon flaticon-call-1"></span>
-                                                <div class="text"><?php echo e($setting->working_day); ?></div>
-                                                <a href="tel:<?php echo e($setting->phone_no); ?>"><strong><?php echo e($setting->phone_no); ?></strong></a>
-                                            </li>
-
-                                            <li>
-                                                <span class="icon flaticon-email"></span>
-                                                <div class="text">Do you have a Question?<br>
-                                                <a href="mailto:<?php echo e($setting->email); ?>"><strong><?php echo e($setting->email); ?></strong></a></div>
-                                            </li>
-
-                                            <li>
-                                                <span class="icon flaticon-back-in-time"></span>
-                                                <div class="text"><?php echo e($setting->working_day); ?>
-
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -123,6 +70,8 @@
 
 </div>
 
+<?php echo $__env->yieldContent('scripts'); ?>
+
 <script src="<?php echo e(asset('assets/js/jquery.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/popper.min.js')); ?>"></script>
 
@@ -148,6 +97,7 @@
 <script src="<?php echo e(asset('assets/js/owl.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/wow.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/script.js')); ?>"></script>
+
 <!--Google Map APi Key-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
 
