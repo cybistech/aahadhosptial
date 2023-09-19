@@ -10,7 +10,7 @@
                     <h4>{{ $d->name }}</a></h4>
                 </div>
                 <a href="{{url('departments').'/'.$d->slug}}">
-                    <div class="text">{!!substr($d->description,0,120)!!}</div>
+                    <div class="text">{!! substr($d->description,0,140) !!}</div>
                 </a>
                 <span class="icon-right flaticon-heart-2"></span>
             </div>

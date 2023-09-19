@@ -40,24 +40,6 @@
                             {!! $departmentdetails->description !!}
                         @endif
                     </div>
-                    {{-- <div>
-                        <div class="row">
-                            <div class="image-column col-xl-6 col-lg-12 col-md-12">
-                                <figure class="image"><a href="#"class="lightbox-image"><img src="{{asset('upload/images/post-img.jpg')}}" alt=""></a></figure>
-                            </div>
-                            <div class="text-column col-xl-6 col-lg-12 col-md-12">
-                                <p>Complete account of the systems and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness.</p>
-                                <ul class="list-style-one">
-                                    <li>Enhancing Your Vision sit ametcon sec tetur</li>
-                                    <li>adipisicing eiusmod tempor tread depth sit tread</li>
-                                    <li>eiusmod Your Vision sit ametcon sec tetur sec</li>
-                                    <li>adipisicing eiusmod tempor tread depth sit </li>
-                                    <li>tread Your Vision sit ametcon sec tetur</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> --}}
-
                     <div class="product-info-tabs">
                         <div class="prod-tabs tabs-box">
                             <ul class="tab-btns tab-buttons clearfix">
@@ -143,7 +125,7 @@
                                         <h4>{{ $d->name }}</a></h4>
                                     </div>
                                     <a href="{{url('departments').'/'.$d->slug}}">
-                                        <div class="text">{{substr($d->description,0,75)}}</div>
+                                        <div class="text">{!! substr($d->description,0,140) !!}</div>
                                     </a>
                                 </div>
                             </a>

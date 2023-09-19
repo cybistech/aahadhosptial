@@ -63,7 +63,7 @@
                            <td>{{isset($d->emergency_no)?$d->emergency_no:""}}</td>
                            <td>
                                 <a href="{{url('admin/savedepartment/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="javascript:deleterow('deletedepartment','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
+                                <a href="{{url('admin/deletedepartment/').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a>
                                 <a href="{{url('admin/departmentservice/').'/'.$d->id}}"  class="btn btn-warning btndepartwarning">{{__('messages.Add Services')}}</a>
                            </td>
                         </tr>
