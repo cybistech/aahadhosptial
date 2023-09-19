@@ -57,6 +57,18 @@
                         </label>
                         <input type="text" id="title" placeholder="{{__('messages.Enter').' '.__('messages.News Title')}}" class="form-control" required name="title" value="{{ isset($data->title)?$data->title:''}}">
                      </div>
+                     <div class="form-group" >
+                        <label for="news_categories" class=" form-control-label">
+                        {{__('messages.Select News_Categories')}}
+                        <span class="reqfield" >*</span>
+                        </label>
+                        <select id="news_categories" name="news_categories" required class="form-control">
+                           <option value="">{{__('messages.Select News_Categories')}}</option>
+                           @foreach($news_categories as $n)
+                           <option value="{{$n->id}}" <?= isset($data->news_categories) && $data->news_categories == $n->id ? "selected='selected'" : "" ?> >{{$n->name}}</option>
+                           @endforeach
+                        </select>
+                     </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
                         {{__('messages.Meta Description')}}

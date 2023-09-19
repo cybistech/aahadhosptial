@@ -397,6 +397,7 @@ return [
     'Icon' => 'Icon',
     'Icon Class'=> 'Icon Class',
     'meta_description'=>'Meta Description',
+    'Select News_Categories'=>'Select News Categories',
 
 
 

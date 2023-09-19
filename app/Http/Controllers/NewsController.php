@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Model\News;
+use App\Model\NewsCategories;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +18,10 @@ class NewsController extends Controller
 
     public function saveNews($id){
         $data=News::find($id);
+        $news_categories=NewsCategories::all();
         return view('admin.news.savenews')->with([
             'news_id'=>$id,
+            'news_categories'=>$news_categories,
             'data'=>$data
         ]);
     }
@@ -30,6 +34,7 @@ class NewsController extends Controller
                'meta_tags' => 'required',
                'excerpt' => 'required',
                'contents' => 'required',
+               'news_categories'=>'required',
                'tags' =>'required',
                'status'=>'required',
            ]);
@@ -37,6 +42,7 @@ class NewsController extends Controller
            $request->validate([
             'title' => 'required',
             'meta_description' => 'required',
+            'news_categories'=>'required',
             'meta_tags' => 'required',
             'excerpt' => 'required',
             'contents' => 'required',
@@ -95,6 +101,7 @@ class NewsController extends Controller
        $store->title=$request->get("title");
        $store->slug=Str::slug($request->get('title'));
        $store->meta_description=$request->get("meta_description");
+       $store->news_categories_id=$request->get('news_categories');
        $store->meta_tags=$request->get("meta_tags");
        $store->excerpt=$request->excerpt;
        $store->contents=$request->contents;
@@ -106,7 +113,7 @@ class NewsController extends Controller
        $store->save();
        Session::flash('message',$msg);
        Session::flash('alert-class', 'alert-success');
-       return redirect("admin/newss");
+       return redirect("admin/news");
     }
 
 
