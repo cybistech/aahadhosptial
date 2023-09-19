@@ -91,10 +91,10 @@ class NewsController extends Controller
 
        if($request->get("id")!="0"){
            $store=News::find($request->get("id"));
-           $msg=__('messages.News Update Successfully');
+           $msg=__('News Update Successfully');
        }else{
            $store=new News();
-           $msg=__('messages.News Add Successfully');
+           $msg=__('News Add Successfully');
        }
 
 

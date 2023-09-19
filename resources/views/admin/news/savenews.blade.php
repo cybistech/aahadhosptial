@@ -65,7 +65,7 @@
                         <select id="news_categories" name="news_categories" required class="form-control">
                            <option value="">{{__('messages.Select News_Categories')}}</option>
                            @foreach($news_categories as $n)
-                           <option value="{{$n->id}}" <?= isset($data->news_categories) && $data->news_categories == $n->id ? "selected='selected'" : "" ?> >{{$n->name}}</option>
+                           <option value="{{$n->id}}" <?= isset($data->news_categories_id) && $data->news_categories_id == $n->id ? "selected='selected'" : "" ?> >{{$n->name}}</option>
                            @endforeach
                         </select>
                      </div>
@@ -125,8 +125,8 @@
                         <span class="reqfield" >*</span>
                         </label>
                         <select name="status" id="status" class="form-control">
-                            <option value="publish" {{old('status' == "publish" ? 'selected' : '')}}>{{__('Publish')}}</option>
-                            <option value="draft"   {{old('status' == "draft" ? 'selected' : '')}}>{{__('Draft')}}</option>
+                            <option value="publish" {{old('status' == "publish" ? 'selected' : '')}} @if($data->status == 'publish') selected @endif>{{__('Publish')}}</option>
+                            <option value="draft"   {{old('status' == "draft" ? 'selected' : '')}} @if($data->status == 'draft') selected @endif>{{__('Draft')}}</option>
                         </select>
                     </div>
                      <div>
