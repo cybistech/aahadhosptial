@@ -60,6 +60,13 @@
                         <input type="text" id="name" placeholder="{{__('messages.Enter').' '.__('messages.Name')}}" class="form-control" required name="name" value="{{ isset($servicedata->name)?$servicedata->name:''}}">
                      </div>
                      <div class="form-group">
+                        <label for="name" class=" form-control-label">
+                        {{__('messages.meta_description')}}
+                        <span class="reqfield" >*</span>
+                        </label>
+                        <input type="text" id="meta_description" placeholder="{{__('messages.Enter').' '.__('messages.meta_description')}}" class="form-control" required name="meta_description" value="{{ isset($servicedata->meta_description)?$servicedata->meta_description:''}}">
+                     </div>
+                     <div class="form-group">
                         <label for="email" class=" form-control-label">
                         {{__('messages.Description')}}<span class="reqfield" >*</span>
                         </label>

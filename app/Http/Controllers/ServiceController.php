@@ -29,12 +29,14 @@ class ServiceController extends Controller
         if($request->get("id")!="0"){
             $request->validate([
                 'name' => 'required',
-                'description' => 'required'
+                'description' => 'required',
+                'meta_description'=>'required,'
             ]);
         }else{
             $request->validate([
                 'name' => 'required',
                 'description' => 'required',
+                'meta_description' => 'required',
                 'image'=>'required'
             ]);
         }
@@ -86,6 +88,7 @@ class ServiceController extends Controller
 
         $store->name=$request->get("name");
         $store->slug=Str::slug($request->get('name'));
+        $store->meta_description=$request->get('meta_description');
         $store->description=$request->get("description");
         $store->icon=$img_url;
         $store->save();
