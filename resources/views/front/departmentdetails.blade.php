@@ -14,7 +14,7 @@
         <ul class="page-breadcrumb">
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('departments')}}">Departments</a></li>
-            <li><a href="#">{{ $departmentdetails->name }}</a></li>
+            <li>{{ $departmentdetails->name }}</li>
         </ul>
     </div>
 </div>
