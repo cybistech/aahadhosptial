@@ -57,7 +57,7 @@
                     <div class="inner">
                         <span class="icon flaticon-phone"></span>
                         <h4><strong>Phone</strong></h4>
-                        <p><a href="#">{{$setting->phone_no}}</a></p>
+                        <p><a href="tel:{{ $setting->phone_no}}">{{$setting->phone_no}}</a></p>
                     </div>
                 </div>
 

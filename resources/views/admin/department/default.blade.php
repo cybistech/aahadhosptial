@@ -36,7 +36,7 @@
                   </div>
                   @endif
                   <div>
-                     <a href="{{url('admin/savedepartment/0')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.Department')}}</a>
+                     <a href="{{url('admin/savedepartment/0')}}" class="btn btn-primary">{{__('messages.Add').' '.__('Department')}}</a>
                   </div>
                   <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
@@ -63,7 +63,7 @@
                            <td>{{isset($d->emergency_no)?$d->emergency_no:""}}</td>
                            <td>
                                 <a href="{{url('admin/savedepartment/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                <a href="{{url('admin/deletedepartment/').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirmationModal" data-department-name="{{ $d->name }}" data-department-id="{{ $d->id }}">{{ __('messages.Delete') }}</button>
                                 <a href="{{url('admin/departmentservice/').'/'.$d->id}}"  class="btn btn-warning btndepartwarning">{{__('messages.Add Services')}}</a>
                            </td>
                         </tr>
@@ -78,4 +78,34 @@
       </div>
    </div>
 </div>
-@stop
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">Delete Department</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete the Nuclear Magnetic department?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="{{ url('admin/deletedepartment') }}/{{ $d->id }}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#deleteConfirmationModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var departmentName = button.data('department-name');
+        var modal = $(this);
+        modal.find('.modal-body').text("Are you sure you want to delete " + departmentName + "?");
+    });
+</script>
+
+
+@endsection

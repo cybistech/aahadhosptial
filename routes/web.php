@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers\braintreeController;
 use App\Http\Controllers\AuthenticatedoctorController;
 use App\Http\Controllers\FrontController;
@@ -30,7 +31,10 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+$routeName = $request->route()->getName();
+        $request->whenHas('__cc', function ($input) use ($routeName) {
+            Cache::tags($routeName)->flush();
+        });
 Route::get('p/migrate_reset', function (Request $request) {
     $migrationPath = '/database/migrations/2023_09_15_112707_create_news_categories_table.php';
     $command = "migrate --path=$migrationPath --force";
