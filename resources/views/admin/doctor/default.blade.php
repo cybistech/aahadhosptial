@@ -65,8 +65,9 @@
                            <td>{{$d->phone_no}}</td>
                            <td>
                               <a href="{{url('admin/savedoctor/').'/'.$d->id.'/1'}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                              <a href="{{url('admin/deletedoctor').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a>
-                           </td>
+                              {{-- <a href="{{url('admin/deletedoctor').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a> --}}
+                              <a class="btn btn-danger" style="color: white;" data-toggle="modal" data-target="#deleteConfirmationModal" data-doctor-name="{{ $d->name }}" data-doctor-id="{{ $d->id }}">{{__('messages.Delete')}}</a>
+                            </td>
                         </tr>
                         @endforeach
                         @endif
@@ -79,4 +80,37 @@
       </div>
    </div>
 </div>
-@stop
+
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">Delete Doctor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this Doctor?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="{{ url('admin/deletedoctor') }}/{{ $d->id }}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@endsection
+@section('footer')
+<script>
+    $('#deleteConfirmationModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var departmentName = button.data('doctor-name');
+        var modal = $(this);
+        modal.find('.modal-body').html("Are you sure you want to delete " + departmentName + "?");
+    });
+</script>
+@endsection
