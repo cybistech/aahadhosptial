@@ -401,6 +401,9 @@ return [
     'ceo_name' => 'CEO Name',
     'ceo_message' => 'CEO Message',
     'ceo_image' =>'CEO Image',
+    'social_$_setting'=>'Social & Settings',
+    'map_key'=>'Map Key',
+    'map_path'=>'Map Path',
 
 
 

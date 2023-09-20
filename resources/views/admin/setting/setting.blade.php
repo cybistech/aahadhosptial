@@ -35,7 +35,7 @@
                         <a class="nav-link <?= $id==2?'active':""?>" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{{__('messages.ceo_message')}}</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link <?= $id==3?'active':""?>" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">{{__('messages.Setting')}}</a>
+                        <a class="nav-link <?= $id==3?'active':""?>" id="step3-tab" data-toggle="tab" href="#step3" role="tab" aria-controls="step3" aria-selected="false">{{__('messages.social_$_setting')}}</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link <?= $id==4?'active':""?>" id="terms-tab" data-toggle="tab" href="#terms" role="tab" aria-controls="terms" aria-selected="false">{{__('messages.Terms Condition')}}</a>
@@ -111,7 +111,7 @@
                                  @endforeach
                               </select>
                            </div>
-                           <div class="form-group">
+                           {{-- <div class="form-group">
                               <label for="name" class=" form-control-label">
                               {{__('messages.Default Currency')}}
                               <span class="reqfield">*</span>
@@ -120,7 +120,7 @@
                                  <option value="{{$data->currency}}" selected>{{$data->currency}}</option>
                                  @include('admin.setting.currency')
                               </select>
-                           </div>
+                           </div> --}}
                            {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
                            @else --}}
@@ -255,6 +255,14 @@
                               <label>{{__('messages.Working days')}}<span class="reqfield">*</span></label>
                               <input type="text" name="working_day" id="working_day" class="form-control" placeholder="{{__('messages.Working days')}}" value="<?= isset($data->working_day)?$data->working_day:""?>"/>
                            </div>
+                            <div class="form-group">
+                                <label>{{__('messages.map_key')}}<span class="reqfield">*</span></label>
+                                <input type="text" name="map_key" id="map_key" class="form-control" placeholder="{{__('messages.map_key')}}" value="<?= isset($data->map_key)?$data->map_key:""?>"/>
+                            </div>
+                            <div class="form-group">
+                                <label>{{__('messages.map_path')}}<span class="reqfield">*</span></label>
+                                <input type="text" name="map_path" id="map_path" class="form-control" placeholder="{{__('messages.map_key')}}" value="<?= isset($data->map_path)?$data->map_path:""?>"/>
+                            </div>
                            {{-- @if(Config::get("democheck.vdemo")=='1')
                               <button type="button" onclick="disablebtn()" class="btn btn-success btn-flat m-b-30 m-t-30">{{__('messages.Submit')}}</button>
                            @else --}}

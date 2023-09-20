@@ -260,6 +260,8 @@ class NotificationController extends Controller
        $setting->expert_doctor=$request->get("expert_doctor");
        $setting->worldwide_branch=$request->get("worldwide_branch");
        $setting->working_day=$request->get("working_day");
+       $setting->map_key=$request->get('map_key');
+       $setting->map_path=$request->get('map_path');
 
        $setting->save();
        return redirect('admin/setting'.'/4');
