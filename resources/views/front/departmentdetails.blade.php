@@ -44,13 +44,13 @@
                     <div class="product-info-tabs">
                         <div class="prod-tabs tabs-box">
                             <ul class="tab-btns tab-buttons clearfix">
-                                @foreach($departmentdetails->service->take(6) as $item)
+                                @foreach($departmentdetails->service->take(4) as $item)
                                     <li data-tab="#{{ Str::slug($item->name) }}" class="tab-btn @if($loop->first) active-btn @endif">{{ $item->name }}</li>
                                 @endforeach
                             </ul>
 
                             <div class="tabs-content">
-                                @foreach($departmentdetails->service->take(6) as $item)
+                                @foreach($departmentdetails->service->take(4) as $item)
                                     <div class="tab @if($loop->first) active-tab @endif" id="{{ Str::slug($item->name) }}">
                                         <div class="content">
                                             <p>{!! $item->description !!}</p>
