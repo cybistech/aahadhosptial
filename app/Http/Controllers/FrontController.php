@@ -297,10 +297,9 @@ class FrontController extends Controller
        }
 
        public function termcondition(){
-          $department=Department::all();
+           $department=Department::all();
            $setting=Setting::find(1);
-           $data=About::find(1);
-           return view("front.termcondition",compact('data','setting','department'));
+           return view("front.termcondition",compact('setting','department'));
        }
 
        public function privacypolicy(){

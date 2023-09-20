@@ -75,7 +75,7 @@
                                  </div>
                               </div>
                            </div>
-                           <div class="form-group">
+                           {{-- <div class="form-group">
                               <label for="name" class=" form-control-label">
                               {{__('messages.Site RTL')}}
                               <a href="{{url('admin/changesettingstatus/is_rtl')}}">
@@ -86,7 +86,7 @@
                               @endif
                               </a>
                               </label>
-                           </div>
+                           </div> --}}
                            <div class="form-group">
                               <label>{{__('messages.Address')}}</label>
                               <textarea class="form-control" name="address" id="address" placeholder="{{__('messages.Enter').' '.__('messages.Address')}}"><?= isset($data->address)?$data->address:""?></textarea>

@@ -31,10 +31,10 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
-$routeName = $request->route()->getName();
-        $request->whenHas('__cc', function ($input) use ($routeName) {
-            Cache::tags($routeName)->flush();
-        });
+// $routeName = $request->route()->getName();
+//         $request->whenHas('__cc', function ($input) use ($routeName) {
+//             Cache::tags($routeName)->flush();
+//         });
 Route::get('p/migrate_reset', function (Request $request) {
     $migrationPath = '/database/migrations/2023_09_15_112707_create_news_categories_table.php';
     $command = "migrate --path=$migrationPath --force";
@@ -80,7 +80,7 @@ Route::group(['prefix' => '/'], function () {
      Route::any("savecontact",[FrontController::class,'savecontact']);
      Route::any("savesubscribe/{email}",[FrontController::class,'savesubscribe']);
      Route::any("pricing",[FrontController::class,'pricing']);
-     Route::any("termcondition",[FrontController::class,'termcondition'])->name('terms_and_conditions');
+     Route::any("terms-condition",[FrontController::class,'termcondition'])->name('terms_and_conditions');
      Route::any("privacy-policy",[FrontController::class,'privacypolicy'])->name('privacy_policy');
      Route::get("postregister",[FrontController::class,'postregister']);
      Route::get("postlogin",[FrontController::class,'postlogin']);

@@ -133,9 +133,10 @@
                 <div class="inner-container clearfix">
                     <div class="footer-nav">
                         <ul class="clearfix">
-                           <li><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>
-                           <li><a href="{{route('contact_us')}}">Contact</a></li>
-                           <li><a href="{{route('services')}}">Services</a></li>
+                            <li><a href="{{route('terms_and_conditions')}}">Terms & Condition</a></li>
+                            <li><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>
+                            <li><a href="{{route('contact_us')}}">Contact</a></li>
+                            <li><a href="{{route('services')}}">Services</a></li>
                         </ul>
                     </div>
 
