@@ -45,8 +45,7 @@
                         <tr>
                            <th>{{__('messages.Id')}}</th>
                            <th>{{__('messages.Name')}}</th>
-                           <th>{{__('messages.Price For')}}</th>
-                           <th>{{__('messages.Price')}}</th>
+                           <th>{{__('messages.Description')}}</th>
                            <th>{{__('messages.Action')}}</th>
                         </tr>
                      </thead>
@@ -55,14 +54,7 @@
                         <tr>
                            <td>{{$d->id}}</td>
                            <td>{{$d->name}}</td>
-                           <td>
-                              @if($d->price_for=='1')
-                              {{__('messages.Investigations')}}
-                              @else
-                              {{__('messages.Treatments')}}
-                              @endif
-                           </td>
-                           <td>{{$d->price}}</td>
+                           <td>{!! $d->description !!}</td>
                            <td>
                               <a href="{{url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
                               {{-- <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a> --}}
