@@ -94,7 +94,7 @@
     <div class="auto-container">
         <div class="carousel-outer">
             <div class="services-carousel owl-carousel owl-theme default-dots">
-                @foreach ($department as $d)
+                @foreach ($department->take(10) as $d)
                     <div class="service-block-two">
                         <div class="inner-box">
                             <a href="{{url('departments').'/'.$d->slug}}">
