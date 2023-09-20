@@ -12,7 +12,7 @@
             <ul>
                 <li data-index="rs-1" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{asset('adesign/images/home_1.jpg')}}">
+                    <img alt="{{__('Home Banner')}}" title="{{__('Home Banner')}}" width="1440" height="700" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{asset('adesign/images/home_1.jpg')}}">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -96,7 +96,7 @@
 
                 <li data-index="rs-2" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{asset('adesign/images/home_2.jpg')}}">
+                    <img alt="{{__('Home Banner2')}}" title="{{__('Home Banner2')}}" width="1440" height="700" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{asset('adesign/images/home_2.jpg')}}">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -305,7 +305,7 @@
                                 $image=asset('upload/profile/profile.png');
                             }
                         ?>
-                        <figure class="image"><a href="{{url('doctors/').'/'.$d->slug}}"><img src="{{ $image }}" alt="{{ $d->name }}"></a></figure>
+                        <figure class="image"><a href="{{url('doctors/').'/'.$d->slug}}"><img src="{{ $image }}" alt="{{ $d->name }}" title="{{$d->name}}" width="260" height="330.27" ></a></figure>
                         <ul class="social-links">
                             @if (!empty($d->facebook_id))
                                 <li><a href="{{ $d->facebook_id }}"><span class="fab fa-facebook"></span></a></li>

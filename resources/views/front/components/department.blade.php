@@ -2,7 +2,7 @@
     <div class="inner-box">
         <a href="{{url('departments').'/'.$d->slug}}">
             <div class="image-box">
-                <figure class="image"><img style="height: 265.13px;" src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name }}"></figure>
+                <figure class="image"><img style="height: 265.13px;" src="{{asset('upload/department').'/'.$d->image}}" alt="{{ $d->name . ' Department' }}" title="{{ $d->name }}" width="363.33" height="265.13"></figure>
             </div>
             <div class="lower-content">
                 <div class="title-box">
