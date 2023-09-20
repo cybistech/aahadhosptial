@@ -64,7 +64,6 @@
                            <td>{{isset($d->status)?$d->status:""}}</td>
                            <td>
                                 <a href="{{url('admin/saveNews/').'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                                {{-- <a href="javascript:deleterow('deletedenews','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a> --}}
                                 {{-- <a href="{{url('admin/deletedenews/').'/'.$d->id}}" class="btn btn-danger">{{__('messages.Delete')}}</a> --}}
                                 <a class="btn btn-danger" style="color: white;" data-toggle="modal" data-target="#deleteConfirmationModal" data-news-name="{{ $d->name }}" data-news-id="{{ $d->id }}">{{__('messages.Delete')}}</a>
                             </td>
