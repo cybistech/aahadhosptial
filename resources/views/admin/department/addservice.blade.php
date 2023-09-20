@@ -60,20 +60,10 @@
                      </div>
                      <div class="form-group">
                         <label for="name" class=" form-control-label">
-                        {{__('messages.Price For')}}
+                        {{__('messages.Description')}}
                         <span class="reqfield">*</span>
                         </label>
-                        <select id="price_for" name="price_for" class="form-control" required="">
-                           <option value="1" <?= isset($data->price_for) && $data->price_for == 1 ?: "selected='selected'" ?> >{{__('messages.Investigations')}}</option>
-                           <option value="2" <?= isset($data->price_for) && $data->price_for == 2 ?: "selected='selected'" ?>>{{__('messages.Treatments')}}</option>
-                        </select>
-                     </div>
-                     <div class="form-group">
-                        <label for="name" class=" form-control-label">
-                        {{__('messages.Price')}}
-                        <span class="reqfield">*</span>
-                        </label>
-                        <input type="number" step="any" id="price" placeholder="{{__('messages.Enter').' '.__('messages.Price')}}" class="form-control" required name="price" value="{{ isset($data->price)?$data->price:''}}">
+                        <textarea class="form-control" name="description" id="description"><?= isset($data->description)?$data->description:""?></textarea>
                      </div>
                      <div>
 
@@ -95,4 +85,8 @@
       </div>
    </div>
 </div>
-@stop
+<script>
+    CKEDITOR.replace('description');
+    CKEDITOR
+</script>
+@endsection

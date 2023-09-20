@@ -183,14 +183,12 @@ class DepartmentController extends Controller
         if($request->get("id")!="0"){
                 $request->validate([
                     'name' => 'required',
-                    'price' => 'required',
-                    'price_for'=>'required'
+                    'description' => 'required',
                 ]);
               }else{
                 $request->validate([
                     'name' => 'required',
-                    'price' => 'required',
-                    'price_for'=>'required'
+                    'description' => 'required',
                 ]);
              }
 
@@ -203,9 +201,8 @@ class DepartmentController extends Controller
             }
 
             $store->name=$request->get("name");
-            $store->price=$request->get("price");
+            $store->description=$request->get("description");
             $store->department_id=$request->get("depart_id");
-            $store->price_for=$request->get("price_for");
             $store->save();
             Session::flash('message',$msg);
             Session::flash('alert-class', 'alert-success');
