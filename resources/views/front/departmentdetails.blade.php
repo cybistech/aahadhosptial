@@ -34,39 +34,29 @@
                     <div class="title-box">
                         <h2>{{ $departmentdetails->name }}</h2>
                     </div>
-                    {{-- <p>{{$departmentdetails->description}}</p> --}}
+
                     <div>
                         @if ($departmentdetails->description)
                             {!! $departmentdetails->description !!}
                         @endif
                     </div>
+
                     <div class="product-info-tabs">
                         <div class="prod-tabs tabs-box">
                             <ul class="tab-btns tab-buttons clearfix">
-                                <li data-tab="#prod-details" class="tab-btn active-btn">Precautions</li>
-                                <li data-tab="#prod-spec" class="tab-btn">Intelligence</li>
-                                <li data-tab="#prod-reviews" class="tab-btn">Specializations</li>
+                                @foreach($departmentdetails->service->take(6) as $item)
+                                    <li data-tab="#{{ Str::slug($item->name) }}" class="tab-btn @if($loop->first) active-btn @endif">{{ $item->name }}</li>
+                                @endforeach
                             </ul>
 
                             <div class="tabs-content">
-
-                                <div class="tab active-tab" id="prod-details">
-                                    <div class="content">
-                                        <p>Suspendisse laoreet at nulla id auctor. Maecenas in dui cursus, lacinia nisl non, blandit lorem. Aliquam vel risus hendrerit, faucibus nisl a, porta sapien. Etiam iaculis mattis quam, nec iaculis velit feugiat quis. Pellentesque sed feugiat dui, ac euismod leo.</p>
+                                @foreach($departmentdetails->service->take(6) as $item)
+                                    <div class="tab @if($loop->first) active-tab @endif" id="{{ Str::slug($item->name) }}">
+                                        <div class="content">
+                                            <p>{!! $item->description !!}</p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="tab" id="prod-spec">
-                                    <div class="content">
-                                        <p>Suspendisse laoreet at nulla id auctor. Maecenas in dui cursus, lacinia nisl non, blandit lorem. Aliquam vel risus hendrerit, faucibus nisl a, porta sapien. Etiam iaculis mattis quam, nec iaculis velit feugiat quis. Pellentesque sed feugiat dui, ac euismod leo.</p>
-                                    </div>
-                                </div>
-
-                                <div class="tab" id="prod-reviews">
-                                    <div class="content">
-                                        <p>Suspendisse laoreet at nulla id auctor. Maecenas in dui cursus, lacinia nisl non, blandit lorem. Aliquam vel risus hendrerit, faucibus nisl a, porta sapien. Etiam iaculis mattis quam, nec iaculis velit feugiat quis. Pellentesque sed feugiat dui, ac euismod leo.</p>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -85,14 +75,6 @@
                                 <li @if ($d->id == $departmentdetails->id) class="active" @endif><a href="{{url('departments').'/'.$d->slug}}">{{ $d->name }}</a></li>
                             @endforeach
                         </ul>
-                    </div>
-                </div>
-                <div class="brochures-box">
-                    <div class="inner">
-                        <h4>Download Brochures</h4>
-                        <div class="text">Etiam tortor lorem, auctor ut orci ut, vehicula ultricies mauris. scelerisque gravida.</div>
-                        <a class="theme-btn btn-style-one" href="#"><span class="btn-title"><i class="fa fa-file-pdf"></i> Info Company</span></a>
-                        <a class="theme-btn btn-style-one" href="#"><span class="btn-title"><i class="fa fa-file-pdf"></i> Brochure Newest</span></a>
                     </div>
                 </div>
 
