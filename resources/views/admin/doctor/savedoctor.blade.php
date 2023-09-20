@@ -1,7 +1,11 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Save Doctor')}}
-@stop
+    @if ($doctor_id == 0)
+        {{ __('messages.Create').' '.__('messages.Doctors') }}
+    @else
+        {{ __('messages.Update').' '.__('messages.Doctors') }}
+    @endif
+@endsection
 @section('content')
 <div class="breadcrumbs">
    <div class="col-sm-4">

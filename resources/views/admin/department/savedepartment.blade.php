@@ -1,6 +1,10 @@
 @extends('admin.layout')
 @section('title')
-{{__('messages.Save Department')}}
+    @if ($department_id == 0)
+        {{ __('messages.Create').' '.__('messages.Department') }}
+    @else
+        {{ __('messages.Update').' '.__('messages.Department') }}
+    @endif
 @stop
 @section('content')
 <div class="breadcrumbs">
