@@ -82,6 +82,7 @@ Route::group(['prefix' => '/'], function () {
      Route::any("pricing",[FrontController::class,'pricing']);
      Route::any("terms-condition",[FrontController::class,'termcondition'])->name('terms_and_conditions');
      Route::any("privacy-policy",[FrontController::class,'privacypolicy'])->name('privacy_policy');
+     Route::get('about-us',[FrontController::class,'about_us'])->name('about_us');
      Route::get("postregister",[FrontController::class,'postregister']);
      Route::get("postlogin",[FrontController::class,'postlogin']);
      Route::get("userlogout",[FrontController::class,'userlogout']);

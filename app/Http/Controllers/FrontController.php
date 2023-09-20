@@ -718,4 +718,13 @@ class FrontController extends Controller
     public function categories_manage($slug){
         return redirect()->route($slug);
     }
+
+    public function about_us(){
+        $department=Department::all();
+        $setting=Setting::first();
+        return view('front.aboutus')->with([
+            'department'=>$department,
+            'setting'=> $setting,
+        ]);
+    }
 }
