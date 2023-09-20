@@ -307,10 +307,18 @@
                         ?>
                         <figure class="image"><a href="{{url('doctors/').'/'.$d->slug}}"><img src="{{ $image }}" alt="{{ $d->name }}"></a></figure>
                         <ul class="social-links">
-                            <li><a href="{{isset($d->facebook_id)?$d->facebook_id:'https://www.facebook.com'}}"><span class="fab fa-facebook"></span></a></li>
-                            <li><a href="{{isset($d->linkdin_id)?$d->linkdin_id:'https://www.linkdine.com/?hl=en'}}"><span class="fab fa-linkedin-in"></span></a></li>
-                            <li><a href="{{isset($d->twitter_id)?$d->twitter_id:'https://twitter.com/search-home'}}"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="{{isset($d->instagram_id)?$d->instagram_id:'https://www.instagram.com/?hl=en'}}"><span class="fab fa-instagram"></span></a></li>
+                            @if (!empty($d->facebook_id))
+                                <li><a href="{{ $d->facebook_id }}"><span class="fab fa-facebook"></span></a></li>
+                            @endif
+                            @if (!empty($d->google_id))
+                                <li><a href="{{ $d->google_id }}"><span class="fab fa-google-plus-g"></span></a></li>
+                            @endif
+                            @if (!empty($d->twitter_id))
+                                <li><a href="{{ $d->twitter_id }}"><span class="fab fa-twitter"></span></a></li>
+                            @endif
+                            @if (!empty($d->instagram_id))
+                                <li><a href="{{ $d->instagram_id }}"><span class="fab fa-instagram"></span></a></li>
+                            @endif
                         </ul>
                         <div class="info-box">
                             <h4 class="name"><a href="{{url('doctors/').'/'.$d->slug}}">{{ $d->name }}</a></h4>

@@ -163,33 +163,43 @@
     <div class="auto-container">
         <div class="row">
             @foreach ($doctor_list as $d_list)
-            <div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <?php
-                        if($d_list->image){
-                            $image=asset('upload/doctor')."/".$d_list->image;
-                        }else{
-                            $image=asset('upload/profile/profile.png');
-                        }
-                    ?>
+                <div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                    <div class="inner-box">
+                        <?php
+                            if($d_list->image){
+                                $image=asset('upload/doctor')."/".$d_list->image;
+                            }else{
+                                $image=asset('upload/profile/profile.png');
+                            }
+                        ?>
                             <figure class="image"><a href="{{url('doctors/').'/'.$d_list->slug}}"><img src="{{ $image }}" alt="{{ $d_list->name }}"></a></figure>
                             <ul class="social-links">
-                        <li><a href="{{isset($d_list->facebook_id)?$d_list->facebook_id:'https://www.facebook.com'}}"><span class="fab fa-facebook"></span></a></li>
-                        <li><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
-                        <li><a href="{{isset($d_list->twitter_id)?$d_list->twitter_id:'https://twitter.com/search-home'}}"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="{{isset($d_list->instagram_id)?$d_list->instagram_id:'https://www.instagram.com/?hl=en'}}"><span class="fab fa-instagram"></span></a></li>
-                    </ul>
-                    <div class="info-box">
-                        <h4 class="name"><a href="{{url('doctors/').'/'.$d_list->slug}}">{{ $d_list->name }}</a></h4>
-                        <span class="designation">Senior Dr. at Delmont</span>
+                                @if (!empty($d_list->facebook_id))
+                                    <li><a href="{{ $d_list->facebook_id }}"><span class="fab fa-facebook"></span></a></li>
+                                @endif
+                                @if (!empty($d_list->google_id))
+                                    <li><a href="{{ $d_list->google_id }}"><span class="fab fa-google-plus-g"></span></a></li>
+                                @endif
+                                @if (!empty($d_list->twitter_id))
+                                    <li><a href="{{ $d_list->twitter_id }}"><span class="fab fa-twitter"></span></a></li>
+                                @endif
+                                @if (!empty($d_list->instagram_id))
+                                    <li><a href="{{ $d_list->instagram_id }}"><span class="fab fa-instagram"></span></a></li>
+                                @endif
+                            </ul>
+                        <div class="info-box">
+                            <h4 class="name"><a href="{{url('doctors/').'/'.$d_list->slug}}">{{ $d_list->name }}</a></h4>
+                            <span class="designation">Senior Dr. at Delmont</span>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
-
         </div>
     </div>
 </section>
 
 
 @endsection
+
+
+
