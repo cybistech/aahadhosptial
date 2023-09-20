@@ -175,6 +175,7 @@ Route::group(['prefix' => 'admin'], function () {
          Route::get('saveNews/{id}',[NewsController::class,'saveNews']);
          Route::post("updatenews",[NewsController::class,'updatedeNews']);
          Route::get("deletedenews/{id}",[NewsController::class,'deletenews']);
+         Route::get('filter/category',[NewsController::class,'category_filter'])->name('category-filter');
 
 
          //album

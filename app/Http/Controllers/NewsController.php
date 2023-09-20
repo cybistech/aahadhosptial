@@ -13,7 +13,11 @@ class NewsController extends Controller
 {
     public function index(){
         $all_news= News::all();
-        return view('admin.news.default')->with('all_news',$all_news);
+        $categories = NewsCategories::all();
+        return view('admin.news.default')->with([
+            'all_news'=>$all_news,
+            'categories'=>$categories,
+        ]);
     }
 
     public function saveNews($id){
@@ -133,5 +137,21 @@ class NewsController extends Controller
         Session::flash('message',__('messages.News Delete Successfully'));
         Session::flash('alert-class', 'alert-success');
         return redirect('admin/news');
+  }
+
+    public function category_filter(Request $request)
+    {
+
+        $news_category = $request->input('category');
+
+        if ($news_category)
+        {
+            $query=News::where('news_categories_id', $news_category)->where('status','publish');
+        } else
+        {
+            $query = News::query();
+        }
+        $all_news = $query->get();
+        return response()->json($all_news);
   }
 }

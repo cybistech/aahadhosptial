@@ -35,10 +35,20 @@
                      </button>
                   </div>
                   @endif
-                  <div>
-                     <a href="{{url('admin/saveNews/0')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.news')}}</a>
-                  </div>
-                  <div class="table-responsive">
+                    <div>
+                        <a href="{{url('admin/saveNews/0')}}" class="btn btn-primary">{{__('messages.Add').' '.__('messages.news')}}</a>
+                    </div>
+                    <div class="col-lg-3" style="margin-left: -15px; display: flex; flex-direction: column;">
+                        <label for="filter" style="margin-bottom: 5px;">Select Category</label>
+                        <select id="categoryFilter" style="width: 100%; max-width: 9.8rem; height: 2rem; border-radius: 0.2rem; border-color: #ced4da; font-size: 75%; padding-left: 7px;">
+                            <option value="" >Select Option</option>
+                            @foreach ($categories as $c)
+                                <option value="{{ $c->id }}">{{ $c->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="table-responsive">
                   <table id="service" class="table  table-striped table-bordered">
                      <thead>
                         <tr>
@@ -102,6 +112,7 @@
 
 
 
+
 @endsection
 @section('footer')
 <script>
@@ -110,6 +121,46 @@
         var departmentName = button.data('news-name');
         var modal = $(this);
         modal.find('.modal-body').html("Are you sure you want to delete " + departmentName + "?");
+    });
+</script>
+<script>
+
+    $('#categoryFilter').on('input', function() {
+        var category = $('#categoryFilter').val();
+        console.log(category);
+        $.ajax
+        ({
+            url: "{{ route('category-filter') }}",
+            type: "GET",
+            data:
+            {
+                category: category,
+            },
+            success: function(data)
+            {
+                $('#service tbody').empty();
+                console.log(data);
+
+// Loop through the filtered data and append rows to the table
+$.each(data, function (index, news) {
+    var row = '<tr>' +
+        '<td>' + news.id + '</td>' +
+        '<td>' + news.title + '</td>' +
+        '<td style="height: 150px; width: 150px;">' +
+            '<img src="{{ asset("upload/news") }}/' + news.featured_image + '" class="imgsize1"/>' +
+        '</td>' +
+        '<td>' + news.contents + '</td>' +
+        '<td>' + news.status + '</td>' +
+        '<td>' +
+            '<a href="{{ url("admin/saveNews") }}/' + news.id + '" class="btn btn-primary">Edit</a>' +
+            '<a class="btn btn-danger" style="color: white;" data-toggle="modal" data-target="#deleteConfirmationModal" data-news-name="' + news.name + '" data-news-id="' + news.id + '">Delete</a>' +
+        '</td>' +
+        '</tr>';
+
+    $('#service tbody').append(row);
+});
+            }
+        });
     });
 </script>
 @endsection
