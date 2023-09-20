@@ -65,8 +65,9 @@
                            <td>{{$d->price}}</td>
                            <td>
                               <a href="{{url('admin/savedepartmentservice/').'/'.$d->department_id.'/'.$d->id}}" class="btn btn-primary">{{__('messages.Edit')}}</a>
-                              <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a>
-                           </td>
+                              {{-- <a href="javascript:deleterow('deletedepartmentservice','<?= $d->id ?>')" class="btn btn-danger">{{__('messages.Delete')}}</a> --}}
+                              <a class="btn btn-danger" style="color: white;" data-toggle="modal" data-target="#deleteConfirmationModal" data-departservice-name="{{ $d->name }}" data-departservice-id="{{ $d->id }}">{{__('messages.Delete')}}</a>
+                            </td>
                         </tr>
                         @endforeach
                      </tbody>
@@ -78,4 +79,37 @@
       </div>
    </div>
 </div>
-@stop
+
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">Delete Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this Service?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="{{ url('admin/deletedepartmentservice') }}/{{ $d->id }}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@endsection
+@section('footer')
+<script>
+    $('#deleteConfirmationModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var departmentName = button.data('departservice-name');
+        var modal = $(this);
+        modal.find('.modal-body').html("Are you sure you want to delete " + departmentName + "?");
+    });
+</script>
+@endsection

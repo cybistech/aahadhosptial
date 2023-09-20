@@ -108,7 +108,7 @@ class ServiceController extends Controller
             }
       }
       $data->delete();
-      Session::flash('message',__("messages.Facilities Delete Successfully"));
+      Session::flash('message',__("Service Delete Successfully"));
       Session::flash('alert-class', 'alert-success');
       return redirect("admin/service");
     }
