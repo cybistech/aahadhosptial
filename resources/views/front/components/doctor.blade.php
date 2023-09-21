@@ -26,7 +26,7 @@
         </div>
         <div class="info-box">
             <h5 class="name"><a href="{{url('doctors/').'/'.$d->slug}}">{{ $d->name }}</a></h5>
-            <span class="">{{substr($d->about_us,0,100)}}</span>
+            <span class="">{!! substr($d->about_us,0,100) !!}</span>
         </div>
     </div>
 </div>

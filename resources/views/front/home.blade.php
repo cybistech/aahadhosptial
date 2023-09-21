@@ -305,7 +305,7 @@
                                 $image=asset('upload/profile/profile.png');
                             }
                         ?>
-                        <figure class="image"><a href="{{url('doctors/').'/'.$d->slug}}"><img src="{{ $image }}" alt="{{ $d->name }}" title="{{$d->name}}" width="260" height="330.27" ></a></figure>
+                        <figure class="image"><a href="{{url('doctors/').'/'.$d->slug}}"><img class="img" src="{{ $image }}" alt="{{ $d->name }}" title="{{$d->name}}" width="260" height="330.27" ></a></figure>
                         <ul class="social-links">
                             @if (!empty($d->facebook_id))
                                 <li><a href="{{ $d->facebook_id }}"><span class="fab fa-facebook"></span></a></li>
@@ -555,7 +555,7 @@
                             <div class="lower-content">
                                 <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ substr($n->title,0,25) }}</a></h4>
                                 <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
-                                <div class="text">{{ substr($n->contents,0,75) }}</div>
+                                <div class="text">{!! substr($n->contents,0,75) !!}</div>
                                     <div class="post-info">
                                         <div class="post-author">{{ $n->user->name }}</div>
                                     </div>

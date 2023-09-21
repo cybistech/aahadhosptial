@@ -88,16 +88,14 @@
                               <div class="col-md-6">
                                  <label for="email" class=" form-control-label">
                                  {{__('messages.Email')}}
-                                 <span class="reqfield" >*</span>
                                  </label>
-                                 <input type="text" id="email" placeholder="{{__('messages.Enter').' '.__('messages.Email')}}" class="form-control" required name="email" value="{{ isset($data->email)?$data->email:''}}">
+                                 <input type="text" id="email" placeholder="{{__('messages.Enter').' '.__('messages.Email')}}" class="form-control" name="email" value="{{ isset($data->email)?$data->email:''}}">
                               </div>
                               <div class="col-md-6">
                                  <label for="name" class=" form-control-label">
                                  {{__('messages.Password')}}
-                                 <span class="reqfield" >*</span>
                                  </label>
-                                 <input type="text" id="password" placeholder="{{__('messages.Enter').' '.__('messages.Password')}}" class="form-control" required name="password" value="{{ isset($data->password)?$data->password:''}}">
+                                 <input type="text" id="password" placeholder="{{__('messages.Enter').' '.__('messages.Password')}}" class="form-control" name="password" value="{{ isset($data->password)?$data->password:''}}">
                               </div>
                            </div>
                            <div class="form-group">
@@ -116,13 +114,13 @@
                                  <label for="phone" class=" form-control-label">
                                  {{__('messages.Facebook ID')}}
                                  </label>
-                                 <input type="text" id="facebook" required placeholder="{{__('messages.Enter').' '.__('messages.Facebook ID')}}"  class="form-control"  name="facebook" value="{{ isset($data->facebook_id)?$data->facebook_id:''}}">
+                                 <input type="text" id="facebook"  placeholder="{{__('messages.Enter').' '.__('messages.Facebook ID')}}"  class="form-control"  name="facebook" value="{{ isset($data->facebook_id)?$data->facebook_id:''}}">
                               </div>
                               <div class="col-md-6">
                                  <label for="name" class=" form-control-label">
                                  {{__('messages.Twitter ID')}}
                                  </label>
-                                 <input type="text" id="twitter_id" required placeholder="{{__('messages.Enter').' '.__('messages.Twitter ID')}}"  class="form-control"  name="twitter_id" value="{{ isset($data->twitter_id)?$data->twitter_id:''}}">
+                                 <input type="text" id="twitter_id"  placeholder="{{__('messages.Enter').' '.__('messages.Twitter ID')}}"  class="form-control"  name="twitter_id" value="{{ isset($data->twitter_id)?$data->twitter_id:''}}">
                               </div>
                            </div>
                            <div class="form-group">
@@ -130,13 +128,13 @@
                                  <label for="phone" class=" form-control-label">
                                  {{__('messages.Google ID')}}
                                  </label>
-                                 <input type="text" id="google_id" required placeholder="{{__('messages.Enter').' '.__('messages.Google ID')}}"  class="form-control"  name="google_id" value="{{ isset($data->google_id)?$data->google_id:''}}">
+                                 <input type="text" id="google_id"  placeholder="{{__('messages.Enter').' '.__('messages.Google ID')}}"  class="form-control"  name="google_id" value="{{ isset($data->google_id)?$data->google_id:''}}">
                               </div>
                               <div class="col-md-6">
                                  <label for="name" class=" form-control-label">
                                  {{__('messages.Instagram ID')}}
                                  </label>
-                                 <input type="text" id="instagram_id" required placeholder="{{__('messages.Enter').' '.__('messages.Instagram ID')}}"  class="form-control"  name="instagram_id" value="{{ isset($data->instagram_id)?$data->instagram_id:''}}">
+                                 <input type="text" id="instagram_id"  placeholder="{{__('messages.Enter').' '.__('messages.Instagram ID')}}"  class="form-control"  name="instagram_id" value="{{ isset($data->instagram_id)?$data->instagram_id:''}}">
                               </div>
                               <div class="col-md-6">
                                 <label for="meta_description" class=" form-control-label">

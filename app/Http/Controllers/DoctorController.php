@@ -12,6 +12,7 @@ use App\Model\Appointment;
 use App\Model\Token;
 use App\Model\Review;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 // use Intervention\Image\Facades\Image;
 use App\Model\Setting;
@@ -49,8 +50,8 @@ class DoctorController extends Controller
                 $request->validate([
                     'department' => 'required',
                     'name' => 'required',
-                    'email' => 'required|unique:users',
-                    'password'=>'required',
+                    // 'email' => 'required|unique:users',
+                    // 'password'=>'required',
                     'phone_no'=>'required',
                     'aboutus'=>'required',
                     'service'=>'required',
@@ -118,8 +119,8 @@ class DoctorController extends Controller
                 $store=new Doctor();
                 $usd=new User();
                 $usd->name=$request->get("name");
-                $usd->email=$request->get("email");
-                $usd->password=$request->get("password");
+                $usd->email=strtolower(str_replace(' ', '.', $request->get('name'))) . '@gmail.com';
+                $usd->password=Hash::make(Str::random(8));
                 $usd->phone_no=$request->get("phone_no");
                 $usd->usertype='3';
                 $usd->save();
@@ -130,8 +131,8 @@ class DoctorController extends Controller
             $store->department_id=$request->get("department");
             $store->name=$request->get("name");
             $store->slug=Str::slug($request->get('name'));
-            $store->email=$request->get("email");
-            $store->password=$request->get("password");
+            $store->email=strtolower(str_replace(' ', '.', $request->get('name'))) . '@gmail.com';
+            $store->password=Hash::make(Str::random(8));
             $store->phone_no=$request->get("phone_no");
             $store->about_us=$request->get("aboutus");
             $store->service=$request->get("service");
