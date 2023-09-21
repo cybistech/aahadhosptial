@@ -40,7 +40,7 @@ class DoctorController extends Controller
                 $request->validate([
                     'department' => 'required',
                     'name' => 'required',
-                    'password'=>'required',
+                    // 'password'=>'required',
                     'phone_no'=>'required',
                     'aboutus'=>'required',
                     'service'=>'required',
@@ -131,8 +131,8 @@ class DoctorController extends Controller
             $store->department_id=$request->get("department");
             $store->name=$request->get("name");
             $store->slug=Str::slug($request->get('name'));
-            $store->email=strtolower(str_replace(' ', '.', $request->get('name'))) . '@gmail.com';
-            $store->password=Hash::make(Str::random(8));
+            $store->email=$request->get("email");
+            $store->password=$request->get("password");
             $store->phone_no=$request->get("phone_no");
             $store->about_us=$request->get("aboutus");
             $store->service=$request->get("service");
