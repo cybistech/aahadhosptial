@@ -19,6 +19,11 @@
     </div>
 </div>
 </section>
+        @php
+            $setting=setting();
+            $department=department();
+            $news=news();
+        @endphp
 
 <div class="sidebar-page-container">
 <div class="auto-container">

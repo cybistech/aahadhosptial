@@ -35,6 +35,11 @@
 </section>
 <!-- End Map Section -->
 
+        @php
+            $setting=setting();
+            $department=department();
+            $news=news();
+        @endphp
 <section class="contact-section" id="contact">
     <div class="small-container">
         <div class="sec-title text-center">

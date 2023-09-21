@@ -12,6 +12,7 @@ use App\Model\Appointment;
 use App\Model\DepartService;
 use App\Model\Token;
 use App\Model\Review;
+use Illuminate\Support\Str;
 use App\Model\Service;
 use App\Model\Setting;
 use App\Model\Package;
@@ -51,25 +52,30 @@ class FrontController extends Controller
           Session::put("main_banner",asset('public/upload/web').'/'.$setting->main_banner);
        }
         public function showhome(){
-            $seo = (object) array(
-                'seo_title' => ' Home '.'|'.' Aahad Hospital',
-                'seo_description' => 'Some description',
-                'seo_other' => '',
-                'seo_type'=>'website',
-                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
-            );
             if(!isset($_COOKIE['fload'])){
                 //setcookie('fload','1', time() + (86400 * 30), "/");
             }
-            // $segment1 =  request()->segment(1);
-            // dd($segment1);exit;
-            $service=Service::get()->take(6);
-            $doctor=Doctor::get()->take(4);
-            return view('front.home')->with([
-                'seo'=>$seo,
-                'services'=>$service,
-                'doctors'=>$doctor,
-            ]);
+            $cache_key = Route::currentRouteName();
+            if ( Cache::has($cache_key) ) {
+                return Cache::get($cache_key);
+            } else {
+                $seo = (object) array(
+                    'seo_title' => ' Home '.'|'.' Aahad Hospital',
+                    'seo_description' => 'Some description',
+                    'seo_other' => '',
+                    'seo_type'=>'website',
+                    'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+                );
+                $service=Service::get()->take(6);
+                $doctor=Doctor::get()->take(4);
+                $cachedData = view('front.home')->with([
+                    'seo'=>$seo,
+                    'services'=>$service,
+                    'doctors'=>$doctor,
+                ])->render();
+                Cache::put($cache_key, $cachedData, 604800);
+                return $cachedData;
+            }
         }
 
        public function getserviceanddoctor($department_id){
@@ -121,18 +127,31 @@ class FrontController extends Controller
            return view("front.facilites")->with("department",$department)->with("facilites",$service)->with("setting",$setting);
        }
 
-       public function department(){
-           $department=Department::all();
-           $departments=Department::paginate(10);
-           $setting=Setting::find(1);
-           return view("front.department")->with("department",$department)->with('departments',$departments)->with("setting",$setting);
-       }
+        public function department(){
 
-       public function contact_us(){
-           $department=Department::all();
-           $setting=Setting::find(1);
-           return view("front.contactus")->with("department",$department)->with("setting",$setting);
-       }
+            $cache_key =  'dep';
+            if ( Cache::has($cache_key) ) {
+                return Cache::get($cache_key);
+            } else {
+                $departments=Department::paginate(10);
+                $cachedData = view("front.department")->with('departments', $departments)->render();
+                Cache::put($cache_key, $cachedData, 604800);
+                return $cachedData;
+            }
+        }
+
+        public function contact_us(){
+
+            $cache_key = Route::currentRouteName();
+            if ( Cache::has($cache_key) ) {
+                return Cache::get($cache_key);
+            } else {
+                $cachedData = view('front.contactus')->render();
+                Cache::put($cache_key, $cachedData, 604800);
+                return $cachedData;
+            }
+
+        }
 
        public function myaccount(){
          if(Auth::id()&&isset(Auth::user()->usertype)&&Auth::user()->usertype=='1'){
@@ -210,46 +229,73 @@ class FrontController extends Controller
             return redirect()->back();
        }
 
-       public function doctordetails($slug){
-            $department=Department::all();
-            $d_detail=Doctor::where('slug',$slug)->first();
-            $id=$d_detail->user_id;
-            $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
+            public function doctordetails($slug){
 
+                $key=Doctor::where('slug',$slug)->first();
+                $cache_key=$slug.$key->user_id;
+                $d_detail= Cache::remember($cache_key, 604800 , function () use ($slug) {
+                    return $d_detail= Doctor::where('slug',$slug)->first();
+                });
 
-            if(!$doctor) {
-                return redirect('/');
+                $id= Cache::remember('id'.$cache_key, 604800 , function() use ($d_detail) {
+                    return $d_detail->user_id;
+                });
+
+                $doctor= Cache::remember('doc'.$cache_key, 604800 , function () use ($id) {
+                    return Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
+                });
+
+                if(!$doctor) {
+                    return redirect('/');
+                }
+
+                $doctor_list= Cache::remember('doctor_list'.$cache_key, 604800 , function() use ($doctor) {
+                    return Doctor::where('department_id',$doctor->department_id)->get()->take(8);
+                });
+
+                return view('front.doctordetails')->with([
+                    'doctor_list'=>$doctor_list,
+                    'doctor'=>$doctor,
+                    'id'=>$id
+                ]);
+
+        }
+
+        public function departmentdetail($slug){
+
+            $cache_key=Route::currentRouteName().$slug;
+            $departmentdetails= Cache::remember($cache_key, 604800 , function() use ($slug) {
+                return Department::with("doctor","service")->where('slug',$slug)->first();
+            });
+                if($departmentdetails){
+                    return view('front.departmentdetails')->with([
+                        'departmentdetails'=>$departmentdetails
+                    ])->render();
+
+                }else{
+                    return redirect('/');
+                }
+
+    }
+
+        public function doctorlist(){
+
+            $cache_key = Route::currentRouteName();
+            if ( Cache::has($cache_key) ) {
+                return Cache::get($cache_key);
+            } else {
+                $doctor=Doctor::paginate(10);
+                $departmentdoctor=Department::with('doctor')->get();
+                $reviews=Review::with('doctors','users')->get()->take(4);
+                $cachedData = view('front.doctorlist')->with([
+                    'doctor'=>$doctor,
+                    'departmentdoctor'=>$departmentdoctor,
+                    'reviews'=>$reviews
+                ])->render();
+                Cache::put($cache_key, $cachedData, 604800);
+                return $cachedData;
             }
-            $departmentdetails=Department::with("doctor","service")->find($doctor->department_id);
-            $doctor->total_ratting=count(Review::where("doctor_id",$id)->get());
-            $doctor->ratting=Review::where("doctor_id",$id)->avg('ratting');
-            $reviews=Review::with('doctors','users')->where("doctor_id",$id)->get();
-            $doctor_list=Doctor::where('department_id',$doctor->department_id)->get()->take(8);
-            //echo "<pre>";print_r($reviews);exit;
-             $setting=Setting::find(1);
-           //  echo "<pre>";print_r($doctor);exit;
-            return view("front.doctordetails")->with('doctor_list',$doctor_list)->with("department",$department)->with("review",$reviews)->with("doctor",$doctor)->with("departmentdetails",$departmentdetails)->with("id",$id)->with("setting",$setting);
-       }
-
-       public function departmentdetail($slug){
-           $department=Department::all();
-            $setting=Setting::find(1);
-           $departmentdetails=Department::with("doctor","service")->where('slug',$slug)->first();
-           if($departmentdetails){
-               return view("front.departmentdetails")->with("department",$department)->with("departmentdetails",$departmentdetails)->with("setting",$setting);
-           }else{
-               return redirect('/');
-           }
-       }
-
-       public function doctorlist(){
-          $department=Department::all();
-          $doctor=Doctor::paginate(10);
-          $departmentdoctor=Department::with('doctor')->get();
-           $setting=Setting::find(1);
-           $reviews=Review::with('doctors','users')->get()->take(4);
-          return view("front.doctorlist")->with('reviews',$reviews)->with("department",$department)->with("doctor",$doctor)->with("departmentdoctor",$departmentdoctor)->with("setting",$setting);
-       }
+        }
 
        public function gallery(){
            $department=Department::all();
@@ -299,17 +345,28 @@ class FrontController extends Controller
            return view("front.pricing")->with("department",$department)->with("pricing",$pricing)->with("setting",$setting);
        }
 
-       public function termcondition(){
-           $department=Department::all();
-           $setting=Setting::find(1);
-           return view("front.termcondition",compact('setting','department'));
-       }
+        public function termcondition(){
 
-       public function privacypolicy(){
-           $department=Department::all();
-           $setting=Setting::find(1);
-           return view("front.privacypolicy")->with("department",$department)->with("setting",$setting);
-       }
+            $cache_key = Route::currentRouteName();
+            if ( Cache::has($cache_key) ) {
+                return Cache::get($cache_key);
+            } else {
+                $cachedData = view('front.termcondition')->render();
+                Cache::put($cache_key, $cachedData, 604800);
+                return $cachedData;
+            }
+        }
+
+        public function privacypolicy(){
+            $cache_key = Route::currentRouteName();
+            if ( Cache::has($cache_key) ) {
+                return Cache::get($cache_key);
+            } else {
+                $cachedData = view('front.privacypolicy')->render();
+                Cache::put($cache_key, $cachedData, 604800);
+                return $cachedData;
+            }
+        }
 
        public function postregister(Request $request){
            $getemail=User::where("email",$request->get("email"))->first();
@@ -649,73 +706,104 @@ class FrontController extends Controller
     }
 
     public function services(){
-        $department = Department::all();
-        $service = Service::all();
-        $setting = Setting::find(1);
-        return view('front.services')->with([
-            'department' => $department,
-            'service' => $service,
-            'setting' => $setting
-        ]);
+
+        $cache_key = Route::currentRouteName();
+        if ( Cache::has($cache_key) ) {
+            return Cache::get($cache_key);
+        } else {
+            $service = Service::all();
+            $cachedData = view('front.services')->with([
+                'service' => $service,
+
+            ])->render();
+            Cache::put($cache_key, $cachedData, 604800);
+            return $cachedData;
+        }
+
     }
     public function news(){
-        $department=Department::all();
-        $setting=Setting::first();
-        $newsPost=News::where('news_categories_id',1)->with('user')->paginate(15);
-        return view('front.news')->with("department",$department)->with('setting',$setting)->with('newsPost',$newsPost);
+
+        $cache_key = Route::currentRouteName().'new';
+        if ( Cache::has($cache_key) ) {
+            return Cache::get($cache_key);
+        } else {
+            $newsPost=News::where('news_categories_id',1)->where('status','publish')->with('user')->paginate(15);
+            $cachedData = view('front.news')->with([
+                'newsPost' => $newsPost,
+            ])->render();
+            Cache::put($cache_key, $cachedData, 604800);
+            return $cachedData;
+        }
     }
     public function events(){
-        $department=Department::all();
-        $setting=Setting::first();
-        $events=News::where('news_categories_id',2)->with('user')->paginate(15);
-        return view('front.events')->with([
-            'department'=>$department,
-            'events'=>$events,
-            'setting'=>$setting
-        ]);
+
+        $cache_key = Route::currentRouteName();
+        if ( Cache::has($cache_key) ) {
+            return Cache::get($cache_key);
+        } else {
+            $events=News::where('news_categories_id',2)->where('status','publish')->with('user')->paginate(15);
+            $cachedData = view('front.events')->with([
+                'events' => $events,
+            ])->render();
+            Cache::put($cache_key, $cachedData, 604800);
+            return $cachedData;
+        }
     }
 
     public function news_detail($slug){
-        $setting=Setting::first();
-        $department=Department::all();
-        $newsDetail=News::where('news_categories_id',1)->where('slug',$slug)->with('user')->first();
-        $news=News::where('news_categories_id',1)->with('user')->get();
-        $categories=NewsCategories::withCount('blogs')->get();
-        return view('front.newsdetail')->with([
-            'department'=>$department,
-            'setting'=>$setting,
-            'newsDetail'=>$newsDetail,
-            'news'=>$news,
-            'news_categories'=>$categories,
-        ]);
+
+        $cache_key = Route::currentRouteName().$slug;
+        if ( Cache::has($cache_key) ) {
+            return Cache::get($cache_key);
+        } else {
+            $newsDetail=News::where('news_categories_id',1)->where('slug',$slug)->where('status','publish')->with('user')->first();
+            $news=News::where('news_categories_id',1)->with('user')->where('status','publish')->get();
+            $categories=NewsCategories::withCount('blogs')->get();
+            $cachedData = view('front.newsdetail')->with([
+                'newsDetail'=>$newsDetail,
+                'news'=>$news,
+                'news_categories'=>$categories,
+            ])->render();
+            Cache::put($cache_key, $cachedData, 604800);
+            return $cachedData;
+        }
     }
 
     public function events_detail($slug){
-        $setting=Setting::first();
-        $department=Department::all();
-        $newsDetail=News::where('news_categories_id',2)->where('slug',$slug)->with('user')->first();
-        $news=News::where('news_categories_id',2)->get();
-        $categories=NewsCategories::withCount('blogs')->get();
-        return view('front.events_detail')->with([
-            'department'=>$department,
-            'setting'=>$setting,
-            'newsDetail'=>$newsDetail,
-            'news'=>$news,
-            'news_categories'=>$categories,
-        ]);
+
+
+        $cache_key = Route::currentRouteName().$slug;
+        if ( Cache::has($cache_key) ) {
+            return Cache::get($cache_key);
+        } else {
+            $newsDetail=News::where('news_categories_id',2)->where('slug',$slug)->where('status','publish')->with('user')->first();
+            $news=News::where('news_categories_id',2)->where('status','publish')->get();
+            $categories=NewsCategories::withCount('blogs')->get();
+            $cachedData = view('front.events_detail')->with([
+                'newsDetail'=>$newsDetail,
+                'news'=>$news,
+                'news_categories'=>$categories,
+            ])->render();
+            Cache::put($cache_key, $cachedData, 604800);
+            return $cachedData;
+        }
     }
 
     public function services_detail($slug){
-        $setting=Setting::first();
-        $department=Department::all();
-        $serviceDetail=Service::where('slug',$slug)->first();
-        $service=Service::all();
-        return view('front.servicesdetail')->with([
-            'setting'=>$setting,
-            'service'=>$service,
-            'department'=>$department,
-            'serviceDetail'=>$serviceDetail
-        ]);
+
+        $cache_key = Route::currentRouteName().$slug;
+        if ( Cache::has($cache_key) ) {
+            return Cache::get($cache_key);
+        } else {
+            $serviceDetail=Service::where('slug',$slug)->first();
+            $service=Service::all();
+            $cachedData = view('front.servicesdetail')->with([
+                'service'=>$service,
+                'serviceDetail'=>$serviceDetail
+            ])->render();
+            Cache::put($cache_key, $cachedData, 604800);
+            return $cachedData;
+        }
     }
 
     public function categories_manage($slug){
@@ -723,11 +811,14 @@ class FrontController extends Controller
     }
 
     public function about_us(){
-        $department=Department::all();
-        $setting=Setting::first();
-        return view('front.aboutus')->with([
-            'department'=>$department,
-            'setting'=> $setting,
-        ]);
+
+        $cache_key = Route::currentRouteName();
+        if ( Cache::has($cache_key) ) {
+            return Cache::get($cache_key);
+        } else {
+            $cachedData = view('front.aboutus')->render();
+            Cache::put($cache_key, $cachedData, 604800);
+            return $cachedData;
+        }
     }
 }

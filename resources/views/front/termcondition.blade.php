@@ -16,6 +16,11 @@
     </section>
 <!--End Page Title-->
 
+        @php
+            $setting=setting();
+            $department=department();
+            $news=news();
+        @endphp
 <!-- Terms And Conditions -->
 <section class="terms-and-condition">
     <div class="auto-container">

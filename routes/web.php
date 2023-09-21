@@ -46,8 +46,8 @@ Route::get('p/migrate_reset', function (Request $request) {
 Route::get('cache_clear', function() {
    Artisan::call('config:cache');
    Artisan::call('optimize:clear');
-   die("Done");
-    // return redirect('/');
+   Artisan::call('cache:clear');
+    return redirect('/');
 });
  Route::get("/brain",[braintreeController::class,'showbrain']);
 
@@ -73,7 +73,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get('news/{slug}',[FrontController::class,'news_detail'])->name('news_detail');
      Route::get('events/{slug}',[FrontController::class,'events_detail'])->name('event_detail');
      Route::get('categories/{slug}',[FrontController::class,'categories_manage'])->name('manage_categories');
-     Route::get("departments/{slug}",[FrontController::class,'departmentdetail']);
+     Route::get("departments/{slug}",[FrontController::class,'departmentdetail'])->name('department_detail');
      Route::get("doctors",[FrontController::class,'doctorlist'])->name('doctors');
      Route::get("gallery",[FrontController::class,'gallery']);
      Route::get("contact-us",[FrontController::class,'contact_us'])->name('contact_us');
@@ -87,7 +87,7 @@ Route::group(['prefix' => '/'], function () {
      Route::get("postlogin",[FrontController::class,'postlogin']);
      Route::get("userlogout",[FrontController::class,'userlogout']);
      Route::get("postforgot",[FrontController::class,'postforgot']);
-     Route::get("doctors/{slug}",[FrontController::class,'doctordetails']);
+     Route::get("doctors/{slug}",[FrontController::class,'doctordetails'])->name('doctor_details');
      Route::any("addreview",[FrontController::class,'addreview']);
      Route::post("mediaupload",[FrontController::class,'mediaupload']);
      Route::post("deletemedia",[FrontController::class,'deletemedia']);
