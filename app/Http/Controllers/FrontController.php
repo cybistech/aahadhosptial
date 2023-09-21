@@ -677,7 +677,7 @@ class FrontController extends Controller
         $department=Department::all();
         $newsDetail=News::where('news_categories_id',1)->where('slug',$slug)->with('user')->first();
         $news=News::where('news_categories_id',1)->with('user')->get();
-        $categories=NewsCategories::all();
+        $categories=NewsCategories::withCount('blogs')->get();
         return view('front.newsdetail')->with([
             'department'=>$department,
             'setting'=>$setting,
@@ -692,7 +692,7 @@ class FrontController extends Controller
         $department=Department::all();
         $newsDetail=News::where('news_categories_id',2)->where('slug',$slug)->with('user')->first();
         $news=News::where('news_categories_id',2)->get();
-        $categories=NewsCategories::all();
+        $categories=NewsCategories::withCount('blogs')->get();
         return view('front.events_detail')->with([
             'department'=>$department,
             'setting'=>$setting,

@@ -11,4 +11,10 @@ class NewsCategories extends Model
     protected $table='news_categories';
     protected $primary_key='id';
     protected $fillable=['name','slug','status'];
+
+    public function blogs()
+    {
+        return $this->hasMany(News::class);
+    }
+
 }

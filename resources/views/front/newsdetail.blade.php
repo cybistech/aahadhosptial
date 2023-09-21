@@ -87,7 +87,7 @@
                                         <a href="{{ route('news_detail', ['slug' => $n->slug]) }}">
                                             <div class="lower-content">
                                                 <h4><a href="{{ route('news_detail', ['slug' => $n->slug]) }}">{{ substr($n->title,0,25) }}</a></h4>
-                                                <div class="text">{{ substr($n->contents,0,75) }}</div>
+                                                <div class="text">{!! substr($n->contents,0,75) !!}</div>
                                                     <div class="post-info">
                                                     <div class="post-author">{{ $n->user->name }}</div>
                                                 </div>
@@ -117,7 +117,7 @@
                             <div class="sidebar-title"><h3>Categories</h3></div>
                             <ul class="cat-list">
                                 @foreach ($news_categories as $c)
-                                    <li><a href="{{ route('manage_categories', ['slug' => $c->slug]) }}">{{ $c->name }}</a></li>
+                                    <li><a href="{{ route('manage_categories', ['slug' => $c->slug]) }}">{{ $c->name }} <span>({{ $c->blogs_count}})</span></a></li>
                                 @endforeach
                             </ul>
                         </div>
