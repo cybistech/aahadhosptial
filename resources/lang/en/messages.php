@@ -404,7 +404,8 @@ return [
     'social_$_setting'=>'Social & Settings',
     'map_key'=>'Map Key',
     'map_path'=>'Map Path',
-    'Create'=>'Add New'
+    'Create'=>'Add New',
+    'off'=>'OFF',
 
 
 
