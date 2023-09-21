@@ -60,6 +60,10 @@
 
     <header class="main-header header-style-one">
 
+        @php
+            $setting=setting();
+            $department=department();
+        @endphp
 
         <div class="header-top">
             <div class="auto-container">

@@ -16,6 +16,10 @@
 
     <footer class="main-footer">
 
+        @php
+            $setting=setting();
+            $department=department();
+        @endphp
         <div class="widgets-section" style="background-image: url({{asset('assets/images/background/7.jpg')}});">
             <div class="auto-container">
                 <div class="row">

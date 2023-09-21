@@ -4,7 +4,11 @@
 @endsection
 
 @section('main.container')
-
+        @php
+            $setting=setting();
+            $department=department();
+            $news=news();
+        @endphp
 
 <section class="main-slider">
     <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">

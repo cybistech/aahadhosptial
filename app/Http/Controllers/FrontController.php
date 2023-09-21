@@ -49,7 +49,8 @@ class FrontController extends Controller
           Session::put("main_banner",asset('public/upload/web').'/'.$setting->main_banner);
        }
        public function showhome(){
-        $setting=Setting::find(1);
+        // $setting=Setting::find(1);
+        // $department=Department::all();
         $seo = (object) array(
             'seo_title' => ' Home '.'|'.' Aahad Hospital',
             'seo_description' => 'Some description',
@@ -61,12 +62,16 @@ class FrontController extends Controller
             //setcookie('fload','1', time() + (86400 * 30), "/");
          }
           $service=Service::get()->take(6);
-          $package=Package::get()->take(3);
-          $department=Department::all();
+        //   $package=Package::get()->take(3);
           $doctor=Doctor::get()->take(4);
-          $news=News::where('news_categories_id',1)->get()->take(3);
-          $reviews=Review::with('doctors','users')->get()->take(4);
-          return view("front.home")->with('seo',$seo)->with('news',$news)->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctors",$doctor)->with("chatpage",'1');;
+        //   $news=News::where('news_categories_id',1)->get()->take(3);
+        //   $reviews=Review::with('doctors','users')->get()->take(4);
+        return view('front.home')->with([
+            'seo'=>$seo,
+            'services'=>$service,
+            'doctors'=>$doctor,
+        ]);
+        //   return view("front.home")->with('seo',$seo)->with('news',$news)->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctors",$doctor)->with("chatpage",'1');;
        }
 
        public function getserviceanddoctor($department_id){

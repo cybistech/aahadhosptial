@@ -13,8 +13,26 @@
 */
 
 use App\Model\News;
+use App\Model\Setting;
+use App\Model\Department;
 
 function news(){
     $news=News::where('news_categories_id',1)->get();
     return $news;
+}
+
+if (!function_exists('setting')) {
+    function setting() {
+        $setting = Setting::find(1);
+
+        return $setting;
+    }
+}
+
+if (!function_exists('department')) {
+    function department() {
+        $department=Department::all();
+
+        return $department;
+    }
 }
