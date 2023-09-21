@@ -211,7 +211,7 @@ class FrontController extends Controller
             $department=Department::all();
             $d_detail=Doctor::where('slug',$slug)->first();
             $id=$d_detail->user_id;
-            $doctor=Doctor::with('department',"TimeTabledata")->where("slug",$slug)->first();
+            $doctor=Doctor::with('department',"TimeTabledata")->where("user_id",$id)->first();
 
 
             if(!$doctor) {

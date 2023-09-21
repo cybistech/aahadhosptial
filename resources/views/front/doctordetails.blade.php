@@ -25,7 +25,7 @@
                 <div class="docter-detail">
                     <h3 class="name">{{ $doctor->name }}</h3>
                     {{-- <span class="designation">MBBS (Sydney), FRACS (Paediatric Surgery)</span> --}}
-                    <div class="text">{{ $doctor->about_us }}</div>
+                    <div class="text">{!! $doctor->about_us !!}</div>
                     <ul class="doctor-info-list">
                         <li>
                             <strong>Speciality</strong>
@@ -37,7 +37,7 @@
                         </li> --}}
                         <li>
                             <strong>Services</strong>
-                            <p>{{ $doctor->service }}</p>
+                            <p>{!! $doctor->service !!}</p>
                         </li>
                         {{-- <li>
                             <strong>Address</strong>
@@ -133,9 +133,22 @@
                                             ?>
                                              <span>{{ $timeRange }}</span></li>
                                     @else
-                                        @foreach ($weekdays as $dayTimetable)
+
+                                        @if (count($weekdays) > 0)
+                                            @foreach ($weekdays as $dayTimetable)
+                                                @php
+                                                    $parts = explode(' ', $dayTimetable);
+                                                    $weekend_name = $parts[0];
+                                                    $timerange = $parts[1] .  ' - ' . $parts[3];
+                                                @endphp
+                                                <li>{{$weekend_name}} <span>{{ $timerange }}</span></li>
+                                            @endforeach
+                                        @endif
+
+
+                                        {{-- @foreach ($weekdays as $dayTimetable)
                                                 <p>{{ $dayTimetable }}</p>
-                                        @endforeach
+                                        @endforeach --}}
                                     @endif
                                 @endif
 

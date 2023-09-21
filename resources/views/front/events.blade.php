@@ -40,7 +40,7 @@
                     <div class="content-box">
                         <h4><a href="{{ route('event_detail', ['slug' => $e->slug]) }}">{{ $e->title }}</a></h4>
                         <a href="{{ route('event_detail', ['slug' => $e->slug]) }}">
-                            <div class="text">{{ substr($e->contents,0,250) }}</div>
+                            <div class="text">{!! substr($e->contents,0,250) !!}</div>
                             <div class="theme-btn btn-style-one read-more"><span class="btn-title">Read More</span></div>
                             <div class="post-info">
                             <div class="post-author">{{ $e->user->name }}</div>
