@@ -30,10 +30,12 @@ use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Database;
 use App\User;
+use Illuminate\Support\Facades\Route;
 // use Session;
 use Illuminate\Support\Facades\Session;
 use DateTime;
 use DateTimeZone;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
 // use Mail;
 use validate;
@@ -48,31 +50,27 @@ class FrontController extends Controller
           Session::put("slider_color","#f1f5ff");
           Session::put("main_banner",asset('public/upload/web').'/'.$setting->main_banner);
        }
-       public function showhome(){
-        // $setting=Setting::find(1);
-        // $department=Department::all();
-        $seo = (object) array(
-            'seo_title' => ' Home '.'|'.' Aahad Hospital',
-            'seo_description' => 'Some description',
-            'seo_other' => '',
-            'seo_type'=>'website',
-            'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
-        );
-         if(!isset($_COOKIE['fload'])){
-            //setcookie('fload','1', time() + (86400 * 30), "/");
-         }
-          $service=Service::get()->take(6);
-        //   $package=Package::get()->take(3);
-          $doctor=Doctor::get()->take(4);
-        //   $news=News::where('news_categories_id',1)->get()->take(3);
-        //   $reviews=Review::with('doctors','users')->get()->take(4);
-        return view('front.home')->with([
-            'seo'=>$seo,
-            'services'=>$service,
-            'doctors'=>$doctor,
-        ]);
-        //   return view("front.home")->with('seo',$seo)->with('news',$news)->with("services",$service)->with("package",$package)->with("setting",$setting)->with("department",$department)->with("review",$reviews)->with("doctors",$doctor)->with("chatpage",'1');;
-       }
+        public function showhome(){
+            $seo = (object) array(
+                'seo_title' => ' Home '.'|'.' Aahad Hospital',
+                'seo_description' => 'Some description',
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
+            if(!isset($_COOKIE['fload'])){
+                //setcookie('fload','1', time() + (86400 * 30), "/");
+            }
+            // $segment1 =  request()->segment(1);
+            // dd($segment1);exit;
+            $service=Service::get()->take(6);
+            $doctor=Doctor::get()->take(4);
+            return view('front.home')->with([
+                'seo'=>$seo,
+                'services'=>$service,
+                'doctors'=>$doctor,
+            ]);
+        }
 
        public function getserviceanddoctor($department_id){
            $departmentservice=DepartService::where("department_id",$department_id)->get();
