@@ -1,1 +1,0 @@
-page not found<?php /**PATH C:\xampp\htdocs\clinic Management\resources\views/errors/admin404.blade.php ENDPATH**/ ?>

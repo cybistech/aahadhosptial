@@ -1,1 +1,0 @@
-page not found<?php /**PATH E:\xampp\htdocs\vidhi\laravel\singleclinic\resources\views/errors/admin404.blade.php ENDPATH**/ ?>

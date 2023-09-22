@@ -88,6 +88,17 @@
                      <a href="<?php echo e(url('admin/setting/1')); ?>"> <i class="menu-icon fa fa-cogs"></i><?php echo e(__('messages.Setting')); ?></a>
                   </li>
 
+                    <li class="active">
+                        <a href="<?php echo e(route('cache.clear')); ?>" id="clear-cache-btn"><i class="menu-icon fa fa-trash"></i><?php echo e(__('messages.clear_cache')); ?></a>
+                    </li>
+
+                    <script>
+                        document.getElementById('clear-cache-btn').addEventListener('click', function(e) {
+                            e.preventDefault();
+                            var currentUrl = window.location.href;
+                            window.location.href = "<?php echo e(route('cache.clear')); ?>?redirect=" + encodeURIComponent(currentUrl);
+                        });
+                    </script>
                </ul>
             </div>
          </nav>
@@ -113,7 +124,21 @@
                   </div>
                </div>
             </div>
+
          </header>
+         <div class="container">
+                <?php if(Session::get("message")): ?>
+                   <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+                      <?php echo e(Session::get("message")); ?>
+
+                      <?php echo e(__('Hamza is here ')); ?>
+
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                      </button>
+                   </div>
+                   <?php endif; ?>
+             </div>
          <?php echo $__env->yieldContent('content'); ?>
       </div>
       <div id="chat_new" class="modal" >

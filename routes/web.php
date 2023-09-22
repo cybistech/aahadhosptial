@@ -35,13 +35,7 @@ use Illuminate\Support\Facades\Artisan;
 //         $request->whenHas('__cc', function ($input) use ($routeName) {
 //             Cache::tags($routeName)->flush();
 //         });
-Route::get('p/migrate_reset', function (Request $request) {
-    $migrationPath = '/database/migrations/2023_09_15_112707_create_news_categories_table.php';
-    $command = "migrate --path=$migrationPath --force";
 
-    Artisan::call($command);
-    return "Migration complete!";
-});
 
 Route::get('cache_clear', function() {
    Artisan::call('config:cache');

@@ -3,6 +3,19 @@
 
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
+<div class="container">
+    <?php if(Session::get("message")): ?>
+       <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+          <?php echo e(Session::get("message")); ?>
+
+          <?php echo e(__('Hamza is here ')); ?>
+
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+          </button>
+       </div>
+       <?php endif; ?>
+ </div>
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">
@@ -24,28 +37,12 @@
 <div class="content mt-3">
 <div class="col-xl-3 col-lg-6">
    <div class="card">
-      <a href="<?php echo e(url('admin/appointment/0/0')); ?>"><div class="card-body">
+      <a href="<?php echo e(url('admin/department')); ?>"><div class="card-body">
          <div class="stat-widget-one">
             <div class="stat-icon dib"><i class="fa fa-ambulance  text-primary border-primary"></i></div>
             <div class="stat-content dib">
                <div class="stat-text"><?php echo e(__('messages.Total')); ?></div>
-			   <div class="stat-text"><?php echo e(__('messages.Appointment')); ?></div>
-               <div class="stat-digit"><?php echo e($totaldoctor); ?></div>
-            </div>
-         </div>
-      </div></a>
-   </div>
-</div>
-<div class="col-xl-3 col-lg-6">
-   <div class="card">
-     <a href="<?php echo e(url('admin/department')); ?>"> <div class="card-body">
-         <div class="stat-widget-one">
-            <div class="stat-icon dib"><i class="ti-layout-grid2  text-success border-success"></i></div>
-            <div class="stat-content dib">
-               <div class="stat-text"><?php echo e(__('messages.Total')); ?></div>
-               <div class="stat-text"><?php echo e(__('messages.Department')); ?>
-
-               </div>
+			   <div class="stat-text"><?php echo e(__('messages.Department')); ?></div>
                <div class="stat-digit"><?php echo e($totaldepartment); ?></div>
             </div>
          </div>
@@ -53,28 +50,44 @@
    </div>
 </div>
 <div class="col-xl-3 col-lg-6">
-   <div class="card">
-      <a href="<?php echo e(url('admin/service')); ?>"><div class="card-body">
-         <div class="stat-widget-one">
-            <div class="stat-icon dib"><i class="ti-book  text-warning border-warning"></i></div>
-            <div class="stat-content dib">
-               <div class="stat-text"><?php echo e(__('messages.Total')); ?></div>
-               <div class="stat-text"><?php echo e(__('messages.Facilities')); ?></div>
-               <div class="stat-digit"><?php echo e($totalservice); ?></div>
-            </div>
-         </div>
-      </div></a>
-   </div>
-</div>
+    <div class="card">
+       <a href="<?php echo e(url('admin/service')); ?>"><div class="card-body">
+          <div class="stat-widget-one">
+             <div class="stat-icon dib"><i class="ti-book  text-warning border-warning"></i></div>
+             <div class="stat-content dib">
+                <div class="stat-text"><?php echo e(__('messages.Total')); ?></div>
+                <div class="stat-text"><?php echo e(__('messages.services')); ?></div>
+                <div class="stat-digit"><?php echo e($totalservice); ?></div>
+             </div>
+          </div>
+       </div></a>
+    </div>
+ </div>
+ <div class="col-xl-3 col-lg-6">
+    <div class="card">
+      <a href="<?php echo e(url('admin/doctor')); ?>"> <div class="card-body">
+          <div class="stat-widget-one">
+             <div class="stat-icon dib"><i class="fa fa-user-md  text-danger border-danger"></i></div>
+             <div class="stat-content dib">
+                <div class="stat-text"><?php echo e(__('messages.Total')); ?></div>
+                <div class="stat-text"><?php echo e(__('messages.Doctors')); ?></div>
+                <div class="stat-digit"><?php echo e($totaldoctor); ?></div>
+             </div>
+          </div>
+       </div></a>
+    </div>
+ </div>
 <div class="col-xl-3 col-lg-6">
    <div class="card">
-     <a href="<?php echo e(url('admin/doctor')); ?>"> <div class="card-body">
+     <a href="<?php echo e(url('admin/department')); ?>"> <div class="card-body">
          <div class="stat-widget-one">
-            <div class="stat-icon dib"><i class="fa fa-user-md  text-danger border-danger"></i></div>
+            <div class="stat-icon dib"><i class="ti-layout-grid2  text-success border-success"></i></div>
             <div class="stat-content dib">
                <div class="stat-text"><?php echo e(__('messages.Total')); ?></div>
-               <div class="stat-text"><?php echo e(__('messages.Doctors')); ?></div>
-               <div class="stat-digit"><?php echo e($totaldoctor); ?></div>
+               <div class="stat-text"><?php echo e(__('messages.News')); ?>
+
+               </div>
+               <div class="stat-digit"><?php echo e($latest_news); ?></div>
             </div>
          </div>
       </div></a>
