@@ -1,7 +1,7 @@
 @extends('front.layout.main')
-@section('title')
+{{-- @section('title')
  {{__("messages.Privacy Policy")}}
-@endsection
+@endsection --}}
 @section('main.container')
     <section class="page-title" style="background-image: url({{asset('upload/department/department.jpg')}});">
         <div class="auto-container">

@@ -61,7 +61,7 @@ class FrontController extends Controller
             } else {
                 $seo = (object) array(
                     'seo_title' => ' Home '.'|'.' Aahad Hospital',
-                    'seo_description' => 'Some description',
+                    'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
                     'seo_other' => '',
                     'seo_type'=>'website',
                     'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
@@ -134,7 +134,18 @@ class FrontController extends Controller
                 return Cache::get($cache_key);
             } else {
                 $departments=Department::paginate(10);
-                $cachedData = view("front.department")->with('departments', $departments)->render();
+
+                $seo = (object) array(
+                    'seo_title' => 'Departments ' .'|'.' Aahad Hospital',
+                    'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                    'seo_other' => '',
+                    'seo_type'=>'website',
+                    'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+                );
+                $cachedData = view("front.department")->with([
+                    'departments'=>$departments,
+                    'seo'=>$seo
+                    ])->render();
                 Cache::put($cache_key, $cachedData, 604800);
                 return $cachedData;
             }
@@ -146,7 +157,18 @@ class FrontController extends Controller
             if ( Cache::has($cache_key) ) {
                 return Cache::get($cache_key);
             } else {
-                $cachedData = view('front.contactus')->render();
+
+                $seo = (object) array(
+                    'seo_title' => 'Contact us ' .'|'.' Aahad Hospital',
+                    'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                    'seo_other' => '',
+                    'seo_type'=>'website',
+                    'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+                );
+
+                $cachedData = view('front.contactus')->with([
+                    'seo'=>$seo
+                ])->render();
                 Cache::put($cache_key, $cachedData, 604800);
                 return $cachedData;
             }
@@ -253,7 +275,17 @@ class FrontController extends Controller
                     return Doctor::where('department_id',$doctor->department_id)->get()->take(8);
                 });
 
+                $seo = (object) array(
+                    'seo_title' => $doctor->name. ' |'.' Aahad Hospital',
+                    'seo_description' => $doctor->meta_description,
+                    'seo_other' => '',
+                    'seo_type'=>'website',
+                    'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+                );
+
+
                 return view('front.doctordetails')->with([
+                    'seo'=>$seo,
                     'doctor_list'=>$doctor_list,
                     'doctor'=>$doctor,
                     'id'=>$id
@@ -267,8 +299,17 @@ class FrontController extends Controller
             $departmentdetails= Cache::remember($cache_key, 604800 , function() use ($slug) {
                 return Department::with("doctor","service")->where('slug',$slug)->first();
             });
+
+            $seo = (object) array(
+                'seo_title' => $departmentdetails->name .' |'.' Aahad Hospital',
+                'seo_description' => $departmentdetails->meta_description,
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
                 if($departmentdetails){
                     return view('front.departmentdetails')->with([
+                        'seo'=>$seo,
                         'departmentdetails'=>$departmentdetails
                     ])->render();
 
@@ -287,7 +328,16 @@ class FrontController extends Controller
                 $doctor=Doctor::paginate(10);
                 $departmentdoctor=Department::with('doctor')->get();
                 $reviews=Review::with('doctors','users')->get()->take(4);
+                $seo = (object) array(
+                    'seo_title' => ' Doctors '.'|'.' Aahad Hospital',
+                    'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                    'seo_other' => '',
+                    'seo_type'=>'website',
+                    'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+                );
+
                 $cachedData = view('front.doctorlist')->with([
+                    'seo'=>$seo,
                     'doctor'=>$doctor,
                     'departmentdoctor'=>$departmentdoctor,
                     'reviews'=>$reviews
@@ -351,7 +401,18 @@ class FrontController extends Controller
             if ( Cache::has($cache_key) ) {
                 return Cache::get($cache_key);
             } else {
-                $cachedData = view('front.termcondition')->render();
+
+                $seo = (object) array(
+                    'seo_title' => 'Terms & Condition ' .'|'.' Aahad Hospital',
+                    'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                    'seo_other' => '',
+                    'seo_type'=>'website',
+                    'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+                );
+
+                $cachedData = view('front.termcondition')->with([
+                    'seo'=>$seo
+                ])->render();
                 Cache::put($cache_key, $cachedData, 604800);
                 return $cachedData;
             }
@@ -362,7 +423,18 @@ class FrontController extends Controller
             if ( Cache::has($cache_key) ) {
                 return Cache::get($cache_key);
             } else {
-                $cachedData = view('front.privacypolicy')->render();
+
+                $seo = (object) array(
+                    'seo_title' => 'Privacy Policy ' .'|'.' Aahad Hospital',
+                    'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                    'seo_other' => '',
+                    'seo_type'=>'website',
+                    'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+                );
+
+                $cachedData = view('front.privacypolicy')->with([
+                    'seo'=>$seo
+                ])->render();
                 Cache::put($cache_key, $cachedData, 604800);
                 return $cachedData;
             }
@@ -712,7 +784,16 @@ class FrontController extends Controller
             return Cache::get($cache_key);
         } else {
             $service = Service::all();
+            $seo = (object) array(
+                'seo_title' => ' Services '.'|'.' Aahad Hospital',
+                'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
+
             $cachedData = view('front.services')->with([
+                'seo'=>$seo,
                 'service' => $service,
 
             ])->render();
@@ -728,7 +809,15 @@ class FrontController extends Controller
             return Cache::get($cache_key);
         } else {
             $newsPost=News::where('news_categories_id',1)->where('status','publish')->with('user')->paginate(15);
+            $seo = (object) array(
+                'seo_title' => 'news ' .'|'.' Aahad Hospital',
+                'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
             $cachedData = view('front.news')->with([
+                'seo'=>$seo,
                 'newsPost' => $newsPost,
             ])->render();
             Cache::put($cache_key, $cachedData, 604800);
@@ -742,7 +831,17 @@ class FrontController extends Controller
             return Cache::get($cache_key);
         } else {
             $events=News::where('news_categories_id',2)->where('status','publish')->with('user')->paginate(15);
+
+            $seo = (object) array(
+                'seo_title' => 'events ' .'|'.' Aahad Hospital',
+                'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
+
             $cachedData = view('front.events')->with([
+                'seo'=>$seo,
                 'events' => $events,
             ])->render();
             Cache::put($cache_key, $cachedData, 604800);
@@ -759,7 +858,17 @@ class FrontController extends Controller
             $newsDetail=News::where('news_categories_id',1)->where('slug',$slug)->where('status','publish')->with('user')->first();
             $news=News::where('news_categories_id',1)->with('user')->where('status','publish')->get();
             $categories=NewsCategories::withCount('blogs')->get();
+
+            $seo = (object) array(
+                'seo_title' => $newsDetail->title .' |'.' Aahad Hospital',
+                'seo_description' => $newsDetail->meta_description,
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
+
             $cachedData = view('front.newsdetail')->with([
+                'seo'=>$seo,
                 'newsDetail'=>$newsDetail,
                 'news'=>$news,
                 'news_categories'=>$categories,
@@ -779,7 +888,17 @@ class FrontController extends Controller
             $newsDetail=News::where('news_categories_id',2)->where('slug',$slug)->where('status','publish')->with('user')->first();
             $news=News::where('news_categories_id',2)->where('status','publish')->get();
             $categories=NewsCategories::withCount('blogs')->get();
+
+            $seo = (object) array(
+                'seo_title' => $newsDetail->title .' |'.' Aahad Hospital',
+                'seo_description' => $newsDetail->meta_description,
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
+
             $cachedData = view('front.events_detail')->with([
+                'seo'=>$seo,
                 'newsDetail'=>$newsDetail,
                 'news'=>$news,
                 'news_categories'=>$categories,
@@ -797,7 +916,16 @@ class FrontController extends Controller
         } else {
             $serviceDetail=Service::where('slug',$slug)->first();
             $service=Service::all();
+
+            $seo = (object) array(
+                'seo_title' => $serviceDetail->name .' |'.' Aahad Hospital',
+                'seo_description' => $serviceDetail->meta_description,
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
             $cachedData = view('front.servicesdetail')->with([
+                'seo'=>$seo,
                 'service'=>$service,
                 'serviceDetail'=>$serviceDetail
             ])->render();
@@ -816,7 +944,18 @@ class FrontController extends Controller
         if ( Cache::has($cache_key) ) {
             return Cache::get($cache_key);
         } else {
-            $cachedData = view('front.aboutus')->render();
+
+            $seo = (object) array(
+                'seo_title' => 'About us ' .'|'.' Aahad Hospital',
+                'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
+                'seo_other' => '',
+                'seo_type'=>'website',
+                'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
+            );
+
+            $cachedData = view('front.aboutus')->with([
+                'seo'=>$seo
+            ])->render();
             Cache::put($cache_key, $cachedData, 604800);
             return $cachedData;
         }

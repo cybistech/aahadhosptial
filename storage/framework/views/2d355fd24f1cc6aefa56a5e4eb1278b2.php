@@ -1,8 +1,3 @@
-<?php $__env->startSection('title'); ?>
- <?php echo e(__('Doctors')); ?>
-
-<?php $__env->stopSection(); ?>
-
 <?php $__env->startSection('main.container'); ?>
 
 <section class="page-title" style="background-image: url(<?php echo e(asset('upload/department/department.jpg')); ?>);">
@@ -16,7 +11,6 @@
         </div>
     </div>
 </section>
-
 
 <section class="team-section-two alternate alternate2">
     <div class="auto-container">

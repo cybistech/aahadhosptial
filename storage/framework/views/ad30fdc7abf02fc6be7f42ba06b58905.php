@@ -1,10 +1,9 @@
-<?php $__env->startSection('title'); ?>
-    <?php echo e(__('Home')); ?>
-
-<?php $__env->stopSection(); ?>
-
 <?php $__env->startSection('main.container'); ?>
-
+        <?php
+            $setting=setting();
+            $department=department();
+            $news=news();
+        ?>
 
 <section class="main-slider">
     <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
@@ -12,7 +11,7 @@
             <ul>
                 <li data-index="rs-1" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo e(asset('adesign/images/home_1.jpg')); ?>">
+                    <img alt="<?php echo e(__('Home Banner')); ?>" title="<?php echo e(__('Home Banner')); ?>" width="1440" height="700" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo e(asset('adesign/images/home_1.jpg')); ?>">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -88,15 +87,15 @@
                     data-textalign="['top','top','top','top']"
                     data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
                         <div class="btn-box">
-                            <a href="about-us.html" class="theme-btn btn-style-one"><span class="btn-title">About Us</span></a>
-                            <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Our Services</span></a>
+                            <a href="<?php echo e(route('departments')); ?>" class="theme-btn btn-style-one"><span class="btn-title">Our Departments</span></a>
+                            <a href="<?php echo e(route('doctors')); ?>" class="theme-btn btn-style-two"><span class="btn-title">Our Doctors</span></a>
                         </div>
                     </div>
                 </li>
 
                 <li data-index="rs-2" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo e(asset('adesign/images/home_2.jpg')); ?>">
+                    <img alt="<?php echo e(__('Home Banner2')); ?>" title="<?php echo e(__('Home Banner2')); ?>" width="1440" height="700" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="<?php echo e(asset('adesign/images/home_2.jpg')); ?>">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -172,8 +171,8 @@
                     data-textalign="['top','top','top','top']"
                     data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
                         <div class="btn-box">
-                            <a href="about-us.html" class="theme-btn btn-style-one"><span class="btn-title">About Us</span></a>
-                            <a href="departments.html" class="theme-btn btn-style-two"><span class="btn-title">Our Services</span></a>
+                            <a href="<?php echo e(route('departments')); ?>" class="theme-btn btn-style-one"><span class="btn-title">Our Departments</span></a>
+                            <a href="<?php echo e(route('doctors')); ?>" class="theme-btn btn-style-two"><span class="btn-title">Our Doctors</span></a>
                         </div>
                     </div>
                 </li>
@@ -220,19 +219,15 @@
 <section class="about-section">
     <div class="auto-container">
         <div class="row">
-            <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
                 <div class="inner-column">
                     <div class="sec-title">
-                        <span class="sub-title">OUR MEDICAL</span>
-                        <h2>We're setting Standards in Research what's more, Clinical Care.</h2>
-                        <span class="divider"></span>
-                        <p>We provide the most full medical services, so every person could have the pportunity o receive qualitative medical help.</p>
-                        <p> Our Clinic has grown to provide a world class facility for the treatment of tooth loss, dental cosmetics and bore advanced restorative dentistry. We are among the most qualified implant providers in the AUS with over 30 years of uality training and experience.</p>
-                    </div>
-                    <div class="link-box">
-                        <figure class="signature"><img src="images/resource/signature.png" alt=""></figure>
-                        <a href="#" class="theme-btn btn-style-one"><span class="btn-title">More About</span></a>
+                        <h2>CEO's Message</h2>
+                        <span class="sub-title"><?php echo e($setting->ceo_name); ?></span>
+                        <?php if($setting->ceo_message): ?>
+                            <?php echo $setting->ceo_message; ?>
+
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -240,15 +235,7 @@
             <!-- Images Column -->
             <div class="images-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <div class="video-link">
-                        <a href="https://www.youtube.com/watch?v=4UvS3k8D4rs" class="play-btn lightbox-image" data-fancybox="images"><span class="flaticon-play-button-1"></span></a>
-                    </div>
-                    <figure class="image-1"><img src="<?php echo e(asset('upload/images/image-1.png')); ?>" alt=""></figure>
-                    <figure class="image-2"><img src="<?php echo e(asset('upload/images/image-2.png')); ?>" alt=""></figure>
-                    <figure class="image-3">
-                        <span class="hex"></span>
-                        <img src="<?php echo e(asset('upload/images/image-3.png')); ?>" alt="">
-                    </figure>
+                    <figure class="image-1"><img src="<?php echo e(asset('upload/ceo/').'/'.$setting->ceo_image); ?>" alt="<?php echo e($setting->ceo_name); ?>"></figure>
                 </div>
             </div>
         </div>
@@ -318,12 +305,20 @@
                                 $image=asset('upload/profile/profile.png');
                             }
                         ?>
-                        <figure class="image"><a href="<?php echo e(url('doctors/').'/'.$d->slug); ?>"><img src="<?php echo e($image); ?>" alt="<?php echo e($d->name); ?>"></a></figure>
+                        <figure class="image"><a href="<?php echo e(url('doctors/').'/'.$d->slug); ?>"><img class="img" src="<?php echo e($image); ?>" alt="<?php echo e($d->name); ?>" title="<?php echo e($d->name); ?>" width="260" height="330.27" ></a></figure>
                         <ul class="social-links">
-                            <li><a href="<?php echo e(isset($d->facebook_id)?$d->facebook_id:'https://www.facebook.com'); ?>"><span class="fab fa-facebook"></span></a></li>
-                            <li><a href="<?php echo e(isset($d->linkdin_id)?$d->linkdin_id:'https://www.linkdine.com/?hl=en'); ?>"><span class="fab fa-linkedin-in"></span></a></li>
-                            <li><a href="<?php echo e(isset($d->twitter_id)?$d->twitter_id:'https://twitter.com/search-home'); ?>"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="<?php echo e(isset($d->instagram_id)?$d->instagram_id:'https://www.instagram.com/?hl=en'); ?>"><span class="fab fa-instagram"></span></a></li>
+                            <?php if(!empty($d->facebook_id)): ?>
+                                <li><a href="<?php echo e($d->facebook_id); ?>"><span class="fab fa-facebook"></span></a></li>
+                            <?php endif; ?>
+                            <?php if(!empty($d->google_id)): ?>
+                                <li><a href="<?php echo e($d->google_id); ?>"><span class="fab fa-google-plus-g"></span></a></li>
+                            <?php endif; ?>
+                            <?php if(!empty($d->twitter_id)): ?>
+                                <li><a href="<?php echo e($d->twitter_id); ?>"><span class="fab fa-twitter"></span></a></li>
+                            <?php endif; ?>
+                            <?php if(!empty($d->instagram_id)): ?>
+                                <li><a href="<?php echo e($d->instagram_id); ?>"><span class="fab fa-instagram"></span></a></li>
+                            <?php endif; ?>
                         </ul>
                         <div class="info-box">
                             <h4 class="name"><a href="<?php echo e(url('doctors/').'/'.$d->slug); ?>"><?php echo e($d->name); ?></a></h4>
@@ -339,50 +334,7 @@
 </section>
 
 
-<section class="appointment-section">
-    <div class="image-layer" style="background-image: url<?php echo e(asset('upload/department/department.jpg')); ?>;"></div>
-    <div class="auto-container">
-        
-            
 
-        <div class="fun-fact-section">
-            <div class="row">
-
-                <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
-                    <div class="count-box">
-                        <div class="icon-box"><span class="icon flaticon-user-experience"></span></div>
-                        <h4 class="counter-title">Years of Experience</h4>
-                        <span class="count-text" data-speed="3000" data-stop="25">0</span>
-                    </div>
-                </div>
-
-                <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="count-box">
-                        <div class="icon-box"><span class="icon flaticon-team"></span></div>
-                        <h4 class="counter-title">Medical Spesialities</h4>
-                        <span class="count-text" data-speed="3000" data-stop="470">0</span>
-                    </div>
-                </div>
-
-                <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
-                    <div class="count-box">
-                        <div class="icon-box"><span class="icon flaticon-hospital"></span></div>
-                        <h4 class="counter-title">Medical Spesialities</h4>
-                        <span class="count-text" data-speed="3000" data-stop="689">0</span>
-                    </div>
-                </div>
-
-                <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
-                    <div class="count-box">
-                        <div class="icon-box"><span class="icon flaticon-add-friend"></span></div>
-                        <h4 class="counter-title">Happy Patients</h4>
-                        <span class="count-text" data-speed="3000" data-stop="9036">0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 
@@ -401,25 +353,26 @@
             <span class="divider"></span>
         </div>
 
+
         <div class="row">
             <?php if(count($news)>0): ?>
                 <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
                         <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><a href="blog-post-image.html"><img width="350" height="192" style="height: 177.7px" src="<?php echo e(asset('upload/news')."/".$n->featured_image); ?>" alt="<?php echo e($n->title); ?>"></a></figure>
-                                <a href="#" class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></a>
-                            </div>
-                            <div class="lower-content">
-                                <h4><a href="blog-post-image.html"><?php echo e($n->title); ?></a></h4>
-                                <div class="text"><?php echo e(substr($n->contents,0,75)); ?></div>
-                                <div class="post-info">
-                                    <div class="post-author">By Admin Rose</div>
-                                    <ul class="post-option">
-                                        <li><a href="#">0 <i class="far fa-heart"></i></a></li>
-                                        <li><a href="#">0 <i class="far fa-comments"></i></a></li>
-                                    </ul>
+                            <a href="<?php echo e(route('news_detail', ['slug' => $n->slug])); ?>">
+                                <div class="image-box">
+                                    <figure class="image"><img width="350" height="192" style="height: 177.7px" src="<?php echo e(asset('upload/news')."/".$n->featured_image); ?>" alt="<?php echo e($n->title); ?>"></figure>
+                                    <a href="<?php echo e(route('news_detail', ['slug' => $n->slug])); ?>" class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></a>
                                 </div>
+                            </a>
+                            <div class="lower-content">
+                                <h4><a href="<?php echo e(route('news_detail', ['slug' => $n->slug])); ?>"><?php echo e(substr($n->title,0,25)); ?></a></h4>
+                                <a href="<?php echo e(route('news_detail', ['slug' => $n->slug])); ?>">
+                                <div class="text"><?php echo substr($n->contents,0,75); ?></div>
+                                    <div class="post-info">
+                                        <div class="post-author"><?php echo e($n->user->name); ?></div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,10 @@
 
     <footer class="main-footer">
 
+        <?php
+            $setting=setting();
+            $department=department();
+        ?>
         <div class="widgets-section" style="background-image: url(<?php echo e(asset('assets/images/background/7.jpg')); ?>);">
             <div class="auto-container">
                 <div class="row">
@@ -42,7 +46,75 @@
                     </div>
 
 
-                    
+                    <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+
+                             <?php
+                                $news=news();
+                            ?>
+
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Latest News</h2>
+
+                                    <div class="widget-content">
+                                        <?php if(count($news)>0): ?>
+                                            <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $n): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <div class="post">
+                                                    <?php
+                                                        if($n->featured_image){
+                                                            $image=asset('upload/news')."/".$n->featured_image;
+                                                        }else{
+                                                            $image=asset('upload/profile/profile.png');
+                                                        }
+                                                    ?>
+                                                    <div class="thumb"><a href="<?php echo e(route('news_detail', ['slug' => $n->slug])); ?>"><img src="<?php echo e($image); ?>" alt=""></a></div>
+                                                    <h4><a href="<?php echo e(route('news_detail', ['slug' => $n->slug])); ?>"><?php echo e($n->title); ?></a></h4>
+                                                    <span class="date"><?php echo e(\Carbon\Carbon::parse($n->created_at)->format('j F, Y')); ?></span>
+                                                </div>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+
+                                <div class="footer-widget contact-widget">
+                                    <h2 class="widget-title">Contact Us</h2>
+
+                                    <div class="widget-content">
+                                        <ul class="contact-list">
+                                            <li>
+                                                <span class="icon flaticon-placeholder"></span>
+                                                <div class="text"><?php echo e($setting->address); ?></div>
+                                            </li>
+
+                                            <li>
+                                                <span class="icon flaticon-call-1"></span>
+                                                <div class="text"><?php echo e($setting->working_day); ?></div>
+                                                <a href="tel:<?php echo e($setting->phone_no); ?>"><strong><?php echo e($setting->phone_no); ?></strong></a>
+                                            </li>
+
+                                            <li>
+                                                <span class="icon flaticon-email"></span>
+                                                <div class="text">Do you have a Question?<br>
+                                                <a href="mailto:<?php echo e($setting->email); ?>"><strong><?php echo e($setting->email); ?></strong></a></div>
+                                            </li>
+
+                                            <li>
+                                                <span class="icon flaticon-back-in-time"></span>
+                                                <div class="text"><?php echo e($setting->working_day); ?>
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,9 +126,11 @@
                 <div class="inner-container clearfix">
                     <div class="footer-nav">
                         <ul class="clearfix">
-                           <li><a href="<?php echo e(route('privacy_policy')); ?>">Privacy Policy</a></li>
-                           <li><a href="<?php echo e(route('contact_us')); ?>">Contact</a></li>
-                           <li><a href="<?php echo e(route('services')); ?>">Services</a></li>
+                            <li><a href="<?php echo e(route('terms_and_conditions')); ?>">Terms & Condition</a></li>
+                            <li><a href="<?php echo e(route('privacy_policy')); ?>">Privacy Policy</a></li>
+                            <li><a href="<?php echo e(route('about_us')); ?>">About</a></li>
+                            <li><a href="<?php echo e(route('contact_us')); ?>">Contact</a></li>
+                            <li><a href="<?php echo e(route('services')); ?>">Services</a></li>
                         </ul>
                     </div>
 
@@ -88,6 +162,8 @@
 <script src="<?php echo e(asset('assets/plugins/revolution/js/extensions/revolution.extension.video.min.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/main-slider-script.js')); ?>"></script>
 
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="<?php echo e(asset('assets/js/bootstrap.min.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/jquery.fancybox.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/mmenu.polyfills.js')); ?>"></script>

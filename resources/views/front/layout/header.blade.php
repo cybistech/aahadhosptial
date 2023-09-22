@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>@yield('title')</title>
+{{-- <title>@yield('title')</title> --}}
 
 
 
@@ -18,7 +18,7 @@
 <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
 <link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 
-{{-- @php
+    @php
         if(isset($seo)){
             $image = $seo->image;
             $description = $seo->seo_description;
@@ -32,20 +32,20 @@
 <meta name='description' itemprop='description' content='{!! $description !!}'>
 {{-- <meta name='keywords'  content='{{$keywords}}'> --}}
 
-{{-- <meta property="og:title" content="{!! $title !!}" >
+<meta property="og:title" content="{!! $title !!}" >
 <meta property="og:description" content="{!! $description !!}">
 <meta property="og:type" content="{{\Request::url()}}" >
 <meta property="og:image" content="{{$image}}" >
-<meta property="og:url" content="{{$type}}" >
+<meta property="og:url" content="{{\Request::url()}}" >
 
-<meta property="og:site_name" content="Prime" >
+<meta property="og:site_name" content="{{\Request::url()}}" >
 <meta property="og:locale" content="en" >
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="Prime">
+<meta name="twitter:site" content="{{\Request::url()}}">
 <meta name="twitter:title" content="{!! $title !!}">
 <meta name="twitter:description" content="{!! $description !!}">
-<meta name="twitter:image" content="{{$type}}"> --}}
+<meta name="twitter:image" content="{{$image}}">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">

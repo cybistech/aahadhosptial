@@ -1,7 +1,7 @@
 @extends('front.layout.main')
-@section('title')
+{{-- @section('title')
 {{ $newsDetail->title }}
-@endsection
+@endsection --}}
 
 @section('main.container')
 
@@ -31,7 +31,43 @@
                                         $image=asset('upload/profile/profile.png');
                                     }
                                 ?>
-                                <div class="image"><img src="{{$image}}" alt="{{ $newsDetail->title }}" /></div>
+                                <div class="image"><img class="events_image" src="{{$image}}" alt="{{ $newsDetail->title }}" /></div>
+                                <style>
+@media (min-width: 425){
+                                        .events_image {
+        /* Set width and height for screens 1140px and above */
+                                            width: 295px;
+                                            height: 270px;
+                                        }
+                                    }
+
+
+
+@media (min-width: 768){
+                                        .events_image {
+        /* Set width and height for screens 1140px and above */
+                                            width: 738px;
+                                            height: 270px;
+                                        }
+                                    }
+
+
+                                    @media (min-width: 1024){
+                                        .events_image {
+        /* Set width and height for screens 1140px and above */
+                                            width: 653px;
+                                            height: 270px;
+                                        }
+                                    }
+
+                                    @media (min-width: 1140px) {
+                                        .events_image {
+        /* Set width and height for screens 1140px and above */
+                                            width: 770px;
+                                            height: 270px;
+                                        }
+                                    }
+                                </style>
                                 <div class="lower-content">
                                     <ul class="post-info">
                                         <li><span class="far fa-user"></span> Admin</li>
@@ -80,7 +116,7 @@
                                                         $image=asset('upload/profile/profile.png');
                                                     }
                                                 ?>
-                                                <figure class="image"><img style=" width: 585px; height: 330px;" src="{{ $image }}" alt=""></figure>
+                                                <figure class="image"><img style=" width: 585px; height: 390px;" src="{{ $image }}" alt=""></figure>
                                                 <a href="{{ route('event_detail', ['slug' => $n->slug]) }}" class="date">{{ \Carbon\Carbon::parse($n->created_at)->format('j F, Y') }}</a>
                                             </div>
                                         </a>

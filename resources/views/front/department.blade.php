@@ -1,7 +1,7 @@
 @extends('front.layout.main')
-@section('title')
+{{-- @section('title')
  {{__('messages.Department')}}
-@endsection
+@endsection --}}
 @section('main.container')
 
 

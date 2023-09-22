@@ -1,7 +1,7 @@
 @extends('front.layout.main')
-@section('title')
+{{-- @section('title')
  {{__('Doctors')}}
-@endsection
+@endsection --}}
 
 @section('main.container')
 
