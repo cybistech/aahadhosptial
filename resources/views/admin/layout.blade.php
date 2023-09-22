@@ -130,6 +130,17 @@
                      <a href="{{url('admin/setting/1')}}"> <i class="menu-icon fa fa-cogs"></i>{{__('messages.Setting')}}</a>
                   </li>
 
+                    <li class="active">
+                        <a href="{{ route('cache.clear') }}" id="clear-cache-btn"><i class="menu-icon fa fa-trash"></i>{{__('messages.clear_cache')}}</a>
+                    </li>
+
+                    <script>
+                        document.getElementById('clear-cache-btn').addEventListener('click', function(e) {
+                            e.preventDefault();
+                            var currentUrl = window.location.href;
+                            window.location.href = "{{ route('cache.clear') }}?redirect=" + encodeURIComponent(currentUrl);
+                        });
+                    </script>
                </ul>
             </div>
          </nav>
@@ -155,7 +166,19 @@
                   </div>
                </div>
             </div>
+
          </header>
+         <div class="container">
+                @if(Session::get("message"))
+                   <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+                      {{Session::get("message")}}
+                      {{__('Hamza is here ')}}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                      </button>
+                   </div>
+                   @endif
+             </div>
          @yield('content')
       </div>
       <div id="chat_new" class="modal" >

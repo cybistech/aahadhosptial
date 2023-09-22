@@ -3,6 +3,17 @@
 {{__('messages.Dashboard')}}
 @endsection
 @section('content')
+<div class="container">
+    @if(Session::get("message"))
+       <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+          {{Session::get("message")}}
+          {{__('Hamza is here ')}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+          </button>
+       </div>
+       @endif
+ </div>
 <div class="breadcrumbs">
    <div class="col-sm-4">
       <div class="page-header float-left">

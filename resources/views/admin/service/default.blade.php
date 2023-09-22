@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-@endsection
+
 <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -97,7 +97,6 @@
     </div>
 </div>
 
-@section('footer')
 <script>
     $('#deleteConfirmationModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);

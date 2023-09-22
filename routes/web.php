@@ -138,6 +138,7 @@ Route::group(['prefix' => 'admin'], function () {
 		 Route::get("dashboard",[HomeController::class,'showdashboard'])->name("dashboard");
 		 Route::get("logout",[HomeController::class,'logout']);
          Route::get("settimezone/{time}",[HomeController::class,'settimezone']);
+         Route::get('cache-clear',[HomeController::class,'clear_cache'])->name('cache.clear');
 		 //service
 		 Route::resource("service",ServiceController::class);
 		 Route::get("saveservice/{id}",[ServiceController::class,'saveservice']);

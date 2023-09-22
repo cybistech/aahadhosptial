@@ -19,6 +19,8 @@ use App\Model\ContactUs;
 use App\Model\News;
 use DateTime;
 use DateTimeZone;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
 // use Session;
 use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
@@ -194,4 +196,16 @@ class HomeController extends Controller
        public function privacy(){
            return view("privacy_policy");
        }
+
+        public function clear_cache(Request $request){
+            try {
+
+                Artisan::call('config:cache');
+                Artisan::call('optimize:clear');
+                Artisan::call('cache:clear');
+                return redirect()->to($request->input('redirect'))->with('message','Cache cleared successfully!');
+            } catch (\Exception $e) {
+                return redirect()->to($request->input('redirect'))->with('error', 'An error occurred while clearing the cache: ' . $e->getMessage());
+            }
+        }
 }

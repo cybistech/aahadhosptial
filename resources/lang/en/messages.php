@@ -406,6 +406,7 @@ return [
     'map_path'=>'Map Path',
     'Create'=>'Add New',
     'off'=>'OFF',
+    'clear_cache'=>'Clear Cache',
 
 
 
