@@ -173,12 +173,7 @@
 <script src="<?php echo e(asset('assets/js/owl.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/wow.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/script.js')); ?>"></script>
-
-<!--Google Map APi Key-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
-
-<script src="<?php echo e(asset('assets/js/map-script.js')); ?>"></script>
-<!--End Google Map APi-->
+<?php echo $__env->yieldPushContent('scripts'); ?>
 </body>
 </html>
 

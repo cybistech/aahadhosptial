@@ -1,0 +1,915 @@
+1695985602s:52666:"<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+
+
+<link href="http://127.0.0.1:8000/assets/css/bootstrap.css" rel="stylesheet">
+<link href="http://127.0.0.1:8000/assets/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
+<link href="http://127.0.0.1:8000/assets/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
+<link href="http://127.0.0.1:8000/plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
+<link href="http://127.0.0.1:8000/assets/css/style.css" rel="stylesheet">
+<link href="http://127.0.0.1:8000/assets/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<link id="theme-color-file" href="http://127.0.0.1:8000/assets/css/color-themes/dodgerblue.css" rel="stylesheet">
+<link rel="shortcut icon" href="http://127.0.0.1:8000/assets/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="http://127.0.0.1:8000/images/favicon.png" type="image/x-icon">
+
+    <title> Home | Aahad Hospital</title>
+<meta name='description' itemprop='description' content='Learn about tailbone pain (coccydynia) from Cleveland Clinic'>
+
+
+<meta property="og:title" content=" Home | Aahad Hospital" >
+<meta property="og:description" content="Learn about tailbone pain (coccydynia) from Cleveland Clinic">
+<meta property="og:type" content="http://127.0.0.1:8000" >
+<meta property="og:image" content="https://dev.aahadhospital.com/assets/images/favicon.png" >
+<meta property="og:url" content="http://127.0.0.1:8000" >
+
+<meta property="og:site_name" content="http://127.0.0.1:8000" >
+<meta property="og:locale" content="en" >
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="http://127.0.0.1:8000">
+<meta name="twitter:title" content=" Home | Aahad Hospital">
+<meta name="twitter:description" content="Learn about tailbone pain (coccydynia) from Cleveland Clinic">
+<meta name="twitter:image" content="https://dev.aahadhospital.com/assets/images/favicon.png">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+
+    <header class="main-header header-style-one">
+
+        
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="top-left">
+                        <ul class="contact-list clearfix">
+                            <li><i class="flaticon-hospital-1"></i>343 Business Place, Suite 314,
+Seattle, WA 98112</li>
+                            <li><i class="flaticon-back-in-time"></i>Monday - Saturday,8am to 10pm</li>
+                        </ul>
+                    </div>
+                    <div class="top-right">
+                        <ul class="social-icon-one">
+                            <li><a href="https://www.facebook.com/"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="header-lower">
+            <div class="auto-container">
+
+                <div class="main-box">
+                    <div class="logo-box">
+                        <div class="logo"><a href="http://127.0.0.1:8000"><img src="http://127.0.0.1:8000/assets/images/logo.png" alt="" title=""></a></div>
+                    </div>
+                                        <div class="nav-outer">
+                        <nav class="nav main-menu" style="margin-right: 3.5rem">
+                            <ul class="navigation" id="navbar">
+                                <li class=" current  dropdown">
+                                    <a href="http://127.0.0.1:8000">
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+
+                                <li class="dropdown  ">
+                                    <a href="http://127.0.0.1:8000/doctors">
+                                        <span>Doctors</span>
+                                    </a>
+                                </li>
+
+                                <li class="dropdown ">
+                                    <a href="http://127.0.0.1:8000/services">
+                                        <span>Services</span>
+                                    </a>
+                                    
+                                </li>
+                                <li class="dropdown ">
+                                    <a href="http://127.0.0.1:8000/departments">
+                                        <span>Departments</span>
+                                    </a>
+                                    <ul>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/cardiology">Cardiology</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/urology">Urology</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/neurology">Neurology</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/dental">Dental</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/padiatrics">Padiatrics</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/pulmonary">Pulmonary</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/traumatology">Traumatology</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/x-ray">X-ray</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/pregnancy">Pregnancy</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/for-disabled">For disabled</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/prosthes">Prosthes</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/nuclear-magnetic">Nuclear magnetic</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/nutrition">Nutrition</a></li>
+                                                                            </ul>
+                                </li>
+
+                                <li class="dropdown ">
+                                    <a href="http://127.0.0.1:8000/news">
+                                        <span>News</span>
+                                    </a>
+                                    
+                                </li>
+                                <li class="dropdown ">
+                                    <a href="http://127.0.0.1:8000/events">
+                                        <span>Events</span>
+                                    </a>
+                                </li>
+                                <li class=""><a href="http://127.0.0.1:8000/contact-us">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="sticky-header">
+            <div class="auto-container">
+
+                <div class="main-box">
+                    <div class="logo-box">
+                        <div class="logo"><a href="http://127.0.0.1:8000"><img src="http://127.0.0.1:8000/assets/images/logo.png" alt="" title=""></a></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mobile-header">
+            <div class="logo"><a href="http://127.0.0.1:8000"><img src="http://127.0.0.1:8000/assets/images/logo.png" alt="" title=""></a></div>
+
+
+            <div class="nav-outer clearfix">
+
+                <div class="outer-box">
+
+                    
+
+                    <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span class="fa fa-bars"></span></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="nav-mobile"></div>
+
+
+        <div class="search-popup">
+            <span class="search-back-drop"></span>
+            <button class="close-search"><span class="fa fa-times"></span></button>
+
+            <div class="search-inner">
+                <form method="post" action="blog-showcase.html">
+                    <div class="form-group">
+                        <input type="search" name="search-field" value="" placeholder="Search..." required="">
+                        <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </header>
+
+
+        
+<section class="main-slider">
+    <div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_one_wrapper" data-source="gallery">
+        <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
+            <ul>
+                <li data-index="rs-1" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+                    <img alt="Home Banner" title="Home Banner" width="1440" height="700" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="http://127.0.0.1:8000/adesign/images/home_1.jpg">
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['750','750','750','650']"
+                    data-whitespace="normal"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-180','-170','-180','-180']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <span class="title">Welcome to our Medical Care Center </span>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['750','750','750','650']"
+                    data-whitespace="normal"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-100','-95','-100','-115']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <h2>We take care our <br>patients health</h2>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['700','750','700','450']"
+                    data-whitespace="normal"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['0','0','0','0']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <div class="text">I realized that becoming a doctor, I can only help a small community. <br>But by becoming a doctor, I can help my whole country. </div>
+                    </div>
+
+                    <div class="tp-caption tp-resizeme"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="normal"
+                    data-width="['650','650','700','300']"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['80','90','90','140']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <div class="btn-box">
+                            <a href="http://127.0.0.1:8000/departments" class="theme-btn btn-style-one"><span class="btn-title">Our Departments</span></a>
+                            <a href="http://127.0.0.1:8000/doctors" class="theme-btn btn-style-two"><span class="btn-title">Our Doctors</span></a>
+                        </div>
+                    </div>
+                </li>
+
+                <li data-index="rs-2" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+
+                    <img alt="Home Banner2" title="Home Banner2" width="1440" height="700" class="rev-slidebg" data-bgfit="cover" data-bgparallax="20" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="http://127.0.0.1:8000/adesign/images/home_2.jpg">
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['750','750','750','650']"
+                    data-whitespace="normal"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-180','-170','-180','-180']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <span class="title">Welcome to our Medical Care Center </span>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['750','750','750','650']"
+                    data-whitespace="normal"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-100','-95','-100','-115']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <h2>We take care our <br>patients health</h2>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-width="['700','750','700','450']"
+                    data-whitespace="normal"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['0','0','0','0']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <div class="text">I realized that becoming a doctor, I can only help a small community. <br>But by becoming a doctor, I can help my whole country. </div>
+                    </div>
+
+                    <div class="tp-caption tp-resizeme"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="normal"
+                    data-width="['650','650','700','300']"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['80','90','90','140']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <div class="btn-box">
+                            <a href="http://127.0.0.1:8000/departments" class="theme-btn btn-style-one"><span class="btn-title">Our Departments</span></a>
+                            <a href="http://127.0.0.1:8000/doctors" class="theme-btn btn-style-two"><span class="btn-title">Our Doctors</span></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="top-features">
+    <div class="auto-container">
+        <div class="row">
+
+            <div class="feature-block col-lg-4 col-md-6 col-sm-12">
+                <div class="inner-box">
+                    <span class="icon flaticon-charity"></span>
+                    <h4><a href="#">Quality & Safety</a></h4>
+                    <p>Our Delmont hospital utilizes state of the art technology and employs a team of true experts.</p>
+                </div>
+            </div>
+
+            <div class="feature-block col-lg-4 col-md-6 col-sm-12">
+                <div class="inner-box">
+                    <span class="icon flaticon-lifeline"></span>
+                    <h4><a href="#">Leading Technology</a></h4>
+                    <p>Our Delmont hospital utilizes state of the art technology and employs a team of true experts.</p>
+                </div>
+            </div>
+
+            <div class="feature-block col-lg-4 col-md-6 col-sm-12">
+                <div class="inner-box">
+                    <span class="icon flaticon-doctor"></span>
+                    <h4><a href="#">Experts by Experience</a></h4>
+                    <p>Our Delmont hospital utilizes state of the art technology and employs a team of true experts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="about-section">
+    <div class="auto-container">
+        <div class="row">
+            <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                <div class="inner-column">
+                    <div class="sec-title">
+                        <h2>CEO's Message</h2>
+                        <span class="sub-title">Aahad Hospital</span>
+                                                    <p>iOS 17 brings big updates to Phone, Messages, and FaceTime that give you new ways to express yourself as you communicate. StandBy delivers a new full-screen experience with glanceable information designed to view from a distance when you turn iPhone on its side while charging. AirDrop makes it easier to share and connect with those around you and adds NameDrop for contact sharing. Enhancements to the keyboard make entering text faster and easier than ever before. iOS 17 also includes updates to Widgets, Safari, Music, AirPlay, and more.</p>
+                                            </div>
+                </div>
+            </div>
+
+            <!-- Images Column -->
+            <div class="images-column col-lg-6 col-md-12 col-sm-12">
+                <div class="inner-column">
+                    <figure class="image-1"><img src="http://127.0.0.1:8000/upload/ceo/ceo_message_814671.jpg" alt="Aahad Hospital"></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="services-section">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">OUR SERVICES</span>
+            <h2>We Care Our Patients.</h2>
+            <span class="divider"></span>
+        </div>
+
+        <div class="row">
+
+                                               <div class="service-block col-lg-4 col-md-6 col-sm-12">
+    <a href="http://127.0.0.1:8000/services/laboratory-services">
+        <div class="inner-box">
+            
+            <span class="icon flaticon-heartbeat"></span>
+            <h5 style="color: black">Laboratory services</h5>
+            <a href="http://127.0.0.1:8000/services/laboratory-services">
+                <div class="text"><html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>There are only 2 dental specialties that only focus on dental esthetics.</p>
+</body></div>
+            </a>
+        </div>
+    </a>
+</div>
+                                   <div class="service-block col-lg-4 col-md-6 col-sm-12">
+    <a href="http://127.0.0.1:8000/services/heart-disease">
+        <div class="inner-box">
+            
+            <span class="icon flaticon-heartbeat"></span>
+            <h5 style="color: black">Heart Disease</h5>
+            <a href="http://127.0.0.1:8000/services/heart-disease">
+                <div class="text"><html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>There are only 2 dental specialties that only focus on dental esthetics.</p>
+</body></div>
+            </a>
+        </div>
+    </a>
+</div>
+                                   <div class="service-block col-lg-4 col-md-6 col-sm-12">
+    <a href="http://127.0.0.1:8000/services/dental-care">
+        <div class="inner-box">
+            
+            <span class="icon flaticon-heartbeat"></span>
+            <h5 style="color: black">Dental Care</h5>
+            <a href="http://127.0.0.1:8000/services/dental-care">
+                <div class="text"><html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>There are only 2 dental specialties that only focus on dental esthetics.</p>
+</body></div>
+            </a>
+        </div>
+    </a>
+</div>
+                                   <div class="service-block col-lg-4 col-md-6 col-sm-12">
+    <a href="http://127.0.0.1:8000/services/body-surgery">
+        <div class="inner-box">
+            
+            <span class="icon flaticon-heartbeat"></span>
+            <h5 style="color: black">Body Surgery</h5>
+            <a href="http://127.0.0.1:8000/services/body-surgery">
+                <div class="text"><html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>There are only 2 dental specialties that only focus on dental esthetics.</p>
+</body></div>
+            </a>
+        </div>
+    </a>
+</div>
+                                   <div class="service-block col-lg-4 col-md-6 col-sm-12">
+    <a href="http://127.0.0.1:8000/services/neurology-surgery">
+        <div class="inner-box">
+            
+            <span class="icon flaticon-heartbeat"></span>
+            <h5 style="color: black">Neurology Surgery</h5>
+            <a href="http://127.0.0.1:8000/services/neurology-surgery">
+                <div class="text"><html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>There are only 2 dental specialties that only focus on dental esthetics.</p>
+</body></div>
+            </a>
+        </div>
+    </a>
+</div>
+                            
+        </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="http://127.0.0.1:8000/services">Explore all Services</a></div>
+    </div>
+</section>
+
+<section class="services-section-two">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">Our Departments</span>
+            <h2>Our Dedicated Departments</h2>
+            <span class="divider"></span>
+        </div>
+
+        <div class="carousel-outer">
+            <div class="row">
+                                                            <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+    <div class="inner-box">
+        <a href="http://127.0.0.1:8000/departments/cardiology">
+            <div class="image-box">
+                <figure class="image"><img style="height: 265.13px;" src="http://127.0.0.1:8000/upload/department/department_691133.jpg" alt="Cardiology Department" title="Cardiology" width="363.33" height="265.13"></figure>
+            </div>
+            <div class="lower-content">
+                <div class="title-box">
+                    <span class="icon "></span>
+                    <h4>Cardiology</a></h4>
+                </div>
+                <a href="http://127.0.0.1:8000/departments/cardiology">
+                    <div class="text">It provides medical care to patients who have problems with their heart or circulation. Cardiology is a branch of medicine that deals with t</div>
+                </a>
+                <span class="icon-right flaticon-heart-2"></span>
+            </div>
+        </a>
+    </div>
+</div>
+                                            <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+    <div class="inner-box">
+        <a href="http://127.0.0.1:8000/departments/urology">
+            <div class="image-box">
+                <figure class="image"><img style="height: 265.13px;" src="http://127.0.0.1:8000/upload/department/department_867895.png" alt="Urology Department" title="Urology" width="363.33" height="265.13"></figure>
+            </div>
+            <div class="lower-content">
+                <div class="title-box">
+                    <span class="icon "></span>
+                    <h4>Urology</a></h4>
+                </div>
+                <a href="http://127.0.0.1:8000/departments/urology">
+                    <div class="text">The urology department is run by consultant urology surgeons and investigates areas linked to kidney and bladder conditions.</div>
+                </a>
+                <span class="icon-right flaticon-heart-2"></span>
+            </div>
+        </a>
+    </div>
+</div>
+                                            <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+    <div class="inner-box">
+        <a href="http://127.0.0.1:8000/departments/neurology">
+            <div class="image-box">
+                <figure class="image"><img style="height: 265.13px;" src="http://127.0.0.1:8000/upload/department/department_991456.png" alt="Neurology Department" title="Neurology" width="363.33" height="265.13"></figure>
+            </div>
+            <div class="lower-content">
+                <div class="title-box">
+                    <span class="icon "></span>
+                    <h4>Neurology</a></h4>
+                </div>
+                <a href="http://127.0.0.1:8000/departments/neurology">
+                    <div class="text">Monitors and assesses patients with various kidney (renal) problems and conditions.</div>
+                </a>
+                <span class="icon-right flaticon-heart-2"></span>
+            </div>
+        </a>
+    </div>
+</div>
+                                                </div>
+        </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="http://127.0.0.1:8000/departments">Explore all Departments</a></div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">Our Doctor</span>
+            <h2>Our Dedicated Doctors Team</h2>
+            <span class="divider"></span>
+        </div>
+
+        <div class="row">
+                            <div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                    <div class="inner-box">
+                                                <figure class="image"><a href="http://127.0.0.1:8000/doctors/dr-mahajan"><img class="img" src="http://127.0.0.1:8000/upload/doctor/doctor_518185.jpg" alt="Dr. mahajan" title="Dr. mahajan" width="260" height="330.27" ></a></figure>
+                        <ul class="social-links">
+                                                            <li><a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a></li>
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-google-plus-g"></span></a></li>
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-twitter"></span></a></li>
+                                                                                        <li><a href="https://www.facebook.com/"><span class="fab fa-instagram"></span></a></li>
+                                                    </ul>
+                        <div class="info-box">
+                            <h4 class="name"><a href="http://127.0.0.1:8000/doctors/dr-mahajan">Dr. mahajan</a></h4>
+                            <span class="designation">Senior Dr. at Delmont</span>
+                        </div>
+                    </div>
+                </div>
+                            <div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                    <div class="inner-box">
+                                                <figure class="image"><a href="http://127.0.0.1:8000/doctors/dr-julia-jhones"><img class="img" src="http://127.0.0.1:8000/upload/doctor/doctor_555203.jpg" alt="Dr. Julia Jhones" title="Dr. Julia Jhones" width="260" height="330.27" ></a></figure>
+                        <ul class="social-links">
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-google-plus-g"></span></a></li>
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-twitter"></span></a></li>
+                                                                                </ul>
+                        <div class="info-box">
+                            <h4 class="name"><a href="http://127.0.0.1:8000/doctors/dr-julia-jhones">Dr. Julia Jhones</a></h4>
+                            <span class="designation">Senior Dr. at Delmont</span>
+                        </div>
+                    </div>
+                </div>
+                            <div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                    <div class="inner-box">
+                                                <figure class="image"><a href="http://127.0.0.1:8000/doctors/dr-agnes-ayres"><img class="img" src="http://127.0.0.1:8000/upload/doctor/doctor_888356.jpg" alt="Dr. Agnes Ayres" title="Dr. Agnes Ayres" width="260" height="330.27" ></a></figure>
+                        <ul class="social-links">
+                                                            <li><a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a></li>
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-google-plus-g"></span></a></li>
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-twitter"></span></a></li>
+                                                                                        <li><a href="https://www.facebook.com/"><span class="fab fa-instagram"></span></a></li>
+                                                    </ul>
+                        <div class="info-box">
+                            <h4 class="name"><a href="http://127.0.0.1:8000/doctors/dr-agnes-ayres">Dr. Agnes Ayres</a></h4>
+                            <span class="designation">Senior Dr. at Delmont</span>
+                        </div>
+                    </div>
+                </div>
+                            <div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
+                    <div class="inner-box">
+                                                <figure class="image"><a href="http://127.0.0.1:8000/doctors/dr-edward-asner"><img class="img" src="http://127.0.0.1:8000/upload/doctor/doctor_274048.jpg" alt="Dr. Edward Asner" title="Dr. Edward Asner" width="260" height="330.27" ></a></figure>
+                        <ul class="social-links">
+                                                            <li><a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a></li>
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-google-plus-g"></span></a></li>
+                                                                                        <li><a href="https://twitter.com/"><span class="fab fa-twitter"></span></a></li>
+                                                                                        <li><a href="https://www.facebook.com/"><span class="fab fa-instagram"></span></a></li>
+                                                    </ul>
+                        <div class="info-box">
+                            <h4 class="name"><a href="http://127.0.0.1:8000/doctors/dr-edward-asner">Dr. Edward Asner</a></h4>
+                            <span class="designation">Senior Dr. at Delmont</span>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="http://127.0.0.1:8000/doctors">Explore all Dr. Team</a></div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="news-section">
+    <div class="auto-container">
+
+        <div class="sec-title text-center">
+            <span class="title">OUR BLOG</span>
+            <h2>Recent Articles and News</h2>
+            <span class="divider"></span>
+        </div>
+
+
+        <div class="row">
+                                                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                        <div class="inner-box">
+                            <a href="http://127.0.0.1:8000/news/hospital-ghraphics">
+                                <div class="image-box">
+                                    <figure class="image"><img width="350" height="192" style="height: 177.7px" src="http://127.0.0.1:8000/upload/news/news_855391.webp" alt="Hospital Ghraphics"></figure>
+                                    <a href="http://127.0.0.1:8000/news/hospital-ghraphics" class="date">13 September, 2023</a>
+                                </div>
+                            </a>
+                            <div class="lower-content">
+                                <h4><a href="http://127.0.0.1:8000/news/hospital-ghraphics">Hospital Ghraphics</a></h4>
+                                <a href="http://127.0.0.1:8000/news/hospital-ghraphics">
+                                <div class="text"><p>Hospital administrators are individuals or groups of people who act as t</div>
+                                    <div class="post-info">
+                                        <div class="post-author">Hospital Management</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                        <div class="inner-box">
+                            <a href="http://127.0.0.1:8000/news/hospital-mangement-old">
+                                <div class="image-box">
+                                    <figure class="image"><img width="350" height="192" style="height: 177.7px" src="http://127.0.0.1:8000/upload/news/news_117180.jpg" alt="Hospital Mangement OLD"></figure>
+                                    <a href="http://127.0.0.1:8000/news/hospital-mangement-old" class="date">21 September, 2023</a>
+                                </div>
+                            </a>
+                            <div class="lower-content">
+                                <h4><a href="http://127.0.0.1:8000/news/hospital-mangement-old">Hospital Mangement OLD</a></h4>
+                                <a href="http://127.0.0.1:8000/news/hospital-mangement-old">
+                                <div class="text"><p>Hospital administrators are individuals or groups of people who act as t</div>
+                                    <div class="post-info">
+                                        <div class="post-author">Hospital Management</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    </div>
+        <div class="sec-bottom-text">Don’t hesitate, contact us for better help and services <a href="http://127.0.0.1:8000/news">Explore all News</a></div>
+    </div>
+</section>
+
+<footer class="main-footer">
+
+                <div class="widgets-section" style="background-image: url(http://127.0.0.1:8000/assets/images/background/7.jpg);">
+            <div class="auto-container">
+                <div class="row">
+
+                    <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+
+                            <div class="footer-column col-xl-7 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget about-widget">
+                                    <div class="logo">
+                                        <a href="http://127.0.0.1:8000"><img src="http://127.0.0.1:8000/assets/images/logo-2.png" alt="" /></a>
+                                    </div>
+                                    <div class="text">
+                                        <p>Our Clinic has grown to provide a world class facility for the clinic advanced restorative. </p>
+                                        <p>We are among the most qualified implant providers in the AUS with over 30 years of quality training and experience.</p>
+                                    </div>
+                                    <ul class="social-icon-three">
+                                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget">
+                                    <h2 class="widget-title">Departments</h2>
+                                    <ul class="user-links">
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/cardiology">Cardiology</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/urology">Urology</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/neurology">Neurology</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/dental">Dental</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/padiatrics">Padiatrics</a></li>
+                                                                                    <li><a href="http://127.0.0.1:8000/departments/pulmonary">Pulmonary</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="big-column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row">
+
+                             
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget recent-posts">
+                                    <h2 class="widget-title">Latest News</h2>
+
+                                    <div class="widget-content">
+                                                                                                                                    <div class="post">
+                                                                                                        <div class="thumb"><a href="http://127.0.0.1:8000/news/hospital-ghraphics"><img src="http://127.0.0.1:8000/upload/news/news_855391.webp" alt=""></a></div>
+                                                    <h4><a href="http://127.0.0.1:8000/news/hospital-ghraphics">Hospital Ghraphics</a></h4>
+                                                    <span class="date">13 September, 2023</span>
+                                                </div>
+                                                                                            <div class="post">
+                                                                                                        <div class="thumb"><a href="http://127.0.0.1:8000/news/hospital-mangement-old"><img src="http://127.0.0.1:8000/upload/news/news_117180.jpg" alt=""></a></div>
+                                                    <h4><a href="http://127.0.0.1:8000/news/hospital-mangement-old">Hospital Mangement OLD</a></h4>
+                                                    <span class="date">21 September, 2023</span>
+                                                </div>
+                                                                                                                        </div>
+                                </div>
+                            </div>
+
+
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+
+                                <div class="footer-widget contact-widget">
+                                    <h2 class="widget-title">Contact Us</h2>
+
+                                    <div class="widget-content">
+                                        <ul class="contact-list">
+                                            <li>
+                                                <span class="icon flaticon-placeholder"></span>
+                                                <div class="text">343 Business Place, Suite 314,
+Seattle, WA 98112</div>
+                                            </li>
+
+                                            <li>
+                                                <span class="icon flaticon-call-1"></span>
+                                                <div class="text">Monday - Saturday,8am to 10pm</div>
+                                                <a href="tel:(+555) 555-1234"><strong>(+555) 555-1234</strong></a>
+                                            </li>
+
+                                            <li>
+                                                <span class="icon flaticon-email"></span>
+                                                <div class="text">Do you have a Question?<br>
+                                                <a href="mailto:inquiry@clinic.com"><strong>inquiry@clinic.com</strong></a></div>
+                                            </li>
+
+                                            <li>
+                                                <span class="icon flaticon-back-in-time"></span>
+                                                <div class="text">Monday - Saturday,8am to 10pm
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    <div class="footer-nav">
+                        <ul class="clearfix">
+                            <li><a href="http://127.0.0.1:8000/terms-condition">Terms & Condition</a></li>
+                            <li><a href="http://127.0.0.1:8000/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="http://127.0.0.1:8000/about-us">About</a></li>
+                            <li><a href="http://127.0.0.1:8000/contact-us">Contact</a></li>
+                            <li><a href="http://127.0.0.1:8000/services">Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="copyright-text">
+                        <p>Copyright © 2023 <a href="http://127.0.0.1:8000"> Aahad Hospital </a>All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script src="http://127.0.0.1:8000/assets/js/jquery.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/popper.min.js"></script>
+
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/main-slider-script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/jquery.fancybox.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/mmenu.polyfills.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/jquery.modal.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/mmenu.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/appear.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/owl.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/wow.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/script.js"></script>
+</body>
+</html>
+
+
+";
