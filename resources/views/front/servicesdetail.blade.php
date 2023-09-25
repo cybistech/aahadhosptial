@@ -58,15 +58,6 @@
                             </div>
                         </div>
 
-                        <div class="brochures-box">
-                            <div class="inner">
-                                <h4>Download Brochures</h4>
-                                <div class="text">Etiam tortor lorem, auctor ut orci ut, vehicula ultricies mauris. scelerisque gravida.</div>
-                                <a class="theme-btn btn-style-one" href="#"><span class="btn-title"><i class="fa fa-file-pdf"></i> Info Company</span></a>
-                                <a class="theme-btn btn-style-one" href="#"><span class="btn-title"><i class="fa fa-file-pdf"></i> Brochure Newest</span></a>
-                            </div>
-                        </div>
-
                         <div class="help-box">
                             <span>Quick Contact</span>
                             <h4>Get Solution</h4>
@@ -106,3 +97,9 @@
     <!-- End service Section -->
 
 @endsection
+
+@push('scripts')
+<script src="{{asset('assets/js/jquery.fancybox.js')}}"></script>
+<script src="{{asset('assets/js/mmenu.polyfills.js')}}"></script>
+<script src="{{asset('assets/js/jquery.modal.min.js')}}"></script>
+@endpush

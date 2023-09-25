@@ -127,11 +127,8 @@
 <?php $__env->startPush('scripts'); ?>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
-<!--Google Map APi Key-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaaCBm4FEmgKs5cfVrh3JYue3Chj1kJMw"></script>
-
 <script src="<?php echo e(asset('assets/js/map-script.js')); ?>"></script>
-<!--End Google Map APi-->
 <?php $__env->stopPush(); ?>
 
 <?php echo $__env->make('front.layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\clinic Management\resources\views/front/contactus.blade.php ENDPATH**/ ?>

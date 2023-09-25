@@ -1,4 +1,4 @@
-1695990381s:52420:"<!DOCTYPE html>
+1696230238s:52194:"<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -896,20 +896,9 @@
 
 </div>
 
-
 <script src="http://127.0.0.1:8000/assets/js/jquery.js"></script>
 <script src="http://127.0.0.1:8000/assets/js/popper.min.js"></script>
 
-
-<script src="http://127.0.0.1:8000/assets/js/bootstrap.min.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/jquery.fancybox.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/mmenu.polyfills.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/jquery.modal.min.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/mmenu.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/appear.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/owl.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/wow.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/script.js"></script>
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
@@ -922,6 +911,14 @@
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 <script src="http://127.0.0.1:8000/assets/js/main-slider-script.js"></script>
+
+<script src="http://127.0.0.1:8000/assets/js/bootstrap.min.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/mmenu.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/appear.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/owl.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/wow.js"></script>
+<script src="http://127.0.0.1:8000/assets/js/script.js"></script>
+
 </body>
 </html>
 

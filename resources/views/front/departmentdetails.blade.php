@@ -124,3 +124,10 @@
     </div>
 </section>
 @endsection
+@push('scripts')
+
+<script src="{{asset('assets/js/jquery.fancybox.js')}}"></script>
+<script src="{{asset('assets/js/mmenu.polyfills.js')}}"></script>
+<script src="{{asset('assets/js/jquery.modal.min.js')}}"></script>
+
+@endpush

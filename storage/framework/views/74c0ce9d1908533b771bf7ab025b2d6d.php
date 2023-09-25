@@ -144,22 +144,18 @@
 
 </div>
 
-<?php echo $__env->yieldContent('scripts'); ?>
-
 <script src="<?php echo e(asset('assets/js/jquery.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/popper.min.js')); ?>"></script>
 
+<?php echo $__env->yieldPushContent('scripts'); ?>
 
 <script src="<?php echo e(asset('assets/js/bootstrap.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/jquery.fancybox.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/mmenu.polyfills.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/jquery.modal.min.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/mmenu.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/appear.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/owl.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/wow.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/script.js')); ?>"></script>
-<?php echo $__env->yieldPushContent('scripts'); ?>
+
 </body>
 </html>
 
