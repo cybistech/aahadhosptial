@@ -154,18 +154,20 @@
     </footer>
 
 </div>
-
 <script src="{{asset('assets/js/jquery.js')}}"></script>
 <script src="{{asset('assets/js/popper.min.js')}}"></script>
 
+
 @stack('scripts')
 
-<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('assets/js/mmenu.js')}}"></script>
-<script src="{{asset('assets/js/appear.js')}}"></script>
-<script src="{{asset('assets/js/owl.js')}}"></script>
-<script src="{{asset('assets/js/wow.js')}}"></script>
-<script src="{{asset('assets/js/script.js')}}"></script>
+<script src="https://dev.aahadhospital.com/assets/js/bootstrap.min.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/mmenu.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/appear.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/owl.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/wow.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/script.js"></script>
+
+
 
 </body>
 </html>

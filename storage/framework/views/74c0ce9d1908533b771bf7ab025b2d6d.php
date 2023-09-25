@@ -143,18 +143,20 @@
     </footer>
 
 </div>
-
 <script src="<?php echo e(asset('assets/js/jquery.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/popper.min.js')); ?>"></script>
 
+
 <?php echo $__env->yieldPushContent('scripts'); ?>
 
-<script src="<?php echo e(asset('assets/js/bootstrap.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/mmenu.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/appear.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/owl.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/wow.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/script.js')); ?>"></script>
+<script src="https://dev.aahadhospital.com/assets/js/bootstrap.min.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/mmenu.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/appear.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/owl.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/wow.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/script.js"></script>
+
+
 
 </body>
 </html>

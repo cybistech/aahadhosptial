@@ -1,4 +1,4 @@
-1696230238s:52194:"<!DOCTYPE html>
+1696249618s:51879:"<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -6,17 +6,7 @@
 
 
 
-<link href="http://127.0.0.1:8000/assets/css/bootstrap.css" rel="stylesheet">
-<link href="http://127.0.0.1:8000/assets/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
-<link href="http://127.0.0.1:8000/assets/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
-<link href="http://127.0.0.1:8000/plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
-<link href="http://127.0.0.1:8000/assets/css/style.css" rel="stylesheet">
-<link href="http://127.0.0.1:8000/assets/css/responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<link id="theme-color-file" href="http://127.0.0.1:8000/assets/css/color-themes/dodgerblue.css" rel="stylesheet">
-<link rel="shortcut icon" href="http://127.0.0.1:8000/assets/images/favicon.png" type="image/x-icon">
-<link rel="icon" href="http://127.0.0.1:8000/images/favicon.png" type="image/x-icon">
 
     <title> Home | Aahad Hospital</title>
 <meta name='description' itemprop='description' content='Learn about tailbone pain (coccydynia) from Cleveland Clinic'>
@@ -36,6 +26,15 @@
 <meta name="twitter:title" content=" Home | Aahad Hospital">
 <meta name="twitter:description" content="Learn about tailbone pain (coccydynia) from Cleveland Clinic">
 <meta name="twitter:image" content="https://dev.aahadhospital.com/assets/images/favicon.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<link rel="shortcut icon" href="http://127.0.0.1:8000/assets/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="http://127.0.0.1:8000/images/favicon.png" type="image/x-icon">
+
+
+<link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-781451b9.css" /><link rel="modulepreload" href="http://127.0.0.1:8000/build/assets/app-ca64927a.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-781451b9.css" data-navigate-track="reload" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-ca64927a.js" data-navigate-track="reload"></script>
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -895,9 +894,9 @@
     </footer>
 
 </div>
-
 <script src="http://127.0.0.1:8000/assets/js/jquery.js"></script>
 <script src="http://127.0.0.1:8000/assets/js/popper.min.js"></script>
+
 
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
@@ -912,12 +911,14 @@
 <script src="http://127.0.0.1:8000/assets/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 <script src="http://127.0.0.1:8000/assets/js/main-slider-script.js"></script>
 
-<script src="http://127.0.0.1:8000/assets/js/bootstrap.min.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/mmenu.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/appear.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/owl.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/wow.js"></script>
-<script src="http://127.0.0.1:8000/assets/js/script.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/bootstrap.min.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/mmenu.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/appear.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/owl.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/wow.js"></script>
+<script src="https://dev.aahadhospital.com/assets/js/script.js"></script>
+
+
 
 </body>
 </html>

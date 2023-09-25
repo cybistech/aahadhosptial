@@ -6,17 +6,7 @@
 
 
 
-<link href="<?php echo e(asset('assets/css/bootstrap.css')); ?>" rel="stylesheet">
-<link href="<?php echo e(asset('assets/plugins/revolution/css/settings.css')); ?>" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
-<link href="<?php echo e(asset('assets/plugins/revolution/css/layers.css')); ?>" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
-<link href="<?php echo e(asset('plugins/revolution/css/navigation.css')); ?>" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
-<link href="<?php echo e(asset('assets/css/style.css')); ?>" rel="stylesheet">
-<link href="<?php echo e(asset('assets/css/responsive.css')); ?>" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<link id="theme-color-file" href="<?php echo e(asset('assets/css/color-themes/dodgerblue.css')); ?>" rel="stylesheet">
-<link rel="shortcut icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>" type="image/x-icon">
-<link rel="icon" href="<?php echo e(asset('images/favicon.png')); ?>" type="image/x-icon">
 
     <?php
         if(isset($seo)){
@@ -46,6 +36,16 @@
 <meta name="twitter:title" content="<?php echo $title; ?>">
 <meta name="twitter:description" content="<?php echo $description; ?>">
 <meta name="twitter:image" content="<?php echo e($image); ?>">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<link rel="shortcut icon" href="<?php echo e(asset('assets/images/favicon.png')); ?>" type="image/x-icon">
+<link rel="icon" href="<?php echo e(asset('images/favicon.png')); ?>" type="image/x-icon">
+
+
+<?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
+
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">

@@ -2,21 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-{{-- <title>@yield('title')</title> --}}
 
 
 
-<link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
+{{-- <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{asset('assets/plugins/revolution/css/settings.css')}}" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
 <link href="{{asset('assets/plugins/revolution/css/layers.css')}}" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
 <link href="{{asset('plugins/revolution/css/navigation.css')}}" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
 <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-<link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet"> --}}
 
-<link id="theme-color-file" href="{{asset('assets/css/color-themes/dodgerblue.css')}}" rel="stylesheet">
-<link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
-<link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 
     @php
         if(isset($seo)){
@@ -46,6 +41,16 @@
 <meta name="twitter:title" content="{!! $title !!}">
 <meta name="twitter:description" content="{!! $description !!}">
 <meta name="twitter:image" content="{{$image}}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
+<link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
+{{-- <link id="theme-color-file" href="{{asset('assets/css/color-themes/dodgerblue.css')}}" rel="stylesheet"> --}}
+
+@vite('resources/js/app.js')
+{{-- @stack('scripts') --}}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
