@@ -134,13 +134,13 @@
                         <a href="{{ route('cache.clear') }}" id="clear-cache-btn"><i class="menu-icon fa fa-trash"></i>{{__('messages.clear_cache')}}</a>
                     </li>
 
-                    <script>
+                    {{-- <script>
                         document.getElementById('clear-cache-btn').addEventListener('click', function(e) {
                             e.preventDefault();
                             var currentUrl = window.location.href;
                             window.location.href = "{{ route('cache.clear') }}?redirect=" + encodeURIComponent(currentUrl);
                         });
-                    </script>
+                    </script> --}}
                </ul>
             </div>
          </nav>
@@ -168,6 +168,14 @@
             </div>
 
          </header>
+        <div class="container">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+        </div>
+        @dd(session('success'));
          @yield('content')
       </div>
       <div id="chat_new" class="modal" >

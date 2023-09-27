@@ -198,14 +198,11 @@ class HomeController extends Controller
        }
 
         public function clear_cache(Request $request){
-            try {
+            Artisan::call('config:cache');
+            Artisan::call('optimize:clear');
+            Artisan::call('cache:clear');
+            Cache::flush(); // Clear all cache
 
-                Artisan::call('config:cache');
-                Artisan::call('optimize:clear');
-                Artisan::call('cache:clear');
-                return redirect()->to($request->input('redirect'))->with('message','Cache cleared successfully!');
-            } catch (\Exception $e) {
-                return redirect()->to($request->input('redirect'))->with('error', 'An error occurred while clearing the cache: ' . $e->getMessage());
-            }
+            return redirect()->back()->with('success','Cache Cleared Successfully');
         }
 }

@@ -92,13 +92,7 @@
                         <a href="<?php echo e(route('cache.clear')); ?>" id="clear-cache-btn"><i class="menu-icon fa fa-trash"></i><?php echo e(__('messages.clear_cache')); ?></a>
                     </li>
 
-                    <script>
-                        document.getElementById('clear-cache-btn').addEventListener('click', function(e) {
-                            e.preventDefault();
-                            var currentUrl = window.location.href;
-                            window.location.href = "<?php echo e(route('cache.clear')); ?>?redirect=" + encodeURIComponent(currentUrl);
-                        });
-                    </script>
+                    
                </ul>
             </div>
          </nav>
@@ -126,6 +120,15 @@
             </div>
 
          </header>
+        <div class="container">
+            <?php if(session('success')): ?>
+                <div class="alert alert-success">
+                    <?php echo e(session('success')); ?>
+
+                </div>
+            <?php endif; ?>
+        </div>
+        <?php dd(session('success')); ?>;
          <?php echo $__env->yieldContent('content'); ?>
       </div>
       <div id="chat_new" class="modal" >
