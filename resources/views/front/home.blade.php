@@ -239,7 +239,7 @@
             <!-- Images Column -->
             <div class="images-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <figure class="image-1"><img src="{{asset('upload/ceo/').'/'.$setting->ceo_image}}" alt="{{ $setting->ceo_name }}"></figure>
+                    <figure class="image-1"><img src="{{asset('upload/ceo/').'/'.$setting->ceo_image}}" alt="{{ $setting->ceo_name }}" title="{{ $setting->ceo_name}}"></figure>
                 </div>
             </div>
         </div>

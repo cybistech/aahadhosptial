@@ -127,14 +127,13 @@ class FrontController extends Controller
            return view("front.facilites")->with("department",$department)->with("facilites",$service)->with("setting",$setting);
        }
 
-        public function department(){
+        public function department(Request $request){
 
-            $cache_key =  'dep';
-            if ( Cache::has($cache_key) ) {
-                return Cache::get($cache_key);
-            } else {
-                $departments=Department::paginate(10);
-
+            $page = $request->input('page', 1);
+            $cache_key = Route::currentRouteName() . '_page_' . $page;
+            $departments = Cache::remember($cache_key, 604800, function() use ($page) {
+                return $departments=Department::paginate(10, ['*'], 'page', $page);
+            });
                 $seo = (object) array(
                     'seo_title' => 'Departments ' .'|'.' Aahad Hospital',
                     'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
@@ -142,13 +141,10 @@ class FrontController extends Controller
                     'seo_type'=>'website',
                     'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
                 );
-                $cachedData = view("front.department")->with([
+                return view("front.department")->with([
                     'departments'=>$departments,
                     'seo'=>$seo
-                    ])->render();
-                Cache::put($cache_key, $cachedData, 604800);
-                return $cachedData;
-            }
+                ]);
         }
 
         public function contact_us(){
@@ -319,15 +315,13 @@ class FrontController extends Controller
 
     }
 
-        public function doctorlist(){
+        public function doctorlist(Request $request){
 
-            $cache_key = Route::currentRouteName();
-            if ( Cache::has($cache_key) ) {
-                return Cache::get($cache_key);
-            } else {
-                $doctor=Doctor::paginate(10);
-                $departmentdoctor=Department::with('doctor')->get();
-                $reviews=Review::with('doctors','users')->get()->take(4);
+            $page = $request->input('page', 1);
+            $cache_key = Route::currentRouteName() . '_page_' . $page;
+            $doctor= Cache::remember($cache_key, 604800 , function() use ($page) {
+                return Doctor::paginate(10, ['*'], 'page', $page);
+            });
                 $seo = (object) array(
                     'seo_title' => ' Doctors '.'|'.' Aahad Hospital',
                     'seo_description' => 'Learn about tailbone pain (coccydynia) from Cleveland Clinic',
@@ -336,15 +330,10 @@ class FrontController extends Controller
                     'image' =>'https://dev.aahadhospital.com/assets/images/favicon.png'
                 );
 
-                $cachedData = view('front.doctorlist')->with([
+                return view('front.doctorlist')->with([
                     'seo'=>$seo,
                     'doctor'=>$doctor,
-                    'departmentdoctor'=>$departmentdoctor,
-                    'reviews'=>$reviews
-                ])->render();
-                Cache::put($cache_key, $cachedData, 604800);
-                return $cachedData;
-            }
+                ]);
         }
 
        public function gallery(){

@@ -206,6 +206,7 @@
                                     <th><?php echo e(__('messages.Day')); ?></th>
                                     <th><?php echo e(__('messages.From')); ?></th>
                                     <th><?php echo e(__('messages.To')); ?></th>
+                                    <th><?php echo e(__('Off')); ?></th>
                                  </tr>
                               </thead>
                               <tbody>
@@ -232,9 +233,13 @@
                                        <span> <?php echo e($arr[6]); ?></span>
                                        <?php endif; ?>
                                     </td>
-                                    <td><input type="time" required name="from[]" id="from<?php echo e($i); ?>" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
-                                    <td><input type="time" required name="to[]" id="to<?php echo e($i); ?>" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'<?php echo e($i); ?>')" /></td>
-                                 </tr>
+                                    <td><input type="time" name="from[]" id="from<?php echo e($i); ?>" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
+                                    <td><input type="time"  name="to[]" id="to<?php echo e($i); ?>" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'<?php echo e($i); ?>')" /></td>
+                                   <td>
+                                        <input type="hidden" name="off[<?php echo e($i); ?>]" value="0">
+                                        <input type="checkbox" name="off[<?php echo e($i); ?>]" id="off<?php echo e($i); ?>" value="1" <?php if(old('off.'.$i, $work->is_off) == 1): ?> checked <?php endif; ?>/>
+                                    </td>
+                                </tr>
                                  <?php $i++; ?>
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                  <?php else: ?>
@@ -244,9 +249,13 @@
                                     <td><input type="hidden" name="day[]" id="day<?php echo e($i); ?>" readonly="" value="<?php echo e($i+1); ?>" class="form-control" />
                                        <span><?php echo e($a); ?></span>
                                     </td>
-                                    <td><input type="time" required name="from[]" id="from<?php echo e($i); ?>" class="form-control" value="<?php echo e(time()); ?>"  /></td>
-                                    <td><input type="time" required name="to[]" id="to<?php echo e($i); ?>" value="" class="form-control" onchange="checktime(this.value,'<?php echo e($i); ?>')"  /></td>
-                                 </tr>
+                                    <td><input type="time"  name="from[]" id="from<?php echo e($i); ?>" class="form-control" value="<?php echo e(time()); ?>"  /></td>
+                                    <td><input type="time"  name="to[]" id="to<?php echo e($i); ?>" value="" class="form-control" onchange="checktime(this.value,'<?php echo e($i); ?>')"  /></td>
+                                    <td>
+                                        <input type="hidden" name="off[<?php echo e($i); ?>]" value="0">
+                                        <input type="checkbox" name="off[<?php echo e($i); ?>]" id="off<?php echo e($i); ?>" value="1" <?php if(old('off.'.$i) == 1): ?> checked <?php endif; ?> />
+                                    </td>
+                                </tr>
                                  <?php $i++; ?>
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                  <?php endif; ?>

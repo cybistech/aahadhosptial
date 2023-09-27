@@ -96,7 +96,7 @@
 
                 <div class="main-box">
                     <div class="logo-box">
-                        <div class="logo"><a href="{{route('home')}}"><img src="{{asset('assets/images/logo.png')}}" alt="" title=""></a></div>
+                        <div class="logo"><a href="{{route('home')}}"><img src="{{asset('assets/images/logo.png')}}" width="194" height="50" alt="" title=""></a></div>
                     </div>
                     @php $segment1 =  request()->segment(1);  @endphp
                     <div class="nav-outer">

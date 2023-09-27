@@ -91,7 +91,7 @@
 
                 <div class="main-box">
                     <div class="logo-box">
-                        <div class="logo"><a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('assets/images/logo.png')); ?>" alt="" title=""></a></div>
+                        <div class="logo"><a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('assets/images/logo.png')); ?>" width="194" height="50" alt="" title=""></a></div>
                     </div>
                     <?php $segment1 =  request()->segment(1);  ?>
                     <div class="nav-outer">

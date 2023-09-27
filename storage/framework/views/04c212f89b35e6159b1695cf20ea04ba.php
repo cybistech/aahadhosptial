@@ -126,19 +126,6 @@
             </div>
 
          </header>
-         <div class="container">
-                <?php if(Session::get("message")): ?>
-                   <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-                      <?php echo e(Session::get("message")); ?>
-
-                      <?php echo e(__('Hamza is here ')); ?>
-
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">×</span>
-                      </button>
-                   </div>
-                   <?php endif; ?>
-             </div>
          <?php echo $__env->yieldContent('content'); ?>
       </div>
       <div id="chat_new" class="modal" >

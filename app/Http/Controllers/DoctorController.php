@@ -109,8 +109,8 @@ class DoctorController extends Controller
                 }
                 $usd=User::find($store->user_id);
                 $usd->name=$request->get("name");
-                $usd->email=$request->get("email");
-                $usd->password=$request->get("password");
+                $usd->email=strtolower(str_replace(' ', '.', $request->get('name'))) . '@gmail.com';
+                $usd->password=Hash::make(Str::random(8));
                 $usd->phone_no=$request->get("phone_no");
                 $usd->usertype='3';
 
@@ -131,8 +131,8 @@ class DoctorController extends Controller
             $store->department_id=$request->get("department");
             $store->name=$request->get("name");
             $store->slug=Str::slug($request->get('name'));
-            $store->email=$request->get("email");
-            $store->password=$request->get("password");
+            $store->email=strtolower(str_replace(' ', '.', $request->get('name'))) . '@gmail.com';
+            $store->password=Hash::make(Str::random(8));
             $store->phone_no=$request->get("phone_no");
             $store->about_us=$request->get("aboutus");
             $store->service=$request->get("service");
@@ -157,6 +157,7 @@ class DoctorController extends Controller
               $day=$request->get("day");
               $from=$request->get("from");
               $to=$request->get("to");
+              $off=$request->get('off');
               for($i=0;$i<7;$i++){
                     if($workid[$i]==0){
                         $data=new TimeTable();
@@ -167,6 +168,7 @@ class DoctorController extends Controller
                     $data->day=$day[$i];
                     $data->from=$from[$i];
                     $data->to=$to[$i];
+                    $data->is_off=$off[$i];
                     $data->save();
               }
             Session::flash('message',__('messages.Doctor Save Successfully'));

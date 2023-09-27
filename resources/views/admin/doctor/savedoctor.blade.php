@@ -195,6 +195,7 @@
                                     <th>{{__('messages.Day')}}</th>
                                     <th>{{__('messages.From')}}</th>
                                     <th>{{__('messages.To')}}</th>
+                                    <th>{{__('Off')}}</th>
                                  </tr>
                               </thead>
                               <tbody>
@@ -221,9 +222,13 @@
                                        <span> {{$arr[6]}}</span>
                                        @endif
                                     </td>
-                                    <td><input type="time" required name="from[]" id="from{{$i}}" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
-                                    <td><input type="time" required name="to[]" id="to{{$i}}" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'{{$i}}')" /></td>
-                                 </tr>
+                                    <td><input type="time" name="from[]" id="from{{$i}}" class="form-control" value="<?= isset($work->from) ? $work->from : "" ?>" /></td>
+                                    <td><input type="time"  name="to[]" id="to{{$i}}" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'{{$i}}')" /></td>
+                                   <td>
+                                        <input type="hidden" name="off[{{ $i }}]" value="0">
+                                        <input type="checkbox" name="off[{{ $i }}]" id="off{{ $i }}" value="1" @if(old('off.'.$i, $work->is_off) == 1) checked @endif/>
+                                    </td>
+                                </tr>
                                  <?php $i++; ?>
                                  @endforeach
                                  @else
@@ -233,9 +238,13 @@
                                     <td><input type="hidden" name="day[]" id="day{{$i}}" readonly="" value="{{$i+1}}" class="form-control" />
                                        <span>{{$a}}</span>
                                     </td>
-                                    <td><input type="time" required name="from[]" id="from{{$i}}" class="form-control" value="{{time()}}"  /></td>
-                                    <td><input type="time" required name="to[]" id="to{{$i}}" value="" class="form-control" onchange="checktime(this.value,'{{$i}}')"  /></td>
-                                 </tr>
+                                    <td><input type="time"  name="from[]" id="from{{$i}}" class="form-control" value="{{time()}}"  /></td>
+                                    <td><input type="time"  name="to[]" id="to{{$i}}" value="" class="form-control" onchange="checktime(this.value,'{{$i}}')"  /></td>
+                                    <td>
+                                        <input type="hidden" name="off[{{$i}}]" value="0">
+                                        <input type="checkbox" name="off[{{$i}}]" id="off{{$i}}" value="1" @if(old('off.'.$i) == 1) checked @endif />
+                                    </td>
+                                </tr>
                                  <?php $i++; ?>
                                  @endforeach
                                  @endif
