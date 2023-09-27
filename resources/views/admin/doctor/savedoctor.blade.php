@@ -226,7 +226,7 @@
                                     <td><input type="time"  name="to[]" id="to{{$i}}" value="<?= isset($work->to) ? $work->to : "" ?>" class="form-control" onchange="checktime(this.value,'{{$i}}')" /></td>
                                    <td>
                                         <input type="hidden" name="off[{{ $i }}]" value="0">
-                                        <input type="checkbox" name="off[{{ $i }}]" id="off{{ $i }}" value="1" @if(old('off.'.$i, $work->is_off) == 1) checked @endif/>
+                                        <input type="checkbox" name="off[{{ $i }}]" class="clear-inputs" id="off{{ $i }}" value="1" @if(old('off.'.$i, $work->is_off) == 1) checked @endif/>
                                     </td>
                                 </tr>
                                  <?php $i++; ?>
@@ -281,4 +281,27 @@ uiColor : '##ffffff'
 });
 //]]>
 </script>
+<script>
+    // Add an event listener to all elements with the 'clear-inputs' class
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('.clear-inputs');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const row = this.closest('tr'); // Find the closest table row
+
+                // Find the 'From' and 'To' input fields in the same row
+                const fromInput = row.querySelector('input[name^="from"]');
+                const toInput = row.querySelector('input[name^="to"]');
+
+                // Clear the input fields if the checkbox is checked
+                if (this.checked) {
+                    fromInput.value = '';
+                    toInput.value = '';
+                }
+            });
+        });
+    });
+</script>
+
 @endsection

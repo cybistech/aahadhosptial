@@ -102,8 +102,12 @@
                                     foreach ($arr as $index => $day) {
                                         if (isset($doctor->TimeTabledata[$index])) {
                                             $timetable = $doctor->TimeTabledata[$index];
-                                            $formattedTime = date_format(date_create($timetable->from), "H:i") . ' - ' . date_format(date_create($timetable->to), "H:i");
-
+                                            if (!is_null($timetable->from) && !is_null($timetable->to)) {
+                                                $formattedTime = date_format(date_create($timetable->from), "H:i") . ' - ' . date_format(date_create($timetable->to), "H:i");
+                                            }
+                                            else {
+                                                $formattedTime = 'OFF';
+                                            }
                                             if ($index < 5) {
                                                 $weekdays[] = "$day $formattedTime";
                                                 if ($index > 0 && $weekdaysTimetable !== $formattedTime) {
@@ -116,7 +120,6 @@
                                         }
                                     }
                                 @endphp
-
                                 @if (count($weekdays) === 0)
                                     <p>{{ __('No working hours available for weekdays') }}</p>
                                 @else
@@ -125,30 +128,35 @@
                                             <?php
                                                 if (!empty($weekdays) && is_array($weekdays) && count($weekdays) > 0) {
                                                     $firstWeekday = $weekdays[0];
-
-                                                    if (preg_match('/\d{2}:\d{2}\s*-\s*\d{2}:\d{2}/', $firstWeekday, $matches)) {
-                                                        $timeRange = $matches[0];
+                                                    $parts = explode(' ', $firstWeekday);
+                                                    if ($parts[1]=='OFF') {
+                                                        $timeRange='OFF';
+                                                    }
+                                                    else {
+                                                        if (preg_match('/\d{2}:\d{2}\s*-\s*\d{2}:\d{2}/', $firstWeekday, $matches))
+                                                        {
+                                                            $timeRange = $matches[0];
+                                                        }
                                                     }
                                                 }
                                             ?>
                                              <span>{{ $timeRange }}</span></li>
                                     @else
-
                                         @if (count($weekdays) > 0)
                                             @foreach ($weekdays as $dayTimetable)
                                                 @php
                                                     $parts = explode(' ', $dayTimetable);
                                                     $weekend_name = $parts[0];
-                                                    $timerange = $parts[1] .  ' - ' . $parts[3];
+                                                    if ($parts[1] == 'OFF') {
+                                                        $timerange = $parts[1];
+                                                    }
+                                                    else {
+                                                        $timerange = $parts[1] .  ' - ' . $parts[3];
+                                                    }
                                                 @endphp
                                                 <li>{{$weekend_name}} <span>{{ $timerange }}</span></li>
                                             @endforeach
                                         @endif
-
-
-                                        {{-- @foreach ($weekdays as $dayTimetable)
-                                                <p>{{ $dayTimetable }}</p>
-                                        @endforeach --}}
                                     @endif
                                 @endif
 
@@ -157,7 +165,12 @@
                                         @php
                                             $parts = explode(' ', $dayTimetable);
                                             $weekend_name = $parts[0];
-                                            $timerange = $parts[1] .  ' - ' . $parts[3];
+                                            if ($parts[1] == 'OFF') {
+                                                $timerange = $parts[1];
+                                            }
+                                            else {
+                                                $timerange = $parts[1] .  ' - ' . $parts[3];
+                                            }
                                         @endphp
                                             <li>{{$weekend_name}} <span>{{ $timerange }}</span></li>
                                     @endforeach
